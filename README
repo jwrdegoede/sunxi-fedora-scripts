@@ -1,0 +1,202 @@
+Fedora 18 ARM for Allwinner A10 devices README
+----------------------------------------------
+
+Quickstart guide
+----------------
+
+1) Insert an sdcard, note any data on the card will be destroyed!
+2) Make sure the card is not mounted, run "mount" and if the card shows
+   up in the output umount its partitions
+3) Write the img file to the card, ie as root do:
+   xzcat Fedora-18-Beta-a10-armhfp.img > /dev/mmcblk0
+   sync
+4) The card is not yet ready for use! Since the A10 u-boot is board
+   specific, the image comes without any uboot install, follow the next
+   steps to install the right u-boot for your board
+5) Remove the card, and re-insert it. The uboot partition should get
+   automatically mounted, if not mount it manually,
+6) As root (or through sudo) run:
+   sh <uboot-part-mount>/select-board.sh
+   Note the "sh " in front is necessary because the uboot vfat partition
+   often gets auto-mounted noexec. ie:
+   sudo sh /run/media/hans/uboot/select-board.sh
+
+   If you've dialog installed the select-board.sh script will prompt for
+   your board. If you don't have dialog installed, it will print the list
+   of supported boards. Lookup your board and re-run the script with the
+   shortname for your board as argument, ie:
+   sudo sh /run/media/hans/uboot/select-board.sh mk802
+7) umount the uboot and rootfs partitions, ie:
+   umount /run/media/hans/uboot
+   umount /run/media/hans/rootfs
+8) Your sdcard is now ready for use
+9) *Before* powering up your A10 device connect it to an hdmi or dvi monitor
+10) After powering up your A10 device with the sdcard inserted you will
+   start with the firstboot wizard:
+   10a) Configure a user here
+   10b) Most A10 devices do not come with a battery backed rtc, so you will
+        want to enable ntp. Simply click ok in the ntp dialog. Now firstboot
+        will try to start ntp. Since most devices have only wireless, and
+        that is not configured yet at this time, click on cancel when it
+        tries to start ntp. If it then asks if you want to re-do your ntp
+        configuration choose no.
+11) Log in as the just created user
+12) If you need to configure wireless click on the network icon in the
+    top right corner (next to the clock) and select the wireless network
+    you want to connect to
+13) Enjoy Fedora on your A10 device
+
+
+Supported Devices:
+------------------
+
+Fedora 18 ARM for Allwinner A10 has been tested with the following devices:
+* Gooseberry development board
+* Mele a1000g/a2000g 1024 MB RAM
+* Mini-X 1024 MB RAM
+* mk802 (with female mini hdmi) 512 MB RAM
+* mk802ii (with male normal hdmi) 1024 MB RAM
+
+Fedora 18 ARM should also work on the following devices:
+* Cubieboard development board 512 MB RAM
+* Cubieboard development board 1024 MB RAM
+* H6 netbook
+* Hackberry development board
+* Hyundai a7hd tablet
+* Mele a1000/a2000 512 MB RAM
+* Mini-X 512 MB RAM
+
+
+Configuring the display output
+------------------------------
+
+Multiple video outputs at the same time are not supported. By default
+video-output is send to hdmi for all devices, except for tablets/netbooks
+where the output is send to the lcd.
+
+The output resolution can be configured with the disp.screen0_output_mode
+kernel cmdline value, which can be found in the extrargs part of uEnv.txt in
+the uboot partition. The default uEnv.txt contains the following value:
+disp.screen0_output_mode=EDID:1280x720p60
+
+This means try to use EDID and if no valid EDID info is found fallback to
+1280x720p60.
+
+The used output can be changed by adding disp.screen0_output_type=X to the
+extraargs in uEnv.txt. With X being one of: 0:none; 1:lcd; 2:tv; 3:hdmi; 4:vga
+
+Some per display type notes:
+-lcd outputs: Hardcoded to the native mode, disp.screen0_output_mode is ignored
+-tv: Does not support EDID, "EDID:" must be removed from the
+ disp.screen0_output_mode value otherwise it will be ignored, example usage:
+ disp.screen0_output_type=2 disp.screen0_output_mode=720x480i50
+-hdmi: To override the EDID detected mode, drop the "EDID:" from the
+ disp.screen0_output_mode value and set it to the desired mode, ie:
+ disp.screen0_output_type=3 disp.screen0_output_mode=1360x768p60
+-vga: Does not support EDID, "EDID:" must be removed from the
+ disp.screen0_output_mode value otherwise it will be ignored. interlaced 
+ progressive and refreshrate settings specified are ignored, each resolution
+ has hardcoded values for these. Example usage:
+ disp.screen0_output_type=4 disp.screen0_output_mode=1024x768
+
+
+USB controller caveats
+----------------------
+The OTG USB controller in host mode only supports a limited number of
+devices plugging in a hub + mouse + keyboard typically will make either
+the mouse or keyboard not work. This is a hardware limitation which we
+will likely not be able to work around.
+
+On tv-sticks and top-set boxes, simply avoid the otg connector, instead
+use a hub in a real usb connector. Note on the mini-x the otg / host
+marking is not always correct. If things don't work try using the OTG
+connector instead!
+
+On tablets and the gooseberry unfortunately only the otg connector is
+available. One solution there is using a single usb-device which is
+both a keyboard and a mouse at the same time. IE the receiver for logitech
+wireless desktop sets.
+
+
+Supported hardware components / features:
+-----------------------------------------
+
+Fedora 18 ARM for Allwinner A10 supports the following components:
+* CPU + PMU + RAM
+* Serial ports
+* MMC cards
+* Internal NAND storage
+* Framebuffer on lcd / vga / hdmi / composite video
+* Sound both analog out and over hdmi
+* OTG USB controller
+* Both standard USB host controllers
+* Wifi
+* Wired Ethernet
+* SATA
+* IR (untested at this time)
+
+
+Unsupported hardware components:
+--------------------------------
+
+The following components require various proprietary blobs to be used, and
+as such are not supported in the Fedora images. The kernel drivers for them
+are present (usually as modules), so if you add the necessary blobs you
+might get these to work:
+* Mali 400 GPU
+* Cedar hardware video & audio decoding and encoding engine
+* G2D 2d engine
+
+
+Known issues:
+-------------
+* Currently the image is running with selinux in permissive mode, this is
+  done because of a conflict between the F-18 selinux policy and using a 3.4
+  kernel, this is being tracked here:
+  https://bugzilla.redhat.com/show_bug.cgi?id=895070
+
+
+Future plans / todo:
+--------------------
+* Currently 192MiB of the A10's RAM is reserved, leaving only 320MiB for Linux
+  use on 512MiB RAM systems. This is mostly caused by memory reserved for use
+  by hardware listed under the "Unsupported hardware components" paragraph.
+  Since we're not using those blocks anyways the plan is to give this RAM back
+  to Linux by adding kernel cmdline options to reserve the RAM, and then:
+  1) On Fedora by default set all the reserved sizes to 0 on the cmdline
+  2) The kernel modules for these hw-blocks will check the reserved size and
+     if it is 0 refuse to load
+  3) Users who want to use these hw-blocks already need to manually configure
+     the necessary blobs, they will now also need to adjust the kernel cmdline
+* Currently both the analog and hdmi audio outputs of the A10 are both
+  always registered. This means that the user must always manually pick the
+  right soundcard for his config. The plan is to instead only register the
+  analog out on boards which actually have an analog out connecter, and only
+  register the hdmi audio card when an hdmi-audio capable monitor is detected
+
+
+Rebuilding the Fedora 18 ARM for Allwinner A10 disk image
+---------------------------------------------------------
+
+Building the Fedora 18 ARM for Allwinner A10 disk image consists of 2 steps
+1) Building a uboot.tar.gz and rootfs.tar.gz "overlays", this is done
+   bu the build-boot-root-sh script
+2) Combining uboot.tar.gz and rootfs.tar.gz with an official Fedora 18
+   ARM panda image. The a10 image you downloaded is named the same as the panda
+   image used as base with panda replaced by a10, so to get the panda image
+   name replace a10 with panda again :) This combining is done by the
+   build-image.sh script
+
+These scripts are hosted here:
+https://github.com/jwrdegoede/sunxi-fedora-scripts.git
+
+A copy of the exact versions of these scripts used to build this Fedora A10
+image can be found in the scripts directory of the uboot partition, the
+kernel config used during the build can be found here too.
+
+If you want to exactly reproduce this image it is important to use the
+scripts from the scripts dir of the uboot partition, as the scripts contain
+GIT tags used during the build to checkout the exact versions to build.
+
+The pre-conditions these scripts expect to be met, and the exact usage of
+them is documented in comments in the top of each script.

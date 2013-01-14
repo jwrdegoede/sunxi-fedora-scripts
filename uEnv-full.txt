@@ -1,0 +1,15 @@
+baudrate=115200
+console=ttyS0,115200
+bootdelay=1
+bootenv=uEnv.txt
+bootscr=boot.scr
+kernel=uImage
+loglevel=8
+panicarg=panic=10
+root=/dev/mmcblk0p3 rootwait
+scriptaddr=0x44000000
+loadbootenv=fatload mmc 0 $scriptaddr ${bootenv}
+loadbootscr=fatload mmc 0 $scriptaddr ${bootscr}
+setargs=setenv bootargs console=${console} root=${root} loglevel=${loglevel} ${panicarg} ${extraargs}
+boot_mmc=fatload mmc 0 0x43000000 script.bin && fatload mmc 0 0x48000000 ${kernel} && watchdog 0 && bootm 0x48000000
+bootcmd=if run loadbootenv; then echo Loaded environment from ${bootenv}; env import -t ${scriptaddr} ${filesize}; fi; if test -n ${uenvcmd}; then echo Running uenvcmd ...; run uenvcmd; fi; if run loadbootscr; then echo Jumping to ${bootscr}; source ${scriptaddr}; fi; run setargs boot_mmc;

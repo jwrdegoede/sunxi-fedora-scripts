@@ -1,0 +1,161 @@
+#!/usr/bin/bash
+#
+# rootfs-resize :: Fedora ARM root partition resize service script
+#
+# Version 0.7 - 2012-07-30
+#
+# CTyler <ctyler@fedoraproject.org> 2012-01-30 - 2012-07-30
+# Brendan Conoboy <blc@redhat.com> 2012-05-06
+# birger <birger@birger.sh> 2012-05-06
+#
+#
+
+#
+#    rootfs-reszie - SD card resize service
+#
+#    Copyright (C)2012 Chris Tyler and others (see above)
+#
+#    This program is free software; you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation; either version 2 of the License, or
+#    (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program; if not, write to the Free Software
+#    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, 
+#    MA  02110-1301  USA
+#
+
+#
+# If /.nofsresize exists, or 'nofsresize' was passed
+# as a kernel command line argument, disable this
+# service and exit.
+#
+# If /.rootfs-repartition exists, repartition /
+#
+# If /.rootfs-resize exists, resize /
+#
+
+set -e
+PATH=/usr/bin:/usr/sbin
+export PATH
+
+# If the kernel commandline contains "nofsresize" or
+# the file /.nofsresize exist, then disable this service
+# and exit
+
+if grep --silent -i "nofsresize" /proc/cmdline || [[ -f /.nofsresize ]] ; then
+  systemctl disable rootfs-resize.service
+  exit 0
+fi
+
+# If the resize flag files do not exist, then exit
+
+if [[ ! -f /.rootfs-repartition && ! -f /.rootfs-resize ]] ; then
+  exit 0
+fi
+
+PDEV=`cat /proc/self/mountinfo | grep '/ / ' | sed -n 's@.* \(/dev/.*\) .*@\1@p'`
+
+if [ "$PDEV" = "/dev/root" ]; then
+  for i in $(cat /proc/cmdline); do
+    case "$i" in
+      root=*)
+        PDEV=${i:5}
+        ;;
+    esac
+  done
+fi
+
+case $PDEV in
+  /dev/sd*)
+    DEV="${PDEV%%[0-9]*}"
+    PNUM="${PDEV#${DEV}}"
+  ;;
+  /dev/mmcblk*)
+    DEV="${PDEV%%p[0-9]*}"
+    PNUM="${PDEV#${DEV}p}"
+  ;;
+  *)
+    echo "$0: Unknown root device type $PDEV. Exiting"
+    exit 1
+  ;;
+esac
+
+if [[ X$DEV = X ]] || [[ X$PDEV = X ]] || [[ X$PNUM = X ]]; then
+  echo "$0: Was unable to determine device, partition, or number. Exiting."
+  exit 1
+fi
+
+if [[ -f /.rootfs-repartition ]]; then
+
+  if [[ $PNUM -ne $(fdisk -l "$DEV"|grep -c "^/dev/") ]] ; then 
+    echo "$0: $DEV is not the last partition, exiting."
+    exit 0
+  fi
+
+  echo "$0: Phase 1 - Changing the parition size." 
+  echo "$0: Using $PDEV on $DEV for resize"
+
+  echo -e "d\n$PNUM\nn\np\n$PNUM\n\n\np\nw\n"|fdisk $DEV >/dev/null 2>&1 || true
+  echo "$0: Repartition done, rebooting for next phase of resize."
+  touch /.rootfs-resize
+  rm -f /.rootfs-repartition
+  reboot
+
+elif [[ -f /.rootfs-resize ]]; then
+
+  echo "$0: Phase 2 - Resizing the root partition."
+  ionice -n 7 resize2fs -p $PDEV
+
+  if [[ -f /.swapsize ]]
+  then
+    SWAPSIZE="0$(head -1 </.swapsize|tr -cd "0-9")"
+    FREESPACE="$(df  /|sed -n "s|^/[^ ]* \+[0-9]\+ \+[0-9]\+ \+\([0-9]\+\) .*$|\1|p")"
+
+    # Ensure that the swap size is non-negative
+    if [[ "$SWAPSIZE" -lt 0 ]]
+    then
+      SWAPSIZE=0
+    fi
+
+    # Use half of the available root filesystem space, in MB, as the max swap size
+    if [[ "$SWAPSIZE" -gt "$((FREESPACE / 2048))" ]]
+    then
+      SWAPSIZE="$FREESIZE"
+    fi
+
+    # If the swap file is not already present, create it
+    # Create file as /swap0.part in case we're interrupted
+    if [[ ! -f /swap0 && "$SWAPSIZE" -gt 0 ]]
+    then
+      echo "$0: Phase 3 - Creating $SWAPSIZE MB swap file /swap0"
+      ionice -n 7 dd if=/dev/zero of=/swap0.part bs=1M count="$SWAPSIZE"
+      mkswap /swap0.part
+      mv /swap0.part /swap0
+
+    else
+
+      echo "$0: Swap file already exists - not creating."
+
+    fi
+
+    if grep -q "^/swap0" /etc/fstab >/dev/null
+    then
+      :
+    else
+      echo -e "/swap0\tswap\tswap" >>/etc/fstab
+    fi
+    swapon -a
+    rm -f /.swapsize
+
+  fi
+  rm -f /.rootfs-resize
+  echo "$0: Partition resizing completed."
+fi
+
