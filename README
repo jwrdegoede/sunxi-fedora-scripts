@@ -154,7 +154,9 @@ Known issues:
   done because of a conflict between the F-18 selinux policy and using a 3.4
   kernel, this is being tracked here:
   https://bugzilla.redhat.com/show_bug.cgi?id=895070
-
+* No plymouth: we log to a serial console for debugging so no pretty splash.
+  Also we don't use an initrd, so removing the console=ttyS0,115200 from
+  the extraargs in uEnv.txt will give plymouth, but so late it hardly matters.
 
 Future plans / todo:
 --------------------
