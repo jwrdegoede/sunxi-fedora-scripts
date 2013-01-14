@@ -59,6 +59,13 @@ echo "Cleaning panda specific rootfs files and copying A10 rootfs files"
 pushd "$ROOTFS" > /dev/null
 rm -rf usr/lib/modules/*
 tar xfz "$ROOTFS.tar.gz" --no-overwrite-dir
+echo "Customizing A10 rootfs"
+sed -i 's/panda/allwinner/' etc/hostname etc/sysconfig/network
+for i in 'abrt*' atd irqbalance mdmonitor rpcbind sendmail sm-client smartd; do
+    rm etc/systemd/system/multi-user.target.wants/$i.service
+done
+rm etc/systemd/system/spice-vdagentd.target.wants/spice-vdagentd.service
+rm etc/systemd/system/sysinit.target.wants/mdmonitor-takeover.service
 popd > /dev/null
 
 echo "Cleaning up loopback mounts"
