@@ -31,20 +31,22 @@ Quickstart guide
    umount /run/media/hans/rootfs
 8) Your sdcard is now ready for use
 9) *Before* powering up your A10 device connect it to an hdmi or dvi monitor
-10) After powering up your A10 device with the sdcard inserted you will
-   start with the firstboot wizard:
-   10a) Configure a user here
-   10b) Most A10 devices do not come with a battery backed rtc, so you will
+10) When first booting from the sdcard inserted Fedora will automatically
+   reboot once, this is part of the process to resize the root partition to
+   fill the entire sdcard and is normal behavior.
+11) After the automatic reboot Fedora will start with the firstboot wizard:
+   11a) Configure a user here
+   11b) Most A10 devices do not come with a battery backed rtc, so you will
         want to enable ntp. Simply click ok in the ntp dialog. Now firstboot
         will try to start ntp. Since most devices have only wireless, and
         that is not configured yet at this time, click on cancel when it
         tries to start ntp. If it then asks if you want to re-do your ntp
         configuration choose no.
-11) Log in as the just created user
-12) If you need to configure wireless click on the network icon in the
+12) Log in as the just created user
+13) If you need to configure wireless click on the network icon in the
     top right corner (next to the clock) and select the wireless network
     you want to connect to
-13) Enjoy Fedora on your A10 device
+14) Enjoy Fedora on your A10 device
 
 
 Supported Devices:
@@ -103,12 +105,12 @@ Some per display type notes:
 USB controller caveats
 ----------------------
 The OTG USB controller in host mode only supports a limited number of
-devices plugging in a hub + mouse + keyboard typically will make either
+devices, plugging in a hub + mouse + keyboard typically will make either
 the mouse or keyboard not work. This is a hardware limitation which we
 will likely not be able to work around.
 
 On tv-sticks and top-set boxes, simply avoid the otg connector, instead
-use a hub in a real usb connector. Note on the mini-x the otg / host
+use a hub in a regular host usb connector. Note on the mini-x the otg / host
 marking is not always correct. If things don't work try using the OTG
 connector instead!
 
