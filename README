@@ -73,8 +73,12 @@ Configuring the display output
 ------------------------------
 
 Multiple video outputs at the same time are not supported. By default
-video-output is send to hdmi for all devices, except for tablets/netbooks
-where the output is send to the lcd.
+hdmi output with EDID is used for all devices, except for tablets/netbooks
+where the default output is the lcd.
+
+The default hdmi output with EDID will get the native resolution of your
+TV / monitor and use that. Note that in order for this to work your TV /
+monitor must be connected *and turned on*, before booting your device.
 
 The output resolution can be configured with the disp.screen0_output_mode
 kernel cmdline value, which can be found in the extrargs part of uEnv.txt in
