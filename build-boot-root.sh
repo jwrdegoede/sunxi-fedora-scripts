@@ -40,9 +40,9 @@ KERNER_VER=3.4
 A10_BOARDS="cubieboard cubieboard_512 gooseberry_a721 h6 hackberry hyundai_a7hd mele_a1000 mele_a1000g mini-x mini-x-1gb mk802 mk802ii"
 UBOOT_TAG=fedora-18-13012013
 KERNEL_CONFIG_TAG=fedora-18-11012013
-KERNEL_TAG=fedora-18-13012013
+KERNEL_TAG=fedora-18-15012013
 A10_BOARDS_TAG=fedora-18-13012013-3
-SCRIPTS_TAG=fedora-18-14012013-2
+SCRIPTS_TAG=fedora-18-15012013
 
 if [ -z "$DESTDIR" ]; then
     DESTDIR=$(pwd)
