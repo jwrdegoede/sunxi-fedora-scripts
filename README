@@ -148,15 +148,14 @@ might get these to work:
 * G2D 2d engine
 
 
-Known issues:
--------------
-* Currently the image is running with selinux in permissive mode, this is
-  done because of a conflict between the F-18 selinux policy and using a 3.4
-  kernel, this is being tracked here:
-  https://bugzilla.redhat.com/show_bug.cgi?id=895070
+Differences from stock Fedora
+-----------------------------
+* Since the A10 is not a very powerful soc some services which are enabled by
+  default on Fedora are disabled in the image, see build-image.sh for a list.
 * No plymouth: we log to a serial console for debugging so no pretty splash.
   Also we don't use an initrd, so removing the console=ttyS0,115200 from
   the extraargs in uEnv.txt will give plymouth, but so late it hardly matters.
+
 
 Future plans / todo:
 --------------------
