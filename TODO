@@ -1,0 +1,66 @@
+-rebase rootfs-resize patch, mail to ctyler
+
+-retry EDID read on checksum error
+-don't WARN_ON on checksum error, a simple pr_warn will suffice
+-try 16bpp framebuffer -> better performance ?
+
+-only register hdmi audio when hdmi is active
+-make it possible to have no regular audio-codec
+-make twi not register when disabled in fex
+-fix hdmi info block, see wip file
+
+WARNING: sound/soc/sun4i/built-in.o(.devinit.text+0x64): Section mismatch in
+reference from the function sun4i_codec_probe() to the function
+.init.text:snd_chip_codec_mixer_new()
+The function __devinit sun4i_codec_probe() references
+a function __init snd_chip_codec_mixer_new().
+If snd_chip_codec_mixer_new is only used by sun4i_codec_probe then
+annotate snd_chip_codec_mixer_new with a matching annotation.
+
+-try to free up reserved memory by disabling unused stuff
+-firstboot
+-timezone selection in firstboot
+
+gooseberry:
+- proper fex file for gooseberry-a721
+- hdmi out for gooseberry not working with X, entire screen looks bad
+  for text console, clock issue / power issue ?
+
+
+notes:
+-gooseberry wifi rtl8188ctv
+-mk802-ii wifi rtl8188cus
+-currently using non mainline driver (linux-sunxi includes realtek's own
+ driver, and uses that by default)
+-must label rootfs as rootfs (fstab expects this)
+
+
+reserve-mem notes:
+-Can do __setup_param("argname", func, func, 1) to get func called with the
+ argname-value value string, can do this for all the reservations, except
+ for the mali as that runs from a fixup function which runs before
+ parse_early_param() (called from arch/arm/kernel/setup.c)
+
+-fbdev needs fb0_framebuffer_num * width * height * bpp / 8 bytes per
+framebuffer -> 1920x1080@32bpp with disp_mode = 0 and fb0_framebuffer_num = 2
+needs 16M
+
+mmap on 512M machine:
+
+  0- 64	free
+ 64-144 ve
+144-384 free
+384-400	g2d
+400-416 free
+416-448	fb
+448-512 mali
+
+on 1024M:
+  0- 64	free
+ 64-144 ve
+144-384 free
+384-400	g2d
+400-416 free
+416-448	fb
+448-960 free
+960-1014 mali
