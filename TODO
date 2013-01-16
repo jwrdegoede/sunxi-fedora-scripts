@@ -17,23 +17,11 @@ a function __init snd_chip_codec_mixer_new().
 If snd_chip_codec_mixer_new is only used by sun4i_codec_probe then
 annotate snd_chip_codec_mixer_new with a matching annotation.
 
+-Do something with the LEDS on the cubie board, ie light up green LED
+ on boot like the build in Android does?
+
 -try to free up reserved memory by disabling unused stuff
--firstboot
--timezone selection in firstboot
-
-gooseberry:
-- proper fex file for gooseberry-a721
-- hdmi out for gooseberry not working with X, entire screen looks bad
-  for text console, clock issue / power issue ?
-
-
-notes:
--gooseberry wifi rtl8188ctv
--mk802-ii wifi rtl8188cus
--currently using non mainline driver (linux-sunxi includes realtek's own
- driver, and uses that by default)
--must label rootfs as rootfs (fstab expects this)
-
+-timezone selection in firstboot ?
 
 reserve-mem notes:
 -Can do __setup_param("argname", func, func, 1) to get func called with the
