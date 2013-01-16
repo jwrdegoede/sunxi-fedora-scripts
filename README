@@ -8,7 +8,7 @@ Quickstart guide
 2) Make sure the card is not mounted, run "mount" and if the card shows
    up in the output umount its partitions
 3) Write the img file to the card, ie as root do:
-   xzcat Fedora-18-Beta-a10-armhfp.img > /dev/mmcblk0
+   xzcat Fedora-18-Beta-a10-armhfp.img.xz > /dev/mmcblk0
    sync
 4) The card is not yet ready for use! Since the A10 u-boot is board
    specific, the image comes without any uboot install, follow the next
@@ -93,9 +93,11 @@ extraargs in uEnv.txt. With X being one of: 0:none; 1:lcd; 2:tv; 3:hdmi; 4:vga
 
 Some per display type notes:
 -lcd outputs: Hardcoded to the native mode, disp.screen0_output_mode is ignored
--tv: Does not support EDID, "EDID:" must be removed from the
- disp.screen0_output_mode value otherwise it will be ignored, example usage:
- disp.screen0_output_type=2 disp.screen0_output_mode=720x576i50
+-tv: For the cvbs output disp.screen0_output_mode must be set to one of the
+ following: pal, pal-svideo, ntsc, ntsc-svideo, pal-m, pal-m-svideo, pal-nc,
+ pal-nc-svideo. Note the -svideo variants should only be used on boards with
+ an svideo connector, for composite out use the regular variants, ie:
+ disp.screen0_output_type=2 disp.screen0_output_mode=pal
 -hdmi: To override the EDID detected mode, drop the "EDID:" from the
  disp.screen0_output_mode value and set it to the desired mode, ie:
  disp.screen0_output_type=3 disp.screen0_output_mode=1360x768p60

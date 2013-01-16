@@ -17,6 +17,10 @@ a function __init snd_chip_codec_mixer_new().
 If snd_chip_codec_mixer_new is only used by sun4i_codec_probe then
 annotate snd_chip_codec_mixer_new with a matching annotation.
 
+-Get rid of "pm valid" kernel messages
+-Silence kernel debug spew in general
+-Disable more services, mask plymouth* since we don't use it anyway, also
+ see service start messages on a serial terminal
 -Do something with the LEDS on the cubie board, ie light up green LED
  on boot like the build in Android does?
 
