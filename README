@@ -95,7 +95,7 @@ Some per display type notes:
 -lcd outputs: Hardcoded to the native mode, disp.screen0_output_mode is ignored
 -tv: Does not support EDID, "EDID:" must be removed from the
  disp.screen0_output_mode value otherwise it will be ignored, example usage:
- disp.screen0_output_type=2 disp.screen0_output_mode=720x480i50
+ disp.screen0_output_type=2 disp.screen0_output_mode=720x576i50
 -hdmi: To override the EDID detected mode, drop the "EDID:" from the
  disp.screen0_output_mode value and set it to the desired mode, ie:
  disp.screen0_output_type=3 disp.screen0_output_mode=1360x768p60
