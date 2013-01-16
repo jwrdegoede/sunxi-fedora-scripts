@@ -36,9 +36,9 @@ fi
 
 # Remove partition at the end of UBOOT_DEV to get the sdcard dev
 if expr match "$UBOOT_DEV" "/dev/sd.1" > /dev/null; then
-    SDCARD_DEV=${UBOOT_DEV:0:-1}
+    SDCARD_DEV=$(echo $UBOOT_DEV | sed 's+1$++')
 elif expr match "$UBOOT_DEV" "/dev/mmcblk.p1" > /dev/null; then
-    SDCARD_DEV=${UBOOT_DEV:0:-2}
+    SDCARD_DEV=$(echo $UBOOT_DEV | sed 's+p1$++')
 else
     echo "Error cannot determine sdcard-dev from uboot-dev $UBOOT_DEV"
     exit 1
