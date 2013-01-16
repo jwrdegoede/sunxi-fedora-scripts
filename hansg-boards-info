@@ -1,0 +1,13 @@
+Info on the boards I use for testing, nothing really interesting here...
+
+Board-id:	Mem:				Flash:
+
+A10-boards:
+mk802		2x gt8ub128m 16bp-bg 		29f32g08cbaca
+mini-x-1gb	2x fttt 15e f1224		samsung k9gbg08u0a scb0
+mele_a1000g	4x hynix h5tq2g83cfr h9c 208a	29f64g08cbaaa
+goosberry_a721	4x 1215sbx v73cag01808raj19	29f32g08cbaca
+mk802ii		4x hynix h5tq2g83cfr h9c 236vk	ys29f32g08cbacawp 1234
+
+A10s-boards:
+r7		4x hynix h5tq2g83cfr h9c 202v	hynix h27ubg8t2tbr bc 235f 
