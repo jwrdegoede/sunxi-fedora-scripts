@@ -61,6 +61,7 @@ rm -rf usr/lib/modules/*
 tar xfz "$ROOTFS.tar.gz" --no-overwrite-dir
 echo "Customizing A10 rootfs"
 sed -i 's/panda/allwinner/' etc/hostname etc/sysconfig/network
+sed -i 's/installonly_limit=3/installonly_limit=3\nexclude=kernel-omap*/' etc/yum.conf
 for i in 'abrt*' atd irqbalance mdmonitor rpcbind sendmail sm-client smartd; do
     rm etc/systemd/system/multi-user.target.wants/$i.service
 done
