@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# This script builds a Fedora ARM Allwinner A10 image, as input it takes
+# This script builds a Fedora ARM Allwinner sunxi image, as input it takes
 # uboot.tar.gz and rootfs.tar.gz tarbals as build by build-boot-root.sh
 # and an *unzipped* Fedora ARM panda sdcard image
 #
@@ -49,18 +49,18 @@ mount "/dev/mapper/${LOOP}p3" "$ROOTFS"
 echo "Clearing uboot area"
 dd if=/dev/zero of="/dev/$LOOP" bs=1024 seek=8 count=1016
 
-echo "Cleaning panda uboot files and copying A10 uboot files"
+echo "Cleaning panda uboot files and copying sunxi uboot files"
 pushd "$UBOOT" > /dev/null
 rm -rf *
 tar xfz "$UBOOT.tar.gz" --no-same-owner --no-same-permissions
 popd > /dev/null
 
-echo "Cleaning panda specific rootfs files and copying A10 rootfs files"
+echo "Cleaning panda specific rootfs files and copying sunxi rootfs files"
 pushd "$ROOTFS" > /dev/null
 rm -rf usr/lib/modules/*
 tar xfz "$ROOTFS.tar.gz" --no-overwrite-dir
-echo "Customizing A10 rootfs"
-sed -i 's/panda/allwinner/' etc/hostname etc/sysconfig/network
+echo "Customizing sunxi rootfs"
+sed -i 's/panda/sunxi/' etc/hostname etc/sysconfig/network
 sed -i 's/installonly_limit=3/installonly_limit=3\nexclude=kernel-omap*/' etc/yum.conf
 for i in 'abrt*' atd irqbalance mdmonitor rpcbind sendmail sm-client smartd; do
     rm etc/systemd/system/multi-user.target.wants/$i.service
