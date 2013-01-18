@@ -1,3 +1,5 @@
+-fix hdmi info block, see wip file
+
 -rebase rootfs-resize patch, mail to ctyler
 
 -retry EDID read on checksum error
@@ -6,8 +8,12 @@
 
 -only register hdmi audio when hdmi is active
 -make it possible to have no regular audio-codec
+-make regular audio codec register at index 1, so that if present
+ hdmi becomes card 0
 -make twi not register when disabled in fex
--fix hdmi info block, see wip file
+
+-get 10mbit hub, checkout half duplex issue:
+ https://github.com/linux-sunxi/linux-sunxi/issues/102
 
 WARNING: sound/soc/sun4i/built-in.o(.devinit.text+0x64): Section mismatch in
 reference from the function sun4i_codec_probe() to the function
