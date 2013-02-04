@@ -1,6 +1,10 @@
--fix hdmi info block, see wip file
+-use proper functions to calucalate mult + shift for timers
+-see if we can do a better sched_clock
+-implement a uboot reset for A13 that actually works (use the wdt)
 
 -rebase rootfs-resize patch, mail to ctyler
+
+-1080i does not work when the fex file has the scaler disabled
 
 -retry EDID read on checksum error
 -don't WARN_ON on checksum error, a simple pr_warn will suffice
