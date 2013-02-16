@@ -1,5 +1,5 @@
-Fedora 18 ARM for Allwinner A10 devices README
-----------------------------------------------
+Fedora 18 ARM for Allwinner A10 and A13 devices README
+------------------------------------------------------
 
 Quickstart guide
 ----------------
@@ -8,7 +8,7 @@ Quickstart guide
 2) Make sure the card is not mounted, run "mount" and if the card shows
    up in the output umount its partitions
 3) Write the img file to the card, ie as root do:
-   xzcat Fedora-18-Beta-a10-armhfp.img.xz > /dev/mmcblk0
+   xzcat Fedora-18-a10-armhfp-r1.img.xz > /dev/mmcblk0
    sync
 4) The card is not yet ready for use! Since the A10 u-boot is board
    specific, the image comes without any uboot install, follow the next
@@ -53,20 +53,32 @@ Supported Devices:
 ------------------
 
 Fedora 18 ARM for Allwinner A10 has been tested with the following devices:
+* BA10 TV Box
+* Cubieboard development board 1024 MB RAM
 * Gooseberry development board
 * Mele a1000g/a2000g 1024 MB RAM
 * Mini-X 1024 MB RAM
 * mk802 (with female mini hdmi) 512 MB RAM
 * mk802ii (with male normal hdmi) 1024 MB RAM
+* UHost U1A hdmi tv stick
+* Olimex A13-OLinuXino-MICRO
 
 Fedora 18 ARM should also work on the following devices:
+* Whitelabel A10 tablet sold under various names
 * Cubieboard development board 512 MB RAM
-* Cubieboard development board 1024 MB RAM
+* Coby MID7042 tablet
+* Coby MID8042 tablet
+* Coby MID9742 tablet
 * H6 netbook
 * Hackberry development board
 * Hyundai a7hd tablet
 * Mele a1000/a2000 512 MB RAM
 * Mini-X 512 MB RAM
+* mk802 (with female mini hdmi) 1024 MB RAM
+* Point of View ProTab 2 IPS 9" tablet
+* Point of View ProTab 2 IPS tablet with 3g
+* Whitelabel A13 tablet sold under various names
+* Olimex A13-OLinuXino
 
 
 Configuring the display output
@@ -163,25 +175,6 @@ Differences from stock Fedora
 * No plymouth: we log to a serial console for debugging so no pretty splash.
   Also we don't use an initrd, so removing the console=ttyS0,115200 from
   the extraargs in uEnv.txt will give plymouth, but so late it hardly matters.
-
-
-Future plans / todo:
---------------------
-* Currently 192MiB of the A10's RAM is reserved, leaving only 320MiB for Linux
-  use on 512MiB RAM systems. This is mostly caused by memory reserved for use
-  by hardware listed under the "Unsupported hardware components" paragraph.
-  Since we're not using those blocks anyways the plan is to give this RAM back
-  to Linux by adding kernel cmdline options to reserve the RAM, and then:
-  1) On Fedora by default set all the reserved sizes to 0 on the cmdline
-  2) The kernel modules for these hw-blocks will check the reserved size and
-     if it is 0 refuse to load
-  3) Users who want to use these hw-blocks already need to manually configure
-     the necessary blobs, they will now also need to adjust the kernel cmdline
-* Currently both the analog and hdmi audio outputs of the A10 are both
-  always registered. This means that the user must always manually pick the
-  right soundcard for his config. The plan is to instead only register the
-  analog out on boards which actually have an analog out connecter, and only
-  register the hdmi audio card when an hdmi-audio capable monitor is detected
 
 
 Rebuilding the Fedora 18 ARM for Allwinner A10 disk image

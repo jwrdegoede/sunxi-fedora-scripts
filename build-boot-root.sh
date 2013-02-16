@@ -41,9 +41,9 @@ A10_BOARDS="a10_mid_1gb ba10_tv_box coby_mid7042 coby_mid8042 coby_mid9742 cubie
 A13_BOARDS="a13_mid a13_olinuxino a13_olinuxino_micro"
 UBOOT_TAG=fedora-18-16022013
 KERNEL_CONFIG_TAG=fedora-18-16022013
-KERNEL_TAG=fedora-18-16022013
+KERNEL_TAG=fedora-18-16022013-2
 SUNXI_BOARDS_TAG=fedora-18-16022013
-SCRIPTS_TAG=fedora-18-16022013
+SCRIPTS_TAG=fedora-18-16022013-2
 
 for i in "$@"; do
     case $i in
