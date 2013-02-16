@@ -39,11 +39,11 @@
 KERNER_VER=3.4
 A10_BOARDS="a10_mid_1gb ba10_tv_box coby_mid7042 coby_mid8042 coby_mid9742 cubieboard cubieboard_512 gooseberry_a721 h6 hackberry hyundai_a7hd inet97f-ii mele_a1000 mele_a1000g mini-x mini-x-1gb mk802 mk802-1gb mk802ii pov_protab2_ips9 pov_protab2_ips_3g uhost_u1a"
 A13_BOARDS="a13_mid a13_olinuxino a13_olinuxino_micro"
-UBOOT_TAG=fedora-18-13012013
-KERNEL_CONFIG_TAG=fedora-18-17012013
-KERNEL_TAG=fedora-18-17012013
-SUNXI_BOARDS_TAG=fedora-18-13012013-3
-SCRIPTS_TAG=fedora-18-17012013
+UBOOT_TAG=fedora-18-16022013
+KERNEL_CONFIG_TAG=fedora-18-16022013
+KERNEL_TAG=fedora-18-16022013
+SUNXI_BOARDS_TAG=fedora-18-16022013
+SCRIPTS_TAG=fedora-18-16022013
 
 for i in "$@"; do
     case $i in

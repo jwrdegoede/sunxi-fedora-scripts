@@ -61,15 +61,25 @@ rm -rf usr/lib/modules/*
 tar xfz "$ROOTFS.tar.gz" --no-overwrite-dir
 echo "Customizing sunxi rootfs"
 sed -i 's/panda/sunxi/' etc/hostname etc/sysconfig/network
-sed -i 's/installonly_limit=3/installonly_limit=3\nexclude=kernel-omap*/' etc/yum.conf
-for i in 'abrt*' atd irqbalance mdmonitor rpcbind sendmail sm-client smartd; do
-    rm etc/systemd/system/multi-user.target.wants/$i.service
+if ! grep -q exclude=kernel-omap etc/yum.conf; then
+    sed -i 's/installonly_limit=3/installonly_limit=3\nexclude=kernel-omap*/' etc/yum.conf
+fi
+for i in 'abrt*' atd irqbalance mdmonitor rngd rpcbind sendmail sm-client smartd; do
+    rm -f etc/systemd/system/multi-user.target.wants/$i.service
 done
-rm etc/systemd/system/spice-vdagentd.target.wants/spice-vdagentd.service
-rm etc/systemd/system/sysinit.target.wants/mdmonitor-takeover.service
+rm -f etc/systemd/system/spice-vdagentd.target.wants/spice-vdagentd.service
+rm -f etc/systemd/system/sysinit.target.wants/mdmonitor-takeover.service
+# We don't use plymouth (no initrd) so mask it
+pushd usr/lib > /dev/null
+    for i in systemd/system/*plymouth*.service; do
+        ln -f -s /dev/null ../../etc/$i
+    done
+popd > /dev/null
 popd > /dev/null
 
 echo "Cleaning up loopback mounts"
+# wait for udev rules / udisksd to stop poking things, causing -EBUSY errors
+sleep 1
 umount "$ROOTFS"
 umount "$UBOOT"
 kpartx -d "/dev/$LOOP"

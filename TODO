@@ -1,8 +1,4 @@
--Disable more services, mask plymouth* since we don't use it anyway, also
- see service start messages on a serial terminal
--Test original mk802 (NO_AXP in uboot)
--Publish Fedora images
-
+-look into high load issue
 -look into interlaced without scaler maybe scnwin vs srcwin issue ?
 -A10s
 -check issues with long kernel cmdline
