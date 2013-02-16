@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# This scripts builds an Allwinner A10 kernel + per board u-boot, spl and fex
+# This scripts builds Allwinner sunxi kernels + per board u-boot, spl and fex
 # It will then place all the build files into 2 directories:
 # $DESTDIR/uboot and $DESTDIR/rootfs
 # and then tars up these directories to:
@@ -9,7 +9,7 @@
 #
 # These tarbals are intended to be untarred to respectively the uboot and
 # rootfs partition of a Fedora panda sdcard image, thereby turning this image
-# into an Fedora A10 sdcard image. See build-image.sh for a script automating
+# into an Fedora sunxi sdcard image. See build-image.sh for a script automating
 # this.
 #
 # The latest version of this script can be found here:
@@ -37,12 +37,27 @@
 # https://github.com/jwrdegoede/linux-sunxi.git
 
 KERNER_VER=3.4
-A10_BOARDS="cubieboard cubieboard_512 gooseberry_a721 h6 hackberry hyundai_a7hd mele_a1000 mele_a1000g mini-x mini-x-1gb mk802 mk802ii"
+A10_BOARDS="a10_mid_1gb ba10_tv_box coby_mid7042 coby_mid8042 coby_mid9742 cubieboard cubieboard_512 gooseberry_a721 h6 hackberry hyundai_a7hd inet97f-ii mele_a1000 mele_a1000g mini-x mini-x-1gb mk802 mk802-1gb mk802ii pov_protab2_ips9 pov_protab2_ips_3g uhost_u1a"
+A13_BOARDS="a13_mid a13_olinuxino a13_olinuxino_micro"
 UBOOT_TAG=fedora-18-13012013
 KERNEL_CONFIG_TAG=fedora-18-17012013
 KERNEL_TAG=fedora-18-17012013
-A10_BOARDS_TAG=fedora-18-13012013-3
+SUNXI_BOARDS_TAG=fedora-18-13012013-3
 SCRIPTS_TAG=fedora-18-17012013
+
+for i in "$@"; do
+    case $i in
+        --noclean)
+            NOCLEAN=1
+            ;;
+        --nocheckout)
+            NOCHECKOUT=1
+            ;;
+        *)
+            echo "Usage $0 [--noclean] [--nocheckout]"
+            exit 1
+    esac
+done
 
 if [ -z "$DESTDIR" ]; then
     DESTDIR=$(pwd)
@@ -57,52 +72,73 @@ mkdir $DESTDIR/uboot
 mkdir $DESTDIR/rootfs
 
 pushd u-boot-sunxi
-git checkout $UBOOT_TAG
-[ "$1" != --noclean ] && git clean -dxf
+[ -z "$NOCHECKOUT" ] && git checkout $UBOOT_TAG
+[ -z "$NOCLEAN" ] && git clean -dxf
 mkdir $DESTDIR/uboot/boards
 # Note the changing board configs always force a rebuild
+mkdir $DESTDIR/uboot/boards/sun4i
 for i in $A10_BOARDS; do
     make -j4 CROSS_COMPILE=arm-linux-gnu- O=$i distclean
     make -j4 CROSS_COMPILE=arm-linux-gnu- O=$i $i
-    mkdir $DESTDIR/uboot/boards/$i
-    cp $i/spl/sunxi-spl.bin $DESTDIR/uboot/boards/$i
-    cp $i/u-boot.bin $DESTDIR/uboot/boards/$i
+    mkdir $DESTDIR/uboot/boards/sun4i/$i
+    cp $i/spl/sunxi-spl.bin $DESTDIR/uboot/boards/sun4i/$i
+    cp $i/u-boot.bin $DESTDIR/uboot/boards/sun4i/$i
+done
+mkdir $DESTDIR/uboot/boards/sun5i
+for i in $A13_BOARDS; do
+    make -j4 CROSS_COMPILE=arm-linux-gnu- O=$i distclean
+    make -j4 CROSS_COMPILE=arm-linux-gnu- O=$i $i
+    mkdir $DESTDIR/uboot/boards/sun5i/$i
+    cp $i/spl/sunxi-spl.bin $DESTDIR/uboot/boards/sun5i/$i
+    cp $i/u-boot.bin $DESTDIR/uboot/boards/sun5i/$i
 done
 popd
 
 pushd sunxi-boards
-git checkout $A10_BOARDS_TAG
-[ "$1" != --noclean ] && git clean -dxf
+[ -z "$NOCHECKOUT" ] && git checkout $SUNXI_BOARDS_TAG
+[ -z "$NOCLEAN" ] && git clean -dxf
 for i in $A10_BOARDS; do
-    cp -p sys_config/a10/$i.fex $DESTDIR/uboot/boards/$i
-    fex2bin sys_config/a10/$i.fex $DESTDIR/uboot/boards/$i/script.bin
+    cp -p sys_config/a10/$i.fex $DESTDIR/uboot/boards/sun4i/$i
+    fex2bin sys_config/a10/$i.fex $DESTDIR/uboot/boards/sun4i/$i/script.bin
+done
+for i in $A13_BOARDS; do
+    cp -p sys_config/a13/$i.fex $DESTDIR/uboot/boards/sun5i/$i
+    fex2bin sys_config/a13/$i.fex $DESTDIR/uboot/boards/sun5i/$i/script.bin
 done
 popd
 
 pushd sunxi-kernel-config
-git checkout $KERNEL_CONFIG_TAG
-[ "$1" != --noclean ] && git clean -dxf
-make VERSION=$KERNER_VER -f Makefile.config kernel-$KERNER_VER-armv7hl-a10.config
+[ -z "$NOCHECKOUT" ] && git checkout $KERNEL_CONFIG_TAG
+[ -z "$NOCLEAN" ] && git clean -dxf
+make VERSION=$KERNER_VER -f Makefile.config kernel-$KERNER_VER-armv7hl-sun4i.config
+make VERSION=$KERNER_VER -f Makefile.config kernel-$KERNER_VER-armv7hl-sun5i.config
 popd
 
 pushd linux-sunxi
-git checkout $KERNEL_TAG
-[ "$1" != --noclean ] && git clean -dxf
-cp -a ../sunxi-kernel-config/kernel-$KERNER_VER-armv7hl-a10.config .config
-make ARCH=arm CROSS_COMPILE=arm-linux-gnu- CONFIG_DEBUG_SECTION_MISMATCH=y -j4 uImage modules
+[ -z "$NOCHECKOUT" ] && git checkout $KERNEL_TAG
+[ -z "$NOCLEAN" ] && git clean -dxf
+mkdir -p sun4i sun5i
+cp ../sunxi-kernel-config/kernel-$KERNER_VER-armv7hl-sun4i.config sun4i/.config
+cp ../sunxi-kernel-config/kernel-$KERNER_VER-armv7hl-sun5i.config sun5i/.config
+make O=sun4i ARCH=arm CROSS_COMPILE=arm-linux-gnu- CONFIG_DEBUG_SECTION_MISMATCH=y -j4 uImage modules
+make O=sun5i ARCH=arm CROSS_COMPILE=arm-linux-gnu- CONFIG_DEBUG_SECTION_MISMATCH=y -j4 uImage modules
+
+cp sun4i/arch/arm/boot/uImage $DESTDIR/uboot/uImage.sun4i
+cp sun5i/arch/arm/boot/uImage $DESTDIR/uboot/uImage.sun5i
+
 mkdir $DESTDIR/rootfs/usr
-make ARCH=arm CROSS_COMPILE=arm-linux-gnu- INSTALL_MOD_PATH=$DESTDIR/rootfs/usr modules_install
-for i in `find $DESTDIR/rootfs/usr/lib/modules -name "*.ko"`; do
-    arm-linux-gnu-strip --strip-debug "$i"
-done
+make O=sun4i ARCH=arm CROSS_COMPILE=arm-linux-gnu- INSTALL_MOD_PATH=$DESTDIR/rootfs/usr modules_install
+make O=sun5i ARCH=arm CROSS_COMPILE=arm-linux-gnu- INSTALL_MOD_PATH=$DESTDIR/rootfs/usr modules_install
+find $DESTDIR/rootfs/usr/lib/modules -name "*.ko" -exec arm-linux-gnu-strip --strip-debug '{}' \;
+
 mkdir $DESTDIR/uboot/scripts
-cp arch/arm/boot/uImage $DESTDIR/uboot
-cp .config $DESTDIR/uboot/scripts/kernel-$KERNER_VER-armv7hl-a10.config
+cp sun4i/.config $DESTDIR/uboot/scripts/kernel-$KERNER_VER-armv7hl-sun4i.config
+cp sun5i/.config $DESTDIR/uboot/scripts/kernel-$KERNER_VER-armv7hl-sun5i.config
 popd
 
 pushd sunxi-fedora-scripts
-git checkout $SCRIPTS_TAG
-[ "$1" != --noclean ] && git clean -dxf
+[ -z "$NOCHECKOUT" ] && git checkout $SCRIPTS_TAG
+[ -z "$NOCLEAN" ] && git clean -dxf
 ../u-boot-sunxi/mele_a1000/tools/mkenvimage -s 131072 \
   -o $DESTDIR/uboot/boards/uEnv-img.bin uEnv-full.txt
 mkimage -C none -A arm -T script -d boot.cmd $DESTDIR/uboot/boot.scr

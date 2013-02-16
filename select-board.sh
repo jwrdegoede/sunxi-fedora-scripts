@@ -11,18 +11,30 @@ BOARDS_DIR="$UBOOT_MOUNT/boards"
 UBOOT_DEV="$(df $CANON | tail -n 1 | awk '{print $1}')"
 
 BOARDS=()
-BOARDS+=(cubieboard_512  "Cubieboard development board 512 MB RAM")
-BOARDS+=(cubieboard      "Cubieboard development board 1024 MB RAM")
-BOARDS+=(gooseberry_a721 "Gooseberry development board")
-BOARDS+=(h6              "H6 netbook")
-BOARDS+=(hackberry       "Hackberry development board")
-BOARDS+=(hyundai_a7hd    "Hyundai a7hd tablet")
-BOARDS+=(mele_a1000      "Mele a1000/a2000 512 MB RAM")
-BOARDS+=(mele_a1000g     "Mele a1000g/a2000g 1024 MB RAM")
-BOARDS+=(mini-x          "Mini-X 512 MB RAM")
-BOARDS+=(mini-x-1gb      "Mini-X 1024 MB RAM")
-BOARDS+=(mk802           "mk802 (with female mini hdmi) 512 MB RAM")
-BOARDS+=(mk802ii         "mk802ii (with male normal hdmi) 1024 MB RAM")
+BOARDS+=(a10_mid_1gb         "Whitelabel A10 tablet sold under various names")
+BOARDS+=(ba10_tv_box         "BA10 TV Box")
+BOARDS+=(coby_mid7042        "Coby MID7042 tablet")
+BOARDS+=(coby_mid8042        "Coby MID8042 tablet")
+BOARDS+=(coby_mid9742        "Coby MID9742 tablet")
+BOARDS+=(cubieboard_512      "Cubieboard development board 512 MB RAM")
+BOARDS+=(cubieboard          "Cubieboard development board 1024 MB RAM")
+BOARDS+=(gooseberry_a721     "Gooseberry development board")
+BOARDS+=(h6                  "H6 netbook")
+BOARDS+=(hackberry           "Hackberry development board")
+BOARDS+=(hyundai_a7hd        "Hyundai a7hd tablet")
+BOARDS+=(mele_a1000          "Mele a1000/a2000 512 MB RAM")
+BOARDS+=(mele_a1000g         "Mele a1000g/a2000g 1024 MB RAM")
+BOARDS+=(mini-x              "Mini-X 512 MB RAM")
+BOARDS+=(mini-x-1gb          "Mini-X 1024 MB RAM")
+BOARDS+=(mk802               "mk802 (with female mini hdmi) 512 MB RAM")
+BOARDS+=(mk802-1gb           "mk802 (with female mini hdmi) 1024 MB RAM")
+BOARDS+=(mk802ii             "mk802ii (with male normal hdmi) 1024 MB RAM")
+BOARDS+=(pov_protab2_ips9    "Point of View ProTab 2 IPS 9\" tablet")
+BOARDS+=(pov_protab2_ips_3g  "Point of View ProTab 2 IPS tablet with 3g")
+BOARDS+=(uhost_u1a           "UHost U1A hdmi tv stick")
+BOARDS+=(a13_mid             "Whitelabel A13 tablet sold under various names")
+BOARDS+=(a13_olinuxino       "Olimex A13-OLinuXino")
+BOARDS+=(a13_olinuxino_micro "Olimex A13-OLinuXino-MICRO")
 
 if [ "$1" = "--help" -o -z "$DIALOG" -a -z "$BOARD" ]; then
     echo "Usage: \"$0 <board>\""
@@ -70,20 +82,25 @@ if [ -z "$BOARD" ]; then
     rm $TMPFILE
 fi
 
-if [ ! -d $BOARDS_DIR/$BOARD ]; then
+if [ -d $BOARDS_DIR/sun4i/$BOARD ]; then
+    ARCH=sun4i
+elif [ -d $BOARDS_DIR/sun5i/$BOARD ]; then
+    ARCH=sun5i
+else
     echo "Error cannot find board dir: $BOARDS_DIR/$BOARD"
     exit 1
 fi
 
-yesno "Are you sure you want to install the spl, u-boot and uEnv for $BOARD from $BOARDS_DIR onto $SDCARD_DEV ?"
+yesno "Are you sure you want to install the spl, u-boot and kernel for $BOARD from $BOARDS_DIR onto $SDCARD_DEV ?"
 
 echo
-echo "Installing spl, u-boot and uEnv for $BOARD onto $SDCARD_DEV ..."
+echo "Installing spl, u-boot and kernel for $BOARD onto $SDCARD_DEV ..."
 
-dd if="$BOARDS_DIR/$BOARD/sunxi-spl.bin" of="$SDCARD_DEV" bs=1024 seek=8
-dd if="$BOARDS_DIR/$BOARD/u-boot.bin" of="$SDCARD_DEV" bs=1024 seek=32
+dd if="$BOARDS_DIR/$ARCH/$BOARD/sunxi-spl.bin" of="$SDCARD_DEV" bs=1024 seek=8
+dd if="$BOARDS_DIR/$ARCH/$BOARD/u-boot.bin" of="$SDCARD_DEV" bs=1024 seek=32
 dd if="$BOARDS_DIR/uEnv-img.bin" of="$SDCARD_DEV" bs=1024 seek=544
-cp "$BOARDS_DIR/$BOARD/script.bin" "$UBOOT_MOUNT"
+cp "$BOARDS_DIR/$ARCH/$BOARD/script.bin" "$UBOOT_MOUNT"
+cp "$UBOOT_MOUNT/uImage.$ARCH" "$UBOOT_MOUNT/uImage"
 sync
 
 echo "Done"

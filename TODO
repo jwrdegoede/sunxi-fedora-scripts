@@ -1,68 +1,32 @@
+-Disable more services, mask plymouth* since we don't use it anyway, also
+ see service start messages on a serial terminal
+-Test original mk802 (NO_AXP in uboot)
+-Publish Fedora images
+
+-look into interlaced without scaler maybe scnwin vs srcwin issue ?
+-A10s
+-check issues with long kernel cmdline
+-chip-id: Unknown (AW1625), for proper code for this see:
+ projects/allwinner/a13_source_1.5/lichee/linux-3.0/arch/arm/mach-sun5i/core.c
+
 -use proper functions to calucalate mult + shift for timers
 -see if we can do a better sched_clock
 -implement a uboot reset for A13 that actually works (use the wdt)
 
 -rebase rootfs-resize patch, mail to ctyler
 
--1080i does not work when the fex file has the scaler disabled
-
 -retry EDID read on checksum error
 -don't WARN_ON on checksum error, a simple pr_warn will suffice
 -try 16bpp framebuffer -> better performance ?
 
--only register hdmi audio when hdmi is active
--make it possible to have no regular audio-codec
--make regular audio codec register at index 1, so that if present
- hdmi becomes card 0
 -make twi not register when disabled in fex
+
+-mali clock div is too low in many fex files when not using PLL6 for PLL4
 
 -get 10mbit hub, checkout half duplex issue:
  https://github.com/linux-sunxi/linux-sunxi/issues/102
+-checkout wemac performance issues, see archived mail
 
-WARNING: sound/soc/sun4i/built-in.o(.devinit.text+0x64): Section mismatch in
-reference from the function sun4i_codec_probe() to the function
-.init.text:snd_chip_codec_mixer_new()
-The function __devinit sun4i_codec_probe() references
-a function __init snd_chip_codec_mixer_new().
-If snd_chip_codec_mixer_new is only used by sun4i_codec_probe then
-annotate snd_chip_codec_mixer_new with a matching annotation.
-
--Get rid of "pm valid" kernel messages
 -Silence kernel debug spew in general
--Disable more services, mask plymouth* since we don't use it anyway, also
- see service start messages on a serial terminal
--Do something with the LEDS on the cubie board, ie light up green LED
- on boot like the build in Android does?
 
--try to free up reserved memory by disabling unused stuff
 -timezone selection in firstboot ?
-
-reserve-mem notes:
--Can do __setup_param("argname", func, func, 1) to get func called with the
- argname-value value string, can do this for all the reservations, except
- for the mali as that runs from a fixup function which runs before
- parse_early_param() (called from arch/arm/kernel/setup.c)
-
--fbdev needs fb0_framebuffer_num * width * height * bpp / 8 bytes per
-framebuffer -> 1920x1080@32bpp with disp_mode = 0 and fb0_framebuffer_num = 2
-needs 16M
-
-mmap on 512M machine:
-
-  0- 64	free
- 64-144 ve
-144-384 free
-384-400	g2d
-400-416 free
-416-448	fb
-448-512 mali
-
-on 1024M:
-  0- 64	free
- 64-144 ve
-144-384 free
-384-400	g2d
-400-416 free
-416-448	fb
-448-960 free
-960-1014 mali
