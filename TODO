@@ -1,3 +1,8 @@
+-give up on making select-board.sh work with sh, make it require bash and
+ update docs on this
+
+-try to get more leds working
+
 -look into high load issue
 -look into interlaced without scaler maybe scnwin vs srcwin issue ?
 -A10s
@@ -6,7 +11,13 @@
  projects/allwinner/a13_source_1.5/lichee/linux-3.0/arch/arm/mach-sun5i/core.c
 
 -use proper functions to calucalate mult + shift for timers
--see if we can do a better sched_clock
+-see if we can do a better sched_clock and clocksource
+ -use 32 bit timer in auto-reload with reload of 0xffffffff, use
+  it as a counter.
+ -call gettimeofday from a slow timer to ensure wraps get detected
+ -current clocksource can cause us to run with interrupts disabled for 17%
+  of the time, see "perf top" output
+
 -implement a uboot reset for A13 that actually works (use the wdt)
 
 -rebase rootfs-resize patch, mail to ctyler
