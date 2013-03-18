@@ -1,5 +1,10 @@
 -give up on making select-board.sh work with sh, make it require bash and
  update docs on this
+-add inet97f-ii to select-board.sh, it is in build-boot-root but not in
+ select-board
+
+-take photos of devices + create wiki pages so people can easily identify
+ which device they have
 
 -try to get more leds working
 
