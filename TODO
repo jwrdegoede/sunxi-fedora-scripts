@@ -1,7 +1,18 @@
+-check r7 with latest u-boot, interrupt at first boot, check power and led
+-silence wifi spew!!
+-add missing boards to u-boot sunxi-current
+-fix kernel-config
+-add new boards to build + select-board
 -give up on making select-board.sh work with sh, make it require bash and
  update docs on this
 -add inet97f-ii to select-board.sh, it is in build-boot-root but not in
  select-board
+-create image
+-upload
+-release a new F-18 image with A10s support !!
+
+-A10s gpio-int:
+ https://github.com/amery/linux-sunxi/commit/e94c07323b3667130eedf1f833c12ccb80fd820d
 
 -take photos of devices + create wiki pages so people can easily identify
  which device they have
@@ -10,10 +21,6 @@
 
 -look into high load issue
 -look into interlaced without scaler maybe scnwin vs srcwin issue ?
--A10s
--check issues with long kernel cmdline
--chip-id: Unknown (AW1625), for proper code for this see:
- projects/allwinner/a13_source_1.5/lichee/linux-3.0/arch/arm/mach-sun5i/core.c
 
 -use proper functions to calucalate mult + shift for timers
 -see if we can do a better sched_clock and clocksource
@@ -35,8 +42,6 @@
 
 -mali clock div is too low in many fex files when not using PLL6 for PLL4
 
--get 10mbit hub, checkout half duplex issue:
- https://github.com/linux-sunxi/linux-sunxi/issues/102
 -checkout wemac performance issues, see archived mail
 
 -Silence kernel debug spew in general
