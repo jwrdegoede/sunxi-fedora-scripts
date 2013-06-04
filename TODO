@@ -1,5 +1,8 @@
 -check r7 with latest u-boot, interrupt at first boot, check power and led
 -silence wifi spew!!
+-better cpu-info in /proc/cpuinfo
+-better cpu-info in u-boot
+-mac address?
 -add missing boards to u-boot sunxi-current
 -fix kernel-config
 -add new boards to build + select-board
