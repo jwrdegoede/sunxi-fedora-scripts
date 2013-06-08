@@ -1,5 +1,5 @@
-Fedora 18 ARM for Allwinner A10 and A13 devices README
-------------------------------------------------------
+Fedora 18 ARM for Allwinner A10, A10s and A13 devices README
+------------------------------------------------------------
 
 Quickstart guide
 ----------------
@@ -16,10 +16,10 @@ Quickstart guide
 5) Remove the card, and re-insert it. The uboot partition should get
    automatically mounted, if not mount it manually,
 6) As root (or through sudo) run:
-   sh <uboot-part-mount>/select-board.sh
-   Note the "sh " in front is necessary because the uboot vfat partition
+   bash <uboot-part-mount>/select-board.sh
+   Note the "bash " in front is necessary because the uboot vfat partition
    often gets auto-mounted noexec. ie:
-   sudo sh /run/media/hans/uboot/select-board.sh
+   sudo bash /run/media/hans/uboot/select-board.sh
 
    If you've dialog installed the select-board.sh script will prompt for
    your board. If you don't have dialog installed, it will print the list
@@ -54,31 +54,39 @@ Supported Devices:
 
 Fedora 18 ARM for Allwinner A10 has been tested with the following devices:
 * BA10 TV Box
+* A13-OLinuXino-MICRO (Olimex)
 * Cubieboard development board 1024 MB RAM
 * Gooseberry development board
-* Mele a1000g/a2000g 1024 MB RAM
+* Mele A1000G/A2000G 1024 MB RAM
 * Mini-X 1024 MB RAM
 * mk802 (with female mini hdmi) 512 MB RAM
+* mk802 with A10s (s with a circle around it on the barcode label)
 * mk802ii (with male normal hdmi) 1024 MB RAM
+* r7 hdmi tv stick
 * UHost U1A hdmi tv stick
-* Olimex A13-OLinuXino-MICRO
+* Wobo i5 TV Box
 
 Fedora 18 ARM should also work on the following devices:
-* Whitelabel A10 tablet sold under various names
-* Cubieboard development board 512 MB RAM
+* A10 tablet sold under various names (whitelabel)
+* A13 tablet sold under various names (whitelabel)
+* A13-OLinuXino (Olimex)
 * Coby MID7042 tablet
 * Coby MID8042 tablet
 * Coby MID9742 tablet
+* Cubieboard development board 512 MB RAM
+* DNS AirTab M82 tablet
+* EOMA68 A10 CPU card
 * H6 netbook
 * Hackberry development board
 * Hyundai a7hd tablet
-* Mele a1000/a2000 512 MB RAM
+* iNet-97F Rev.2 (and clones) tablet
+* Mele A1000/A2000 512 MB RAM
+* Mele A3700
 * Mini-X 512 MB RAM
 * mk802 (with female mini hdmi) 1024 MB RAM
+* pcDuino development board
 * Point of View ProTab 2 IPS 9" tablet
 * Point of View ProTab 2 IPS tablet with 3g
-* Whitelabel A13 tablet sold under various names
-* Olimex A13-OLinuXino
 
 
 Configuring the display output
