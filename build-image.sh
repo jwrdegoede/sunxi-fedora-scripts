@@ -60,7 +60,7 @@ pushd "$ROOTFS" > /dev/null
 rm -rf usr/lib/modules/*
 tar xfz "$ROOTFS.tar.gz" --no-overwrite-dir
 echo "Customizing sunxi rootfs"
-sed -i 's/panda/sunxi/' etc/hostname etc/sysconfig/network
+#sed -i 's/panda/sunxi/' etc/hostname etc/sysconfig/network
 if ! grep -q exclude=kernel-omap etc/yum.conf; then
     sed -i 's/installonly_limit=3/installonly_limit=3\nexclude=kernel-omap*/' etc/yum.conf
 fi

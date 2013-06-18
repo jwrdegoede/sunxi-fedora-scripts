@@ -8,7 +8,7 @@ Quickstart guide
 2) Make sure the card is not mounted, run "mount" and if the card shows
    up in the output umount its partitions
 3) Write the img file to the card, ie as root do:
-   xzcat Fedora-18-a10-armhfp-r1.img.xz > /dev/mmcblk0
+   xzcat Fedora-18-a10-armhfp-r2.img.xz > /dev/mmcblk0
    sync
 4) The card is not yet ready for use! Since the A10 u-boot is board
    specific, the image comes without any uboot install, follow the next
