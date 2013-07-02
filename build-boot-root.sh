@@ -37,9 +37,9 @@
 # https://github.com/jwrdegoede/linux-sunxi.git
 
 KERNER_VER=3.4
-A10_BOARDS="a10_mid_1gb ba10_tv_box coby_mid7042 coby_mid8042 coby_mid9742 cubieboard cubieboard_512 dns_m82 eoma68-a10 gooseberry_a721 h6 hackberry hyundai_a7hd inet97f-ii mele_a1000 mele_a1000g mele_a3700 mini-x mini-x-1gb mk802 mk802-1gb mk802ii pcduino pov_protab2_ips9 pov_protab2_ips_3g uhost_u1a"
+A10_BOARDS="a10_mid_1gb ba10_tv_box coby_mid7042 coby_mid8042 coby_mid9742 cubieboard cubieboard_512 dns_m82 eoma68_a10 gooseberry_a721 h6 hackberry hyundai_a7hd inet97f-ii mele_a1000 mele_a1000g mele_a3700 mini-x mini-x-1gb mk802 mk802-1gb mk802ii pcduino pov_protab2_ips9 pov_protab2_ips_3g uhost_u1a"
 A13_BOARDS="a13_mid a13-olinuxino a13-olinuxinom"
-A10S_BOARDS="mk802_a10s r7-tv-dongle wobo-i5"
+A10S_BOARDS="a10s-olinuxino-m auxtek-t004 mk802_a10s r7-tv-dongle wobo-i5"
 UBOOT_TAG=fedora-18-08062013
 KERNEL_CONFIG_TAG=fedora-18-08062013
 KERNEL_TAG=fedora-18-08062013
@@ -132,15 +132,15 @@ pushd linux-sunxi
 mkdir -p sun4i sun5i
 cp ../sunxi-kernel-config/kernel-$KERNER_VER-armv7hl-sun4i.config sun4i/.config
 cp ../sunxi-kernel-config/kernel-$KERNER_VER-armv7hl-sun5i.config sun5i/.config
-make O=sun4i ARCH=arm CROSS_COMPILE=arm-linux-gnu- -j4 uImage modules
-make O=sun5i ARCH=arm CROSS_COMPILE=arm-linux-gnu- -j4 uImage modules
+make O=sun4i ARCH=arm CROSS_COMPILE=arm-linux-gnu- CONFIG_DEBUG_SECTION_MISMATCH=y -j4 uImage modules
+make O=sun5i ARCH=arm CROSS_COMPILE=arm-linux-gnu- CONFIG_DEBUG_SECTION_MISMATCH=y -j4 uImage modules
 
 cp sun4i/arch/arm/boot/uImage $DESTDIR/uboot/uImage.sun4i
 cp sun5i/arch/arm/boot/uImage $DESTDIR/uboot/uImage.sun5i
 
 mkdir $DESTDIR/rootfs/usr
-make O=sun4i ARCH=arm CROSS_COMPILE=arm-linux-gnu- INSTALL_MOD_PATH=$DESTDIR/rootfs/usr modules_install
-make O=sun5i ARCH=arm CROSS_COMPILE=arm-linux-gnu- INSTALL_MOD_PATH=$DESTDIR/rootfs/usr modules_install
+make O=sun4i ARCH=arm CROSS_COMPILE=arm-linux-gnu- CONFIG_DEBUG_SECTION_MISMATCH=y INSTALL_MOD_PATH=$DESTDIR/rootfs/usr modules_install
+make O=sun5i ARCH=arm CROSS_COMPILE=arm-linux-gnu- CONFIG_DEBUG_SECTION_MISMATCH=y INSTALL_MOD_PATH=$DESTDIR/rootfs/usr modules_install
 find $DESTDIR/rootfs/usr/lib/modules -name "*.ko" -exec arm-linux-gnu-strip --strip-debug '{}' \;
 
 mkdir $DESTDIR/uboot/scripts

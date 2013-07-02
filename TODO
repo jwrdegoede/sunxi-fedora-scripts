@@ -1,6 +1,15 @@
+-F19
+ -rootfs resize not included / broken? See :
+ https://bugzilla.redhat.com/show_bug.cgi?id=974631
+
 -A10s gpio-int:
  https://github.com/amery/linux-sunxi/commit/e94c07323b3667130eedf1f833c12ccb80fd820d
  Need to fix in gpio-sunxi.c as well
+
+-add rc.local to tweak cpufreq? :
+ http://linux-sunxi.org/Cpufreq
+
+-look into usb devices not working on A10s without hub ?
 
 -take photos of devices + create wiki pages so people can easily identify
  which device they have
@@ -11,53 +20,6 @@
 
 -install to HD
 -install to NAND
-
--look into interlaced without scaler maybe scnwin vs srcwin issue ?
- https://github.com/pcduino/kernel/commit/1726cccf71ca54b19667d50ecef6dc31da08deda
- patch/linux-sunxi/drivers/video/sunxi/disp/dev_disp.c
-@@ -1029,6 +1032,13 @@ static long disp_ioctl(struct file *filp, unsigned int cmd, unsigned long arg)
-         __wrn("copy_from_user fail\n");
-         return -EFAULT;
-       }
-+#ifdef CONFIG_SUNXI_DVI_FIX
-+      int percent = 0;
-+      __disp_rect_t src_para;
-+      BSP_disp_layer_get_src_window(ubuffer[0], ubuffer[1], &src_para);
-+      percent = 100*100/( src_para.width*100 / para.width );
-+      update_window_percent(percent);
-+#endif
-       ret = BSP_disp_layer_set_screen_window(ubuffer[0],
-                      ubuffer[1],
-                      &para);
- patch/linux-sunxi/drivers/video/sunxi/disp/dev_fb.c
-+#ifdef CONFIG_SUNXI_DVI_FIX
-+static int percent = 0;
-+void update_window_percent(int new_percent)
-+{
-+  percent = new_percent;
-+}
-+EXPORT_SYMBOL(update_window_percent);
-+
-+void set_window_percent(void)
-+{
-+  __disp_rect_t rec;
-+  __disp_layer_info_t para;
-+  if ( !percent )
-+    percent = 90;
-+
-+  memset((void *)&para, 0, sizeof(para));
-+  BSP_disp_layer_get_src_window(0, 100, &rec);
-+  int width = rec.width; 
-+  int height = rec.height;
-+
-+  rec.x = width*(100-percent)/100/2;
-+  rec.y = height*(100-percent)/100/2;
-+  rec.width = width*percent/100;
-+  rec.height = height*percent/100;
-+  BSP_disp_layer_set_screen_window(0, 100, &rec);
-+}
-+EXPORT_SYMBOL(set_window_percent);
-+#endif
 
 -use proper functions to calucalate mult + shift for timers
 -see if we can do a better sched_clock and clocksource
@@ -71,12 +33,8 @@
 
 -try 16bpp framebuffer -> better performance ?
 
--make twi not register when disabled in fex
-
 -mali clock div is too low in many fex files when not using PLL6 for PLL4
 
 -checkout wemac performance issues, see archived mail
 
 -Silence kernel debug spew in general
-
--timezone selection in firstboot ?

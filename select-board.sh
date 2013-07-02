@@ -12,9 +12,11 @@ UBOOT_DEV="$(df $CANON | tail -n 1 | awk '{print $1}')"
 
 BOARDS=()
 BOARDS+=(a10_mid_1gb         "A10 tablet sold under various names (whitelabel)")
+BOARDS+=(a10s-olinuxino-m    "A10s-OLinuXino-MICRO (Olimex)")
 BOARDS+=(a13_mid             "A13 tablet sold under various names (whitelabel)")
 BOARDS+=(a13-olinuxino       "A13-OLinuXino (Olimex)")
 BOARDS+=(a13-olinuxinom      "A13-OLinuXino-MICRO (Olimex)")
+BOARDS+=(auxtek-t004         "Auxtek T004 hdmi tv stick")
 BOARDS+=(ba10_tv_box         "BA10 TV Box")
 BOARDS+=(coby_mid7042        "Coby MID7042 tablet")
 BOARDS+=(coby_mid8042        "Coby MID8042 tablet")
