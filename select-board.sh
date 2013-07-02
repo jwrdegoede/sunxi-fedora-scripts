@@ -12,10 +12,11 @@ UBOOT_DEV="$(df $CANON | tail -n 1 | awk '{print $1}')"
 
 BOARDS=()
 BOARDS+=(a10_mid_1gb         "A10 tablet sold under various names (whitelabel)")
-BOARDS+=(a10s-olinuxino-m    "A10s-OLinuXino-MICRO (Olimex)")
 BOARDS+=(a13_mid             "A13 tablet sold under various names (whitelabel)")
+BOARDS+=(a10s-olinuxino-m    "A10s-OLinuXino-MICRO (Olimex)")
 BOARDS+=(a13-olinuxino       "A13-OLinuXino (Olimex)")
 BOARDS+=(a13-olinuxinom      "A13-OLinuXino-MICRO (Olimex)")
+BOARDS+=(a20-olinuxino_micro "A20-OLinuXino-MICRO (Olimex)")
 BOARDS+=(auxtek-t004         "Auxtek T004 hdmi tv stick")
 BOARDS+=(ba10_tv_box         "BA10 TV Box")
 BOARDS+=(coby_mid7042        "Coby MID7042 tablet")
@@ -23,6 +24,7 @@ BOARDS+=(coby_mid8042        "Coby MID8042 tablet")
 BOARDS+=(coby_mid9742        "Coby MID9742 tablet")
 BOARDS+=(cubieboard_512      "Cubieboard development board 512 MB RAM")
 BOARDS+=(cubieboard          "Cubieboard development board 1024 MB RAM")
+BOARDS+=(cubieboard2         "Cubieboard 2 (A20) development board")
 BOARDS+=(dns_m82             "DNS AirTab M82 tablet")
 BOARDS+=(EOMA68-A10          "EOMA68 A10 CPU card")
 BOARDS+=(gooseberry_a721     "Gooseberry development board")
@@ -96,8 +98,10 @@ if [ -d $BOARDS_DIR/sun4i/$BOARD ]; then
     ARCH=sun4i
 elif [ -d $BOARDS_DIR/sun5i/$BOARD ]; then
     ARCH=sun5i
+elif [ -d $BOARDS_DIR/sun7i/$BOARD ]; then
+    ARCH=sun7i
 else
-    echo "Error cannot find board dir: $BOARDS_DIR/$BOARD"
+    echo "Error cannot find board dir: $BOARDS_DIR/sun?i/$BOARD"
     exit 1
 fi
 
