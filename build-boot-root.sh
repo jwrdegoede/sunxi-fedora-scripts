@@ -143,7 +143,7 @@ popd
 pushd linux-sunxi
 [ -z "$NOCHECKOUT" ] && git checkout $KERNEL_TAG
 [ -z "$NOCLEAN" ] && git clean -dxf
-mkdir -p sun4i sun5i
+mkdir -p sun4i sun5i sun7i
 cp ../sunxi-kernel-config/kernel-$KERNER_VER-armv7hl-sun4i.config sun4i/.config
 cp ../sunxi-kernel-config/kernel-$KERNER_VER-armv7hl-sun5i.config sun5i/.config
 cp ../sunxi-kernel-config/kernel-$KERNER_VER-armv7hl-sun7i.config sun7i/.config
