@@ -1,20 +1,43 @@
--F19
- -rootfs resize not included / broken? See :
- https://bugzilla.redhat.com/show_bug.cgi?id=974631
+-F19-r1
+ -Must:
+  -add rootfs resiz, also see :
+   https://bugzilla.redhat.com/show_bug.cgi?id=974631
+  -relabel fs
+  -update README: F19, update boards list, document a20 caveats?
+ -Should
+  -A20 support
+  -add network config support
+  -get wifi on auxtek-t004 to work
+ -NTH:
+  -add rc.local to tweak cpufreq? :
+   http://linux-sunxi.org/Cpufreq
+  -look into usb devices not working on A10s without hub ?
+  -look into A10s reboot issue (seen on mk802_a10s at 1920x1200)
+  -look into high load issue
+
+-A20 support
+ -Must:
+  -dma compat
+  -add sound support
+  -fix / check emac mac-addr code for doing the proper thing with an all 0 sid
+  -add emac support
+  -add sata support
+ -NTH:
+  -better sched_clock (currently using jiffies), try using arch_timer one,
+   otherwise use timer.c one ?
+  -add nand support
+  -all other pheriphals
+  -Add CONFIG_SUNXI_MULTIPLATFORM Kconfig support
+  -Switch to plat include dir?
+
+-rtc-sun4i, make BACKUP_PWM a runtime check based on ic ver
 
 -A10s gpio-int:
  https://github.com/amery/linux-sunxi/commit/e94c07323b3667130eedf1f833c12ccb80fd820d
  Need to fix in gpio-sunxi.c as well
 
--add rc.local to tweak cpufreq? :
- http://linux-sunxi.org/Cpufreq
-
--look into usb devices not working on A10s without hub ?
-
 -take photos of devices + create wiki pages so people can easily identify
  which device they have
-
--look into high load issue
 
 -look into ir support
 
