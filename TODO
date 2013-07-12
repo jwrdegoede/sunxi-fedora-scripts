@@ -44,6 +44,9 @@
 -install to HD
 -install to NAND
 
+-lower fbmem, disable double buffer by default. Freeing 10 MB (useful on
+ low mem devices mostly)
+
 -use proper functions to calucalate mult + shift for timers
 -see if we can do a better sched_clock and clocksource
  -use 32 bit timer in auto-reload with reload of 0xffffffff, use

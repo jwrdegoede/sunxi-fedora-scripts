@@ -47,6 +47,7 @@ BOARDS+=(pov_protab2_ips_3g  "Point of View ProTab 2 IPS tablet with 3g")
 BOARDS+=(r7-tv-dongle        "r7 hdmi tv stick")
 BOARDS+=(uhost_u1a           "UHost U1A hdmi tv stick")
 BOARDS+=(wobo-i5             "Wobo i5 TV Box")
+BOARDS+=(xzpad700            "XZPAD700 7\" tablet")
 
 if [ "$1" = "--help" -o -z "$DIALOG" -a -z "$BOARD" ]; then
     echo "Usage: \"$0 <board>\""
