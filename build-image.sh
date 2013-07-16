@@ -53,7 +53,7 @@ dd if=/dev/zero of="/dev/$LOOP" bs=1024 seek=8 count=1016
 
 echo "Cleaning panda uboot files and copying sunxi uboot files"
 pushd "$UBOOT" > /dev/null
-rm -rf *
+rm -rf .vmlinuz* *
 tar xfz "$UBOOT.tar.gz" --no-same-owner --no-same-permissions
 popd > /dev/null
 
@@ -77,6 +77,8 @@ pushd usr/lib > /dev/null
         ln -f -s /dev/null ../../etc/$i
     done
 popd > /dev/null
+# Make initial-setup not force the user to change his passwd when no rtc
+patch -p1 < anaconda-users.patch
 popd > /dev/null
 
 echo "Cleaning up loopback mounts"

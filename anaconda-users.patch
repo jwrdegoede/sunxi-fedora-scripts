@@ -1,0 +1,11 @@
+--- /usr/lib/python2.7/site-packages/pyanaconda/users.py.orig	1969-12-31 21:35:36.602227749 -0500
++++ /usr/lib/python2.7/site-packages/pyanaconda/users.py	1969-12-31 21:37:21.522173304 -0500
+@@ -313,6 +313,8 @@
+                     else:
+                         password = cryptPassword(kwargs["password"], algo=kwargs.get("algo", None))
+                     self.admin.setpassUser(userEnt, password, True)
++                    userEnt.set(libuser.SHADOWLASTCHANGE, "")
++                    self.admin.modifyUser(userEnt)
+                 elif pw == "":
+                     # Setup the account with *NO* password
+                     self.admin.unlockUser(userEnt)

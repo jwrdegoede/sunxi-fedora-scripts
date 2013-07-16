@@ -1,10 +1,8 @@
 -test at the hackerspace:
  -try wobi-i5 usbc0 in host only mode, commit if works
- -test auxtek-t003 wifi
 
 -F19-r1
  -Should
-  -need to change password on first login for both user and root ?
   -add network config support
   -get wifi on auxtek-t004 to work
   -auxtek-t004 led
