@@ -1,0 +1,13 @@
+[Unit]
+Description=Root Filesystem Auto-Resizer
+
+[Service]
+Environment=TERM=linux
+Type=oneshot
+ExecStart=/usr/sbin/rootfs-resize
+StandardError=syslog
+RemainAfterExit=no
+
+[Install]
+WantedBy=multi-user.target
+

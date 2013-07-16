@@ -1,5 +1,5 @@
-Fedora 18 ARM for Allwinner A10, A10s and A13 devices README
-------------------------------------------------------------
+Fedora 19 ARM for Allwinner A10, A10s, A13 and A20 devices README
+-----------------------------------------------------------------
 
 Quickstart guide
 ----------------
@@ -8,18 +8,15 @@ Quickstart guide
 2) Make sure the card is not mounted, run "mount" and if the card shows
    up in the output umount its partitions
 3) Write the img file to the card, ie as root do:
-   xzcat Fedora-18-a10-armhfp-r2.img.xz > /dev/mmcblk0
+   xzcat Fedora-19-a10-armhfp-r1.img.xz > /dev/mmcblk0
    sync
 4) The card is not yet ready for use! Since the A10 u-boot is board
    specific, the image comes without any uboot install, follow the next
    steps to install the right u-boot for your board
 5) Remove the card, and re-insert it. The uboot partition should get
    automatically mounted, if not mount it manually,
-6) As root (or through sudo) run:
-   bash <uboot-part-mount>/select-board.sh
-   Note the "bash " in front is necessary because the uboot vfat partition
-   often gets auto-mounted noexec. ie:
-   sudo bash /run/media/hans/uboot/select-board.sh
+6) As root (or through sudo) run: <uboot-part-mount>/select-board.sh, ie:
+   sudo /run/media/hans/uboot/select-board.sh
 
    If you've dialog installed the select-board.sh script will prompt for
    your board. If you don't have dialog installed, it will print the list
@@ -52,10 +49,13 @@ Quickstart guide
 Supported Devices:
 ------------------
 
-Fedora 18 ARM for Allwinner A10 has been tested with the following devices:
-* BA10 TV Box
+Fedora 19 ARM for Allwinner A10 has been tested with the following devices:
 * A13-OLinuXino-MICRO (Olimex)
+* Auxtek T003 hdmi tv stick
+* Auxtek T004 hdmi tv stick
+* BA10 TV Box
 * Cubieboard development board 1024 MB RAM
+* Cubieboard2 (A20) development board
 * Gooseberry development board
 * Mele A1000G/A2000G 1024 MB RAM
 * Mini-X 1024 MB RAM
@@ -66,10 +66,12 @@ Fedora 18 ARM for Allwinner A10 has been tested with the following devices:
 * UHost U1A hdmi tv stick
 * Wobo i5 TV Box
 
-Fedora 18 ARM should also work on the following devices:
+Fedora 19 ARM should also work on the following devices:
 * A10 tablet sold under various names (whitelabel)
 * A13 tablet sold under various names (whitelabel)
+* A10s-OLinuXino-MICRO (Olimex)
 * A13-OLinuXino (Olimex)
+* A20-OLinuXino-MICRO (Olimex)
 * Coby MID7042 tablet
 * Coby MID8042 tablet
 * Coby MID9742 tablet
@@ -87,7 +89,7 @@ Fedora 18 ARM should also work on the following devices:
 * pcDuino development board
 * Point of View ProTab 2 IPS 9" tablet
 * Point of View ProTab 2 IPS tablet with 3g
-
+* XZPAD700 7" tablet
 
 Configuring the display output
 ------------------------------
@@ -149,19 +151,23 @@ wireless desktop sets.
 Supported hardware components / features:
 -----------------------------------------
 
-Fedora 18 ARM for Allwinner A10 supports the following components:
+Fedora 19 ARM for Allwinner A10 supports the following components:
 * CPU + PMU + RAM
 * Serial ports
 * MMC cards
-* Internal NAND storage
+* Internal NAND storage (*)
 * Framebuffer on lcd / vga / hdmi / composite video
 * Sound both analog out and over hdmi
-* OTG USB controller
+* OTG USB controller (*)
 * Both standard USB host controllers
 * Wifi
 * Wired Ethernet
 * SATA
-* IR (untested at this time)
+* IR (untested at this time) (*)
+
+*) Not supported on A20, the A20 support in the Fedora 19 A10 images is new,
+and as such the driver code for these has not been forward-ported from the
+Allwinner source dump to the sunxi-3.4 kernel the Fedora 19 A10 images use yet.
 
 
 Unsupported hardware components:
@@ -169,11 +175,13 @@ Unsupported hardware components:
 
 The following components require various proprietary blobs to be used, and
 as such are not supported in the Fedora images. The kernel drivers for them
-are present (usually as modules), so if you add the necessary blobs you
+are present (usually as modules) (*), so if you add the necessary blobs you
 might get these to work:
 * Mali 400 GPU
 * Cedar hardware video & audio decoding and encoding engine
 * G2D 2d engine
+
+*) Except for the A20
 
 
 Differences from stock Fedora
@@ -185,17 +193,15 @@ Differences from stock Fedora
   the extraargs in uEnv.txt will give plymouth, but so late it hardly matters.
 
 
-Rebuilding the Fedora 18 ARM for Allwinner A10 disk image
+Rebuilding the Fedora 19 ARM for Allwinner A10 disk image
 ---------------------------------------------------------
 
-Building the Fedora 18 ARM for Allwinner A10 disk image consists of 2 steps
+Building the Fedora 19 ARM for Allwinner A10 disk image consists of 2 steps
 1) Building a uboot.tar.gz and rootfs.tar.gz "overlays", this is done
    bu the build-boot-root-sh script
-2) Combining uboot.tar.gz and rootfs.tar.gz with an official Fedora 18
-   ARM panda image. The a10 image you downloaded is named the same as the panda
-   image used as base with panda replaced by a10, so to get the panda image
-   name replace a10 with panda again :) This combining is done by the
-   build-image.sh script
+2) Combining uboot.tar.gz and rootfs.tar.gz with an official Fedora 19 arm img,
+   this combining is done by the build-image.sh script
+   The a10 image you downloaded is based on Fedora-XFCE-armhfp-19-1-sda.raw
 
 These scripts are hosted here:
 https://github.com/jwrdegoede/sunxi-fedora-scripts.git

@@ -41,6 +41,8 @@ echo "Setting up loopback mount of $IMG_OUT and its partitions"
 losetup "/dev/$LOOP" "$IMG_OUT"
 kpartx -a "/dev/$LOOP"
 udevadm settle
+e2label "/dev/mapper/${LOOP}p1" uboot
+e2label "/dev/mapper/${LOOP}p3" rootfs
 mkdir -p "$UBOOT"
 mount "/dev/mapper/${LOOP}p1" "$UBOOT"
 mkdir -p "$ROOTFS"

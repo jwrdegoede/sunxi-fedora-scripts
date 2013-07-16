@@ -37,9 +37,9 @@
 # https://github.com/jwrdegoede/linux-sunxi.git
 
 KERNER_VER=3.4
-A10_BOARDS="a10_mid_1gb ba10_tv_box coby_mid7042 coby_mid8042 coby_mid9742 cubieboard cubieboard_512 dns_m82 eoma68_a10 gooseberry_a721 h6 hackberry hyundai_a7hd inet97f-ii mele_a1000 mele_a1000g mele_a3700 mini-x mini-x-1gb mk802 mk802-1gb mk802ii pcduino pov_protab2_ips9 pov_protab2_ips_3g uhost_u1a xzpad700"
-A13_BOARDS="a13_mid a13-olinuxino a13-olinuxinom"
-A10S_BOARDS="a10s-olinuxino-m auxtek-t004 mk802_a10s r7-tv-dongle wobo-i5"
+A10_BOARDS="a10_mid_1gb ba10_tv_box coby_mid7042 coby_mid8042 coby_mid9742 cubieboard cubieboard_512 dns_m82 eoma68_a10 gooseberry_a721 h6 hackberry hyundai_a7hd inet97f-ii mele_a1000 mele_a1000g mele_a3700 mini-x mini-x-1gb mk802 mk802-1gb mk802ii pcduino pov_protab2_ips9 pov_protab2_ips_3g uhost_u1a"
+A13_BOARDS="a13_mid a13-olinuxino a13-olinuxinom xzpad700"
+A10S_BOARDS="a10s-olinuxino-m auxtek-t003 auxtek-t004 mk802_a10s r7-tv-dongle wobo-i5"
 A20_BOARDS="a20-olinuxino_micro cubieboard2"
 UBOOT_TAG=fedora-18-08062013
 KERNEL_CONFIG_TAG=fedora-18-08062013
@@ -80,7 +80,6 @@ mkdir $DESTDIR/uboot/boards
 # Note the changing board configs always force a rebuild
 mkdir $DESTDIR/uboot/boards/sun4i
 for i in $A10_BOARDS; do
-    make -j4 CROSS_COMPILE=arm-linux-gnu- O=$i distclean
     make -j4 CROSS_COMPILE=arm-linux-gnu- O=$i $i
     mkdir $DESTDIR/uboot/boards/sun4i/$i
     cp $i/spl/sunxi-spl.bin $DESTDIR/uboot/boards/sun4i/$i
@@ -88,14 +87,12 @@ for i in $A10_BOARDS; do
 done
 mkdir $DESTDIR/uboot/boards/sun5i
 for i in $A13_BOARDS; do
-    make -j4 CROSS_COMPILE=arm-linux-gnu- O=$i distclean
     make -j4 CROSS_COMPILE=arm-linux-gnu- O=$i $i
     mkdir $DESTDIR/uboot/boards/sun5i/$i
     cp $i/spl/sunxi-spl.bin $DESTDIR/uboot/boards/sun5i/$i
     cp $i/u-boot.bin $DESTDIR/uboot/boards/sun5i/$i
 done
 for i in $A10S_BOARDS; do
-    make -j4 CROSS_COMPILE=arm-linux-gnu- O=$i distclean
     make -j4 CROSS_COMPILE=arm-linux-gnu- O=$i $i
     mkdir $DESTDIR/uboot/boards/sun5i/$i
     cp $i/spl/sunxi-spl.bin $DESTDIR/uboot/boards/sun5i/$i
@@ -103,7 +100,6 @@ for i in $A10S_BOARDS; do
 done
 mkdir $DESTDIR/uboot/boards/sun7i
 for i in $A20_BOARDS; do
-    make -j4 CROSS_COMPILE=arm-linux-gnu- O=$i distclean
     make -j4 CROSS_COMPILE=arm-linux-gnu- O=$i $i
     mkdir $DESTDIR/uboot/boards/sun7i/$i
     cp $i/spl/sunxi-spl.bin $DESTDIR/uboot/boards/sun7i/$i
@@ -176,20 +172,26 @@ mkimage -C none -A arm -T script -d boot.cmd $DESTDIR/uboot/boot.scr
 cp -p boot.cmd README select-board.sh $DESTDIR/uboot
 cp -p uEnv-boot.txt $DESTDIR/uboot/uEnv.txt
 cp -p build-boot-root.sh build-image.sh $DESTDIR/uboot/scripts
-# replace rootfs-resize with one which understands running without an initrd
-mkdir $DESTDIR/rootfs/usr/sbin
+# Add F-18 rootfs-resize (+ patch for no initrd + hack for rhbz#974631)
+mkdir -p $DESTDIR/rootfs/usr/sbin
+mkdir -p $DESTDIR/rootfs/usr/lib/systemd/system
+mkdir -p $DESTDIR/rootfs/etc/systemd/system/multi-user.target.wants
 cp -p rootfs-resize $DESTDIR/rootfs/usr/sbin
+cp -p rootfs-resize.service $DESTDIR/rootfs/usr/lib/systemd/system
+ln -s /usr/lib/systemd/system/rootfs-resize.service \
+  $DESTDIR/rootfs/etc/systemd/system/multi-user.target.wants/rootfs-resize.service
+touch $DESTDIR/rootfs/.rootfs-repartition
 popd
 
 echo
 echo "Successfully build uboot and rootfs directories, packing ..."
 
 pushd $DESTDIR/uboot
-tar cfz $DESTDIR/uboot.tar.gz *
+tar cfz --group=root --owner=root $DESTDIR/uboot.tar.gz *
 popd
 
 pushd $DESTDIR/rootfs
-tar cfz $DESTDIR/rootfs.tar.gz *
+tar cfz --group=root --owner=root $DESTDIR/rootfs.tar.gz .rootfs-repartition *
 popd
 
 echo "Successfully generated uboot.tar.gz and rootfs.tar.gz"

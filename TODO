@@ -1,13 +1,13 @@
+-test at the hackerspace:
+ -try wobi-i5 usbc0 in host only mode, commit if works
+ -test auxtek-t003 wifi
+
 -F19-r1
- -Must:
-  -add rootfs resiz, also see :
-   https://bugzilla.redhat.com/show_bug.cgi?id=974631
-  -relabel fs
-  -update README: F19, update boards list, document a20 caveats?
  -Should
-  -A20 support
+  -need to change password on first login for both user and root ?
   -add network config support
   -get wifi on auxtek-t004 to work
+  -auxtek-t004 led
  -NTH:
   -add rc.local to tweak cpufreq? :
    http://linux-sunxi.org/Cpufreq
@@ -16,28 +16,16 @@
   -look into high load issue
 
 -A20 support
- -Must:
-  -dma compat
-  -add sound support
-  -fix / check emac mac-addr code for doing the proper thing with an all 0 sid
-  -add emac support
-  -add sata support
- -NTH:
-  -better sched_clock (currently using jiffies), try using arch_timer one,
-   otherwise use timer.c one ?
-  -add nand support
-  -all other pheriphals
-  -Add CONFIG_SUNXI_MULTIPLATFORM Kconfig support
-  -Switch to plat include dir?
+ -add nand support
+ -all other pheriphals
+ -Add CONFIG_SUNXI_MULTIPLATFORM Kconfig support
+ -Switch to plat include dir?
 
--rtc-sun4i, make BACKUP_PWM a runtime check based on ic ver
+-the sun7i code dump has many interesting improvements to the emac code, also
+ see emac-sun7i-diff-wip (which is incomplete)
 
--A10s gpio-int:
- https://github.com/amery/linux-sunxi/commit/e94c07323b3667130eedf1f833c12ccb80fd820d
- Need to fix in gpio-sunxi.c as well
-
--take photos of devices + create wiki pages so people can easily identify
- which device they have
+-look into using
+ https://github.com/ssvb/xf86-video-sunxifb/commits/master
 
 -look into ir support
 
@@ -47,20 +35,28 @@
 -lower fbmem, disable double buffer by default. Freeing 10 MB (useful on
  low mem devices mostly)
 
--use proper functions to calucalate mult + shift for timers
--see if we can do a better sched_clock and clocksource
- -use 32 bit timer in auto-reload with reload of 0xffffffff, use
-  it as a counter.
- -call gettimeofday from a slow timer to ensure wraps get detected
- -current clocksource can cause us to run with interrupts disabled for 17%
-  of the time, see "perf top" output
+-try 16bpp framebuffer -> better performance ?
 
 -rebase rootfs-resize patch, mail to ctyler
 
--try 16bpp framebuffer -> better performance ?
+-rtc-sun4i, make BACKUP_PWM a runtime check based on ic ver
+
+-sound/soc/sun4i improvements:
+ -remove dead ENFORCE_RATES code from sound/soc/sun4i
+ -remove dead sun4i_sndhdmi_startup / sun4i_sndhdmi_shutdown from
+  sound/soc/sun4i/hdmiaudio/sun4i-sndhdmi.c
+ -remove bogus input code for hdmi / spdif ?
+ -add full-duplex support to audio-codec + i2s code (take from a13/a10s/a20
+  source dumps)
+ -according to a10_source_1.5 sun4i hdmi has no rx/tx ctrl just like sun7i
+
+-A10s gpio-int:
+ https://github.com/amery/linux-sunxi/commit/e94c07323b3667130eedf1f833c12ccb80fd820d
+ Need to fix in gpio-sunxi.c as well
+
+-take photos of devices + create wiki pages so people can easily identify
+ which device they have
 
 -mali clock div is too low in many fex files when not using PLL6 for PLL4
 
 -checkout wemac performance issues, see archived mail
-
--Silence kernel debug spew in general
