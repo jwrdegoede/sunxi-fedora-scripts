@@ -1,0 +1,12 @@
+diff -up usr/lib/python2.7/site-packages/pyanaconda/simpleconfig.py.orig usr/lib/python2.7/site-packages/pyanaconda/simpleconfig.py
+--- usr/lib/python2.7/site-packages/pyanaconda/simpleconfig.py.orig	2013-07-17 16:29:07.966735271 +0200
++++ usr/lib/python2.7/site-packages/pyanaconda/simpleconfig.py	2013-07-17 16:29:15.098561363 +0200
+@@ -198,5 +198,6 @@ class IfcfgFile(SimpleConfigFile):
+         else:
+             path = os.path.join(dir, os.path.basename(self.path))
+ 
+-        SimpleConfigFile.write(self, path)
+-
++        f = open(path, 'w')
++        f.write(str(self))
++        f.close()

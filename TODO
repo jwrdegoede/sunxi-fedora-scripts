@@ -1,17 +1,9 @@
--test at the hackerspace:
- -try wobi-i5 usbc0 in host only mode, commit if works
-
--F19-r1
- -Should
-  -add network config support
-  -get wifi on auxtek-t004 to work
-  -auxtek-t004 led
- -NTH:
-  -add rc.local to tweak cpufreq? :
-   http://linux-sunxi.org/Cpufreq
-  -look into usb devices not working on A10s without hub ?
-  -look into A10s reboot issue (seen on mk802_a10s at 1920x1200)
-  -look into high load issue
+-get wifi on auxtek-t004 to work
+-add rc.local to tweak cpufreq? :
+ http://linux-sunxi.org/Cpufreq
+-look into usb devices not working on A10s without hub ?
+-look into A10s reboot issue (seen on mk802_a10s at 1920x1200)
+-look into high load issue
 
 -A20 support
  -add nand support

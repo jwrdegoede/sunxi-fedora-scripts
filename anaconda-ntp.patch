@@ -1,0 +1,15 @@
+diff -up usr/lib/python2.7/site-packages/pyanaconda/ntp.py.orig usr/lib/python2.7/site-packages/pyanaconda/ntp.py
+--- usr/lib/python2.7/site-packages/pyanaconda/ntp.py.orig	2013-07-17 16:57:42.194959230 +0200
++++ usr/lib/python2.7/site-packages/pyanaconda/ntp.py	2010-01-01 00:02:03.896835310 +0100
+@@ -142,8 +142,10 @@ def save_servers_to_config(servers, conf
+     if not out_file_path:
+         try:
+             stat = os.stat(conf_file_path)
+-            shutil.move(temp_path, conf_file_path)
++            # Use copy rather then move to get the correct selinux context
++            shutil.copy(temp_path, conf_file_path)
+             os.chmod(conf_file_path, stat.st_mode)
++            os.unlink(temp_path)
+ 
+         except OSError as oserr:
+             msg = "Cannot replace the old config with "\

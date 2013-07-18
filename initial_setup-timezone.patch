@@ -1,0 +1,16 @@
+diff -up usr/lib/python2.7/site-packages/initial_setup/__main__.py.orig2 usr/lib/python2.7/site-packages/initial_setup/__main__.py
+--- usr/lib/python2.7/site-packages/initial_setup/__main__.py.orig2	2013-07-17 14:45:02.633273992 +0200
++++ usr/lib/python2.7/site-packages/initial_setup/__main__.py	2013-07-17 14:44:59.631282875 +0200
+@@ -121,11 +121,10 @@ storage = DummyStorage()
+ # Do not execute sections that were part of the original
+ # anaconda kickstart file (== have .seen flag set)
+ 
+-sections = [data.keyboard, data.lang, data.network]
++sections = [data.keyboard, data.lang, data.network, data.timezone]
+ 
+ # data.selinux
+ # data.firewall
+-# data.timezone
+ 
+ for section in sections:
+     if section.seen:

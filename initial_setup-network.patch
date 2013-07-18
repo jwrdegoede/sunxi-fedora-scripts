@@ -1,0 +1,109 @@
+diff -up usr/lib/python2.7/site-packages/initial_setup/__main__.py.orig usr/lib/python2.7/site-packages/initial_setup/__main__.py
+--- usr/lib/python2.7/site-packages/initial_setup/__main__.py.orig	2013-06-12 14:11:07.000000000 +0200
++++ usr/lib/python2.7/site-packages/initial_setup/__main__.py	2013-07-17 14:44:56.399291996 +0200
+@@ -1,8 +1,25 @@
+ #!/bin/python
++
++# set the root path to / so the imported spokes
++# know where to apply their changes
++from pyanaconda import constants
++
++# this has to stay in the form constants.ROOT_PATH so it modifies
++# the scalar in anaconda, not the local copy here
++constants.ROOT_PATH = "/"
++
+ import os
+ import sys
+ import pykickstart
+ from pyanaconda.users import Users
++from pyanaconda.network import networkInitialize
++from pyanaconda.installclass import DefaultInstall
++
++class DummyStorage:
++    def __init__(self):
++        self.rootDevice = None
++        self.devices = []
++
+ 
+ if "DISPLAY" in os.environ and os.environ["DISPLAY"]:
+     mode="gui"
+@@ -16,14 +33,6 @@ if mode == "gui":
+     for p in os.environ.get("ANACONDA_WIDGETS_OVERRIDES", "").split(":"):
+         gi.overrides.__path__.insert(0, p)
+ 
+-# set the root path to / so the imported spokes
+-# know where to apply their changes
+-from pyanaconda import constants
+-
+-# this has to stay in the form constants.ROOT_PATH so it modifies
+-# the scalar in anaconda, not the local copy here
+-constants.ROOT_PATH = "/"
+-
+ from pyanaconda.addons import collect_addon_paths
+ 
+ addon_paths = ["/usr/share/initial-setup/modules", "/usr/share/anaconda/addons"]
+@@ -43,6 +52,10 @@ anaconda_log.init()
+ from pyanaconda.threads import initThreading
+ initThreading()
+ 
++# initialize network logging (needed by the Network spoke that may be shown)
++from pyanaconda.network import setup_ifcfg_log
++setup_ifcfg_log()
++
+ from pyanaconda import kickstart
+ 
+ # Construct a commandMap with the supported Anaconda's commands only
+@@ -55,6 +68,7 @@ kickstart_commands = ["user",
+                       "logging",
+                       "selinux",
+                       "firewall",
++                      "network"
+                       ]
+ 
+ commandMap = dict((k, kickstart.commandMap[k]) for k in kickstart_commands)
+@@ -69,6 +83,8 @@ try:
+ except pykickstart.errors.KickstartError as kserr:
+     sys.exit(1)
+ 
++networkInitialize(data)
++
+ if mode == "gui":
+     # Import IS gui specifics
+     import gui
+@@ -99,10 +115,13 @@ ret = ui.run()
+ if ret == False:
+     sys.exit(0)
+ 
++instClass = DefaultInstall()
++storage = DummyStorage()
++
+ # Do not execute sections that were part of the original
+ # anaconda kickstart file (== have .seen flag set)
+ 
+-sections = [data.keyboard, data.lang]
++sections = [data.keyboard, data.lang, data.network]
+ 
+ # data.selinux
+ # data.firewall
+@@ -111,7 +130,7 @@ sections = [data.keyboard, data.lang]
+ for section in sections:
+     if section.seen:
+         continue
+-    section.execute(None, data, None)
++    section.execute(storage, data, instClass)
+ 
+ # Prepare the user database tools
+ u = Users()
+@@ -120,10 +139,10 @@ sections = [data.group, data.user, data.
+ for section in sections:
+     if section.seen:
+         continue
+-    section.execute(None, data, None, u)
++    section.execute(storage, data, instClass, u)
+ 
+ # Configure all addons
+-data.addons.execute(None, data, None, u)
++data.addons.execute(storage, data, instClass, u)
+ 
+ # Print the kickstart data to file
+ with open("/root/initial-setup-ks.cfg", "w") as f:

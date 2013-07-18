@@ -31,6 +31,7 @@ IMG_IN="$1"
 IMG_OUT="$2"
 UBOOT="$(pwd)/uboot"
 ROOTFS="$(pwd)/rootfs"
+SCRIPTS="$(pwd)/$(dirname $0)"
 
 if [ -z "$NOCOPY" ]; then
     echo "Copying $IMG_IN to $IMG_OUT"
@@ -77,8 +78,19 @@ pushd usr/lib > /dev/null
         ln -f -s /dev/null ../../etc/$i
     done
 popd > /dev/null
-# Make initial-setup not force the user to change his passwd when no rtc
-patch -p1 < anaconda-users.patch
+
+if [ -z "$NOCOPY" ]; then
+    # Make initial-setup not force a passwd change when there is no rtc
+    patch -p0 < $SCRIPTS/anaconda-users.patch
+    # Add network config to initial setup
+    patch -p0 < $SCRIPTS/anaconda-network.patch
+    patch -p0 < $SCRIPTS/anaconda-simpleconfig.patch
+    patch -p0 < $SCRIPTS/initial_setup-network.patch
+    # Actually safe selected timezone settings
+    patch -p0 < $SCRIPTS/anaconda-ntp.patch
+    patch -p0 < $SCRIPTS/initial_setup-timezone.patch
+fi
+
 popd > /dev/null
 
 echo "Cleaning up loopback mounts"

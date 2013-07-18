@@ -1,0 +1,20 @@
+diff -up usr/lib/python2.7/site-packages/pyanaconda/ui/gui/spokes/network.py.orig usr/lib/python2.7/site-packages/pyanaconda/ui/gui/spokes/network.py
+--- usr/lib/python2.7/site-packages/pyanaconda/ui/gui/spokes/network.py.orig	2013-06-27 18:27:37.000000000 +0200
++++ usr/lib/python2.7/site-packages/pyanaconda/ui/gui/spokes/network.py	2013-07-17 10:47:07.624742406 +0200
+@@ -40,6 +40,7 @@ from pyanaconda.ui.gui.spokes import Nor
+ from pyanaconda.ui.gui.categories.software import SoftwareCategory
+ from pyanaconda.ui.gui.hubs.summary import SummaryHub
+ from pyanaconda.ui.gui.utils import gtk_call_once, enlightbox
++from pyanaconda.ui.common import FirstbootSpokeMixIn
+ 
+ from pyanaconda import network
+ from pyanaconda.nm import nm_activated_devices, nm_device_setting_value
+@@ -1274,7 +1275,7 @@ def register_secret_agent(spoke):
+     return True
+ 
+ 
+-class NetworkSpoke(NormalSpoke):
++class NetworkSpoke(FirstbootSpokeMixIn, NormalSpoke):
+     builderObjects = ["networkWindow", "liststore_wireless_network", "liststore_devices", "add_device_dialog", "liststore_add_device"]
+     mainWidgetName = "networkWindow"
+     uiFile = "spokes/network.glade"

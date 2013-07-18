@@ -31,19 +31,20 @@ Quickstart guide
 10) When first booting from the sdcard inserted Fedora will automatically
    reboot once, this is part of the process to resize the root partition to
    fill the entire sdcard and is normal behavior.
-11) After the automatic reboot Fedora will start with the firstboot wizard:
-   11a) Configure a user here
-   11b) Most A10 devices do not come with a battery backed rtc, so you will
-        want to enable ntp. Simply click ok in the ntp dialog. Now firstboot
-        will try to start ntp. Since most devices have only wireless, and
-        that is not configured yet at this time, click on cancel when it
-        tries to start ntp. If it then asks if you want to re-do your ntp
-        configuration choose no.
+11) After the automatic reboot Fedora will start with the initial-setup wizard:
+   11a) Configure networking, note:
+        * If you've an A10 board with wired ethernet and you want to use dhcp
+          you don't need to do anything.
+        * If you've an A20 board, your ethernet will have a random mac-address,
+          so if you want to configure a static ip-address and want it to stick
+          across reboots, go to the ethernet-tab, select the mac-address field
+          and delete its contents, so that the static ip address you're
+          configuring does not get tied to the random mac-address.
+   11b) Setup the time zone
+   11c) Set a root password
+   11d) Create a user
 12) Log in as the just created user
-13) If you need to configure wireless click on the network icon in the
-    top right corner (next to the clock) and select the wireless network
-    you want to connect to
-14) Enjoy Fedora on your A10 device
+13) Enjoy Fedora on your A10 device
 
 
 Supported Devices:
