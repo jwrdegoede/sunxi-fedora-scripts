@@ -50,18 +50,19 @@ mkdir -p "$ROOTFS"
 mount "/dev/mapper/${LOOP}p3" "$ROOTFS"
 
 echo "Clearing uboot area"
-dd if=/dev/zero of="/dev/$LOOP" bs=1024 seek=8 count=1016
+dd if=/dev/zero of="/dev/$LOOP" bs=1024 seek=8 count=664
 
-echo "Cleaning panda uboot files and copying sunxi uboot files"
+echo "Cleaning non allwinner uboot files and copying sunxi uboot files"
 pushd "$UBOOT" > /dev/null
-rm -rf .vmlinuz* *
-tar xfz "$UBOOT.tar.gz" --no-same-owner --no-same-permissions
+rm -rf .vmlinuz* System* boot* config* dtb* grub* init* klist* u* vmlinuz*
+tar xfz "$UBOOT.tar.gz"
 popd > /dev/null
 
-echo "Cleaning panda specific rootfs files and copying sunxi rootfs files"
+echo "Cleaning non allwinner kernel modules and copying sunxi rootfs files"
 pushd "$ROOTFS" > /dev/null
 rm -rf usr/lib/modules/*
 tar xfz "$ROOTFS.tar.gz" --no-overwrite-dir
+
 echo "Customizing sunxi rootfs"
 #sed -i 's/panda/sunxi/' etc/hostname etc/sysconfig/network
 if ! grep -q exclude=kernel-omap etc/yum.conf; then
