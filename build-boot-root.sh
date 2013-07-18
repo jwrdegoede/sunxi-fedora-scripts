@@ -45,7 +45,7 @@ UBOOT_TAG=fedora-19-18072013
 KERNEL_CONFIG_TAG=fedora-19-18072013
 KERNEL_TAG=fedora-19-18072013
 SUNXI_BOARDS_TAG=fedora-19-18072013
-SCRIPTS_TAG=fedora-19-18072013-2
+SCRIPTS_TAG=fedora-19-18072013-3
 
 for i in "$@"; do
     case $i in
@@ -187,11 +187,11 @@ echo
 echo "Successfully build uboot and rootfs directories, packing ..."
 
 pushd $DESTDIR/uboot
-tar --group=root --owner=root cfz $DESTDIR/uboot.tar.gz *
+tar --group=root --owner=root -cfz $DESTDIR/uboot.tar.gz *
 popd
 
 pushd $DESTDIR/rootfs
-tar --group=root --owner=root cfz $DESTDIR/rootfs.tar.gz .rootfs-repartition *
+tar --group=root --owner=root -cfz $DESTDIR/rootfs.tar.gz .rootfs-repartition *
 popd
 
 echo "Successfully generated uboot.tar.gz and rootfs.tar.gz"
