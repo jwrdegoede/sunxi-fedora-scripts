@@ -1,3 +1,5 @@
+-fix emac phy setup when cable gets inserted after boot (sun7i improvements)
+ -drop link wait ?
 -get wifi on auxtek-t004 to work
 -add rc.local to tweak cpufreq? :
  http://linux-sunxi.org/Cpufreq
@@ -6,10 +8,11 @@
 -look into high load issue
 
 -A20 support
+ -delay at boot
  -add nand support
+ -usbc0
+ -ir support
  -all other pheriphals
- -Add CONFIG_SUNXI_MULTIPLATFORM Kconfig support
- -Switch to plat include dir?
 
 -the sun7i code dump has many interesting improvements to the emac code, also
  see emac-sun7i-diff-wip (which is incomplete)
@@ -48,5 +51,3 @@
  which device they have
 
 -mali clock div is too low in many fex files when not using PLL6 for PLL4
-
--checkout wemac performance issues, see archived mail
