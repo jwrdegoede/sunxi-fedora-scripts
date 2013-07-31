@@ -6,6 +6,8 @@
 -look into usb devices not working on A10s without hub ?
 -look into A10s reboot issue (seen on mk802_a10s at 1920x1200)
 -look into high load issue
+-look into providing kernel rpms, see:
+ http://xre2k.bugs3.com/repos/arm/source_sun4i/
 
 -A20 support
  -delay at boot
