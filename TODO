@@ -1,10 +1,9 @@
 -A20 support
- -a20-olinuxino-micro, fix sound/soc crash with new fex
- -usbc0
  -add nand support
  -ir support
  -all other pheriphals
 
+-buttons on olinuxino A13-wifi and A20
 -get wifi on auxtek-t004 to work
 -add rc.local to tweak cpufreq? :
  http://linux-sunxi.org/Cpufreq
