@@ -1,23 +1,16 @@
--A20 support
- -add nand support
- -ir support
- -all other pheriphals
-
--buttons on olinuxino A13-wifi and A20
--get wifi on auxtek-t004 to work
 -add rc.local to tweak cpufreq? :
  http://linux-sunxi.org/Cpufreq
 -look into A10s reboot issue (seen on various a10s boards)
 -look into high load issue
--look into providing kernel rpms, see:
- http://xre2k.bugs3.com/repos/arm/source_sun4i/
+-merge sun7i nand improvements
 -fix emac phy setup when cable gets inserted after boot (sun7i improvements)
  -drop link wait ?
  -the sun7i code dump has many interesting improvements to the emac code, also
   see emac-sun7i-diff-wip (which is incomplete)
+-get wifi on auxtek-t004 to work
 
 -look into suspend/resume
- -fails due to mmc card resuming (power on) too late causing rootfs errors
+ -fails due to mmc card power off too soon causing rootfs errors
 
 -look into using
  https://github.com/ssvb/xf86-video-sunxifb/commits/master

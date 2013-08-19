@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # This script builds a Fedora ARM Allwinner sunxi image, as input it takes
 # uboot.tar.gz and rootfs.tar.gz tarbals as build by build-boot-root.sh

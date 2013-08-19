@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # This scripts builds Allwinner sunxi kernels + per board u-boot, spl and fex
 # It will then place all the build files into 2 directories:
