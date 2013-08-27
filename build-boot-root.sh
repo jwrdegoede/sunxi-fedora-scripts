@@ -82,28 +82,24 @@ mkdir $DESTDIR/uboot/boards/sun4i
 for i in $A10_BOARDS; do
     make -j4 CROSS_COMPILE=arm-linux-gnu- O=$i $i
     mkdir $DESTDIR/uboot/boards/sun4i/$i
-    cp $i/spl/sunxi-spl.bin $DESTDIR/uboot/boards/sun4i/$i
-    cp $i/u-boot.bin $DESTDIR/uboot/boards/sun4i/$i
+    cp $i/u-boot-sunxi-with-spl.bin $DESTDIR/uboot/boards/sun4i/$i
 done
 mkdir $DESTDIR/uboot/boards/sun5i
 for i in $A13_BOARDS; do
     make -j4 CROSS_COMPILE=arm-linux-gnu- O=$i $i
     mkdir $DESTDIR/uboot/boards/sun5i/$i
-    cp $i/spl/sunxi-spl.bin $DESTDIR/uboot/boards/sun5i/$i
-    cp $i/u-boot.bin $DESTDIR/uboot/boards/sun5i/$i
+    cp $i/u-boot-sunxi-with-spl.bin $DESTDIR/uboot/boards/sun5i/$i
 done
 for i in $A10S_BOARDS; do
     make -j4 CROSS_COMPILE=arm-linux-gnu- O=$i $i
     mkdir $DESTDIR/uboot/boards/sun5i/$i
-    cp $i/spl/sunxi-spl.bin $DESTDIR/uboot/boards/sun5i/$i
-    cp $i/u-boot.bin $DESTDIR/uboot/boards/sun5i/$i
+    cp $i/u-boot-sunxi-with-spl.bin $DESTDIR/uboot/boards/sun5i/$i
 done
 mkdir $DESTDIR/uboot/boards/sun7i
 for i in $A20_BOARDS; do
     make -j4 CROSS_COMPILE=arm-linux-gnu- O=$i $i
     mkdir $DESTDIR/uboot/boards/sun7i/$i
-    cp $i/spl/sunxi-spl.bin $DESTDIR/uboot/boards/sun7i/$i
-    cp $i/u-boot.bin $DESTDIR/uboot/boards/sun7i/$i
+    cp $i/u-boot-sunxi-with-spl.bin $DESTDIR/uboot/boards/sun7i/$i
 done
 popd
 

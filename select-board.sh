@@ -112,8 +112,7 @@ yesno "Are you sure you want to install the spl, u-boot and kernel for $BOARD fr
 echo
 echo "Installing spl, u-boot and kernel for $BOARD onto $SDCARD_DEV ..."
 
-dd if="$BOARDS_DIR/$ARCH/$BOARD/sunxi-spl.bin" of="$SDCARD_DEV" bs=1024 seek=8
-dd if="$BOARDS_DIR/$ARCH/$BOARD/u-boot.bin" of="$SDCARD_DEV" bs=1024 seek=32
+dd if="$BOARDS_DIR/$ARCH/$BOARD/u-boot-sunxi-with-spl.bin" of="$SDCARD_DEV" bs=1024 seek=8
 dd if="$BOARDS_DIR/uEnv-img.bin" of="$SDCARD_DEV" bs=1024 seek=544
 cp "$BOARDS_DIR/$ARCH/$BOARD/script.bin" "$UBOOT_MOUNT"
 cp "$UBOOT_MOUNT/uImage.$ARCH" "$UBOOT_MOUNT/uImage"
