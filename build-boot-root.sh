@@ -37,7 +37,7 @@
 # https://github.com/jwrdegoede/linux-sunxi.git
 
 KERNER_VER=3.4
-A10_BOARDS="a10_mid_1gb ba10_tv_box coby_mid7042 coby_mid8042 coby_mid9742 cubieboard cubieboard_512 dns_m82 eoma68_a10 gooseberry_a721 h6 hackberry hyundai_a7hd inet97f-ii mele_a1000 mele_a1000g mele_a3700 mini-x mini-x-1gb mk802 mk802-1gb mk802ii pcduino pov_protab2_ips9 pov_protab2_ips_3g uhost_u1a"
+A10_BOARDS="a10_mid_1gb ba10_tv_box coby_mid7042 coby_mid8042 coby_mid9742 cubieboard cubieboard_512 dns_m82 eoma68_a10 gooseberry_a721 h6 hackberry hyundai_a7hd inet97f-ii Marsboard_A10 mele_a1000 mele_a1000g mele_a3700 mini-x mini-x-1gb mk802 mk802-1gb mk802ii pcduino pov_protab2_ips9 pov_protab2_ips_3g sanei_n90 uhost_u1a"
 A13_BOARDS="a13_mid a13-olinuxino a13-olinuxinom xzpad700"
 A10S_BOARDS="a10s-olinuxino-m auxtek-t003 auxtek-t004 mk802_a10s r7-tv-dongle wobo-i5"
 A20_BOARDS="a20-olinuxino_micro cubieboard2"
@@ -106,21 +106,39 @@ popd
 pushd sunxi-boards
 [ -z "$NOCHECKOUT" ] && git checkout $SUNXI_BOARDS_TAG
 [ -z "$NOCLEAN" ] && git clean -dxf
-for i in $A10_BOARDS; do
-    cp -p sys_config/a10/$i.fex $DESTDIR/uboot/boards/sun4i/$i
-    fex2bin sys_config/a10/$i.fex $DESTDIR/uboot/boards/sun4i/$i/script.bin
-done
-for i in $A13_BOARDS; do
-    cp -p sys_config/a13/$i.fex $DESTDIR/uboot/boards/sun5i/$i
-    fex2bin sys_config/a13/$i.fex $DESTDIR/uboot/boards/sun5i/$i/script.bin
-done
-for i in $A10S_BOARDS; do
-    cp -p sys_config/a10s/$i.fex $DESTDIR/uboot/boards/sun5i/$i
-    fex2bin sys_config/a10s/$i.fex $DESTDIR/uboot/boards/sun5i/$i/script.bin
-done
-for i in $A20_BOARDS; do
-    cp -p sys_config/a20/$i.fex $DESTDIR/uboot/boards/sun7i/$i
-    fex2bin sys_config/a20/$i.fex $DESTDIR/uboot/boards/sun7i/$i/script.bin
+for lcd in "" "-lcd7" "-lcd10"; do
+    for i in $A10_BOARDS; do
+        if [ ! -f sys_config/a10/$i$lcd.fex ]; then
+            continue
+        fi
+        cp -p sys_config/a10/$i$lcd.fex $DESTDIR/uboot/boards/sun4i/$i
+        fex2bin sys_config/a10/$i$lcd.fex \
+            $DESTDIR/uboot/boards/sun4i/$i/script$lcd.bin
+    done
+    for i in $A13_BOARDS; do
+        if [ ! -f sys_config/a13/$i$lcd.fex ]; then
+            continue
+        fi
+        cp -p sys_config/a13/$i$lcd.fex $DESTDIR/uboot/boards/sun5i/$i
+        fex2bin sys_config/a13/$i$lcd.fex \
+            $DESTDIR/uboot/boards/sun5i/$i/script$lcd.bin
+    done
+    for i in $A10S_BOARDS; do
+        if [ ! -f sys_config/a10s/$i$lcd.fex ]; then
+            continue
+        fi
+        cp -p sys_config/a10s/$i$lcd.fex $DESTDIR/uboot/boards/sun5i/$i
+        fex2bin sys_config/a10s/$i$lcd.fex \
+            $DESTDIR/uboot/boards/sun5i/$i/script$lcd.bin
+    done
+    for i in $A20_BOARDS; do
+        if [ ! -f sys_config/a20/$i$lcd.fex ]; then
+            continue
+        fi
+        cp -p sys_config/a20/$i$lcd.fex $DESTDIR/uboot/boards/sun7i/$i
+        fex2bin sys_config/a20/$i$lcd.fex \
+            $DESTDIR/uboot/boards/sun7i/$i/script$lcd.bin
+    done
 done
 popd
 

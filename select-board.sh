@@ -6,6 +6,7 @@ set -e
 
 CANON="$(readlink -f $0)"
 BOARD="$1"
+LCD=""
 UBOOT_MOUNT="$(dirname $CANON)"
 BOARDS_DIR="$UBOOT_MOUNT/boards"
 UBOOT_DEV="$(df $CANON | tail -n 1 | awk '{print $1}')"
@@ -13,10 +14,18 @@ UBOOT_DEV="$(df $CANON | tail -n 1 | awk '{print $1}')"
 BOARDS=()
 BOARDS+=(a10_mid_1gb         "A10 tablet sold under various names (whitelabel)")
 BOARDS+=(a13_mid             "A13 tablet sold under various names (whitelabel)")
-BOARDS+=(a10s-olinuxino-m    "A10s-OLinuXino-MICRO (Olimex)")
-BOARDS+=(a13-olinuxino       "A13-OLinuXino (Olimex)")
-BOARDS+=(a13-olinuxinom      "A13-OLinuXino-MICRO (Olimex)")
-BOARDS+=(a20-olinuxino_micro "A20-OLinuXino-MICRO (Olimex)")
+BOARDS+=(a10s-olinuxino-m          "A10s-OLinuXino-MICRO")
+BOARDS+=(a10s-olinuxino-m-lcd7     "A10s-OLinuXino-MICRO with 7\" lcd module")
+BOARDS+=(a10s-olinuxino-m-lcd10    "A10s-OLinuXino-MICRO with 10\" lcd module")
+BOARDS+=(a13-olinuxino             "A13-OLinuXino")
+BOARDS+=(a13-olinuxino-lcd7        "A13-OLinuXino with 7\" lcd module")
+BOARDS+=(a13-olinuxino-lcd10       "A13-OLinuXino with 10\" lcd module")
+BOARDS+=(a13-olinuxinom            "A13-OLinuXino-MICRO")
+BOARDS+=(a13-olinuxinom-lcd7       "A13-OLinuXino-MICRO with 7\" lcd module")
+BOARDS+=(a13-olinuxinom-lcd10      "A13-OLinuXino-MICRO with 10\" lcd module")
+BOARDS+=(a20-olinuxino_micro       "A20-OLinuXino-MICRO")
+BOARDS+=(a20-olinuxino_micro-lcd7  "A20-OLinuXino-MICRO with 7\" lcd module")
+BOARDS+=(a20-olinuxino_micro-lcd10 "A20-OLinuXino-MICRO with 10\" lcd module")
 BOARDS+=(auxtek-t003         "Auxtek T003 hdmi tv stick")
 BOARDS+=(auxtek-t004         "Auxtek T004 hdmi tv stick")
 BOARDS+=(ba10_tv_box         "BA10 TV Box")
@@ -96,6 +105,17 @@ if [ -z "$BOARD" ]; then
     rm $TMPFILE
 fi
 
+case "$BOARD" in
+    *-lcd7)
+        BOARD=${BOARD:0:-5}
+        LCD=-lcd7
+        ;;
+    *-lcd10)
+        BOARD=${BOARD:0:-6}
+        LCD=-lcd10
+        ;;
+esac
+
 if [ -d $BOARDS_DIR/sun4i/$BOARD ]; then
     ARCH=sun4i
 elif [ -d $BOARDS_DIR/sun5i/$BOARD ]; then
@@ -107,14 +127,14 @@ else
     exit 1
 fi
 
-yesno "Are you sure you want to install the spl, u-boot and kernel for $BOARD from $BOARDS_DIR onto $SDCARD_DEV ?"
+yesno "Are you sure you want to install the spl, u-boot and kernel for $BOARD$LCD from $BOARDS_DIR onto $SDCARD_DEV ?"
 
 echo
-echo "Installing spl, u-boot and kernel for $BOARD onto $SDCARD_DEV ..."
+echo "Installing spl, u-boot and kernel for $BOARD$LCD onto $SDCARD_DEV ..."
 
 dd if="$BOARDS_DIR/$ARCH/$BOARD/u-boot-sunxi-with-spl.bin" of="$SDCARD_DEV" bs=1024 seek=8
 dd if="$BOARDS_DIR/uEnv-img.bin" of="$SDCARD_DEV" bs=1024 seek=544
-cp "$BOARDS_DIR/$ARCH/$BOARD/script.bin" "$UBOOT_MOUNT"
+cp "$BOARDS_DIR/$ARCH/$BOARD/script$LCD.bin" "$UBOOT_MOUNT"
 cp "$UBOOT_MOUNT/uImage.$ARCH" "$UBOOT_MOUNT/uImage"
 sync
 
