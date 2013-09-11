@@ -91,7 +91,7 @@ yesno () {
         echo -n "Press enter to continue, CTRL+C to cancel"
         read
     else
-        dialog --yesno "$1" 20 70
+        dialog --yesno "$1" 20 76
     fi
 }
 
@@ -100,7 +100,7 @@ if [ -z "$BOARD" ]; then
     yesno "Your sdcard has been detected at $SDCARD_DEV. If this is wrong this utility may corrupt data on the detected disk! Is $SDCARD_DEV the correct disk to install the spl, u-boot and uEnv too ?"
 
     TMPFILE=$(mktemp)
-    dialog --menu "Select your Allwinner board" 20 70 30 "${BOARDS[@]}" 2> $TMPFILE
+    dialog --menu "Select your Allwinner board" 20 76 30 "${BOARDS[@]}" 2> $TMPFILE
     BOARD="$(cat $TMPFILE)"
     rm $TMPFILE
 fi
@@ -134,7 +134,7 @@ echo "Installing spl, u-boot and kernel for $BOARD$LCD onto $SDCARD_DEV ..."
 
 dd if="$BOARDS_DIR/$ARCH/$BOARD/u-boot-sunxi-with-spl.bin" of="$SDCARD_DEV" bs=1024 seek=8
 dd if="$BOARDS_DIR/uEnv-img.bin" of="$SDCARD_DEV" bs=1024 seek=544
-cp "$BOARDS_DIR/$ARCH/$BOARD/script$LCD.bin" "$UBOOT_MOUNT"
+cp "$BOARDS_DIR/$ARCH/$BOARD/script$LCD.bin" "$UBOOT_MOUNT/script.bin"
 cp "$UBOOT_MOUNT/uImage.$ARCH" "$UBOOT_MOUNT/uImage"
 sync
 
