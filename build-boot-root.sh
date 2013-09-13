@@ -195,6 +195,9 @@ cp -p rootfs-resize.service $DESTDIR/rootfs/usr/lib/systemd/system
 ln -s /usr/lib/systemd/system/rootfs-resize.service \
   $DESTDIR/rootfs/etc/systemd/system/multi-user.target.wants/rootfs-resize.service
 touch $DESTDIR/rootfs/.rootfs-repartition
+# Add rc.local
+mkdir -p $DESTDIR/etc/rc.d
+cp -p rc.local $DESTDIR/etc/rc.d
 popd
 
 echo

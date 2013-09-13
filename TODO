@@ -1,7 +1,3 @@
--add rc.local to tweak cpufreq? :
- http://linux-sunxi.org/Cpufreq
--look into A10s reboot issue (seen on various a10s boards)
--look into high load issue
 -merge sun7i nand improvements
 -fix emac phy setup when cable gets inserted after boot (sun7i improvements)
  -drop link wait ?
@@ -37,10 +33,6 @@
  -add full-duplex support to audio-codec + i2s code (take from a13/a10s/a20
   source dumps)
  -according to a10_source_1.5 sun4i hdmi has no rx/tx ctrl just like sun7i
-
--A10s gpio-int:
- https://github.com/amery/linux-sunxi/commit/e94c07323b3667130eedf1f833c12ccb80fd820d
- Need to fix in gpio-sunxi.c as well
 
 -take photos of devices + create wiki pages so people can easily identify
  which device they have

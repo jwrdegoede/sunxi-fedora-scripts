@@ -8,7 +8,7 @@ Quickstart guide
 2) Make sure the card is not mounted, run "mount" and if the card shows
    up in the output umount its partitions
 3) Write the img file to the card, ie as root do:
-   xzcat Fedora-19-a10-armhfp-r1.img.xz > /dev/mmcblk0
+   xzcat Fedora-19-a10-armhfp-r2.img.xz > /dev/mmcblk0
    sync
 4) The card is not yet ready for use! Since the A10 u-boot is board
    specific, the image comes without any uboot install, follow the next
@@ -35,7 +35,7 @@ Quickstart guide
    11a) Configure networking, note:
         * If you've an A10 board with wired ethernet and you want to use dhcp
           you don't need to do anything.
-        * If you've an A20 board, your ethernet will have a random mac-address,
+        * If you've an A20 board, your ethernet may have a random mac-address,
           so if you want to configure a static ip-address and want it to stick
           across reboots, go to the ethernet-tab, select the mac-address field
           and delete its contents, so that the static ip address you're
@@ -51,7 +51,10 @@ Supported Devices:
 ------------------
 
 Fedora 19 ARM for Allwinner A10 has been tested with the following devices:
+* A10s-OLinuXino-MICRO (Olimex)
+* A13-OLinuXino (Olimex)
 * A13-OLinuXino-MICRO (Olimex)
+* A20-OLinuXino-MICRO (Olimex)
 * Auxtek T003 hdmi tv stick
 * Auxtek T004 hdmi tv stick
 * BA10 TV Box
@@ -70,9 +73,6 @@ Fedora 19 ARM for Allwinner A10 has been tested with the following devices:
 Fedora 19 ARM should also work on the following devices:
 * A10 tablet sold under various names (whitelabel)
 * A13 tablet sold under various names (whitelabel)
-* A10s-OLinuXino-MICRO (Olimex)
-* A13-OLinuXino (Olimex)
-* A20-OLinuXino-MICRO (Olimex)
 * Coby MID7042 tablet
 * Coby MID8042 tablet
 * Coby MID9742 tablet
@@ -83,6 +83,7 @@ Fedora 19 ARM should also work on the following devices:
 * Hackberry development board
 * Hyundai a7hd tablet
 * iNet-97F Rev.2 (and clones) tablet
+* Marsboard A10
 * Mele A1000/A2000 512 MB RAM
 * Mele A3700
 * Mini-X 512 MB RAM
@@ -90,6 +91,7 @@ Fedora 19 ARM should also work on the following devices:
 * pcDuino development board
 * Point of View ProTab 2 IPS 9" tablet
 * Point of View ProTab 2 IPS tablet with 3g
+* Sanei N90
 * XZPAD700 7" tablet
 
 Configuring the display output
@@ -156,19 +158,19 @@ Fedora 19 ARM for Allwinner A10 supports the following components:
 * CPU + PMU + RAM
 * Serial ports
 * MMC cards
-* Internal NAND storage (*)
+* Internal NAND storage
 * Framebuffer on lcd / vga / hdmi / composite video
 * Sound both analog out and over hdmi
-* OTG USB controller (*)
+* OTG USB controller
 * Both standard USB host controllers
 * Wifi
 * Wired Ethernet
 * SATA
-* IR (untested at this time) (*)
-
-*) Not supported on A20, the A20 support in the Fedora 19 A10 images is new,
-and as such the driver code for these has not been forward-ported from the
-Allwinner source dump to the sunxi-3.4 kernel the Fedora 19 A10 images use yet.
+* IR (untested at this time)
+* SPI (as module, not supported on A20)
+* "tablet" keys on olinuxino boards
+* 7 and 10 inch lcd displays on olinuxino boards (requires selecting the
+  right config in select-board.sh
 
 
 Unsupported hardware components:
@@ -176,13 +178,11 @@ Unsupported hardware components:
 
 The following components require various proprietary blobs to be used, and
 as such are not supported in the Fedora images. The kernel drivers for them
-are present (usually as modules) (*), so if you add the necessary blobs you
-might get these to work:
+are present (usually as modules), so if you add the necessary blobs you might
+get these to work:
 * Mali 400 GPU
 * Cedar hardware video & audio decoding and encoding engine
 * G2D 2d engine
-
-*) Except for the A20
 
 
 Differences from stock Fedora
