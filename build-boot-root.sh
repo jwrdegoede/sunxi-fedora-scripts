@@ -41,11 +41,11 @@ A10_BOARDS="a10_mid_1gb ba10_tv_box coby_mid7042 coby_mid8042 coby_mid9742 cubie
 A13_BOARDS="a13_mid a13-olinuxino a13-olinuxinom xzpad700"
 A10S_BOARDS="a10s-olinuxino-m auxtek-t003 auxtek-t004 mk802_a10s r7-tv-dongle wobo-i5"
 A20_BOARDS="a20-olinuxino_micro cubieboard2"
-UBOOT_TAG=fedora-19-13092013
-KERNEL_CONFIG_TAG=fedora-19-13092013
-KERNEL_TAG=fedora-19-13092013
-SUNXI_BOARDS_TAG=fedora-19-13092013
-SCRIPTS_TAG=fedora-19-13092013
+UBOOT_TAG=fedora-19-14092013
+KERNEL_CONFIG_TAG=fedora-19-14092013
+KERNEL_TAG=fedora-19-14092013
+SUNXI_BOARDS_TAG=fedora-19-14092013
+SCRIPTS_TAG=fedora-19-14092013
 
 for i in "$@"; do
     case $i in
@@ -196,8 +196,8 @@ ln -s /usr/lib/systemd/system/rootfs-resize.service \
   $DESTDIR/rootfs/etc/systemd/system/multi-user.target.wants/rootfs-resize.service
 touch $DESTDIR/rootfs/.rootfs-repartition
 # Add rc.local
-mkdir -p $DESTDIR/etc/rc.d
-cp -p rc.local $DESTDIR/etc/rc.d
+mkdir -p $DESTDIR/rootfs/etc/rc.d
+cp -p rc.local $DESTDIR/rootfs/etc/rc.d
 popd
 
 echo
