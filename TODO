@@ -1,3 +1,4 @@
+-check kernel blocking still is done properly
 -merge sun7i nand improvements
 -fix emac phy setup when cable gets inserted after boot (sun7i improvements)
  -drop link wait ?

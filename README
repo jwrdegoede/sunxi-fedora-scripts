@@ -184,6 +184,11 @@ get these to work:
 * Cedar hardware video & audio decoding and encoding engine
 * G2D 2d engine
 
+Note that the drivers for these need some memory to be reserved at boot, and
+since they are not supported by default in the Fedora images, this memory
+reservation has been disabled. To reserve the memory edit /boot/uEnv.txt and
+remove the kernel cmdline options which disable the memory reservation.
+
 
 Differences from stock Fedora
 -----------------------------
