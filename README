@@ -60,6 +60,7 @@ Fedora 19 ARM for Allwinner A10 has been tested with the following devices:
 * BA10 TV Box
 * Cubieboard development board 1024 MB RAM
 * Cubieboard2 (A20) development board
+* Cubietruck development board
 * Gooseberry development board
 * Mele A1000G/A2000G 1024 MB RAM
 * Mini-X 1024 MB RAM
@@ -84,9 +85,11 @@ Fedora 19 ARM should also work on the following devices:
 * Hyundai a7hd tablet
 * iNet-97F Rev.2 (and clones) tablet
 * Marsboard A10
+* Megafeis A08
 * Mele A1000/A2000 512 MB RAM
 * Mele A3700
 * Mini-X 512 MB RAM
+* Mini-X with A10s soc
 * mk802 (with female mini hdmi) 1024 MB RAM
 * pcDuino development board
 * Point of View ProTab 2 IPS 9" tablet
@@ -133,8 +136,20 @@ Some per display type notes:
  disp.screen0_output_type=4 disp.screen0_output_mode=1024x768
 
 
+How to power your allwinner device
+----------------------------------
+
+For reliable operation it is important that your allwinner device is properly
+powered. Some users try to power their allwinner development boards through
+the power pin on the serial port / uart connector. This is a very bad idea!
+and will almost always result in unreliable operation. Instaed always power
+your allwinner device over the barrel connector intended for that using,
+using a quality, reliable power supply.
+
+
 USB controller caveats
 ----------------------
+
 The OTG USB controller in host mode only supports a limited number of
 devices, plugging in a hub + mouse + keyboard typically will make either
 the mouse or keyboard not work. This is a hardware limitation which we
@@ -149,6 +164,12 @@ On tablets and the gooseberry unfortunately only the otg connector is
 available. One solution there is using a single usb-device which is
 both a keyboard and a mouse at the same time. IE the receiver for logitech
 wireless desktop sets.
+
+
+Known Issues
+------------
+* The broadcom sdio wifi found in the Auxtek T004 hdmi-stick and on the
+  Cubietruck is not supported
 
 
 Supported hardware components / features:
