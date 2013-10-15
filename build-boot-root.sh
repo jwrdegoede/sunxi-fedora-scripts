@@ -37,10 +37,10 @@
 # https://github.com/jwrdegoede/linux-sunxi.git
 
 KERNER_VER=3.4
-A10_BOARDS="A10_MID_1GB ba10_tv_box Coby_MID7042 Coby_MID8042 Coby_MID9742 Cubieboard Cubieboard_512 DNS_M82 EOMA68_A10 Gooseberry_A721 H6 Hackberry Hyundai_A7HD INet97F-II Marsboard_A10 Mele_A1000 Mele_A1000G Mele_A3700 Mini-X Mini-X-1Gb mk802 mk802-1gb mk802ii pcDuino PoV_ProTab2_IPS9 PoV_ProTab2_IPS_3g Sanei_N90 uhost_u1a"
-A13_BOARDS="A13_MID A13-OLinuXino A13-OLinuXinoM xzpad700"
-A10S_BOARDS="A10s-OLinuXino-M Auxtek-T003 Auxtek-T004 Megafeis_A08 Mini-X_A10s mk802_a10s r7-tv-dongle wobo-i5"
-A20_BOARDS="A20-OLinuXino_MICRO Cubieboard2 Cubietruck"
+A10_BOARDS="a10_mid_1gb ba10_tv_box coby_mid7042 coby_mid8042 coby_mid9742 cubieboard cubieboard_512 dns_m82 eoma68_a10 gooseberry_a721 h6 hackberry hyundai_a7hd inet97f-ii marsboard_a10 mele_a1000 mele_a1000g mele_a3700 mini-x mini-x-1gb mk802 mk802-1gb mk802ii pcduino pov_protab2_ips9 pov_protab2_ips_3g sanei_n90 uhost_u1a"
+A13_BOARDS="a13_mid a13-olinuxino A13-olinuxinom xzpad700"
+A10S_BOARDS="a10s-olinuxino-m auxtek-t003 auxtek-t004 megafeis_a08 mini-x_a10s mk802_a10s r7-tv-dongle wobo-i5"
+A20_BOARDS="a20-olinuxino_micro cubieboard2 cubietruck eu3000"
 UBOOT_TAG=fedora-19-13102013
 KERNEL_CONFIG_TAG=fedora-19-13102013
 KERNEL_TAG=fedora-19-13102013
@@ -80,32 +80,24 @@ mkdir $DESTDIR/uboot/boards
 # Note the changing board configs always force a rebuild
 mkdir $DESTDIR/uboot/boards/sun4i
 for i in $A10_BOARDS; do
-    UPPERCASE=$i
-    i=$(echo $i | tr '[:upper:]' '[:lower:]')
-    make -j4 CROSS_COMPILE=arm-linux-gnu- O=$i $UPPERCASE
+    make -j4 CROSS_COMPILE=arm-linux-gnu- O=$i $i
     mkdir $DESTDIR/uboot/boards/sun4i/$i
     cp $i/u-boot-sunxi-with-spl.bin $DESTDIR/uboot/boards/sun4i/$i
 done
 mkdir $DESTDIR/uboot/boards/sun5i
 for i in $A13_BOARDS; do
-    UPPERCASE=$i
-    i=$(echo $i | tr '[:upper:]' '[:lower:]')
-    make -j4 CROSS_COMPILE=arm-linux-gnu- O=$i $UPPERCASE
+    make -j4 CROSS_COMPILE=arm-linux-gnu- O=$i $i
     mkdir $DESTDIR/uboot/boards/sun5i/$i
     cp $i/u-boot-sunxi-with-spl.bin $DESTDIR/uboot/boards/sun5i/$i
 done
 for i in $A10S_BOARDS; do
-    UPPERCASE=$i
-    i=$(echo $i | tr '[:upper:]' '[:lower:]')
-    make -j4 CROSS_COMPILE=arm-linux-gnu- O=$i $UPPERCASE
+    make -j4 CROSS_COMPILE=arm-linux-gnu- O=$i $i
     mkdir $DESTDIR/uboot/boards/sun5i/$i
     cp $i/u-boot-sunxi-with-spl.bin $DESTDIR/uboot/boards/sun5i/$i
 done
 mkdir $DESTDIR/uboot/boards/sun7i
 for i in $A20_BOARDS; do
-    UPPERCASE=$i
-    i=$(echo $i | tr '[:upper:]' '[:lower:]')
-    make -j4 CROSS_COMPILE=arm-linux-gnu- O=$i $UPPERCASE
+    make -j4 CROSS_COMPILE=arm-linux-gnu- O=$i $i
     mkdir $DESTDIR/uboot/boards/sun7i/$i
     cp $i/u-boot-sunxi-with-spl.bin $DESTDIR/uboot/boards/sun7i/$i
 done
@@ -116,7 +108,6 @@ pushd sunxi-boards
 [ -z "$NOCLEAN" ] && git clean -dxf
 for lcd in "" "-lcd7" "-lcd10"; do
     for i in $A10_BOARDS; do
-        i=$(echo $i | tr '[:upper:]' '[:lower:]')
         if [ ! -f sys_config/a10/$i$lcd.fex ]; then
             continue
         fi
@@ -125,7 +116,6 @@ for lcd in "" "-lcd7" "-lcd10"; do
             $DESTDIR/uboot/boards/sun4i/$i/script$lcd.bin
     done
     for i in $A13_BOARDS; do
-        i=$(echo $i | tr '[:upper:]' '[:lower:]')
         if [ ! -f sys_config/a13/$i$lcd.fex ]; then
             continue
         fi
@@ -134,7 +124,6 @@ for lcd in "" "-lcd7" "-lcd10"; do
             $DESTDIR/uboot/boards/sun5i/$i/script$lcd.bin
     done
     for i in $A10S_BOARDS; do
-        i=$(echo $i | tr '[:upper:]' '[:lower:]')
         if [ ! -f sys_config/a10s/$i$lcd.fex ]; then
             continue
         fi
@@ -143,7 +132,6 @@ for lcd in "" "-lcd7" "-lcd10"; do
             $DESTDIR/uboot/boards/sun5i/$i/script$lcd.bin
     done
     for i in $A20_BOARDS; do
-        i=$(echo $i | tr '[:upper:]' '[:lower:]')
         if [ ! -f sys_config/a20/$i$lcd.fex ]; then
             continue
         fi
