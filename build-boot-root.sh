@@ -37,7 +37,7 @@
 # https://github.com/jwrdegoede/linux-sunxi.git
 
 KERNER_VER=3.4
-A10_BOARDS="a10_mid_1gb ba10_tv_box coby_mid7042 coby_mid8042 coby_mid9742 cubieboard cubieboard_512 dns_m82 eoma68_a10 gooseberry_a721 h6 hackberry hyundai_a7hd inet97f-ii marsboard_a10 mele_a1000 mele_a1000g mele_a3700 mini-x mini-x-1gb mk802 mk802-1gb mk802ii pcduino pov_protab2_ips9 pov_protab2_ips_3g sanei_n90 uhost_u1a"
+A10_BOARDS="a10_mid_1gb ba10_tv_box coby_mid7042 coby_mid8042 coby_mid9742 cubieboard cubieboard_512 dns_m82 eoma68_a10 gooseberry_a721 h6 hackberry hyundai_a7hd inet97f-ii jesurun-q5 marsboard_a10 mele_a1000 mele_a1000g mele_a3700 mini-x mini-x-1gb mk802 mk802-1gb mk802ii pcduino pov_protab2_ips9 pov_protab2_ips_3g sanei_n90 uhost_u1a"
 A13_BOARDS="a13_mid a13-olinuxino A13-olinuxinom xzpad700"
 A10S_BOARDS="a10s-olinuxino-m auxtek-t003 auxtek-t004 megafeis_a08 mini-x_a10s mk802_a10s r7-tv-dongle wobo-i5"
 A20_BOARDS="a20-olinuxino_micro cubieboard2 cubietruck eu3000"
