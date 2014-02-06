@@ -26,7 +26,6 @@ if [ "$(id -u)" != 0 ]; then
    exit 1
 fi
 
-LOOP=loop5
 IMG_IN="$1"
 IMG_OUT="$2"
 UBOOT="$(pwd)/uboot"
@@ -39,7 +38,8 @@ if [ -z "$NOCOPY" ]; then
 fi
 
 echo "Setting up loopback mount of $IMG_OUT and its partitions"
-losetup "/dev/$LOOP" "$IMG_OUT"
+losetup -f "$IMG_OUT"
+LOOP="$(losetup -j "$IMG_OUT" |sed 's/:.*//;s,.*/,,' |tail -1)"
 kpartx -a "/dev/$LOOP"
 udevadm settle
 e2label "/dev/mapper/${LOOP}p1" uboot
