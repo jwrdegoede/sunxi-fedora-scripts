@@ -19,14 +19,11 @@
 # this script found on your sdcard, as that contains all the git-tags used
 # to build the sdcard image.
 #
-# This script must be run under Fedora-18 x86_64, with the following
+# This script must be run under Fedora-20, with the following
 # packages installed:
 # gcc-arm-linux-gnu
 # uboot-tools
-#
-# Also the fex2bin utility from:
-# https://github.com/linux-sunxi/sunxi-tools.git
-# (not yet packaged) needs to be available in the PATH somewhere
+# sunxi-tools
 #
 # This script must be run from a directory which contains clones of the
 # following git repositories:
