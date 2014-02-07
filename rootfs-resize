@@ -104,7 +104,7 @@ if [[ -f /.rootfs-repartition ]]; then
 
   # HDG: hardcode partition start for now otherwise alignment messes things up
   # See: https://bugzilla.redhat.com/show_bug.cgi?id=974631
-  echo -e "d\n$PNUM\nn\np\n$PNUM\n2001954\n\np\nw\n"|fdisk $DEV >/dev/null 2>&1 || true
+  echo -e "d\n$PNUM\nn\np\n$PNUM\n1251954\n\np\nw\n"|fdisk $DEV >/dev/null 2>&1 || true
   echo "$0: Repartition done, rebooting for next phase of resize."
   touch /.rootfs-resize
   rm -f /.rootfs-repartition
