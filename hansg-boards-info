@@ -4,7 +4,7 @@ BOARD:		CPU:	DRAM:				FLASH:				WIFI:		PMU:
 ---------------------------------------------------------------------------------------------------------------
 a13-olinuxinom  A13	1x hynix h5tq2g83bfr h9c 149ak	None				None		None
 auxtek-t003	A10s	4x 256x8ddr31202		hynix h27ubg8t2btr bc 304a	rtl8188eus	axp152
-auxtek-t004	A10s	2x hynix h5tq2g83bfr h9c 204v	29f32g08cbaca			w01 t0c9002 1237axp152
+auxtek-t004	A10s	2x hynix h5tq2g83bfr h9c 204v	29f32g08cbaca			w01 toc9002 (*) axp152
 ba10_tv_box	A10	4x hynix h5tq2g83cfr h9c 234v	hynix h27ucg8t2atr bc 233a	rtl8188ctv	axp209
 cubieboard	A10	2x gt gt8ub256m16bp-bh		samsung k9gbg08u0a scb0		None		axp209
 goosberry_a721	A10	4x 1215sbx v73cag01808raj19	29f32g08cbaca			rtl8188ctv	axp209
@@ -17,3 +17,7 @@ mk802ii		A10	4x hynix h5tq2g83cfr h9c 236vk	ys29f32g08cbacawp 1234		rtl8188cus
 r7		A10s	4x hynix h5tq2g83cfr h9c 202v	hynix h27ubg8t2btr bc 235f	rtl8189es	axp152
 uhost_u1a	A10	4x hynix h5tq2g83cfr h9c 233ak	hynix h27ubg8t2btr bc 229a	rtl8188cus	axp209
 wobo-i5		A10s	4x hynix h5tq2g83cfr h9c 238vk	hynix h27ubg8t2btr bc 302aa	rtl8188eus	axp209
+mele A100G Quad A31	8x hynix h5tq2g83efr pbc 302ak
+gt90h-v4	A23	2x nanya 512x8                  m? 29f128g08cjaba               rtl8723as       axp223     silead gsl3675
+
+*) bcm40181a2 on mmc1
