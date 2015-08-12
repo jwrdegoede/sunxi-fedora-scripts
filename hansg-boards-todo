@@ -1,0 +1,34 @@
+-Boards without u-boot support / a dts:
+ Wobo I5 (wip)
+ Gooseberry A721: http://linux-sunxi.org/Topwise_A721
+ UHost-U1A
+ Sinovoip-M2
+
+-Boards without otg in dts:
+Mele A1000G
+mk802
+mk802ii
+mk802-a10s
+auxtek-t004
+r7-tv-dongle
+a13-olinuxino-micro
+a31-colombus
+bananapro
+i12-tvbox
+a20-hummingbird
+
+-Boards without axp209.dtsi
++arch/arm/boot/dts/sun4i-a10-ba10-tvbox.dts
++arch/arm/boot/dts/sun4i-a10-chuwi-v7-cw0825.dts
++arch/arm/boot/dts/sun4i-a10-jesurun-q5.dts
++arch/arm/boot/dts/sun4i-a10-mini-xplus.dts
++arch/arm/boot/dts/sun4i-a10-mk802ii.dts
++arch/arm/boot/dts/sun4i-a10-olinuxino-lime.dts
++arch/arm/boot/dts/sun5i-a13-olinuxino.dts
++arch/arm/boot/dts/sun7i-a20-bananapro.dts
++arch/arm/boot/dts/sun7i-a20-hummingbird.dts
++arch/arm/boot/dts/sun7i-a20-i12-tvbox.dts  
++arch/arm/boot/dts/sun7i-a20-m3.dts
++arch/arm/boot/dts/sun7i-a20-olinuxino-lime.dts
++arch/arm/boot/dts/sun7i-a20-olinuxino-lime2.dts
++arch/arm/boot/dts/sun7i-a20-olinuxino-micro.dts

@@ -1,0 +1,33 @@
+Ippo_q8h_v1_2 (a23)
+-Touchscreen: gslX680 / gsl1688_a70 bus 0, addr 0x40, wake PH1, int PB5
+-Accelerometer:  Memsic MXC622X bus 1, addr 0x15:
+ https://github.com/linux-sunxi/linux-sunxi/blob/sunxi-3.4/drivers/gsensor/mxc622x.c
+
+Columbus (A31 development kit with 2048x1536 10" lcd)
+-Touchscreen: ft5x_ts bus 1, addr 0x38, wake PG10, int PG11
+-Accelerometer: mma8452 bus 2, addr 0x1d, int PA9
+
+Chuwi_V7_CW0825 (7" A10 tablet with 4:3 ips screen)
+-Touchscreen: ft5x_ts bus 2, addr 0x38, uses lots of io? see fex file
+-Accelerometer: mma7660 bus 1, addr 0x4c
+
+UTOO_P66 (6" A13 tablet with a portrait ips screen)
+-Touchscreen: chipone icn8313 bus 1, addr 0x40, wake PB3, int PG9
+-Accelerometer: bma250 bus 1, addr 0x08
+
+Wits_Pro_A20_DKT (A20 development kit with 1024x768 7" lcd)
+-Touchscreen: ft5x_ts bus 2, addr 0x38 ?, wake PB13, int PH21
+-Accelerometer: ? bus 1, addr ?
+
+ga10h (10" a33 tablet)
+-Touchscreen: gslX680 bus 0, addr 0x40, wake PH1, int PB5, power eldo1 3V
+-Accelerometer: Memsic MXC622X bus 1, addr 0x15, int PB6
+
+Ippo_q8h_v1_2_a33_1024x600 (iRilu a33)
+-Touchscreen: gslX680 / gsl1688_a70 bus 0, addr 0x40, wake PH1, int PB5, power eldo1 3V ?
+-Accelerometer:  Memsic MXC622X bus 1, addr 0x15:
+ https://github.com/linux-sunxi/linux-sunxi/blob/sunxi-3.4/drivers/gsensor/mxc622x.c
+
+gt90h_v04
+-Touchscreen: gslX680 / gsl1688_a70 bus 0, addr 0x40?, wake PH1, int PB5
+-Accelerometer:  Memsic MXC622X bus 1, addr 0x15?, int PB6
