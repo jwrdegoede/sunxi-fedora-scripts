@@ -29,5 +29,5 @@ Ippo_q8h_v1_2_a33_1024x600 (iRilu a33)
  https://github.com/linux-sunxi/linux-sunxi/blob/sunxi-3.4/drivers/gsensor/mxc622x.c
 
 gt90h_v04
--Touchscreen: gslX680 / gsl1688_a70 bus 0, addr 0x40?, wake PH1, int PB5
--Accelerometer:  Memsic MXC622X bus 1, addr 0x15?, int PB6
+-Touchscreen: gslX680 / gsl1688_a70 bus 0, addr 0x40, wake PH1, int PB5
+-Accelerometer:  Memsic MXC622X bus 1, addr 0x15, int PB6
