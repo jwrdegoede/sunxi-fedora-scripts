@@ -31,3 +31,14 @@ Ippo_q8h_v1_2_a33_1024x600 (iRilu a33)
 gt90h_v04
 -Touchscreen: gslX680 / gsl1688_a70 bus 0, addr 0x40, wake PH1, int PB5
 -Accelerometer:  Memsic MXC622X bus 1, addr 0x15, int PB6
+
+inet97fv2 / qware tablet pc pro3
+-Touchscreen: ft5x_ts / ft5302fe4
+
+inet98v_rev2 / Denver TAC-90011
+-Touchscreen: zet622x / ZEITEC zet6223wta
+-Accelerometer: Memsic MXC622X
+
+Empire_electronix_d709
+-Touchscreen: ft5x_ts / ft5302fe4
+-Accelerometer: Memsic MXC622X
