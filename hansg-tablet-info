@@ -37,8 +37,9 @@ inet97fv2 / qware tablet pc pro3
 -Accelerometer: bma250 bus 1, addr 0x18
 
 inet98v_rev2 / Denver TAC-90011
--Touchscreen: zet622x / ZEITEC zet6223wta
--Accelerometer: Memsic MXC622X
+-Touchscreen: zet622x / ZEITEC zet6223wta bus 1, addr 0x76, wake PB03, int PG11
+-Accelerometer: Memsic MXC622X bus 1, addr 0x15
+-Flash: 29F32G08CBA
 
 Empire_electronix_d709
 -Touchscreen: ft5x_ts / ft5302fe4
