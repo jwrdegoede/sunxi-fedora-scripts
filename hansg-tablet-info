@@ -44,3 +44,7 @@ inet98v_rev2 / Denver TAC-90011
 Empire_electronix_d709
 -Touchscreen: ft5x_ts / ft5302fe4
 -Accelerometer: Memsic MXC622X
+
+PointOfView protab2xxl (inet-1-rev05 board)
+-Touchscreen: ft5x_ts / ft5302fe4
+-Accelerometer: 
