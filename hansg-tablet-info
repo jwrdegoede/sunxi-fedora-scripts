@@ -32,7 +32,7 @@ gt90h_v04
 -Touchscreen: gslX680 / gsl1688_a70 bus 0, addr 0x40, wake PH1, int PB5
 -Accelerometer:  Memsic MXC622X bus 1, addr 0x15, int PB6
 
-inet97fv2 / qware tablet pc pro3
+inet97fv2 / qware tablet pc pro3 / cherry m677
 -Touchscreen: ft5x_ts / ft5302fe4 bus 2, addr 0x38, wake PA11, int PG09
 -Accelerometer: bma250 bus 1, addr 0x18
 
@@ -46,5 +46,34 @@ Empire_electronix_d709
 -Accelerometer: Memsic MXC622X
 
 PointOfView protab2xxl (inet-1-rev05 board)
--Touchscreen: ft5x_ts / ft5302fe4
+-Touchscreen: ft5x_ts
 -Accelerometer: 
+
+Ippo_q8h_v3 (a23)
+-Touchscreen: gsl1680
+-Accelerometer: 
+-Wifi: RTL8188ETV
+-Nand: Samsung K9LBG0UOM
+
+Ippo_q8h_v4.0 (blue a23)
+-Touchscreen: gsl1680
+-Accelerometer: 
+-Wifi: esp8089
+-Nand: Hynix H27UGC8T2ETR
+
+q8 94v-0 (pink a13)
+-Touchscreen: gsl1680
+-Accelerometer: 
+-Wifi: RTL8188ETV
+-Nand: M 29F32G08CBADA
+
+q8 ao721_v41 (white a23)
+-Touchscreen: gsl1680
+-Accelerometer: 
+-Wifi: esp8089
+-Nand: M 29F32G08CBADA
+
+inet-9f-rev03 (qw tb-g100)
+-Touchscreen: ft5406ee8
+-Accelerometer: 
+-Wifi: rtl8188cus
