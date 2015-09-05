@@ -1,8 +1,3 @@
-Ippo_q8h_v1_2 (a23)
--Touchscreen: gslX680 / gsl1688_a70 bus 0, addr 0x40, wake PH1, int PB5
--Accelerometer:  Memsic MXC622X bus 1, addr 0x15:
- https://github.com/linux-sunxi/linux-sunxi/blob/sunxi-3.4/drivers/gsensor/mxc622x.c
-
 Columbus (A31 development kit with 2048x1536 10" lcd)
 -Touchscreen: ft5x_ts bus 1, addr 0x38, wake PG10, int PG11
 -Accelerometer: mma8452 bus 2, addr 0x1d, int PA9
@@ -23,11 +18,6 @@ ga10h (10" a33 tablet)
 -Touchscreen: gslX680 bus 0, addr 0x40, wake PH1, int PB5, power eldo1 3V
 -Accelerometer: Memsic MXC622X bus 1, addr 0x15, int PB6
 
-Ippo_q8h_v1_2_a33_1024x600 (iRilu a33)
--Touchscreen: gslX680 / gsl1688_a70 bus 0, addr 0x40, wake PH1, int PB5, power eldo1 3V ?
--Accelerometer:  Memsic MXC622X bus 1, addr 0x15:
- https://github.com/linux-sunxi/linux-sunxi/blob/sunxi-3.4/drivers/gsensor/mxc622x.c
-
 gt90h_v04
 -Touchscreen: gslX680 / gsl1688_a70 bus 0, addr 0x40, wake PH1, int PB5
 -Accelerometer:  Memsic MXC622X bus 1, addr 0x15, int PB6
@@ -36,10 +26,11 @@ inet97fv2 / qware tablet pc pro3 / cherry m677
 -Touchscreen: ft5x_ts / ft5302fe4 bus 2, addr 0x38, wake PA11, int PG09
 -Accelerometer: bma250 bus 1, addr 0x18
 
-inet98v_rev2 / Denver TAC-90011
+inet98v_rev02 / Denver TAC-90011
 -Touchscreen: zet622x / ZEITEC zet6223wta bus 1, addr 0x76, wake PB03, int PG11
 -Accelerometer: Memsic MXC622X bus 1, addr 0x15
 -Flash: 29F32G08CBA
+-Wifi: rtl8188cus
 
 Empire_electronix_d709
 -Touchscreen: ft5x_ts / ft5302fe4
@@ -49,31 +40,60 @@ PointOfView protab2xxl (inet-1-rev05 board)
 -Touchscreen: ft5x_ts
 -Accelerometer: 
 
-Ippo_q8h_v3 (a23)
+inet-9f-rev03 (qw tb-g100)
+-Touchscreen: ft5406ee8 bus 2, addr 0x38, irq PH21, wakeup PB13, enable PI16
+-Accelerometer: bma250 bus 1, addr 0x18, irq PH00, irq PI10
+-Wifi: rtl8188cus
+
+pov protab2_ips9 / mb8850_v04:
+-Touchscreen: pixcir bus2, addr 0x5c, enable !PA5, wakeup !PB13, irq PH21
+-Accelerometer: bma250 bus1, addr 0x18, irq PH00, irq PI10
+-Wifi: rtl8188cus
+-Bluetooth: RDA 5875Y
+
+######################
+##### q8 tablets #####
+######################
+
+q8 94v-0 (a13, pink)
+-PCB: 94V-0
+-Touchscreen: gsl1680 bus 1, addr 0x40, wakeup PB3, irq PG11
+-Accelerometer: mc32x0 bus 1, addr 0x4c
+ https://github.com/gp-b2g/gp-peak-kernel/blob/master/drivers/misc/mc32x0.c
+-Wifi: RTL8188ETV
+-Nand: M 29F32G08CBADA
+
+q8h-v3 (a23)
+-PCB: Q8H-V3 2013 11 27
 -Touchscreen: gsl1680
 -Accelerometer: 
 -Wifi: RTL8188ETV
 -Nand: Samsung K9LBG0UOM
 
-Ippo_q8h_v4.0 (blue a23)
+q8 tj-a23-q88-v4.0 (a23, blue, Modoex)
+-PCB: TJ-A23-Q88-V4.0_20140815
 -Touchscreen: gsl1680
 -Accelerometer: 
 -Wifi: esp8089
 -Nand: Hynix H27UGC8T2ETR
 
-q8 94v-0 (pink a13)
--Touchscreen: gsl1680
--Accelerometer: 
--Wifi: RTL8188ETV
--Nand: M 29F32G08CBADA
-
-q8 ao721_v41 (white a23)
+q8 ao721_v41 (a23, white)
+-PCB: TW_AO721_V41 2014\07\05
 -Touchscreen: gsl1680
 -Accelerometer: 
 -Wifi: esp8089
 -Nand: M 29F32G08CBADA
 
-inet-9f-rev03 (qw tb-g100)
--Touchscreen: ft5406ee8
--Accelerometer: 
--Wifi: rtl8188cus
+Ippo_q8h_v1_2 (a23)
+-PCB: Q8H-V1.2 2014 08 02
+-Touchscreen: gslX680 / gsl1688_a70 bus 0, addr 0x40, wake PH1, int PB5
+-Accelerometer:  Memsic MXC622X bus 1, addr 0x15:
+ https://github.com/linux-sunxi/linux-sunxi/blob/sunxi-3.4/drivers/gsensor/mxc622x.c
+-Wifi/BT: RDA RDA5990P
+
+Ippo_q8h_v1_2_a33_1024x600 (a33, iRilu)
+-PCB: Q8H-V1.2 2014 08 02
+-Touchscreen: gslX680 / gsl1688_a70 bus 0, addr 0x40, wake PH1, int PB5, power eldo1 3V ?
+-Accelerometer:  Memsic MXC622X bus 1, addr 0x15:
+ https://github.com/linux-sunxi/linux-sunxi/blob/sunxi-3.4/drivers/gsensor/mxc622x.c
+-Wifi/BT: RDA RDA5990P
