@@ -45,10 +45,10 @@ Empire_electronix_d709
 -Touchscreen: ft5x_ts / ft5302fe4
 -Accelerometer: Memsic MXC622X
 
-PointOfView protab2xxl (inet-1-rev05 board)
+inet-1-rev05 (PointOfView protab2xxl)
 -10.1" 16:9 1024:600
--Touchscreen: ft5x_ts
--Accelerometer: 
+-Touchscreen: ft5406ee8 bus 2, addr 0x38, irq PH21, wakeup PB13
+-Accelerometer: bma250 bus 1, addr 0x18, irq PH00, irq PI10 ??
 
 inet-9f-rev03 (qw tb-g100)
 -7" 16:9 800:480
