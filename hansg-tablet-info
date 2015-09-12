@@ -73,7 +73,14 @@ q8 94v-0 (a13, pink)
 -Accelerometer: mc32x0 bus 1, addr 0x4c
  https://github.com/gp-b2g/gp-peak-kernel/blob/master/drivers/misc/mc32x0.c
 -Wifi: RTL8188ETV
--Nand: M 29F32G08CBADA
+-Nand: Micron 29F32G08CBADA
+
+q8 TZX-Q8-713B7 (a13)
+-7" 16:9 800:480
+-PCB: TZX-Q8-713B7
+-Touchscreen: IC: eKTF2127 Android-drv: EKT3632 
+-Wifi: RTL8188CTV
+-Nand: Micron 29F32G08CBACA
 
 q8h-v3 (a23)
 -7" 16:9 800:480
@@ -114,3 +121,10 @@ Ippo_q8h_v1_2_a33_1024x600 (a33, iRilu)
 -Accelerometer:  Memsic MXC622X bus 1, addr 0x15:
  https://github.com/linux-sunxi/linux-sunxi/blob/sunxi-3.4/drivers/gsensor/mxc622x.c
 -Wifi/BT: RDA RDA5990P
+
+q8 tzx-723q4 (a33)
+-7" 16:9 800:480
+-PCB: TZX-723Q4
+-Touchscreen: gsl1680
+-Accelerometer: dmard0?
+-Wifi: esp8089
