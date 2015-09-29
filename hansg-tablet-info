@@ -68,7 +68,7 @@ pov protab2_ips9 / mb8850_v04:
 
 q8 94v-0 (a13, pink)
 -7" 16:9 800:480
--PCB: 94V-0
+-PCB: 94V-0 (no other markings)
 -Touchscreen: gsl1680 bus 1, addr 0x40, wakeup PB3, irq PG11
 -Accelerometer: mc32x0 bus 1, addr 0x4c
  https://github.com/gp-b2g/gp-peak-kernel/blob/master/drivers/misc/mc32x0.c
@@ -90,19 +90,29 @@ q8h-v3 (a23)
 -Wifi: RTL8188ETV
 -Nand: Samsung K9LBG0UOM
 
+qa88-v1.3 (a23, front black, back light blue)
+-7" 16:9 800:480
+-PCB: QA88-V1.3 2014-03-15
+-Touchscreen: Zeitec ZET6251WMA, bus 0, addr 0x76, int PB5, wake PH1
+-Accelerometer: Memsic MXC622X, bus 1, addr 0x15
+-Wifi: esp8089
+-Nand: Samsung K9GBGD8U0M
+
 q8 tj-a23-q88-v4.0 (a23, blue, Modoex)
 -7" 16:9 800:480
 -PCB: TJ-A23-Q88-V4.0_20140815
 -Touchscreen: gsl1680
--Accelerometer: 
+-Accelerometer: mma7660
 -Wifi: esp8089
 -Nand: Hynix H27UGC8T2ETR
 
 q8 ao721_v41 (a23, white)
 -7" 16:9 800:480
 -PCB: TW_AO721_V41 2014\07\05
--Touchscreen: gsl1680
--Accelerometer: 
+-Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5
+-Accelerometer: mc32x0 bus 1, addr 0x4c, int PB06
+-Unknown: Unknown device at bus 1, addr 0x26, gets the bus stuck when probed
+ 0x26 * 2 == 0x4c, mc32x0 responding in a bad way ?
 -Wifi: esp8089
 -Nand: M 29F32G08CBADA
 
