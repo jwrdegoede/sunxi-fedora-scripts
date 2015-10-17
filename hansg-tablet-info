@@ -138,3 +138,12 @@ q8 tzx-723q4 (a33)
 -Touchscreen: gsl1680
 -Accelerometer: dmard0?
 -Wifi: esp8089
+
+#########################
+### non sunxi tablets ###
+#########################
+
+Cresta ctp828 7" blue
+-Rockchip rk3066
+
+
