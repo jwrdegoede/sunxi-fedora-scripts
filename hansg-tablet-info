@@ -82,6 +82,13 @@ q8 TZX-Q8-713B7 (a13)
 -Wifi: RTL8188CTV
 -Nand: Micron 29F32G08CBACA
 
+q8 TZX-713B V2.1 (a13, xi-electronics)
+-7" 16:9 800:480
+-PCB: TZX-713B V2.1 2013/06/07
+-Touchscreen: gsl1680 >?? bus 1, addr 0x40, wakeup PB3, irq PG11 ??<
+-Wifi: RTL8188ETV
+-Nand: Micron 29F32G08CBADA
+
 q8h-v3 (a23)
 -7" 16:9 800:480
 -PCB: Q8H-V3 2013 11 27
