@@ -46,6 +46,7 @@ Empire_electronix_d709
 -Accelerometer: Memsic MXC622X
 
 inet-1-rev05 (PointOfView protab2xxl)
+-PCB: iNet-1 board  wjh-Rev05
 -10.1" 16:9 1024:600
 -Touchscreen: ft5406ee8 bus 2, addr 0x38, irq PH21, wakeup PB13
 -Accelerometer: bma250 bus 1, addr 0x18, irq PH00, irq PI10 ??
@@ -158,5 +159,3 @@ q8 tzx-723q4 (a33)
 
 Cresta ctp828 7" blue
 -Rockchip rk3066
-
-
