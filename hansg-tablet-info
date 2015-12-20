@@ -42,7 +42,7 @@ inet98v_rev02 / Denver TAC-90011
 
 Empire_electronix_d709
 -7" 16:9 800:480
--Touchscreen: ft5x_ts bus 1, addr 0x38
+-Touchscreen: ft5x_ts bus 1, addr 0x38, irq PG11
 -Accelerometer: Memsic MXC622X bus 1, addr 0x15
 
 inet-1-rev05 (PointOfView protab2xxl)
