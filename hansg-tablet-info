@@ -5,7 +5,7 @@ Columbus (A31 development kit with 2048x1536 10" lcd)
 
 Chuwi_V7_CW0825 (7" A10 tablet with 4:3 ips screen)
 -7" 4:3 1024x768 IPS
--Touchscreen: ft5x_ts bus 2, addr 0x38, uses lots of io? see fex file
+-Touchscreen: ft5306de4 bus 2, addr 0x38, uses lots of io? see fex file
 -Accelerometer: mma7660 bus 1, addr 0x4c
 
 UTOO_P66 (6" A13 tablet with a portrait ips screen)
@@ -30,7 +30,7 @@ gt90h_v04 / gooweel 9"
 
 inet97fv2 / qware tablet pc pro3 / cherry m677
 -7" 16:9 800:480
--Touchscreen: ft5x_ts / ft5302fe4 bus 2, addr 0x38, wake PA11, int PG09
+-Touchscreen: ft5406ee8 bus 2, addr 0x38, wake PB13, int PH21
 -Accelerometer: bma250 bus 1, addr 0x18
 
 inet98v_rev02 / Denver TAC-90011
@@ -42,8 +42,8 @@ inet98v_rev02 / Denver TAC-90011
 
 Empire_electronix_d709
 -7" 16:9 800:480
--Touchscreen: ft5x_ts / ft5302fe4
--Accelerometer: Memsic MXC622X
+-Touchscreen: ft5x_ts bus 1, addr 0x38
+-Accelerometer: Memsic MXC622X bus 1, addr 0x15
 
 inet-1-rev05 (PointOfView protab2xxl)
 -PCB: iNet-1 board  wjh-Rev05
