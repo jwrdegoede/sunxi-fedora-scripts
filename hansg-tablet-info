@@ -25,7 +25,7 @@ ga10h (10" a33 tablet)
 
 gt90h_v04 / gooweel 9"
 -9" 16:9 1024:600
--Touchscreen: gslX680 / gsl1688_a70 bus 0, addr 0x40, wake PH1, int PB5
+-Touchscreen: gsl3675 bus 0, addr 0x40, wake PH1, int PB5, fw gsl3675
 -Accelerometer:  Memsic MXC622X bus 1, addr 0x15, int PB6
 
 inet97fv2 / qware tablet pc pro3 / cherry m677
@@ -42,7 +42,7 @@ inet98v_rev02 / Denver TAC-90011
 
 Empire_electronix_d709
 -7" 16:9 800:480
--Touchscreen: ft5x_ts bus 1, addr 0x38, irq PG11
+-Touchscreen: ft5302fe4 bus 1, addr 0x38, irq PG11
 -Accelerometer: Memsic MXC622X bus 1, addr 0x15
 
 inet-1-rev05 (PointOfView protab2xxl)
@@ -92,14 +92,15 @@ q8 TZX-Q8-713B7 (a13)
 q8 TZX-713B V2.1 (a13, xi-electronics)
 -7" 16:9 800:480
 -PCB: TZX-713B V2.1 2013/06/07
--Touchscreen: gsl1680 >?? bus 1, addr 0x40, wakeup PB3, irq PG11 ??<
+-Touchscreen: gsl1680 bus 1, addr 0x40, wakeup PB3, irq PG11, fw gsl1680e
 -Wifi: RTL8188ETV
 -Nand: Micron 29F32G08CBADA
 
 q8h-v3 (a23)
 -7" 16:9 800:480
 -PCB: Q8H-V3 2013 11 27
--Touchscreen: gsl1680
+-Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, fw gsl1688_a70
+ needs to run at 200KHz ???
 -Accelerometer: 
 -Wifi: RTL8188ETV
 -Nand: Samsung K9LBG0UOM
@@ -115,7 +116,7 @@ qa88-v1.3 (a23, front black, back light blue)
 q8 tj-a23-q88-v4.0 (a23, blue, Modoex)
 -7" 16:9 800:480
 -PCB: TJ-A23-Q88-V4.0_20140815
--Touchscreen: gsl1680
+-Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, fw gsl1680e_700
 -Accelerometer: mma7660
 -Wifi: esp8089
 -Nand: Hynix H27UGC8T2ETR
@@ -133,7 +134,7 @@ q8 ao721_v41 (a23, white)
 Ippo_q8h_v1_2 (a23)
 -7" 16:9 800:480
 -PCB: Q8H-V1.2 2014 08 02
--Touchscreen: gslX680 / gsl1688_a70 bus 0, addr 0x40, wake PH1, int PB5
+-Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, fw gsl1688_a70
 -Accelerometer:  Memsic MXC622X bus 1, addr 0x15:
  https://github.com/linux-sunxi/linux-sunxi/blob/sunxi-3.4/drivers/gsensor/mxc622x.c
 -Wifi/BT: RDA RDA5990P
@@ -149,7 +150,7 @@ Ippo_q8h_v1_2_a33_1024x600 (a33, iRilu)
 q8 tzx-723q4 (a33)
 -7" 16:9 800:480
 -PCB: TZX-723Q4
--Touchscreen: gsl1680
+-Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, fw gsl1680_7inch
 -Accelerometer: dmard0?
 -Wifi: esp8089
 
