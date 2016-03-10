@@ -69,6 +69,27 @@ Polaroid MID2809PXE04 / e98_mb v2.3
 -Touchscreen: gsl3670
 -Wifi: esp8089
 
+Difrence DIT4350 (4.3" A13 pink)
+-4.3" 16:9 480x272
+-PCB: INET 66V REV01 - Zeng-gc 2012-06-12
+-Touchscreen: solomon systech ssd2532qn6
+ https://github.com/Pivosgroup/buildroot-linux-kernel-m3/blob/master/drivers/amlogic/input/touch_screen/ssd253x-ts.c
+ Digitizer: rs4f 609029_v1.2
+-Accelerometer:  Memsic MXC622X bus 1, addr 0x15:
+ https://github.com/linux-sunxi/linux-sunxi/blob/sunxi-3.4/drivers/gsensor/mxc622x.c
+-Wifi: rtl8188etv
+
+Colorfly E708 Q1
+-7" 9:16 800x1280 IPS
+-PCB: cm-494-v0
+-Touchscreen: ilitek 2139qt004 bus 1, addr 0x41
+ https://github.com/BPI-SINOVOIP/BPI-M2-bsp/blob/master/linux-sunxi/drivers/input/touchscreen/ilitek_aimvF.c
+ Digitizer: A0216-F0-A
+-Accelerometer: stk8313 bus 2, addr 0x22
+ https://github.com/bbelos/rk3188-kernel/blob/master/drivers/input/sensors/accel/stk831x.c
+-Wifi: rtl8188etv
+
+
 ######################
 ##### q8 tablets #####
 ######################
