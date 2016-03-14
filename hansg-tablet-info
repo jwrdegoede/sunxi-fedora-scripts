@@ -25,7 +25,9 @@ ga10h (10" a33 tablet)
 
 gt90h_v04 / gooweel 9"
 -9" 16:9 1024:600
+-PCB: GT90H-V4 2013/12/27
 -Touchscreen: gsl3675 bus 0, addr 0x40, wake PH1, int PB5, fw gsl3675
+ LDO: none
 -Accelerometer:  Memsic MXC622X bus 1, addr 0x15, int PB6
 
 inet97fv2 / qware tablet pc pro3 / cherry m677
@@ -66,8 +68,9 @@ pov protab2_ips9 / mb8850_v04:
 Polaroid MID2809PXE04 / e98_mb v2.3
 -9" 16:9
 -PCB: e98_mb v2.3 multilaser
--Touchscreen: gsl3670
+-Touchscreen: gsl3670 bus 0, addr 0x40, wake PH1, int PB5, LDO: none
 -Wifi: esp8089
+-Nand: Hynix H27UCG8T2ETR
 
 Difrence DIT4350 (4.3" A13 pink)
 -4.3" 16:9 480x272
@@ -80,7 +83,7 @@ Difrence DIT4350 (4.3" A13 pink)
 -Wifi: rtl8188etv
 
 Colorfly E708 Q1
--7" 9:16 800x1280 IPS
+-7" 10:16 800x1280 IPS
 -PCB: cm-494-v0
 -Touchscreen: ilitek 2139qt004 bus 1, addr 0x41
  https://github.com/BPI-SINOVOIP/BPI-M2-bsp/blob/master/linux-sunxi/drivers/input/touchscreen/ilitek_aimvF.c
@@ -88,6 +91,14 @@ Colorfly E708 Q1
 -Accelerometer: stk8313 bus 2, addr 0x22
  https://github.com/bbelos/rk3188-kernel/blob/master/drivers/input/sensors/accel/stk831x.c
 -Wifi: rtl8188etv
+
+PHT_801H_A33_V1.0
+-8" 10:16 800x1280 IPS
+-PCB: PHT_801H_A33_V1.0 2015_03_16
+-Touchscreen: Silead GSL3676
+ Digitizer: DH0812A1-FPC150-V2
+-Wifi: RTL8703AS
+-Flash: Sandisk X45207133
 
 
 ######################
@@ -98,6 +109,7 @@ q8 94v-0 (a13, pink)
 -7" 16:9 800:480
 -PCB: 94V-0 (no other markings)
 -Touchscreen: gsl1680 bus 1, addr 0x40, wakeup PB3, irq PG11
+ LDO: none
 -Accelerometer: mc32x0 bus 1, addr 0x4c
  https://github.com/gp-b2g/gp-peak-kernel/blob/master/drivers/misc/mc32x0.c
 -Wifi: RTL8188ETV
@@ -121,7 +133,6 @@ q8h-v3 (a23)
 -7" 16:9 800:480
 -PCB: Q8H-V3 2013 11 27
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, fw gsl1688_a70
- needs to run at 200KHz ???
 -Accelerometer: 
 -Wifi: RTL8188ETV
 -Nand: Samsung K9LBG0UOM
@@ -138,9 +149,10 @@ q8 tj-a23-q88-v4.0 (a23, blue, Modoex)
 -7" 16:9 800:480
 -PCB: TJ-A23-Q88-V4.0_20140815
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, fw gsl1680e_700
+ LDO: ldo_io1 at 3000 mV
 -Accelerometer: mma7660
 -Wifi: esp8089
--Nand: Hynix H27UGC8T2ETR
+-Nand: Hynix H27UGC8T2ETR (or: H27UCG8T2ETR like Polaroid MID2809PXE04 ?)
 
 q8 ao721_v41 (a23, white)
 -7" 16:9 800:480
@@ -156,6 +168,7 @@ Ippo_q8h_v1_2 (a23)
 -7" 16:9 800:480
 -PCB: Q8H-V1.2 2014 08 02
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, fw gsl1688_a70
+ LDO: none
 -Accelerometer:  Memsic MXC622X bus 1, addr 0x15:
  https://github.com/linux-sunxi/linux-sunxi/blob/sunxi-3.4/drivers/gsensor/mxc622x.c
 -Wifi/BT: RDA RDA5990P
@@ -172,6 +185,7 @@ q8 tzx-723q4 (a33)
 -7" 16:9 800:480
 -PCB: TZX-723Q4
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, fw gsl1680_7inch
+ LDO: none
 -Accelerometer: dmard0?
 -Wifi: esp8089
 
