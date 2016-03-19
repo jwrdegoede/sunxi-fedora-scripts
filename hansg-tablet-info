@@ -107,6 +107,14 @@ INET_86DZ_REV01 (Lenco 7" A23)
 -Wifi: rtl8188etv
 -Flash: Samsung K9GBG08U0M
 
+dserve DSRV9703C
+-9.7" 4:# IPS 1024x768
+-PCB: 2#3G-WIFI-3.0 2012/04/26
+-Touchscreen: Focaltech FT5406EE8
+ Digitizer: PB97DR971
+-Wifi: rtl8188ctv
+-Flash: Micron 29F32G08CBACA
+
 
 ######################
 ##### q8 tablets #####
