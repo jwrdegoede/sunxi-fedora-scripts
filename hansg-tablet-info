@@ -134,6 +134,7 @@ q8 TZX-Q8-713B7 (a13)
 -7" 16:9 800:480
 -PCB: TZX-Q8-713B7
 -Touchscreen: IC: eKTF2127 Android-drv: EKT3632 
+ https://code.paulk.fr/feed/rss/tag/reverse-engineering
 -Wifi: RTL8188CTV
 -Nand: Micron 29F32G08CBACA
 
@@ -156,6 +157,7 @@ qa88-v1.3 (a23, front black, back light blue)
 -7" 16:9 800:480
 -PCB: QA88-V1.3 2014-03-15
 -Touchscreen: Zeitec ZET6251WMA, bus 0, addr 0x76, int PB5, wake PH1
+ https://github.com/wingrime/zet6221-ts-drv/
 -Accelerometer: Memsic MXC622X, bus 1, addr 0x15
 -Wifi: esp8089
 -Nand: Samsung K9GBGD8U0M
