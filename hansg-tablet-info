@@ -104,17 +104,26 @@ INET_86DZ_REV01 (Lenco 7" A23)
 -7" 16:9 1024x600
 -PCB: INET_86DZ_REV01 ZENG-gc 2013-11-14
 -Touchscreen: gsl1680 (bus 1, addr 0x40, wakeup PB3, irq PG11 ?)
+ Digitizer (original): FPC-TP070129(86VS)-00
 -Wifi: rtl8188etv
 -Flash: Samsung K9GBG08U0M
 
 dserve DSRV9703C
--9.7" 4:# IPS 1024x768
+-9.7" 4:3 IPS 1024x768
 -PCB: 2#3G-WIFI-3.0 2012/04/26
 -Touchscreen: Focaltech FT5406EE8
  Digitizer: PB97DR971
 -Wifi: rtl8188ctv
 -Flash: Micron 29F32G08CBACA
 
+polaroid mid2407pxe03 (a23)
+-7" 16:9
+-PCB: M86_MB V2.0
+-Touchscreen: GSL1680
+ Digitizer: PB70A1364
+-Accelerometer: mma7660 ? (ic: 263 7660)
+-Wifi: esp8089
+-Flash: Sandisk X445107001
 
 ######################
 ##### q8 tablets #####
