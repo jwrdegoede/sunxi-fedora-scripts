@@ -23,49 +23,49 @@ ga10h (10" a33 tablet)
 -Touchscreen: gslX680 bus 0, addr 0x40, wake PH1, int PB5, power eldo1 3V
 -Accelerometer: Memsic MXC622X bus 1, addr 0x15, int PB6
 
-gt90h_v04 / gooweel 9"
+gt90h_v04 / gooweel 9" (a23)
 -9" 16:9 1024:600
 -PCB: GT90H-V4 2013/12/27
 -Touchscreen: gsl3675 bus 0, addr 0x40, wake PH1, int PB5, fw gsl3675
  LDO: none
 -Accelerometer:  Memsic MXC622X bus 1, addr 0x15, int PB6
 
-inet97fv2 / qware tablet pc pro3 / cherry m677
+inet97fv2 / qware tablet pc pro3 / cherry m677 (a10)
 -7" 16:9 800:480
 -Touchscreen: ft5406ee8 bus 2, addr 0x38, wake PB13, int PH21
 -Accelerometer: bma250 bus 1, addr 0x18
 
-inet98v_rev02 / Denver TAC-90011
+inet98v_rev02 / Denver TAC-90011 (a13)
 -9" 16:9 800:480
 -Touchscreen: zet622x / ZEITEC zet6223wta bus 1, addr 0x76, wake PB03, int PG11
 -Accelerometer: Memsic MXC622X bus 1, addr 0x15
 -Flash: 29F32G08CBA
 -Wifi: rtl8188cus
 
-Empire_electronix_d709
+Empire_electronix_d709 (a13)
 -7" 16:9 800:480
 -Touchscreen: ft5302fe4 bus 1, addr 0x38, irq PG11
 -Accelerometer: Memsic MXC622X bus 1, addr 0x15
 
-inet-1-rev05 (PointOfView protab2xxl)
+inet-1-rev05 (PointOfView protab2xxl a10)
 -PCB: iNet-1 board  wjh-Rev05
 -10.1" 16:9 1024:600
 -Touchscreen: ft5406ee8 bus 2, addr 0x38, irq PH21, wakeup PB13
 -Accelerometer: bma250 bus 1, addr 0x18, irq PH00, irq PI10 ??
 
-inet-9f-rev03 (qw tb-g100)
+inet-9f-rev03 (qw tb-g100 a10)
 -7" 16:9 800:480
 -Touchscreen: ft5406ee8 bus 2, addr 0x38, irq PH21, wakeup PB13, enable PI16
 -Accelerometer: bma250 bus 1, addr 0x18, irq PH00, irq PI10
 -Wifi: rtl8188cus
 
-pov protab2_ips9 / mb8850_v04:
+pov protab2_ips9 / mb8850_v04 (a10)
 -Touchscreen: pixcir bus2, addr 0x5c, enable !PA5, wakeup !PB13, irq PH21
 -Accelerometer: bma250 bus1, addr 0x18, irq PH00, irq PI10
 -Wifi: rtl8188cus
 -Bluetooth: RDA 5875Y
 
-Polaroid MID2809PXE04 / e98_mb v2.3
+Polaroid MID2809PXE04 / e98_mb v2.3 (a23)
 -9" 16:9
 -PCB: e98_mb v2.3 multilaser
 -Touchscreen: gsl3670 bus 0, addr 0x40, wake PH1, int PB5, LDO: none
@@ -82,7 +82,7 @@ Difrence DIT4350 (4.3" A13 pink)
  https://github.com/linux-sunxi/linux-sunxi/blob/sunxi-3.4/drivers/gsensor/mxc622x.c
 -Wifi: rtl8188etv
 
-Colorfly E708 Q1
+Colorfly E708 Q1 (a31)
 -7" 10:16 800x1280 IPS
 -PCB: cm-494-v0
 -Touchscreen: ilitek 2139qt004 bus 1, addr 0x41
@@ -92,7 +92,7 @@ Colorfly E708 Q1
  https://github.com/bbelos/rk3188-kernel/blob/master/drivers/input/sensors/accel/stk831x.c
 -Wifi: rtl8188etv
 
-PHT_801H_A33_V1.0
+PHT_801H_A33_V1.0 (a33)
 -8" 10:16 800x1280 IPS
 -PCB: PHT_801H_A33_V1.0 2015_03_16
 -Touchscreen: Silead GSL3676
@@ -108,7 +108,7 @@ INET_86DZ_REV01 (Lenco 7" A23)
 -Wifi: rtl8188etv
 -Flash: Samsung K9GBG08U0M
 
-dserve DSRV9703C
+dserve DSRV9703C (a10)
 -9.7" 4:3 IPS 1024x768
 -PCB: 2#3G-WIFI-3.0 2012/04/26
 -Touchscreen: Focaltech FT5406EE8
@@ -120,7 +120,7 @@ polaroid mid2407pxe03 (a23)
 -7" 16:9
 -PCB: M86_MB V2.0
 -Touchscreen: GSL1680
- Digitizer: PB70A1364
+ Digitizer (original): PB70A1364
 -Accelerometer: mma7660 ? (ic: 263 7660)
 -Wifi: esp8089
 -Flash: Sandisk X445107001
