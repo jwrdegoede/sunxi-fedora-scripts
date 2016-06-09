@@ -133,7 +133,7 @@ q8 94v-0 (a13, pink)
 -7" 16:9 800:480
 -PCB: 94V-0 (no other markings)
 -Touchscreen: gsl1680 bus 1, addr 0x40, wakeup PB3, irq PG11
- LDO: none
+ LDO: none, fw gsl1680e, chip-id: 0xa0820000
 -Accelerometer: mc32x0 bus 1, addr 0x4c
  https://github.com/gp-b2g/gp-peak-kernel/blob/master/drivers/misc/mc32x0.c
 -Wifi: RTL8188ETV
@@ -175,7 +175,7 @@ q8 tj-a23-q88-v4.0 (a23, blue, Modoex)
 -7" 16:9 800:480
 -PCB: TJ-A23-Q88-V4.0_20140815
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, fw gsl1680e_700
- LDO: ldo_io1 at 3000 mV
+ LDO: ldo_io1 at 3000 mV, chip-id: 0xa0820000
 -Accelerometer: mma7660
 -Wifi: esp8089
 -Nand: Hynix H27UGC8T2ETR (or: H27UCG8T2ETR like Polaroid MID2809PXE04 ?)
@@ -211,7 +211,7 @@ q8 tzx-723q4 (a33)
 -7" 16:9 800:480
 -PCB: TZX-723Q4
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, fw gsl1680_7inch
- LDO: none
+ LDO: none, chip-id: 0xb4820000
 -Accelerometer: dmard0?
 -Wifi: esp8089
 
