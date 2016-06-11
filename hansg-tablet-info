@@ -66,9 +66,11 @@ pov protab2_ips9 / mb8850_v04 (a10)
 -Bluetooth: RDA 5875Y
 
 Polaroid MID2809PXE04 / e98_mb v2.3 (a23)
--9" 16:9
+-9" 16:9 800x480
 -PCB: e98_mb v2.3 multilaser
 -Touchscreen: gsl3670 bus 0, addr 0x40, wake PH1, int PB5, LDO: none
+ 1660x890 noswap noinvert, chip-id: 0x50910000
+-Unknown accelerometer: bus 1, addr 0x4c
 -Wifi: esp8089
 -Nand: Hynix H27UCG8T2ETR
 
@@ -103,7 +105,7 @@ PHT_801H_A33_V1.0 (a33)
 INET_86DZ_REV01 (Lenco 7" A23)
 -7" 16:9 1024x600
 -PCB: INET_86DZ_REV01 ZENG-gc 2013-11-14
--Touchscreen: gsl1680 (bus 1, addr 0x40, wakeup PB3, irq PG11 ?)
+-Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5 ?
  Digitizer (original): FPC-TP070129(86VS)-00
 -Wifi: rtl8188etv
 -Flash: Samsung K9GBG08U0M
@@ -119,7 +121,8 @@ dserve DSRV9703C (a10)
 polaroid mid2407pxe03 (a23)
 -7" 16:9
 -PCB: M86_MB V2.0
--Touchscreen: GSL1680
+-Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, LDO: ldoio1 3.3v,
+ 960x640, y-invert + x-invert, chip-id: 0xb3820000
  Digitizer (original): PB70A1364
 -Accelerometer: mma7660 ? (ic: 263 7660)
 -Wifi: esp8089
@@ -133,7 +136,9 @@ q8 94v-0 (a13, pink)
 -7" 16:9 800:480
 -PCB: 94V-0 (no other markings)
 -Touchscreen: gsl1680 bus 1, addr 0x40, wakeup PB3, irq PG11
- LDO: none, fw gsl1680e, chip-id: 0xa0820000
+ LDO: none, chip-id: 0xa0820000
+ With a13-q8-94v-0/GSL1680E_FW.fw: 800x480, inverted-x, swapped-x-y
+ With a23-tj-a23-q88-v4.0_20140815/GSL1680E_700_FW.fw: 1024x600, inverted-x
 -Accelerometer: mc32x0 bus 1, addr 0x4c
  https://github.com/gp-b2g/gp-peak-kernel/blob/master/drivers/misc/mc32x0.c
 -Wifi: RTL8188ETV
@@ -176,6 +181,7 @@ q8 tj-a23-q88-v4.0 (a23, blue, Modoex)
 -PCB: TJ-A23-Q88-V4.0_20140815
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, fw gsl1680e_700
  LDO: ldo_io1 at 3000 mV, chip-id: 0xa0820000
+ With a23-tj-a23-q88-v4.0_20140815/GSL1680E_700_FW.fw: 1024x600
 -Accelerometer: mma7660
 -Wifi: esp8089
 -Nand: Hynix H27UGC8T2ETR (or: H27UCG8T2ETR like Polaroid MID2809PXE04 ?)
