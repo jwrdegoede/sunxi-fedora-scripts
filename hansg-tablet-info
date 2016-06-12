@@ -105,7 +105,8 @@ PHT_801H_A33_V1.0 (a33)
 INET_86DZ_REV01 (Lenco 7" A23)
 -7" 16:9 1024x600
 -PCB: INET_86DZ_REV01 ZENG-gc 2013-11-14
--Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5 ?
+-Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id: 0xa0820000
+ With a23-inet86dz-rev01/D701HC_GSL1688E_DPT_PG 960x640 noswap noinvert
  Digitizer (original): FPC-TP070129(86VS)-00
 -Wifi: rtl8188etv
 -Flash: Samsung K9GBG08U0M
