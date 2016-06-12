@@ -127,6 +127,7 @@ polaroid mid2407pxe03 (a23)
 -Accelerometer: mma7660 ? (ic: 263 7660)
 -Wifi: esp8089
 -Flash: Sandisk X445107001
+-Unused? pmic settings: dldo1 3.3V, dldo2 3.3V, ldoio0 2.8V
 
 ######################
 ##### q8 tablets #####
