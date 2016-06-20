@@ -28,7 +28,7 @@ gt90h_v04 / gooweel 9" (a23)
 -PCB: GT90H-V4 2013/12/27
 -Touchscreen: gsl3675 bus 0, addr 0x40, wake PH1, int PB5, fw gsl3675
  LDO: none
--Accelerometer:  Memsic MXC622X bus 1, addr 0x15, int PB6
+-Accelerometer: Memsic MXC622X bus 1, addr 0x15, int PB6
 
 inet97fv2 / qware tablet pc pro3 / cherry m677 (a10)
 -7" 16:9 800:480
@@ -137,10 +137,9 @@ polaroid mid2407pxe03 (a23)
 q8 94v-0 (a13, pink)
 -7" 16:9 800:480
 -PCB: 94V-0 (no other markings)
--Touchscreen: gsl1680 bus 1, addr 0x40, wakeup PB3, irq PG11
- LDO: none, chip-id: 0xa0820000
- With a13-q8-94v-0/GSL1680E_FW.fw: 800x480, inverted-x, swapped-x-y
- With a23-tj-a23-q88-v4.0_20140815/GSL1680E_700_FW.fw: 1024x600, inverted-x
+-Touchscreen: gsl1680 bus 1, addr 0x40, wakeup PB3, irq PG11, chip-id 0xa0820000
+ a13-q8-94v-0/GSL1680E_FW.fw: 800x480, inverted-x, swapped-x-y
+ a23-tj-a23-q88-v4.0_20140815/GSL1680E_700_FW.fw: 1024x600, inverted-x
 -Accelerometer: mc32x0 bus 1, addr 0x4c
  https://github.com/gp-b2g/gp-peak-kernel/blob/master/drivers/misc/mc32x0.c
 -Wifi: RTL8188ETV
@@ -157,14 +156,16 @@ q8 TZX-Q8-713B7 (a13)
 q8 TZX-713B V2.1 (a13, xi-electronics)
 -7" 16:9 800:480
 -PCB: TZX-713B V2.1 2013/06/07
--Touchscreen: gsl1680 bus 1, addr 0x40, wakeup PB3, irq PG11, fw gsl1680e
+-Touchscreen: gsl1680 bus 1, addr 0x40, wakeup PB3, irq PG11, chip-id 0xa0820000
+ a23-tj-a23-q88-v4.0_20140815/GSL1680E_700_FW.fw: 1024x600
 -Wifi: RTL8188ETV
 -Nand: Micron 29F32G08CBADA
 
 q8h-v3 (a23)
 -7" 16:9 800:480
 -PCB: Q8H-V3 2013 11 27
--Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, fw gsl1688_a70
+-Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id 0xa0820000
+ a23-tj-a23-q88-v4.0_20140815/GSL1688_A70_FW.fw: 800x480, swapped-x-y
 -Accelerometer: 
 -Wifi: RTL8188ETV
 -Nand: Samsung K9LBG0UOM
@@ -181,9 +182,9 @@ qa88-v1.3 (a23, front black, back light blue)
 q8 tj-a23-q88-v4.0 (a23, blue, Modoex)
 -7" 16:9 800:480
 -PCB: TJ-A23-Q88-V4.0_20140815
--Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, fw gsl1680e_700
+-Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5,
  LDO: ldo_io1 at 3000 mV, chip-id: 0xa0820000
- With a23-tj-a23-q88-v4.0_20140815/GSL1680E_700_FW.fw: 1024x600
+ a23-tj-a23-q88-v4.0_20140815/GSL1680E_700_FW.fw: 1024x600
 -Accelerometer: mma7660
 -Wifi: esp8089
 -Nand: Hynix H27UGC8T2ETR (or: H27UCG8T2ETR like Polaroid MID2809PXE04 ?)
@@ -201,8 +202,8 @@ q8 ao721_v41 (a23, white)
 Ippo_q8h_v1_2 (a23)
 -7" 16:9 800:480
 -PCB: Q8H-V1.2 2014 08 02
--Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, fw gsl1688_a70
- LDO: none
+-Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id 0xa0820000
+ a23-tj-a23-q88-v4.0_20140815/GSL1688_A70_FW.fw: 800x480, swapped-x-y
 -Accelerometer:  Memsic MXC622X bus 1, addr 0x15:
  https://github.com/linux-sunxi/linux-sunxi/blob/sunxi-3.4/drivers/gsensor/mxc622x.c
 -Wifi/BT: RDA RDA5990P
@@ -210,7 +211,8 @@ Ippo_q8h_v1_2 (a23)
 Ippo_q8h_v1_2_a33_1024x600 (a33, iRilu)
 -7" 16:9 1024:600
 -PCB: Q8H-V1.2 2014 08 02
--Touchscreen: gslX680 / gsl1688_a70 bus 0, addr 0x40, wake PH1, int PB5, power eldo1 3V ?
+-Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id 0xa0820000
+ a23-tj-a23-q88-v4.0_20140815/GSL1688_A70_FW.fw: 800x480, swapped-x-y
 -Accelerometer:  Memsic MXC622X bus 1, addr 0x15:
  https://github.com/linux-sunxi/linux-sunxi/blob/sunxi-3.4/drivers/gsensor/mxc622x.c
 -Wifi/BT: RDA RDA5990P
@@ -218,10 +220,27 @@ Ippo_q8h_v1_2_a33_1024x600 (a33, iRilu)
 q8 tzx-723q4 (a33)
 -7" 16:9 800:480
 -PCB: TZX-723Q4
--Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, fw gsl1680_7inch
- LDO: none, chip-id: 0xb4820000
+-Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id 0xb4820000
+ a33-tzx-723q4/GSL1680_7INCH_FW.fw: 960x480, inverted-x
 -Accelerometer: dmard0?
 -Wifi: esp8089
+
+q8 v2.4-1118 (Jeroen's a33)
+-7" 16:9 1024:600
+-PCB: MAINBOARD_V2.4  Q8_V2.4_1118
+-Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5
+ a33-tzx-723q4/GSL1680_7INCH_FW.fw: 960x480
+ a33-Q8_V2.4_1118/GSL1680_FW_D702.fw 960x480
+-Wifi: rtl8089ftv
+-Nand: Hynix H27UCG8T2ETR
+
+q8 q8h-v1.5 (Jelle's a33 met sticker met a33/hd)
+-7" 16:9 1024:600
+-PCB: Q8H-V1.5 2015 0129
+-Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id 0xb4820000
+ a33-q8h-v1.5/GSL1688_A70_FW.fw: 960x640
+-Wifi: rtl8703as
+-Flash: I 29F64008AAMEI
 
 #########################
 ### non sunxi tablets ###
