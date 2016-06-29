@@ -19,5 +19,8 @@ uhost_u1a	A10	4x hynix h5tq2g83cfr h9c 233ak	hynix h27ubg8t2btr bc 229a	rtl8188c
 wobo-i5		A10s	4x hynix h5tq2g83cfr h9c 238vk	hynix h27ubg8t2btr bc 302aa	rtl8188eus	axp209
 mele A100G Quad A31	8x hynix h5tq2g83efr pbc 302ak
 gt90h-v4	A23	2x nanya 512x8                  m? 29f128g08cjaba               rtl8723as       axp223     silead gsl3675
-
-*) bcm40181a2 on mmc1
+cubietruck	A20									ap6210 (**)	axp209
+Wits_Pro DKT	A20									ap6476 (***)	axp209
+*)   bcm40181a2 on mmc1		mac 00:22:f4:41:35:f3
+**)  bcm40181a2 + bt on mmc3	mac 00:22:f4:b6:2c:34
+***) bcm40181a2 on mmc3		mac 00:22:f4:f7:3c:a5
