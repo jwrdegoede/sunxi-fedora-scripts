@@ -197,7 +197,8 @@ q8 tj-a23-q88-v4.0 (a23, blue, Modoex)
 q8 ao721_v41 (a23, white)
 -7" 16:9 800:480
 -PCB: TW_AO721_V41 2014\07\05
--Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5
+-Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id: 0xa0820000
+ a23-tj-a23-q88-v4.0_20140815/GSL1680E_700_FW.fw: 1024x600 inverted-x
 -Accelerometer: mc32x0 bus 1, addr 0x4c, int PB06
 -Unknown: Unknown device at bus 1, addr 0x26, gets the bus stuck when probed
  0x26 * 2 == 0x4c, mc32x0 responding in a bad way ?
@@ -263,6 +264,7 @@ a13-94v-0:		a082 a23-tj-a23-q88-v4.0_20140815/GSL1680E_700_FW.fw	1024x600 invert
 a13-tzx-713b-v2.1:	a082 a23-tj-a23-q88-v4.0_20140815/GSL1680E_700_FW.fw	1024x600
 a23-q8h-v3:		a082 a23-tj-a23-q88-v4.0_20140815/GSL1688_A70_FW.fw	 800x480 swapped-x-y
 a23-tj-a23-q88-v4.0:	a082 a23-tj-a23-q88-v4.0_20140815/GSL1680E_700_FW.fw	1024x600
+a23-tw-ao721-v41:	a082 a23-tj-a23-q88-v4.0_20140815/GSL1680E_700_FW.fw	1024x600 inverted-x
 a23-ippo-q8h-v1.2:	a082 a23-tj-a23-q88-v4.0_20140815/GSL1688_A70_FW.fw	 800x480 swapped-x-y
 a33-ippo-q8h-v1.2:	a082 a23-tj-a23-q88-v4.0_20140815/GSL1688_A70_FW.fw	 800x480 swapped-x-y
 a33-tzx-723q4:		b482 a33-Q8_V2.4_1118/GSL1680_FW_D702.fw		 960x480 inverted-x
