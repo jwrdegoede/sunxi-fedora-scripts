@@ -76,7 +76,7 @@ Polaroid MID2809PXE04 / e98_mb v2.3 (a23)
 -Touchscreen: gsl3670 bus 0, addr 0x40, wake PH1, int PB5, LDO: none
  1660x890 noswap noinvert, chip-id: 0x50910000
 -Unknown accelerometer: bus 1, addr 0x4c
--Wifi: esp8089
+-Wifi: esp8089, chip_en: PL06, MAC: ac:d0:74:50:f5:11
 -Nand: Hynix H27UCG8T2ETR
 
 Difrence DIT4350 (4.3" A13 pink)
@@ -181,7 +181,7 @@ qa88-v1.3 (a23, front black, back light blue)
 -Touchscreen: Zeitec ZET6251WMA, bus 0, addr 0x76, int PB5, wake PH1
  https://github.com/wingrime/zet6221-ts-drv/
 -Accelerometer: Memsic MXC622X, bus 1, addr 0x15
--Wifi: esp8089
+-Wifi: esp8089, no chip_en, MAC: 18:fe:34:11:98:ef
 -Nand: Samsung K9GBGD8U0M
 
 q8 tj-a23-q88-v4.0 (a23, blue, Modoex)
@@ -191,7 +191,7 @@ q8 tj-a23-q88-v4.0 (a23, blue, Modoex)
  LDO: ldo_io1 at 3000 mV, chip-id: 0xa0820000
  a23-tj-a23-q88-v4.0_20140815/GSL1680E_700_FW.fw: 1024x600
 -Accelerometer: mma7660
--Wifi: esp8089
+-Wifi: esp8089, chip_en: PL06, MAC: 18:fe:34:ac:fd:c0
 -Nand: Hynix H27UGC8T2ETR (or: H27UCG8T2ETR like Polaroid MID2809PXE04 ?)
 
 q8 ao721_v41 (a23, white)
@@ -227,16 +227,17 @@ q8 tzx-723q4 (a33)
 -7" 16:9 800:480
 -PCB: TZX-723Q4
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id 0xb4820000
- a33-tzx-723q4/GSL1680_7INCH_FW.fw: 960x480, inverted-x
+ a33-tzx-723q4/GSL1680_7INCH_FW.fw: 960x640, inverted-x
 -Accelerometer: dmard0?
--Wifi: esp8089
+-Wifi: esp8089, chip_en: PL11, MAC: 18:fe:34:c7:3e:08, needs:
+ config=crystal_26M_en=1
 
 q8 v2.4-1118 (Jeroen's a33)
 -7" 16:9 1024:600
 -PCB: MAINBOARD_V2.4  Q8_V2.4_1118
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5
- a33-tzx-723q4/GSL1680_7INCH_FW.fw: 960x480
- a33-Q8_V2.4_1118/GSL1680_FW_D702.fw 960x480
+ a33-tzx-723q4/GSL1680_7INCH_FW.fw: 960x640
+ a33-Q8_V2.4_1118/GSL1680_FW_D702.fw 960x640
 -Wifi: rtl8089ftv
 -Nand: Hynix H27UCG8T2ETR
 
@@ -267,6 +268,6 @@ a23-tj-a23-q88-v4.0:	a082 a23-tj-a23-q88-v4.0_20140815/GSL1680E_700_FW.fw	1024x6
 a23-tw-ao721-v41:	a082 a23-tj-a23-q88-v4.0_20140815/GSL1680E_700_FW.fw	1024x600 inverted-x
 a23-ippo-q8h-v1.2:	a082 a23-tj-a23-q88-v4.0_20140815/GSL1688_A70_FW.fw	 800x480 swapped-x-y
 a33-ippo-q8h-v1.2:	a082 a23-tj-a23-q88-v4.0_20140815/GSL1688_A70_FW.fw	 800x480 swapped-x-y
-a33-tzx-723q4:		b482 a33-Q8_V2.4_1118/GSL1680_FW_D702.fw		 960x480 inverted-x
-a33-q8-v2.4-1118:	???? a33-Q8_V2.4_1118/GSL1680_FW_D702.fw		 960x480
-a33-q8h-v1.5:		b482 a33-q8h-v1.5/GSL1688_A70_FW.fw			 960x480
+a33-tzx-723q4:		b482 a33-Q8_V2.4_1118/GSL1680_FW_D702.fw		 960x640 inverted-x
+a33-q8-v2.4-1118:	b482 a33-Q8_V2.4_1118/GSL1680_FW_D702.fw		 960x640
+a33-q8h-v1.5:		b482 a33-q8h-v1.5/GSL1688_A70_FW.fw			 960x640
