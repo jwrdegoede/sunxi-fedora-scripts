@@ -135,6 +135,21 @@ polaroid mid2407pxe03 (a23)
 -Flash: Sandisk X445107001
 -Unused? pmic settings: dldo1 3.3V, dldo2 3.3V, ldoio0 2.8V
 
+inet-q972 (a31s, qware qw tb9718-qhd)
+-9.7" 4:3 1024x768
+-PCB: inet-q972-rev01 Zeng-gc 2013-04-11
+-Touchscreen: ft5406ee8 bus 1, addr 0x38, int PA3
+-Accelerometer: mma865x bus 2, addr 0x1d
+-Wifi: RTL8723AS
+
+Empire_electronix_m712 (a13, battery is missing)
+-7" 16:9 800:480
+-PCB: XW712-V1.1 2012-8-8
+-Touchscreen: goodix gt811
+-Accelerometer: Dmtart06 1238a4
+-Wifi: RTL8188CTV
+-Flash: Micron 29F32G08CBACA
+
 ######################
 ##### q8 tablets #####
 ######################
@@ -202,7 +217,7 @@ q8 ao721_v41 (a23, white)
 -Accelerometer: mc32x0 bus 1, addr 0x4c, int PB06
 -Unknown: Unknown device at bus 1, addr 0x26, gets the bus stuck when probed
  0x26 * 2 == 0x4c, mc32x0 responding in a bad way ?
--Wifi: esp8089
+-Wifi: esp8089, chip_en: PL07, MAC: 18:fe:34:92:4b:56
 -Nand: M 29F32G08CBADA
 
 Ippo_q8h_v1_2 (a23)
