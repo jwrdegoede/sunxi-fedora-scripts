@@ -142,11 +142,11 @@ inet-q972 (a31s, qware qw tb9718-qhd)
 -Accelerometer: mma865x bus 2, addr 0x1d
 -Wifi: RTL8723AS
 
-Empire_electronix_m712 (a13, battery is missing)
+Empire_electronix_m712 (a13)
 -7" 16:9 800:480
 -PCB: XW712-V1.1 2012-8-8
 -Touchscreen: goodix gt811
--Accelerometer: Dmtart06 1238a4
+-Accelerometer: dmard06 bus 1, addr 0x1c
 -Wifi: RTL8188CTV
 -Flash: Micron 29F32G08CBACA
 
@@ -195,7 +195,7 @@ qa88-v1.3 (a23, front black, back light blue)
 -PCB: QA88-V1.3 2014-03-15
 -Touchscreen: Zeitec ZET6251WMA, bus 0, addr 0x76, int PB5, wake PH1
  https://github.com/wingrime/zet6221-ts-drv/
--Accelerometer: Memsic MXC622X, bus 1, addr 0x15
+-Accelerometer: Memsic MXC6225, bus 1, addr 0x15
 -Wifi: esp8089, no chip_en, MAC: 18:fe:34:11:98:ef
 -Nand: Samsung K9GBGD8U0M
 
@@ -214,9 +214,9 @@ q8 ao721_v41 (a23, white)
 -PCB: TW_AO721_V41 2014\07\05
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id: 0xa0820000
  a23-tj-a23-q88-v4.0_20140815/GSL1680E_700_FW.fw: 1024x600 inverted-x
--Accelerometer: mc32x0 bus 1, addr 0x4c, int PB06
+-Accelerometer: mCube mc3230 bus 1, addr 0x4c
 -Unknown: Unknown device at bus 1, addr 0x26, gets the bus stuck when probed
- 0x26 * 2 == 0x4c, mc32x0 responding in a bad way ?
+ 0x26 * 2 == 0x4c, mc3230 responding in a bad way ?
 -Wifi: esp8089, chip_en: PL07, MAC: 18:fe:34:92:4b:56
 -Nand: M 29F32G08CBADA
 
@@ -225,7 +225,7 @@ Ippo_q8h_v1_2 (a23)
 -PCB: Q8H-V1.2 2014 08 02
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id 0xa0820000
  a23-tj-a23-q88-v4.0_20140815/GSL1688_A70_FW.fw: 800x480, swapped-x-y
--Accelerometer:  Memsic MXC622X bus 1, addr 0x15:
+-Accelerometer: Memsic MXC6225 bus 1, addr 0x15:
  https://github.com/linux-sunxi/linux-sunxi/blob/sunxi-3.4/drivers/gsensor/mxc622x.c
 -Wifi/BT: RDA RDA5990P
 
@@ -234,7 +234,7 @@ Ippo_q8h_v1_2_a33_1024x600 (a33, iRilu)
 -PCB: Q8H-V1.2 2014 08 02
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id 0xa0820000
  a23-tj-a23-q88-v4.0_20140815/GSL1688_A70_FW.fw: 800x480, swapped-x-y
--Accelerometer:  Memsic MXC622X bus 1, addr 0x15:
+-Accelerometer: Memsic MXC6225 bus 1, addr 0x15:
  https://github.com/linux-sunxi/linux-sunxi/blob/sunxi-3.4/drivers/gsensor/mxc622x.c
 -Wifi/BT: RDA RDA5990P
 
@@ -243,7 +243,7 @@ q8 tzx-723q4 (a33)
 -PCB: TZX-723Q4
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id 0xb4820000
  a33-tzx-723q4/GSL1680_7INCH_FW.fw: 960x640, inverted-x
--Accelerometer: dmard0?
+-Accelerometer: dmard09 bus 1, addr 0x1d
 -Wifi: esp8089, chip_en: PL11, MAC: 18:fe:34:c7:3e:08, needs:
  config=crystal_26M_en=1
 
@@ -286,3 +286,23 @@ a33-ippo-q8h-v1.2:	a082 a23-tj-a23-q88-v4.0_20140815/GSL1688_A70_FW.fw	 800x480 
 a33-tzx-723q4:		b482 a33-Q8_V2.4_1118/GSL1680_FW_D702.fw		 960x640 inverted-x
 a33-q8-v2.4-1118:	b482 a33-Q8_V2.4_1118/GSL1680_FW_D702.fw		 960x640
 a33-q8h-v1.5:		b482 a33-q8h-v1.5/GSL1688_A70_FW.fw			 960x640
+
+
+###################
+### x86 tablets ###
+###################
+
+Trekstor Surftab Wintro 7.0 ST70416-6
+-7" 1024x600 screen
+-Touchscreen: gsl1686
+-Wifi: rtl8723bs
+-Other: axp288, 25lq64cvig, 7191 1545, OPI MP or DPI MP?
+
+
+Cube iwork 8 Air
+-8" 1200x1920 screen
+-Touchscreen: gsl3670:  input: GSL_TP as /devices/pci0000:00/808622C1:05/i2c-5/5-0071/input/input3
+-Accelerometer: kionix_accel 2-0072: this accelerometer is a KXTJ2-1009
+ input: kionix_accel as /devices/pci0000:00/808622C1:02/i2c-2/2-0072/input/input4
+-Wifi: rtl8723bs
+-Other chips: winbond 25064fwig, nuvoton nau88l24i
