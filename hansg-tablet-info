@@ -23,7 +23,7 @@ ga10h (10" a33 tablet)
 -10.1" 16:9 1024:600
 -PCB: GA10H-V1.1 2014 11 10
 -Touchscreen: gsl3675 bus 0, addr 0x40, wake PH1, int PB5, power eldo1 3V
--Accelerometer: Memsic MXC622X bus 1, addr 0x15, int PB6
+-Accelerometer: Memsic MXC6225, bus 1, addr 0x15
 -Wifi: RTL8703AS
 -Nand 2x Hynix H27UCG8T2ETR
 
@@ -32,7 +32,7 @@ gt90h_v04 / gooweel 9" (a23)
 -PCB: GT90H-V4 2013/12/27
 -Touchscreen: gsl3675 bus 0, addr 0x40, wake PH1, int PB5, fw gsl3675
  LDO: none
--Accelerometer: Memsic MXC622X bus 1, addr 0x15, int PB6
+-Accelerometer: Memsic MXC6225, bus 1, addr 0x15
 -Wifi rtl8723as connected to ehci0 supply dldo1
 
 inet97fv2 / qware tablet pc pro3 / cherry m677 (a10)
@@ -43,14 +43,14 @@ inet97fv2 / qware tablet pc pro3 / cherry m677 (a10)
 inet98v_rev02 / Denver TAC-90011 (a13)
 -9" 16:9 800:480
 -Touchscreen: zet622x / ZEITEC zet6223wta bus 1, addr 0x76, wake PB03, int PG11
--Accelerometer: Memsic MXC622X bus 1, addr 0x15
+-Accelerometer: Memsic MXC6225, bus 1, addr 0x15
 -Flash: 29F32G08CBA
 -Wifi: rtl8188cus
 
 Empire_electronix_d709 (a13)
 -7" 16:9 800:480
 -Touchscreen: ft5302fe4 bus 1, addr 0x38, irq PG11
--Accelerometer: Memsic MXC622X bus 1, addr 0x15
+-Accelerometer: Memsic MXC6225, bus 1, addr 0x15
 
 inet-1-rev05 (PointOfView protab2xxl a10)
 -PCB: iNet-1 board  wjh-Rev05
@@ -85,8 +85,7 @@ Difrence DIT4350 (4.3" A13 pink)
 -Touchscreen: solomon systech ssd2532qn6
  https://github.com/Pivosgroup/buildroot-linux-kernel-m3/blob/master/drivers/amlogic/input/touch_screen/ssd253x-ts.c
  Digitizer: rs4f 609029_v1.2
--Accelerometer:  Memsic MXC622X bus 1, addr 0x15:
- https://github.com/linux-sunxi/linux-sunxi/blob/sunxi-3.4/drivers/gsensor/mxc622x.c
+-Accelerometer: Memsic MXC6225, bus 1, addr 0x15
 -Wifi: rtl8188etv
 
 Colorfly E708 Q1 (a31)
@@ -160,7 +159,7 @@ q8 94v-0 (a13, pink)
 -Touchscreen: gsl1680 bus 1, addr 0x40, wakeup PB3, irq PG11, chip-id 0xa0820000
  a13-q8-94v-0/GSL1680E_FW.fw: 800x480, inverted-x, swapped-x-y
  a23-tj-a23-q88-v4.0_20140815/GSL1680E_700_FW.fw: 1024x600, inverted-x
--Accelerometer: mc32x0 bus 1, addr 0x4c
+-Accelerometer: mc3230 bus 1, addr 0x4c, z=-z y=-x *
  https://github.com/gp-b2g/gp-peak-kernel/blob/master/drivers/misc/mc32x0.c
 -Wifi: RTL8188ETV
 -Nand: Micron 29F32G08CBADA
@@ -170,6 +169,7 @@ q8 TZX-Q8-713B7 (a13)
 -PCB: TZX-Q8-713B7
 -Touchscreen: IC: eKTF2127 Android-drv: EKT3632 
  https://code.paulk.fr/feed/rss/tag/reverse-engineering
+-Accelerometer: dmard06 bus 1, addr 0x1c, z=z y=-y *
 -Wifi: RTL8188CTV
 -Nand: Micron 29F32G08CBACA
 
@@ -178,6 +178,9 @@ q8 TZX-713B V2.1 (a13, xi-electronics)
 -PCB: TZX-713B V2.1 2013/06/07
 -Touchscreen: gsl1680 bus 1, addr 0x40, wakeup PB3, irq PG11, chip-id 0xa0820000
  a23-tj-a23-q88-v4.0_20140815/GSL1680E_700_FW.fw: 1024x600
+-Accelerometer: da311 bus1, 0x27
+ Marking: 311c1 134213 da
+ 3x3 mm 5 pins on 2 sides, 1 pin on 2 other sides, 12 pins total
 -Wifi: RTL8188ETV
 -Nand: Micron 29F32G08CBADA
 
@@ -186,7 +189,7 @@ q8h-v3 (a23)
 -PCB: Q8H-V3 2013 11 27
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id 0xa0820000
  a23-tj-a23-q88-v4.0_20140815/GSL1688_A70_FW.fw: 800x480, swapped-x-y
--Accelerometer: 
+-Accelerometer: Domintech ARD10 bus 1, addr 0x18
 -Wifi: RTL8188ETV
 -Nand: Samsung K9LBG0UOM
 
@@ -195,7 +198,7 @@ qa88-v1.3 (a23, front black, back light blue)
 -PCB: QA88-V1.3 2014-03-15
 -Touchscreen: Zeitec ZET6251WMA, bus 0, addr 0x76, int PB5, wake PH1
  https://github.com/wingrime/zet6221-ts-drv/
--Accelerometer: Memsic MXC6225, bus 1, addr 0x15
+-Accelerometer: Memsic MXC6225, bus 1, addr 0x15 *
 -Wifi: esp8089, no chip_en, MAC: 18:fe:34:11:98:ef
 -Nand: Samsung K9GBGD8U0M
 
@@ -205,7 +208,7 @@ q8 tj-a23-q88-v4.0 (a23, blue, Modoex)
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5,
  LDO: ldo_io1 at 3000 mV, chip-id: 0xa0820000
  a23-tj-a23-q88-v4.0_20140815/GSL1680E_700_FW.fw: 1024x600
--Accelerometer: mma7660
+-Accelerometer: mma7660 bus 1, addr 0x4c *
 -Wifi: esp8089, chip_en: PL06, MAC: 18:fe:34:ac:fd:c0
 -Nand: Hynix H27UGC8T2ETR (or: H27UCG8T2ETR like Polaroid MID2809PXE04 ?)
 
@@ -214,7 +217,7 @@ q8 ao721_v41 (a23, white)
 -PCB: TW_AO721_V41 2014\07\05
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id: 0xa0820000
  a23-tj-a23-q88-v4.0_20140815/GSL1680E_700_FW.fw: 1024x600 inverted-x
--Accelerometer: mCube mc3230 bus 1, addr 0x4c
+-Accelerometer: mCube mc3230 bus 1, addr 0x4c *
 -Unknown: Unknown device at bus 1, addr 0x26, gets the bus stuck when probed
  0x26 * 2 == 0x4c, mc3230 responding in a bad way ?
 -Wifi: esp8089, chip_en: PL07, MAC: 18:fe:34:92:4b:56
@@ -225,8 +228,7 @@ Ippo_q8h_v1_2 (a23)
 -PCB: Q8H-V1.2 2014 08 02
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id 0xa0820000
  a23-tj-a23-q88-v4.0_20140815/GSL1688_A70_FW.fw: 800x480, swapped-x-y
--Accelerometer: Memsic MXC6225 bus 1, addr 0x15:
- https://github.com/linux-sunxi/linux-sunxi/blob/sunxi-3.4/drivers/gsensor/mxc622x.c
+-Accelerometer: Memsic MXC6225 bus 1, addr 0x15 *
 -Wifi/BT: RDA RDA5990P
 
 Ippo_q8h_v1_2_a33_1024x600 (a33, iRilu)
@@ -234,8 +236,7 @@ Ippo_q8h_v1_2_a33_1024x600 (a33, iRilu)
 -PCB: Q8H-V1.2 2014 08 02
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id 0xa0820000
  a23-tj-a23-q88-v4.0_20140815/GSL1688_A70_FW.fw: 800x480, swapped-x-y
--Accelerometer: Memsic MXC6225 bus 1, addr 0x15:
- https://github.com/linux-sunxi/linux-sunxi/blob/sunxi-3.4/drivers/gsensor/mxc622x.c
+-Accelerometer: Memsic MXC6225 bus 1, addr 0x15 *
 -Wifi/BT: RDA RDA5990P
 
 q8 tzx-723q4 (a33)
@@ -243,7 +244,7 @@ q8 tzx-723q4 (a33)
 -PCB: TZX-723Q4
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id 0xb4820000
  a33-tzx-723q4/GSL1680_7INCH_FW.fw: 960x640, inverted-x
--Accelerometer: dmard09 bus 1, addr 0x1d
+-Accelerometer: dmard09 bus 1, addr 0x1d *
 -Wifi: esp8089, chip_en: PL11, MAC: 18:fe:34:c7:3e:08, needs:
  config=crystal_26M_en=1
 
