@@ -189,7 +189,7 @@ q8h-v3 (a23)
 -PCB: Q8H-V3 2013 11 27
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id 0xa0820000
  a23-tj-a23-q88-v4.0_20140815/GSL1688_A70_FW.fw: 800x480, swapped-x-y
--Accelerometer: Domintech ARD10 bus 1, addr 0x18
+-Accelerometer: Domintech ARD10 bus 1, addr 0x18, z=z y=x x=-y *
 -Wifi: RTL8188ETV
 -Nand: Samsung K9LBG0UOM
 
