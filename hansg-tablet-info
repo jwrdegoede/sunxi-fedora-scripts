@@ -129,7 +129,7 @@ polaroid mid2407pxe03 (a23)
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, LDO: ldoio1 3.3v,
  960x640, y-invert + x-invert, chip-id: 0xb3820000
  Digitizer (original): PB70A1364
--Accelerometer: mma7660 ? (ic: 263 7660)
+-Accelerometer: mma7660 bus 1, addr 0x4c, z=-z y=-y x=x *
 -Wifi: esp8089
 -Flash: Sandisk X445107001
 -Unused? pmic settings: dldo1 3.3V, dldo2 3.3V, ldoio0 2.8V
