@@ -178,7 +178,7 @@ q8 TZX-713B V2.1 (a13, xi-electronics)
 -PCB: TZX-713B V2.1 2013/06/07
 -Touchscreen: gsl1680 bus 1, addr 0x40, wakeup PB3, irq PG11, chip-id 0xa0820000
  a23-tj-a23-q88-v4.0_20140815/GSL1680E_700_FW.fw: 1024x600
--Accelerometer: da311 bus1, 0x27
+-Accelerometer: da311 bus 1, addr 0x27, z=-z y=-y x=x *
  Marking: 311c1 134213 da
  3x3 mm 5 pins on 2 sides, 1 pin on 2 other sides, 12 pins total
 -Wifi: RTL8188ETV
