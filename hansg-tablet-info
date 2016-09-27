@@ -262,8 +262,17 @@ q8 q8h-v1.5 (Jelle's a33 met sticker met a33/hd)
 -PCB: Q8H-V1.5 2015 0129
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id 0xb4820000
  a33-q8h-v1.5/GSL1688_A70_FW.fw: 960x640
+-Accelerometer: Memsic MXC6225, bus 1, addr 0x15, y=-x x=-y
 -Wifi: rtl8703as
 -Flash: I 29F64008AAMEI
+
+q8 TZX-723Qa4 (Jelle's a33 haehne)
+-7" 16:9 1024:600
+-PCB: TZX-723Qa4
+-Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id 0xb4820000
+ a33-tzx-723q4/GSL1680_7INCH_FW.fw: 960x640, inverted-x
+-Accelerometer: dmard09 bus 1, addr 0x1d, z=-z y=x x=-y *
+
 
 #########################
 ### non sunxi tablets ###
@@ -286,7 +295,8 @@ a23-ippo-q8h-v1.2:	a082 a23-tj-a23-q88-v4.0_20140815/GSL1688_A70_FW.fw	 800x480 
 a33-ippo-q8h-v1.2:	a082 a23-tj-a23-q88-v4.0_20140815/GSL1688_A70_FW.fw	 800x480 swapped-x-y	mxc6225
 a33-tzx-723q4:		b482 a33-Q8_V2.4_1118/GSL1680_FW_D702.fw		 960x640 inverted-x	dmard09
 a33-q8-v2.4-1118:	b482 a33-Q8_V2.4_1118/GSL1680_FW_D702.fw		 960x640
-a33-q8h-v1.5:		b482 a33-q8h-v1.5/GSL1688_A70_FW.fw			 960x640
+a33-q8h-v1.5:		b482 a33-q8h-v1.5/GSL1688_A70_FW.fw			 960x640		mxc6225
+a33-tzx-723qa4:		b482 a33-Q8_V2.4_1118/GSL1680_FW_D702.fw		 960x640 inverted-x	dmard09
 
 
 ###################
