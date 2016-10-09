@@ -153,43 +153,43 @@ Empire_electronix_m712 (a13)
 ##### q8 tablets #####
 ######################
 
-q8 94v-0 (a13, pink)
+q8 94v-0 (a13, pink) *
 -7" 16:9 800:480
 -PCB: 94V-0 (no other markings)
 -Touchscreen: gsl1680 bus 1, addr 0x40, wakeup PB3, irq PG11, chip-id 0xa0820000
  a13-q8-94v-0/GSL1680E_FW.fw: 800x480, inverted-x, swapped-x-y
  a23-tj-a23-q88-v4.0_20140815/GSL1680E_700_FW.fw: 1024x600, inverted-x
--Accelerometer: mc3230 bus 1, addr 0x4c, z=-z y=-x *
+-Accelerometer: mc3230 bus 1, addr 0x4c, z=-z y=-x x=-y
  https://github.com/gp-b2g/gp-peak-kernel/blob/master/drivers/misc/mc32x0.c
 -Wifi: RTL8188ETV
 -Nand: Micron 29F32G08CBADA
 
-q8 TZX-Q8-713B7 (a13)
+q8 TZX-Q8-713B7 (a13) (2x) *
 -7" 16:9 800:480
 -PCB: TZX-Q8-713B7
 -Touchscreen: IC: eKTF2127 Android-drv: EKT3632 
  https://code.paulk.fr/feed/rss/tag/reverse-engineering
--Accelerometer: dmard06 bus 1, addr 0x1c, z=z y=-y *
+-Accelerometer: dmard06 bus 1, addr 0x1c, z=z y=-y x=-x
 -Wifi: RTL8188CTV
 -Nand: Micron 29F32G08CBACA
 
-q8 TZX-713B V2.1 (a13, xi-electronics)
+q8 TZX-713B V2.1 (a13, xi-electronics) *
 -7" 16:9 800:480
 -PCB: TZX-713B V2.1 2013/06/07
 -Touchscreen: gsl1680 bus 1, addr 0x40, wakeup PB3, irq PG11, chip-id 0xa0820000
  a23-tj-a23-q88-v4.0_20140815/GSL1680E_700_FW.fw: 1024x600
--Accelerometer: da311 bus 1, addr 0x27, z=-z y=-y x=x *
+-Accelerometer: da311 bus 1, addr 0x27, z=-z y=-y x=x
  Marking: 311c1 134213 da
  3x3 mm 5 pins on 2 sides, 1 pin on 2 other sides, 12 pins total
 -Wifi: RTL8188ETV
 -Nand: Micron 29F32G08CBADA
 
-q8h-v3 (a23)
+q8h-v3 (a23) *
 -7" 16:9 800:480
 -PCB: Q8H-V3 2013 11 27
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id 0xa0820000
  a23-tj-a23-q88-v4.0_20140815/GSL1688_A70_FW.fw: 800x480, swapped-x-y
--Accelerometer: Domintech ARD10 bus 1, addr 0x18, z=z y=x x=-y *
+-Accelerometer: Domintech ARD10 bus 1, addr 0x18, z=z y=x x=-y
 -Wifi: RTL8188ETV
 -Nand: Samsung K9LBG0UOM
 
@@ -202,62 +202,79 @@ qa88-v1.3 (a23, front black, back light blue)
 -Wifi: esp8089, no chip_en, MAC: 18:fe:34:11:98:ef
 -Nand: Samsung K9GBGD8U0M
 
-q8 tj-a23-q88-v4.0 (a23, blue, Modoex)
+q8 tj-a23-q88-v4.0 (a23, blue, Modoex) *
 -7" 16:9 800:480
 -PCB: TJ-A23-Q88-V4.0_20140815
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5,
  LDO: ldo_io1 at 3000 mV, chip-id: 0xa0820000
  a23-tj-a23-q88-v4.0_20140815/GSL1680E_700_FW.fw: 1024x600
--Accelerometer: mma7660 bus 1, addr 0x4c *
+-Accelerometer: mma7660 bus 1, addr 0x4c, z=-z y=-y x=x
 -Wifi: esp8089, chip_en: PL06, MAC: 18:fe:34:ac:fd:c0
 -Nand: Hynix H27UGC8T2ETR (or: H27UCG8T2ETR like Polaroid MID2809PXE04 ?)
 
-q8 ao721_v41 (a23, white)
+q8 ao721_v41 (a23, white) *
 -7" 16:9 800:480
 -PCB: TW_AO721_V41 2014\07\05
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id: 0xa0820000
  a23-tj-a23-q88-v4.0_20140815/GSL1680E_700_FW.fw: 1024x600 inverted-x
--Accelerometer: mCube mc3230 bus 1, addr 0x4c, z=-z y=-x *
+-Accelerometer: mCube mc3230 bus 1, addr 0x4c, z=-z y=-x x=-y
 -Unknown: Unknown device at bus 1, addr 0x26, gets the bus stuck when probed
  0x26 * 2 == 0x4c, mc3230 responding in a bad way ?
 -Wifi: esp8089, chip_en: PL07, MAC: 18:fe:34:92:4b:56
 -Nand: M 29F32G08CBADA
 
-Ippo_q8h_v1_2 (a23)
+Ippo_q8h_v1_2 (a23) *
 -7" 16:9 800:480
 -PCB: Q8H-V1.2 2014 08 02
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id 0xa0820000
  a23-tj-a23-q88-v4.0_20140815/GSL1688_A70_FW.fw: 800x480, swapped-x-y
--Accelerometer: Memsic MXC6225 bus 1, addr 0x15 *
+-Accelerometer: Memsic MXC6225 bus 1, addr 0x15, y=-x x=-y
 -Wifi/BT: RDA RDA5990P
 
-Ippo_q8h_v1_2_a33_1024x600 (a33, iRilu)
+Ippo_q8h_v1_2_a33_1024x600 (a33, iRilu) *
 -7" 16:9 1024:600
 -PCB: Q8H-V1.2 2014 08 02
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id 0xa0820000
  a23-tj-a23-q88-v4.0_20140815/GSL1688_A70_FW.fw: 800x480, swapped-x-y
--Accelerometer: Memsic MXC6225 bus 1, addr 0x15 *
+-Accelerometer: Memsic MXC6225 bus 1, addr 0x15, y=-x x=-y
 -Wifi/BT: RDA RDA5990P
 
-q8 tzx-723q4 (a33)
+q8 tzx-723q4 (a33) *
 -7" 16:9 800:480
 -PCB: TZX-723Q4
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id 0xb4820000
  a33-tzx-723q4/GSL1680_7INCH_FW.fw: 960x640, inverted-x
--Accelerometer: dmard09 bus 1, addr 0x1d *
+-Accelerometer: dmard09 bus 1, addr 0x1d, z=-z y=x x=-y
 -Wifi: esp8089, chip_en: PL11, MAC: 18:fe:34:c7:3e:08, needs:
  config=crystal_26M_en=1
 
-q8 v2.4-1118 (Jeroen's a33)
+q8 tzx-723q4 (a33, purple, usb-otg connector broken) *
+-7" 16:9 800:480
+-PCB: TZX-723q4
+-Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id 0xb4820000
+ a33-Q8_V2.4_1118/GSL1680_FW_D702.fw 960x640, inverted-x
+-Accelerometer: da280 (marking 337 21f) bus 1 0x26 z=-z y=x x=y
+-Wifi/BT: RDA RDA5990P
+
+q8 et_q8_v2.0 (a33) *
+-7" 16:9 800:480
+-PCB: ET_Q8_V2.0 150603
+-Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id 0xb4820000
+ a33-Q8_V2.4_1118/GSL1680_FW_D702.fw 960x640, inverted-y
+-Accelerometer: da280 (marking 335 05f) bus 1 0x26 z=-z y=-x x=-y
+-Wifi: rtl8703as
+
+q8 v2.4-1118 (Jeroen's a33) *
 -7" 16:9 1024:600
 -PCB: MAINBOARD_V2.4  Q8_V2.4_1118
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5
  a33-tzx-723q4/GSL1680_7INCH_FW.fw: 960x640
  a33-Q8_V2.4_1118/GSL1680_FW_D702.fw 960x640
+-Accelerometer: da226 (marking ?53 12f) bus 1 0x27, y=x x=y
 -Wifi: rtl8089ftv
 -Nand: Hynix H27UCG8T2ETR
 
-q8 q8h-v1.5 (Jelle's a33 met sticker met a33/hd)
+q8 q8h-v1.5 (Jelle's a33 met sticker met a33/hd) *
 -7" 16:9 1024:600
 -PCB: Q8H-V1.5 2015 0129
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id 0xb4820000
@@ -266,12 +283,12 @@ q8 q8h-v1.5 (Jelle's a33 met sticker met a33/hd)
 -Wifi: rtl8703as
 -Flash: I 29F64008AAMEI
 
-q8 TZX-723Qa4 (Jelle's a33 haehne)
+q8 TZX-723Qa4 (Jelle's a33 haehne) *
 -7" 16:9 1024:600
 -PCB: TZX-723Qa4
 -Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id 0xb4820000
  a33-tzx-723q4/GSL1680_7INCH_FW.fw: 960x640, inverted-x
--Accelerometer: dmard09 bus 1, addr 0x1d, z=-z y=x x=-y *
+-Accelerometer: dmard09 bus 1, addr 0x1d, z=-z y=x x=-y
 
 
 #########################
