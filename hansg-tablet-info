@@ -264,6 +264,14 @@ q8 et_q8_v2.0 (a33) *
 -Accelerometer: da280 (marking 335 05f) bus 1 0x26 z=-z y=-x x=-y
 -Wifi: rtl8703as
 
+q8 q8v-v1.6 (a33, BDF) *
+-7" 16:9 1024:600
+-PCB: Q8V-V1.6 2016 06 23
+-Touchscreen: gsl1680 bus 0, addr 0x40, wake PH1, int PB5, chip-id 0xb4820000
+ a33-q8h-v1.5/GSL1688_A70_FW.fw: 960x640
+-Accelerometer: Memsic MXC6225, bus 1, addr 0x15, y=-x x=-y
+-Wifi: rtl8703as
+
 q8 v2.4-1118 (Jeroen's a33) *
 -7" 16:9 1024:600
 -PCB: MAINBOARD_V2.4  Q8_V2.4_1118
