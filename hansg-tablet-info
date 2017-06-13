@@ -328,11 +328,12 @@ a33-tzx-723qa4:		b482 a33-Q8_V2.4_1118/GSL1680_FW_D702.fw		 960x640 inverted-x	d
 ### x86 tablets ###
 ###################
 
-Trekstor Surftab Wintro 7.0 ST70416-6
+Trekstor Surftab Wintron 7.0 ST70416-6
 -7" 1024x600 screen
 -Touchscreen: gsl1686
 -Wifi: rtl8723bs
 -Other: axp288, 25lq64cvig, 7191 1545, OPI MP or DPI MP?
+-DSDT: PMID = 0x05
 
 Cube iwork 8 Air
 -8" 1200x1920 screen
@@ -341,16 +342,58 @@ Cube iwork 8 Air
  input: kionix_accel as /devices/pci0000:00/808622C1:02/i2c-2/2-0072/input/input4
 -Wifi: rtl8723bs
 -Other chips: winbond 25064fwig, nuvoton nau88l24i
--DSTD: BDID = One, OSID = 0x04
+-DSTD: BDID = One, OSID = 0x04, PMID = 0x02
 
 EZpad mini 3
 -8" 1280x800 screen
 -Touchscreen: gsl3676
--Wifi: AP6212
+-Wifi: AP6212, needs firmware + nvram from: https://vps.vdwaa.nl/~jelle/brcm/
 -Other chips: es8316
--DSTD: BDID = One, OSID = Windows-8.1 ? One : ???
+-DSTD: BDID = One, OSID = Windows-8.1 ? One : ???, PMID = 0x02
 
 GPD-win
 -PCB: WINI55
 -Battery charge IC ti bq24292i
 -Unknown IC 17047 36a1s
+-OSID == One, PMID == 0x03,
+ (BDID == 0x09) || (BDID == 0x0A)
+
+Point of View TAB-P800W (V 1-0) and (V2.1) appear to be identical
+-Touchscreen: Silead gsl3692
+-Wifi: Realtek rtl8723bs
+-Charger: ti bq24292i
+
+GP-electronic 7 inch win10 tablet
+-Touchscreen: Silead gsl1680
+-Wifi: Realtek rtl8723bs
+
+hp-pavilion-x2
+-Unknown IC: 103737LU-B1(gfx driver?)
+-Unknown IC: 89=2c w25 ??
+-USB-2 hub: gl852g
+-AXP288 PMIC
+
+Peaq 10.1" C1010 2-in-1
+-AXP288 PMIC
+-Realtek ALC5640 audiocodec
+Dock:
+-GL850G usb-hub
+-realtek rts5170 sdcard reader
+-mt5036 step up converter
+-mt2000 513g1 ?
+-ite8595e-128 keyboard + touchpad controller
+
+Asus T100TA
+-Amtel MXT1664TXES-C2U 1330B TW QLG9F (Touchscreen controls)
+-Broadcom BCM43241SFKFFBG TN1322 P24 294688 P3T (WiFi)
+-Phison PS2251-68-5 UO1329C D75J0.11AA (USB2.0 usb-stick controller)
+-Realtek ALC5642 D2L87HI GD13F (Audio)
+-Winbond 250(Q)64FW1G 1329 6236 QP30003 (BIOS/UEFI)
+-Intel Q326A657 SR1M5 02962 '12 (the main cpu Z3740)
+-M F20 P02 CFQ0589 (No idea)
+-ITE IT8568VG 1331-AXO ZC0P1A (No idea)
+-SANDISK 9.15 XC4*00 SanDisk32G (The eMMC storage unit, 32GB version)
+
+Chuwi Vi8 Plus (CWI519)
+-Touchscreen Chipone ICN8505
+-Audio Codec: RT ALC5651
