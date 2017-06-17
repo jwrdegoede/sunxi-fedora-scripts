@@ -332,15 +332,15 @@ Trekstor Surftab Wintron 7.0 ST70416-6
 -7" 1024x600 screen
 -Touchscreen: gsl1686
 -Wifi: rtl8723bs
+-Accel: BMA250E, mount-matrix ok
 -Other: axp288, 25lq64cvig, 7191 1545, OPI MP or DPI MP?
 -DSDT: PMID = 0x05
 
 Cube iwork 8 Air
 -8" 1200x1920 screen
--Touchscreen: gsl3670:  input: GSL_TP as /devices/pci0000:00/808622C1:05/i2c-5/5-0071/input/input3
--Accelerometer: kionix_accel 2-0072: this accelerometer is a KXTJ2-1009
- input: kionix_accel as /devices/pci0000:00/808622C1:02/i2c-2/2-0072/input/input4
+-Touchscreen: gsl3670
 -Wifi: rtl8723bs
+-Accel: KIOX000A
 -Other chips: winbond 25064fwig, nuvoton nau88l24i
 -DSTD: BDID = One, OSID = 0x04, PMID = 0x02
 
@@ -348,6 +348,7 @@ EZpad mini 3
 -8" 1280x800 screen
 -Touchscreen: gsl3676
 -Wifi: AP6212, needs firmware + nvram from: https://vps.vdwaa.nl/~jelle/brcm/
+-Accel: BOSC0200 -> BMA222E
 -Other chips: es8316
 -DSTD: BDID = One, OSID = Windows-8.1 ? One : ???, PMID = 0x02
 
@@ -355,25 +356,35 @@ GPD-win
 -PCB: WINI55
 -Battery charge IC ti bq24292i
 -Unknown IC 17047 36a1s
+-Accel: KIOX000A
 -OSID == One, PMID == 0x03,
  (BDID == 0x09) || (BDID == 0x0A)
 
 Point of View TAB-P800W (V 1-0) and (V2.1) appear to be identical
 -Touchscreen: Silead gsl3692
 -Wifi: Realtek rtl8723bs
+-Accel: BMA250E, mount-matrix ok
 -Charger: ti bq24292i
 
 GP-electronic 7 inch win10 tablet
 -Touchscreen: Silead gsl1680
 -Wifi: Realtek rtl8723bs
+-Accel: KIOX000A, mount-matrix ok
 
 hp-pavilion-x2
+-Sensor: BSG1160:
+ Accel: BMC150A at addr 0x11
+ Gyro: BMG160 at addr 0x68
+ Magneto: BMC150B at addr 0x13 
 -Unknown IC: 103737LU-B1(gfx driver?)
 -Unknown IC: 89=2c w25 ??
 -USB-2 hub: gl852g
 -AXP288 PMIC
 
 Peaq 10.1" C1010 2-in-1
+-Touchscreen: SIS0817 i2c-hid touchscreen
+-Wifi RTL8723BS
+-Accel: SMO8500, mount-matrix ok
 -AXP288 PMIC
 -Realtek ALC5640 audiocodec
 Dock:
@@ -384,8 +395,9 @@ Dock:
 -ite8595e-128 keyboard + touchpad controller
 
 Asus T100TA
--Amtel MXT1664TXES-C2U 1330B TW QLG9F (Touchscreen controls)
--Broadcom BCM43241SFKFFBG TN1322 P24 294688 P3T (WiFi)
+-Touchscreen: Amtel MXT1664TXES-C2U 1330B TW QLG9F
+-Wifi: Broadcom BCM43241SFKFFBG TN1322 P24 294688 P3T
+-Accel: INVN6500, mount-matrix ok
 -Phison PS2251-68-5 UO1329C D75J0.11AA (USB2.0 usb-stick controller)
 -Realtek ALC5642 D2L87HI GD13F (Audio)
 -Winbond 250(Q)64FW1G 1329 6236 QP30003 (BIOS/UEFI)
@@ -396,4 +408,25 @@ Asus T100TA
 
 Chuwi Vi8 Plus (CWI519)
 -Touchscreen Chipone ICN8505
+-Accel: BOSC0200 -> BMA222E ???
 -Audio Codec: RT ALC5651
+
+Lamina I8270 (sticker on back) / T701BR.SE (dmi)
+-Accel: SMO8500, mount-matrix ok
+
+Dell Venue 8 Pro xxxx:
+-Accel: xxxx
+-Audio codec: ???
+
+Ployer Momo7w
+-PCB: INET-I71-REV21 Zeng-gc 2015-07-07
+-Touchscreen: gsl1686
+-Wifi: RTL8723BS
+-Audio codec: Realtek ALC5651
+
+HP stream 7:
+-Touchscreen: Goodix
+-Wifi: RTL8723BS
+-Accel: SMO8500
+-Audio codec: Realtek ALC5640
+-PMIC: AXP288

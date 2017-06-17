@@ -1,0 +1,31 @@
+		lcd wif tou acc bat c2a but bri sus spk pho jck hst dev blu c3a tpad
+Asus T100TA	yes (1) yes yes                     yes yes -               -   yes
+Cube iWork8 Air	yes yes (2)         yes yes yes yes                         -   -
+Chuwi Vi8 Plus	yes yes NO
+Dell Venue 5830 yes yes yes yes yes     yes yes yes yes         yes         -   -
+Dell Venue 7130 yes yes
+GP-elec. T701   yes yes (2) yes
+GPD win		yes (1) yes ROT yes yes yes yes yes NO  yes yes
+HP Pavilion X2	yes yes                                                     no  (3)
+HP Stream 7     (4) yes yes ROT yes     yes yes yes yes     -   yes -       -   -
+Jump. EZpad m3	yes (1) (2)
+Lamina I8270    yes yes     yes
+Peaq MMC1010    yes yes yes yes                                                 yes
+Pipo W2S	yes (1) (2) yes
+Ployer Momo7w
+PoV TAB-P800W	yes yes (2) yes
+Trekstor (4)	yes yes (2) yes
+
+Legenda: wif(i) tou(chscreen) acc(el) bat(-mon) c(harge-)2a but(tons)
+bri(ghtness) sus(pend&resume) sp(ea)k(er) (head)pho(nes) j(a)ck-detection
+(usb-)h(o)st (usb-)dev(ice) blu(e-tooth) c(harge-)3a t(ouch)pad
+
+"-"	Not applicable / not available on this device
+"ROT"	Works but orientation is wrong
+
+1) Needs nvram file
+2) Needs firmware
+3) Works in mouse emulation mode, needs patches to enable multi-touch mode
+4) DPI is wrong
+
+5) Trekstor Surftab Wintron 7.0 ST70416-6
