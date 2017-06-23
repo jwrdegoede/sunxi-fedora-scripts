@@ -364,7 +364,7 @@ Point of View TAB-P800W (V 1-0) and (V2.1) appear to be identical
 -Touchscreen: Silead gsl3692
 -Wifi: Realtek rtl8723bs
 -Accel: BMA250E, mount-matrix ok
--Charger: ti bq24292i
+-Charger: ti bq24192
 
 GP-electronic 7 inch win10 tablet
 -Touchscreen: Silead gsl1680
@@ -430,3 +430,16 @@ HP stream 7:
 -Accel: SMO8500
 -Audio codec: Realtek ALC5640
 -PMIC: AXP288
+
+Acer iconia 8
+-PCB: TQ080BT7_V11
+-Touchscreen: Goodix GT811
+-Wifi: AP6383
+-Audio codec: Realtek ALC5640
+
+itworks TW891
+-Touchscreen: Silead GSL3670
+-Wifi RTL8723BS
+-Audio codec: 
+-PMIC: axp288
+-USB hub inside tablet: GL852G
