@@ -330,7 +330,7 @@ a33-tzx-723qa4:		b482 a33-Q8_V2.4_1118/GSL1680_FW_D702.fw		 960x640 inverted-x	d
 
 Trekstor Surftab Wintron 7.0 ST70416-6
 -7" 1024x600 screen
--Touchscreen: gsl1686
+-Touchscreen: gsl1686, with capacitive home-button
 -Wifi: rtl8723bs
 -Accel: BMA250E, mount-matrix ok
 -Other: axp288, 25lq64cvig, 7191 1545, OPI MP or DPI MP?
@@ -338,7 +338,7 @@ Trekstor Surftab Wintron 7.0 ST70416-6
 
 Cube iwork 8 Air
 -8" 1200x1920 screen
--Touchscreen: gsl3670
+-Touchscreen: gsl3670, without capacitive home-button
 -Wifi: rtl8723bs
 -Accel: KIOX000A
 -Other chips: winbond 25064fwig, nuvoton nau88l24i
@@ -346,7 +346,7 @@ Cube iwork 8 Air
 
 EZpad mini 3
 -8" 1280x800 screen
--Touchscreen: gsl3676
+-Touchscreen: gsl3676, without capacitive home-button
 -Wifi: AP6212, needs firmware + nvram from: https://vps.vdwaa.nl/~jelle/brcm/
 -Accel: BOSC0200 -> BMA222E
 -Other chips: es8316
@@ -357,17 +357,20 @@ GPD-win
 -Battery charge IC ti bq24292i
 -Unknown IC 17047 36a1s
 -Accel: KIOX000A
+-PMIC Intel 6835A P10 Whiskey Cove, CHT version
 -OSID == One, PMID == 0x03,
  (BDID == 0x09) || (BDID == 0x0A)
 
 Point of View TAB-P800W (V 1-0) and (V2.1) appear to be identical
--Touchscreen: Silead gsl3692
+-CPU: Z3735G
+-Touchscreen: Silead gsl3692, with capacitive home-button
 -Wifi: Realtek rtl8723bs
 -Accel: BMA250E, mount-matrix ok
 -Charger: ti bq24192
+-PMIC: Crystal Cove (BYT variant)
 
 GP-electronic 7 inch win10 tablet
--Touchscreen: Silead gsl1680
+-Touchscreen: Silead gsl1680, without capacitive home-button
 -Wifi: Realtek rtl8723bs
 -Accel: KIOX000A, mount-matrix ok
 
@@ -414,13 +417,13 @@ Chuwi Vi8 Plus (CWI519)
 Lamina I8270 (sticker on back) / T701BR.SE (dmi)
 -Accel: SMO8500, mount-matrix ok
 
-Dell Venue 8 Pro xxxx:
--Accel: xxxx
+Dell Venue 8 Pro 5830:
+-Accel: HID-sensors
 -Audio codec: ???
 
 Ployer Momo7w
 -PCB: INET-I71-REV21 Zeng-gc 2015-07-07
--Touchscreen: gsl1686
+-Touchscreen: gsl1686, with capacitive home-button
 -Wifi: RTL8723BS
 -Audio codec: Realtek ALC5651
 
@@ -438,8 +441,16 @@ Acer iconia 8
 -Audio codec: Realtek ALC5640
 
 itworks TW891
--Touchscreen: Silead GSL3670
+-Touchscreen: Silead GSL3670, without capacitive home-button
 -Wifi RTL8723BS
 -Audio codec: 
 -PMIC: axp288
 -USB hub inside tablet: GL852G
+
+T-BAO Tbook Air 12.5
+-ITE IT 8987E keyboard controller
+-PI3USB30532 Type-C switch
+-TI BQ24715 charger IC
+-7934 small square 5 pins each side, unknown
+-Intel 3165D2W wifi/bt
+-ALC269 audio codec

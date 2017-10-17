@@ -1,33 +1,40 @@
 Bay and Cherry Trail device status with linux-next
 
 		lcd wif tou acc bat c2a but bri sus spk pho jck hst dev blu c3a tpad
-Asus T100TA	yes (1) yes yes                     yes yes -               -   yes
-Cube iWork8 Air	yes yes (2)         yes yes yes yes                         -   -
-Chuwi Vi8 Plus	yes yes (3)
-Dell Venue 5830 yes yes yes yes yes     yes yes yes yes         yes         -   -
-Dell Venue 7130 yes yes
-GP-elec. T701   yes yes (2) yes
-GPD win		yes (3) yes ROT yes yes yes yes yes NO  yes yes
-HP Pavilion X2	yes yes                                                     no  (4)
-HP Stream 7     (5) yes yes ROT yes     yes yes yes yes     -   yes -       -   -
-Jump. EZpad m3	yes (3) (2)
-Lamina I8270    yes yes     yes
-Peaq MMC1010    yes yes yes yes                                                 yes
-Pipo W2S	yes (1) (2) yes
-Ployer Momo7w
-PoV TAB-P800W	yes yes (2) yes
-Trekstor (6)	yes yes (2) yes
+Acer Ic. W1-810 yes NVR yes yes yes yes yes yes yes             yes -       -   -
+Asus T100TA	yes NVR yes yes                     yes yes         -       -   yes
+Asus T100HA	yes NVR yes no
+Asus T100 CHI   yes NVR     yes                                     -   yes -   yes
+Cube iWork8 Air	yes yes FIR yes     yes yes yes yes             (1) (1)     -   -
+Chuwi Vi8 Plus	yes yes (1) yes yes yes yes yes yes             (1) (1)     -   -
+Dell Venue 5830 yes yes yes yes yes yes yes yes yes yes         yes -       -   -
+Dell Venue 7130 yes yes yes yes yes yes yes yes yes yes         -   -       -   yes
+GP-elec. T701   ROT yes FIR yes yes yes yes yes yes             yes -       -   -
+GPD win		ROT NVR yes     yes yes yes yes yes no  yes yes
+HP Pavilion X2	yes yes                                                     no  (2)
+HP Stream 7     DPI yes yes yes yes     yes yes yes yes         yes -       -   -
+I.T.Works TW891 ROT yes yes yes yes yes
+Jump. EZpad m3	yes FIR FIR yes yes yes yes yes yes             yes (1)     -   -
+Lamina I8270    yes yes yes yes yes     yes yes yes             yes         -   -
+Peaq MMC1010    yes yes yes yes yes yes yes yes yes             yes -       -   yes
+Pipo W2S	yes NVR FIR yes
+Ployer Momo7w   yes yes FIR yes yes yes yes yes yes             yes -       -   -
+PoV TAB-P800W	yes yes FIR yes yes     yes yes yes             yes -       -   -
+Trekstor (3)	yes yes FIR yes yes yes yes yes yes             yes -       -   -
 
 Legenda: wif(i) tou(chscreen) acc(el) bat(-mon) c(harge-)2a but(tons)
 bri(ghtness) sus(pend&resume) sp(ea)k(er) (head)pho(nes) j(a)ck-detection
 (usb-)h(o)st (usb-)dev(ice) blu(e-tooth) c(harge-)3a t(ouch)pad
 
-"-"	Not applicable / not available on this device
-"ROT"	Works but orientation is wrong
+yes   Works
+no    Does not work
+-     Not applicable / not available on this device
+ROT   Screen is mounted rotated vs normal device orientation
+NVR   Needs nvram file
+FRW   Needs firmware which is not in linux-firmware
+DPI   DPI is wrong
 
-1) Needs nvram file
-2) Needs firmware
-3) Needs unmerged kernel patches
-4) Works in mouse emulation mode, needs patches to enable multi-touch mode
-5) DPI is wrong
-6) Trekstor Surftab Wintron 7.0 ST70416-6
+(1) Needs unmerged kernel patches
+(2) Works in mouse emulation mode, needs patches to enable multi-touch mode
+(3) Trekstor Surftab Wintron 7.0 ST70416-6
+
