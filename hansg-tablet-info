@@ -368,6 +368,8 @@ Point of View TAB-P800W (V 1-0) and (V2.1) appear to be identical
 -Accel: BMA250E, mount-matrix ok
 -Charger: ti bq24192
 -PMIC: Crystal Cove (BYT variant)
+-Realtek ALC5640 audiocodec
+ -GPIO based headphone detect (AMCR0F28): yes!
 
 GP-electronic 7 inch win10 tablet
 -Touchscreen: Silead gsl1680, without capacitive home-button
@@ -390,6 +392,7 @@ Peaq 10.1" C1010 2-in-1
 -Accel: SMO8500, mount-matrix ok
 -AXP288 PMIC
 -Realtek ALC5640 audiocodec
+ -GPIO based headphone detect (AMCR0F28): no
 Dock:
 -GL850G usb-hub
 -realtek rts5170 sdcard reader
@@ -403,6 +406,7 @@ Asus T100TA
 -Accel: INVN6500, mount-matrix ok
 -Phison PS2251-68-5 UO1329C D75J0.11AA (USB2.0 usb-stick controller)
 -Realtek ALC5642 D2L87HI GD13F (Audio)
+ -GPIO based headphone detect (AMCR0F28): no
 -Winbond 250(Q)64FW1G 1329 6236 QP30003 (BIOS/UEFI)
 -Intel Q326A657 SR1M5 02962 '12 (the main cpu Z3740)
 -M F20 P02 CFQ0589 (No idea)
@@ -413,6 +417,7 @@ Chuwi Vi8 Plus (CWI519)
 -Touchscreen Chipone ICN8505
 -Accel: BOSC0200 -> BMA250E
 -Audio Codec: RT ALC5651
+-dsdt: PMID == 0x02
 
 Lamina I8270 (sticker on back) / T701BR.SE (dmi)
 -Accel: SMO8500, mount-matrix ok
@@ -454,3 +459,43 @@ T-BAO Tbook Air 12.5
 -7934 small square 5 pins each side, unknown
 -Intel 3165D2W wifi/bt
 -ALC269 audio codec
+-Touchpad: PCB: HTX9848TI+EFSA Touch IC: Hantick HTT5288, fingerprint: EM85F690
+
+AXXO WT-1011 10" 2-in-1
+-Wifi RTL8723BS
+-Accel: SMO8500
+-AXP288 PMIC
+-Touchscreen: FTSC1000 i2c-hid
+-Realtek ALC5640 audiocodec
+Dock:
+-ite8595 keyboard + touchpad controller
+
+Chuwi Vi8 (CWI506)
+-8" 800x1280 DSI panel
+-Bay Trail Z3735F, 2GB RAM
+-Touchscreen GSL3676, with capacitive home-button
+-Accel: BMA250E
+-Realtek ALC5640 audiocodec, analog mic3, mono speaker
+ -GPIO based headphone detect (AMCR0F28): yes!
+
+Teclast X80 Pro
+-8" 1200x1920 DSI panel
+-Cherry Trail x5-Z8300, 2GB RAM
+-Touchscreen: GDIX1001
+-Accel KIOX000A
+-Audio Codec: RT ALC5645, jd_mode=3, mono speaker
+
+Asus T100HA
+-10" 1280x800 panel
+-x5-Z8500 CPU / SoC, 2GB RAM
+-PMIC: Crystal Cove
+-Touchscreen: SIS0457 i2c-hid
+-Audio Codec: RT ALC5645
+
+Asus T200TA
+-11.6" 1366x768 panel
+-Touchscreen: sis9203 + sis9251
+-ITE IT8568VG
+-Aido codec: ALC5640
+-Wifi: AP6234
+-GPS module: no markings
