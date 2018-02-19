@@ -437,13 +437,14 @@ Dell Venue 8 Pro 5830:
 Ployer Momo7w
 -7" 1024x600 panel
 -PCB: INET-I71-REV21 Zeng-gc 2015-07-07
--CPU: Z3735G
+-CPU: Z3735G, 1G RAM
 -Touchscreen: gsl1686, with capacitive home-button
 -Wifi: RTL8723BS
 -Accel: BMA250E, mount-matrix ok
 -Audio codec: Realtek ALC5651
  -GPIO based headphone detect (AMCR0F28): yes
  -ALC5651 headphone detect: uses pin RT5651_JD1_1
+ -Mono speaker, internal mic on IN2, external MIC broken / not present ?
 -PMIC: AXP288
 
 HP stream 7:
@@ -521,16 +522,24 @@ Asus T200TA
 
 VIOS LTH17
 -10" 800x1280 panel, mounted 90 degrees rotated
--No touchscreen
--AXP288 PMIC
+-Touchscreen: No touchscreen
+-Wifi: rtl8723bs
+-Accel: no accel
+-Audio codec: Realtek ALC5651
+ -ALC5651 headphone detect: uses pin RT5651_JD1_1
+ -Stereo speaker, internal left mic on IN2, internal right mic on IN1
+  external MIC on IN3
+-PMIC: AXP288
 -USB HID-MT keyboard / MT-touchpad combo
 -USB UVC webcam
--USB r8188eu Wifi
--RT5651 audio codec
 
 I.T.Works TW701
--7" 1024x600 screen ??
+-7" 1024x600 panel
+-CPU: Z3735G, 1G RAM
 -Touchscreen: gsl1686, with capacitive home-button
 -Wifi: rtl8723bs
--Accel: BMA250E, mount-matrix ok ??
--Audio Codec: rt5651
+-Accel: BMA250E, mount-matrix ok
+-Audio codec: Realtek ALC5651
+ -ALC5651 headphone detect: uses pin RT5651_JD1_1
+ -Mono speaker, internal mic on IN2, external MIC on IN3
+-PMIC: AXP288
