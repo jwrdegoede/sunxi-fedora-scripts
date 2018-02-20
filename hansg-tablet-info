@@ -543,3 +543,12 @@ I.T.Works TW701
  -ALC5651 headphone detect: uses pin RT5651_JD1_1
  -Mono speaker, internal mic on IN2, external MIC on IN3
 -PMIC: AXP288
+
+PIPO W4
+-8" 800x1280 panel
+-CPU: Z3735G, 1G RAM
+-Touchscreen: GDIX1001
+-Wifi: rtl8723bs
+-Accel: SMO8500, FIXME needs mount-matrix quirk
+-Audio codec: Realtek ALC5640
+-PMIC: AXP288
