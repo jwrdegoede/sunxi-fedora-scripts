@@ -331,18 +331,20 @@ a33-tzx-723qa4:		b482 a33-Q8_V2.4_1118/GSL1680_FW_D702.fw		 960x640 inverted-x	d
 Trekstor Surftab Wintron 7.0 ST70416-6
 -7" 1024x600 screen
 -Touchscreen: gsl1686, with capacitive home-button
--Wifi: rtl8723bs
+-Wifi: RTL8723BS
 -Accel: BMA250E, mount-matrix ok
--Other: axp288, 25lq64cvig, 7191 1545, OPI MP or DPI MP?
+-Audio codec: ALC5651
+-PMIC: AXP288
+-Other: 25lq64cvig, 7191 1545, OPI MP or DPI MP?
 -DSDT: PMID = 0x05
 
 Cube iwork 8 Air
 -8" 1200x1920 screen
--CPU: Z8300
 -Touchscreen: gsl3670, without capacitive home-button
--Wifi: rtl8723bs
+-CPU: Z8300
+-Wifi: RTL8723BS
 -Accel: KIOX000A
--Audio Codec: nuvoton nau88l24i
+-Audio codec: nuvoton nau88l24i
 -PMIC: AXP288
 -Other chips: winbond 25064fwig
 -DSTD: BDID = One, OSID = 0x04, PMID = 0x02
@@ -352,42 +354,44 @@ EZpad mini 3
 -Touchscreen: gsl3676, without capacitive home-button
 -Wifi: AP6212, needs firmware + nvram from: https://vps.vdwaa.nl/~jelle/brcm/
 -Accel: BOSC0200 -> BMA222E
--Audio Codec: es8316
+-Audio codec: es8316
 -DSTD: BDID = One, OSID = Windows-8.1 ? One : ???, PMID = 0x02
 
 GPD-win
 -PCB: WINI55
--Battery charge IC ti bq24292i
 -Accel: KIOX000A
--Audio Codec: rt5645
--PMIC Intel 6835A P10 Whiskey Cove, CHT version
+-Audio codec: ALC5645
+-PMIC: Intel 6835A P10 Whiskey Cove, CHT version
+-Charge IC: TI bq24292i
 -Unknown IC 17047 36a1s
 -DSDT: OSID == One, PMID == 0x03, (BDID == 0x09) || (BDID == 0x0A)
 
 Point of View TAB-P800W (V 1-0) and (V2.1) appear to be identical
--CPU: Z3735G
 -Touchscreen: Silead gsl3692, with capacitive home-button
--Wifi: Realtek rtl8723bs
+-CPU: Z3735G
+-Wifi: Realtek RTL8723BS
 -Accel: BMA250E, mount-matrix ok
--Audio Codec: Realtek ALC5640
+-Audio codec: ALC5640
  -GPIO based headphone detect (AMCR0F28): yes!
--Charger: ti bq24192
 -PMIC: Crystal Cove (BYT variant)
+-Charge IC: TI bq24192
 
-GP-electronic 7 inch win10 tablet
+GP-electronic T701 7 inch win10 tablet
+-7" 1024x600 panel, mounted upside-down
 -Touchscreen: Silead gsl1680, without capacitive home-button
--Wifi: Realtek rtl8723bs
+-Wifi: RTL8723BS
 -Accel: KIOX000A, mount-matrix ok
+-PMIC: AXP288
 
 hp-pavilion-x2
 -Sensor: BSG1160:
  Accel: BMC150A at addr 0x11
  Gyro: BMG160 at addr 0x68
  Magneto: BMC150B at addr 0x13 
+-AXP288 PMIC
 -Unknown IC: 103737LU-B1(gfx driver?)
 -Unknown IC: 89=2c w25 ??
 -USB-2 hub: gl852g
--AXP288 PMIC
 
 Peaq 10.1" C1010 2-in-1
 -Touchscreen: SIS0817 i2c-hid touchscreen
@@ -418,11 +422,11 @@ Asus T100TA
 
 Chuwi Vi8 Plus (CWI519)
 -8" 800x1280 LCD
--CPU: x5-Z8300, 2G RAM
 -Touchscreen Chipone ICN8505
--WIFI: brcmfmac43430
+-CPU: x5-Z8300, 2G RAM
+-Wifi: brcmfmac43430
 -Accel: BOSC0200 -> BMA250E, mount-matrix ok
--Audio Codec: RT ALC5651
+-Audio codec: ALC5651
 -PMIC: AXP288
 -DSTD: PMID == 0x02
 
@@ -431,7 +435,7 @@ Lamina I8270 (sticker on back) / T701BR.SE (dmi)
 
 Dell Venue 8 Pro 5830:
 -Accel: HID-sensors
--Audio codec: Realtek ALC5640
+-Audio codec: ALC5640
  -GPIO based headphone detect (AMCR0F28): no
 
 Ployer Momo7w
@@ -441,7 +445,7 @@ Ployer Momo7w
 -Touchscreen: gsl1686, with capacitive home-button
 -Wifi: RTL8723BS
 -Accel: BMA250E, mount-matrix ok
--Audio codec: Realtek ALC5651
+-Audio codec: ALC5651
  -GPIO based headphone detect (AMCR0F28): yes
  -ALC5651 headphone detect: uses pin RT5651_JD1_1
  -Mono speaker, internal mic on IN2, external MIC broken / not present ?
@@ -451,21 +455,21 @@ HP stream 7:
 -Touchscreen: Goodix
 -Wifi: RTL8723BS
 -Accel: SMO8500
--Audio codec: Realtek ALC5640
+-Audio codec: ALC5640
 -PMIC: AXP288
 
 Acer iconia 8
--PCB: TQ080BT7_V11
 -Touchscreen: Goodix GT811
+-PCB: TQ080BT7_V11
 -Wifi: AP6383
--Audio codec: Realtek ALC5640
+-Audio codec: ALC5640
 
 I.T.Works TW891
 -8.9" 800x1280 panel, mounted 90 degrees rotated
 -Touchscreen: Silead GSL3670, without capacitive home-button
 -Wifi RTL8723BS
 -Accel: KIOX000A, mount-matrix ok
--Audio codec: Realtek ALC5640
+-Audio codec: ALC5640
  -GPIO based headphone detect (AMCR0F28): yes!
  -Jack detect also works with RT5640_JD_JD1_IN4P setting
 -PMIC: AXP288
@@ -473,59 +477,61 @@ I.T.Works TW891
 -0603:0002 USB keyboard/touchpad(mouse mode) combo dock
 
 T-BAO Tbook Air 12.5
+-Wifi: Intel 3165D2W
+-Audio codec: ALC269
+-Charge IC: TI bq24715
 -ITE IT 8987E keyboard controller
 -PI3USB30532 Type-C switch
--TI BQ24715 charger IC
 -7934 small square 5 pins each side, unknown
--Intel 3165D2W wifi/bt
--ALC269 audio codec
 -Touchpad: PCB: HTX9848TI+EFSA Touch IC: Hantick HTT5288, fingerprint: EM85F690
 
 AXXO WT-1011 10" 2-in-1
+-Touchscreen: FTSC1000 i2c-hid
 -Wifi RTL8723BS
 -Accel: SMO8500
+-Audio codec: ALC5640
 -AXP288 PMIC
--Touchscreen: FTSC1000 i2c-hid
--Realtek ALC5640 audiocodec
 Dock:
 -ite8595 keyboard + touchpad controller
 
 Chuwi Vi8 (CWI506)
 -8" 800x1280 DSI panel
--Bay Trail Z3735F, 2GB RAM
 -Touchscreen GSL3676, with capacitive home-button
+-PCB: INET-I86M-REV03 Zeng-gc 2014-12-19
+-Bay Trail Z3735F, 2GB RAM
+-Wifi: RTL8723BS
 -Accel: BMA250E
--Realtek ALC5640 audiocodec, analog mic3, mono speaker
+-Audicodec: Realtek ALC5640, analog mic3, mono speaker
  -GPIO based headphone detect (AMCR0F28): yes!
 
 Teclast X80 Pro
 -8" 1200x1920 DSI panel
--Cherry Trail x5-Z8300, 2GB RAM
 -Touchscreen: GDIX1001
--Accel KIOX000A
--Audio Codec: RT ALC5645, jd_mode=3, mono speaker
+-Cherry Trail x5-Z8300, 2GB RAM
+-Accel: KIOX000A
+-Audio Codec: ALC5645, jd_mode=3, mono speaker
 
 Asus T100HA
 -10" 1280x800 panel
--x5-Z8500 CPU / SoC, 2GB RAM
--PMIC: Crystal Cove
 -Touchscreen: SIS0457 i2c-hid
--Audio Codec: RT ALC5645
+-x5-Z8500 CPU / SoC, 2GB RAM
+-Audio Codec: ALC5645
+-PMIC: Crystal Cove
 
 Asus T200TA
 -11.6" 1366x768 panel
 -Touchscreen: sis9203 + sis9251
--ITE IT8568VG
--Audio codec: ALC5640
 -Wifi: AP6234
+-Audio codec: ALC5640
+-ITE IT8568VG
 -GPS module: no markings
 
 VIOS LTH17
 -10" 800x1280 panel, mounted 90 degrees rotated
 -Touchscreen: No touchscreen
--Wifi: rtl8723bs
+-Wifi: RTL8723BS
 -Accel: no accel
--Audio codec: Realtek ALC5651
+-Audio codec: ALC5651
  -ALC5651 headphone detect: uses pin RT5651_JD1_1
  -Stereo speaker, internal left mic on IN2, internal right mic on IN1
   external MIC on IN3
@@ -535,20 +541,30 @@ VIOS LTH17
 
 I.T.Works TW701
 -7" 1024x600 panel
--CPU: Z3735G, 1G RAM
 -Touchscreen: gsl1686, with capacitive home-button
--Wifi: rtl8723bs
+-CPU: Z3735G, 1G RAM
+-Wifi: RTL8723BS
 -Accel: BMA250E, mount-matrix ok
--Audio codec: Realtek ALC5651
+-Audio codec: ALC5651
  -ALC5651 headphone detect: uses pin RT5651_JD1_1
  -Mono speaker, internal mic on IN2, external MIC on IN3
 -PMIC: AXP288
 
 PIPO W4
 -8" 800x1280 panel
--CPU: Z3735G, 1G RAM
 -Touchscreen: GDIX1001
--Wifi: rtl8723bs
+-CPU: Z3735G, 1G RAM
+-Wifi: RTL8723BS
 -Accel: SMO8500, FIXME needs mount-matrix quirk
--Audio codec: Realtek ALC5640
+-Audio codec: ALC5640
+-PMIC: AXP288
+
+Yours 8" Tablet (white no markings)
+-8" 800x1280 DSI panel
+-Touchscreen: GSL3676, with capacitive home-button
+-PCB: INET-I86M-REV21 Zeng-gc 2015-07-08
+-CPU: Bay Trail Z3735F, 2GB RAM
+-Wifi: RTL8723BS
+-Accel: BMA250E
+-Audio codec: Realtek ALC5651, mono speaker
 -PMIC: AXP288
