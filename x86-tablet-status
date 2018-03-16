@@ -1,20 +1,22 @@
 Bay and Cherry Trail device status with linux-next
 
 		lcd wif tou acc bat c2a but bri sus spk pho jck hst dev blu c3a tpad
-Acer Ic. W1-810 yes NVR yes yes yes yes yes yes yes             yes -       -   -
-Asus T100TA	yes NVR yes yes                     yes yes         -       -   yes
-Asus T100HA	yes NVR yes no
-Asus T100 CHI   yes NVR     yes                                     -   yes -   yes
+Acer Ic. W1-810 yes NVR yes yes yes yes yes yes yes             yes -   FIR -   -
+Asus T100TA	yes yes yes yes                     yes yes         -   FIR -   yes
+Asus T100HA	ROT yes yes no                                                  yes
+Asus T100CHI	yes yes yes yes                                     -   FIR -   yes
+Asus T200TA	yes yes                                             -   FIR -   yes
 Cube iWork8 Air	yes yes FIR yes     yes yes yes yes             (1) (1)     -   -
-Chuwi Vi8 Plus	yes yes (1) yes yes yes yes yes yes             (1) (1)     -   -
+Chuwi Hi8 Pro	yes yes FIR yes yes     yes yes                             -   -
+Chuwi Vi8 Plus	yes yes (1) yes yes yes yes yes yes             (1) (1) FIR -   -
 Dell Venue 5830 yes yes yes yes yes yes yes yes yes yes         yes -       -   -
 Dell Venue 7130 yes yes yes yes yes yes yes yes yes yes         -   -       -   yes
 GP-elec. T701   ROT yes FIR yes yes yes yes yes yes             yes -       -   -
-GPD win		ROT NVR yes     yes yes yes yes yes no  yes yes
+GPD win		ROT NVR yes     yes yes yes yes yes yes yes yes yes yes FIR yes -
 HP Pavilion X2	yes yes                                                     no  (2)
 HP Stream 7     DPI yes yes yes yes     yes yes yes yes         yes -       -   -
 I.T.Works TW891 ROT yes yes yes yes yes
-Jump. EZpad m3	yes FIR FIR yes yes yes yes yes yes             yes (1)     -   -
+Jump. EZpad m3	yes NVR FIR yes yes yes yes yes yes             yes (1) FIR -   -
 Lamina I8270    yes yes yes yes yes     yes yes yes             yes         -   -
 Peaq MMC1010    yes yes yes yes yes yes yes yes yes             yes -       -   yes
 Pipo W2S	yes NVR FIR yes
@@ -29,12 +31,12 @@ bri(ghtness) sus(pend&resume) sp(ea)k(er) (head)pho(nes) j(a)ck-detection
 yes   Works
 no    Does not work
 -     Not applicable / not available on this device
-ROT   Screen is mounted rotated vs normal device orientation
+ROT   Screen is mounted rotated vs normal device orientation, works otherwise
+      GNOME3 automatically deals with this, other desktop-environments not
 NVR   Needs nvram file
-FRW   Needs firmware which is not in linux-firmware
+FIR   Needs firmware which is not in linux-firmware
 DPI   DPI is wrong
 
 (1) Needs unmerged kernel patches
 (2) Works in mouse emulation mode, needs patches to enable multi-touch mode
 (3) Trekstor Surftab Wintron 7.0 ST70416-6
-

@@ -420,6 +420,15 @@ Asus T100TA
 -ITE IT8568VG 1331-AXO ZC0P1A (No idea)
 -SANDISK 9.15 XC4*00 SanDisk32G (The eMMC storage unit, 32GB version)
 
+Chuwi Hi8 Pro (CWI513)
+-8" 1200x1920 LCD
+-Touchscreen GSL3676, with capacitive home-button
+-CPU: x5-Z8350, 2G RAM
+-Wifi: RTL8723BS
+-Accel: BOSC0200 -> BMA250E, mount-matrix ok
+-Audio codec: ALC5651
+-PMIC: AXP288
+
 Chuwi Vi8 Plus (CWI519)
 -8" 800x1280 LCD
 -Touchscreen Chipone ICN8505
