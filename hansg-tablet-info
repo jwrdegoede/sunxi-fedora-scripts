@@ -384,14 +384,23 @@ GP-electronic T701 7 inch win10 tablet
 -PMIC: AXP288
 
 hp-pavilion-x2
+-PCB: DORITOS1-6050A2755401-MB unreadable TPN-I121
 -Sensor: BSG1160:
  Accel: BMC150A at addr 0x11
  Gyro: BMG160 at addr 0x68
  Magneto: BMC150B at addr 0x13 
+-Audio codec: ALC5642
 -AXP288 PMIC
--Unknown IC: 103737LU-B1(gfx driver?)
+-I/O chip (superio?) ENE IO3737LU-B1
 -Unknown IC: 89=2c w25 ??
+-Unknown IC: B7 k442 (type-c controller?)
+-Unknown IC: 007 A502 074
+-Unknown IC: 2620E 4245F2
+-Unknown IC: 27b56
+-Unknown IC: A338 AQ552
+-2x Unknown IC: cnf581 (power regulator?)
 -USB-2 hub: gl852g
+-DSDT: PMID == 0x05
 
 Peaq 10.1" C1010 2-in-1
 -Touchscreen: SIS0817 i2c-hid touchscreen
@@ -557,6 +566,15 @@ I.T.Works TW701
 -Audio codec: ALC5651
  -ALC5651 headphone detect: uses pin RT5651_JD1_1
  -Mono speaker, internal mic on IN2, external MIC on IN3
+-PMIC: AXP288
+
+PIPO W2S
+-8" 1200x1920 panel
+-Touchscreen: gsl????, without capacitive home-button
+-CPU: x5-Z8350, 2G RAM
+-Wifi: RTL8723BS
+-Accel: KIOX000A, mount-matrix ok
+-Audio codec: NAU8824
 -PMIC: AXP288
 
 PIPO W4
