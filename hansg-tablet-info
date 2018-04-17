@@ -330,67 +330,77 @@ a33-tzx-723qa4:		b482 a33-Q8_V2.4_1118/GSL1680_FW_D702.fw		 960x640 inverted-x	d
 
 Trekstor Surftab Wintron 7.0 ST70416-6
 -7" 1024x600 screen
--Touchscreen: gsl1686, with capacitive home-button
+-Touchscreen: gsl1686, with capacitive home-button, fw NOT in EFI
+-CPU: Bay Trail Z3735G, 1G RAM
 -Wifi: RTL8723BS
 -Accel: BMA250E, mount-matrix ok
 -Audio codec: ALC5651
--PMIC: AXP288
+-PMIC: AXP288, charging only through micro USB 5V/2A
 -Other: 25lq64cvig, 7191 1545, OPI MP or DPI MP?
 -DSDT: PMID = 0x05
 
 Cube iwork 8 Air
 -8" 1200x1920 screen
--Touchscreen: gsl3670, without capacitive home-button
--CPU: Z8300
+-Touchscreen: gsl3670, without capacitive home-button, fw in EFI
+-CPU: Cherry Trail Z8300, 2G RAM
 -Wifi: RTL8723BS
 -Accel: KIOX000A
 -Audio codec: nuvoton nau88l24i
--PMIC: AXP288
+-PMIC: AXP288, charging only through micro USB 5V/2A
 -Other chips: winbond 25064fwig
 -DSTD: BDID = One, OSID = 0x04, PMID = 0x02
 
 EZpad mini 3
 -8" 1280x800 screen
--Touchscreen: gsl3676, without capacitive home-button
+-Touchscreen: gsl3676, without capacitive home-button, fw NOT in EFI
 -Wifi: AP6212, needs firmware + nvram from: https://vps.vdwaa.nl/~jelle/brcm/
 -Accel: BOSC0200 -> BMA222E
 -Audio codec: es8316
+-PMIC: AXP288, charging only through micro USB 5V/2A
 -DSTD: BDID = One, OSID = Windows-8.1 ? One : ???, PMID = 0x02
 
 GPD-win
 -PCB: WINI55
 -Accel: KIOX000A
 -Audio codec: ALC5645
--PMIC: Intel 6835A P10 Whiskey Cove, CHT version
+-PMIC: Intel 6835A P10 Whiskey Cove (CHT), charging only through Type-C PD 5-12V
 -Charge IC: TI bq24292i
 -Unknown IC 17047 36a1s
 -DSDT: OSID == One, PMID == 0x03, (BDID == 0x09) || (BDID == 0x0A)
 
 Point of View TAB-P800W (V 1-0) and (V2.1) appear to be identical
--Touchscreen: Silead gsl3692, with capacitive home-button
--CPU: Z3735G
+-8" 800x1280 LCD
+-Touchscreen: Silead gsl3692, with capacitive home-button, fw NOT in EFI
+-CPU: Bay Trail Z3735G, 1G RAM
 -Wifi: Realtek RTL8723BS
 -Accel: BMA250E, mount-matrix ok
 -Audio codec: ALC5640
  -GPIO based headphone detect (AMCR0F28): yes!
--PMIC: Crystal Cove (BYT variant)
+-PMIC: Crystal Cove (BYT), charging only through micro USB 5V/2A
 -Charge IC: TI bq24192
+-Fuelgauge: TI bq27443a
 
 GP-electronic T701 7 inch win10 tablet
 -7" 1024x600 panel, mounted upside-down
--Touchscreen: Silead gsl1680, without capacitive home-button
+-Touchscreen: Silead gsl1680, without capacitive home-button, fw NOT in EFI
+-CPU: Bay Trail Z3735G, 1G RAM
 -Wifi: RTL8723BS
 -Accel: KIOX000A, mount-matrix ok
--PMIC: AXP288
+-Audio codec: ESS8316
+-PMIC: AXP288, charging only through micro USB 5V/2A
 
 hp-pavilion-x2
+-10" 1280x800 DSI panel
+-Touchscreen: SYNA7508
 -PCB: DORITOS1-6050A2755401-MB unreadable TPN-I121
+-CPU: Bay Trail Z3736F, 2GB RAM
+-Wifi: RTL8723BS
 -Sensor: BSG1160:
  Accel: BMC150A at addr 0x11
  Gyro: BMG160 at addr 0x68
  Magneto: BMC150B at addr 0x13 
 -Audio codec: ALC5642
--AXP288 PMIC
+-PMIC: AXP288, charging only through Type-C 5V/2A, extra IC to detect 3A Type-C
 -I/O chip (superio?) ENE IO3737LU-B1
 -Unknown IC: 89=2c w25 ??
 -Unknown IC: B7 k442 (type-c controller?)
@@ -408,7 +418,7 @@ Peaq 10.1" C1010 2-in-1
 -Accel: SMO8500, mount-matrix ok
 -Audio Codec: Realtek ALC5640
  -GPIO based headphone detect (AMCR0F28): no
--AXP288 PMIC
+-AXP288 PMIC, charging only through power-barrel, adapter 5V/3A
 -Dock:
  -GL850G usb-hub
  -realtek rts5170 sdcard reader
@@ -422,6 +432,7 @@ Asus T100TA
 -Accel: INVN6500, mount-matrix ok
 -Audio Codec: Realtek ALC5642
  -GPIO based headphone detect (AMCR0F28): no
+-PMIC: Crystal Cove (BYT), charging only through micro USB at 5V/2A
 -Phison PS2251-68-5 UO1329C D75J0.11AA (USB2.0 usb-stick controller)
 -Winbond 250(Q)64FW1G 1329 6236 QP30003 (BIOS/UEFI)
 -Intel Q326A657 SR1M5 02962 '12 (the main cpu Z3740)
@@ -432,65 +443,73 @@ Asus T100TA
 Chuwi Hi8 Pro (CWI513)
 -8" 1200x1920 LCD
 -Touchscreen GSL3676, with capacitive home-button
--CPU: x5-Z8350, 2G RAM
+-CPU: Cherry Trail x5-Z8350, 2G RAM
 -Wifi: RTL8723BS
 -Accel: BOSC0200 -> BMA250E, mount-matrix ok
 -Audio codec: ALC5651
--PMIC: AXP288
+-PMIC: AXP288, charging only through Type-C 5V/2A
 
 Chuwi Vi8 Plus (CWI519)
 -8" 800x1280 LCD
--Touchscreen Chipone ICN8505
--CPU: x5-Z8300, 2G RAM
+-Touchscreen Chipone ICN8505, fw in EFI
+-CPU: Cherry Trail x5-Z8300, 2G RAM
 -Wifi: brcmfmac43430
 -Accel: BOSC0200 -> BMA250E, mount-matrix ok
 -Audio codec: ALC5651
--PMIC: AXP288
+-PMIC: AXP288, charging only through Type-C 5V/2A
 -DSTD: PMID == 0x02
 
 Lamina I8270 (sticker on back) / T701BR.SE (dmi)
+-8" 800x1280 LCD
+-Touchscreen: GDIX1001, without capacitive home-button
+-CPU: Bay Trail Z3735G, 1G RAM
+-Wifi: brcmfmac43430
 -Accel: SMO8500, mount-matrix ok
+-Audio codec: ALC5640
+-PMIC: AXP288, charging only through micro USB 5V/2A
 
 Dell Venue 8 Pro 5830:
 -Accel: HID-sensors
 -Audio codec: ALC5640
  -GPIO based headphone detect (AMCR0F28): no
+-PMIC: ???, charging only through micro USB 5V/2A
 
 Ployer Momo7w
 -7" 1024x600 panel
 -PCB: INET-I71-REV21 Zeng-gc 2015-07-07
--CPU: Z3735G, 1G RAM
--Touchscreen: gsl1686, with capacitive home-button
+-CPU: Bay Trail Z3735G, 1G RAM
+-Touchscreen: gsl1686, with capacitive home-button, fw NOT in EFI
 -Wifi: RTL8723BS
 -Accel: BMA250E, mount-matrix ok
 -Audio codec: ALC5651
  -GPIO based headphone detect (AMCR0F28): yes
  -ALC5651 headphone detect: uses pin RT5651_JD1_1
  -Mono speaker, internal mic on IN2, external MIC broken / not present ?
--PMIC: AXP288
+-PMIC: AXP288, charging only through micro USB 5V/2A
 
 HP stream 7:
 -Touchscreen: Goodix
 -Wifi: RTL8723BS
 -Accel: SMO8500
 -Audio codec: ALC5640
--PMIC: AXP288
+-PMIC: AXP288, charging only through micro USB 5V/2A
 
 Acer iconia 8
 -Touchscreen: Goodix GT811
 -PCB: TQ080BT7_V11
 -Wifi: AP6383
 -Audio codec: ALC5640
+-PMIC: ???, charging only through micro USB 5V/2A
 
 I.T.Works TW891
 -8.9" 800x1280 panel, mounted 90 degrees rotated
--Touchscreen: Silead GSL3670, without capacitive home-button
+-Touchscreen: Silead GSL3670, without capacitive home-button, fw NOT in EFI
 -Wifi RTL8723BS
 -Accel: KIOX000A, mount-matrix ok
 -Audio codec: ALC5640
  -GPIO based headphone detect (AMCR0F28): yes!
  -Jack detect also works with RT5640_JD_JD1_IN4P setting
--PMIC: AXP288
+-PMIC: AXP288, charging only through micro USB 5V/2A
 -USB hub inside tablet: GL852G
 -0603:0002 USB keyboard/touchpad(mouse mode) combo dock
 
@@ -508,39 +527,42 @@ AXXO WT-1011 10" 2-in-1
 -Wifi RTL8723BS
 -Accel: SMO8500
 -Audio codec: ALC5640
--AXP288 PMIC
+-AXP288 PMIC, charging only through micro USB 5V/2A
 Dock:
 -ite8595 keyboard + touchpad controller
 
 Chuwi Vi8 (CWI506)
 -8" 800x1280 DSI panel
--Touchscreen GSL3676, with capacitive home-button
+-Touchscreen GSL3676, with capacitive home-button, fw NOT in EFI
 -PCB: INET-I86M-REV03 Zeng-gc 2014-12-19
--Bay Trail Z3735F, 2GB RAM
+-CPU: Bay Trail Z3735F, 2GB RAM
 -Wifi: RTL8723BS
 -Accel: BMA250E
 -Audicodec: Realtek ALC5640, analog mic3, mono speaker
  -GPIO based headphone detect (AMCR0F28): yes!
+-PMIC: AXP288, charging only through micro USB 5V/2A
 
 Teclast X80 Pro
 -8" 1200x1920 DSI panel
 -Touchscreen: GDIX1001
--Cherry Trail x5-Z8300, 2GB RAM
+-CPU: Cherry Trail x5-Z8300, 2GB RAM
 -Accel: KIOX000A
 -Audio Codec: ALC5645, jd_mode=3, mono speaker
+-PMIC: ???, charging only through micro USB 5V/2A
 
 Asus T100HA
 -10" 1280x800 panel
 -Touchscreen: SIS0457 i2c-hid
--x5-Z8500 CPU / SoC, 2GB RAM
+-CPU: Cherry Trail x5-Z8500, 2GB RAM
 -Audio Codec: ALC5645
--PMIC: Crystal Cove
+-PMIC: Crystal Cove (CHT), charging only through micro USB 5V/2A or 9V/2A
 
 Asus T200TA
 -11.6" 1366x768 panel
 -Touchscreen: sis9203 + sis9251
 -Wifi: AP6234
 -Audio codec: ALC5640
+-PMIC: ??, charging only through power-barrel 19.5V/1.75A
 -ITE IT8568VG
 -GPS module: no markings
 
@@ -553,45 +575,72 @@ VIOS LTH17
  -ALC5651 headphone detect: uses pin RT5651_JD1_1
  -Stereo speaker, internal left mic on IN2, internal right mic on IN1
   external MIC on IN3
--PMIC: AXP288
+-PMIC: AXP288, charging only through power-barrel, adapter 5V/3A
 -USB HID-MT keyboard / MT-touchpad combo
 -USB UVC webcam
 
 I.T.Works TW701
 -7" 1024x600 panel
--Touchscreen: gsl1686, with capacitive home-button
--CPU: Z3735G, 1G RAM
+-Touchscreen: gsl1686, with capacitive home-button, fw NOT in EFI
+-CPU: Bay Trail Z3735G, 1G RAM
 -Wifi: RTL8723BS
 -Accel: BMA250E, mount-matrix ok
 -Audio codec: ALC5651
  -ALC5651 headphone detect: uses pin RT5651_JD1_1
  -Mono speaker, internal mic on IN2, external MIC on IN3
--PMIC: AXP288
+-PMIC: AXP288, charging only through micro USB 5V/2A
 
 PIPO W2S
 -8" 1200x1920 panel
--Touchscreen: gsl????, without capacitive home-button
--CPU: x5-Z8350, 2G RAM
+-Touchscreen: gsl????, without capacitive home-button, fw in EFI
+-CPU: Cherry Trail x5-Z8350, 2G RAM
 -Wifi: RTL8723BS
 -Accel: KIOX000A, mount-matrix ok
 -Audio codec: NAU8824
--PMIC: AXP288
+-PMIC: AXP288, charging only through micro USB 5V/2A
 
 PIPO W4
 -8" 800x1280 panel
 -Touchscreen: GDIX1001
--CPU: Z3735G, 1G RAM
+-CPU: Bay Trail Z3735G, 1G RAM
 -Wifi: RTL8723BS
 -Accel: SMO8500, FIXME needs mount-matrix quirk
 -Audio codec: ALC5640
--PMIC: AXP288
+-PMIC: AXP288, charging only through micro USB 5V/2A
 
 Yours 8" Tablet (white no markings)
 -8" 800x1280 DSI panel
--Touchscreen: GSL3676, with capacitive home-button
+-Touchscreen: GSL3676, with capacitive home-button, fw NOT in EFI
 -PCB: INET-I86M-REV21 Zeng-gc 2015-07-08
 -CPU: Bay Trail Z3735F, 2GB RAM
 -Wifi: RTL8723BS
--Accel: BMA250E
+-Accel: BMA250E, mount-matrix ok
 -Audio codec: Realtek ALC5651, mono speaker
--PMIC: AXP288
+-PMIC: AXP288, charging only through micro USB 5V/2A
+
+MSI S100 Tablet + keyboard cover
+-10.1" 1280x800 LVDS screen connected through eDP to LVDS convertor chip
+-Touchscreen FTSC1000 i2c-hid hid-multitouch
+-PCB: T021_Z3770D_V1_2
+-CPU Bay Trail Z3770D, 2GB RAM
+-Wifi: RTL8723BS
+-Accel: SMO8500, mount-matrix ok
+-Audio codec: ALC5640, mono speaker
+-PMIC: Crystal Cove (BYT), charging only through power-barrel, adapter 12V/1.5A
+-Charge IC: TI bq24192i
+-DP to LVDS IC: Parade ps8622
+-EC: IT8568E, also an i2c-hid keyb/mouse (which does not do anything)
+
+Lenovo Ideapad Miix 310
+-10.1" 800x1280 DSI panel
+-Touchscreen FTSC1000 i2c-hid hid-multitouch
+-CPU: Cherry Trail x5-Z8350, 2G RAM
+-Wifi: RTL8723BS
+-Accel: KIOX000A, mount-matrix ok
+-Audio codec: ALC5645
+-PMIC: AXP288, charging only through power-barrel, adapter 5V/4A
+
+Lenovo Ideapad Miix 320
+-PMIC: AXP288 ?
+ charging only through power-barrel, adapter 5V/4A ?
+-DSDT: PMID = 0x02 ?
