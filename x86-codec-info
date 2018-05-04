@@ -1,0 +1,29 @@
+rt5640:		Spk	Mic	JD	AIF		quirk	SoC	Quirk added
+-Acer iconia 8
+-Asus T100TA	stereo	IN1	JD2IN4N	SSP2 AIF1		BYT	yes
+-Asus T100CHI
+-Asus T200TA    stereo  DMIC1		SSP2 AIF1	403430	BYT
+-Axxo WT1011	stereo	IN3-dff	JD1IN4P	SSP0 AIF1	543423	BYTCR
+-Chuwi Vi8	mono	IN3-dff JD1IN4P SSP0 AIF1	563423	BYTCR
+-Dell Ven8 5830	mono	DMIC1	JD2IN4N SSP2 AIF1	423430	BYT	yes
+-HP stream 7
+-ITworks tw891	mono	IN3-dff	JD1IN4P SSP0 AIF1	563423	BYTCR	yes
+-Lamina I8270
+-MSI S100	mono	IN1-dff	JD2IN4N	SSP2 AIF1	463432	BYT
+-Pavilion x2	stereo	DMIC1	JD2 (2)	SSP0 AIF1(1)	502f30	BYTCR	yes
+-Peaq C1010
+-Pipo W4
+-PoV-mobii-800w mono	IN1-dff	JD2IN4N	SSP0 AIF2	663432	BYTCR
+-Tos Click Mini	stereo	DMIC1	JD2 (2)	SSP0 AIF1(1)	502f30	BYTCR	yes
+
+1) BYTCR devices with routing not in BIOS table and not matching the default
+2) Needs OVCD settings of 1.5mA sf0.75 for button-press detect
+
+rt5645:		Spk	Mic	JDmod	UCM
+-Asus T100HA	stereo	dmic1	3 inv	custom
+-GPD Pocket	mono	diff	3 inv	chtrt5645-mono-speaker-analog-mic
+-GPD win	mono	ana	3 inv	chtrt5645-mono-speaker-analog-mic
+-Kazam Vision	stereo	ana	3	chtrt5645
+-Lenovo Miix310 stereo	diff	3	chtrt5645
+-Lenovo Miix320 stereo	dmic2	3	custom
+-Teclast X80Pro	mono	ana	3	chtrt5645-mono-speaker-analog-mic

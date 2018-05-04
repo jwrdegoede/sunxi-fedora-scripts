@@ -427,7 +427,7 @@ Peaq 10.1" C1010 2-in-1
  -ite8595e-128 keyboard + touchpad controller
 
 Asus T100TA
--Touchscreen: Amtel MXT1664TXES-C2U 1330B TW QLG9F
+-Touchscreen: Atmel MXT1664TXES-C2U 1330B TW QLG9F
 -Wifi: Broadcom BCM43241SFKFFBG TN1322 P24 294688 P3T
 -Accel: INVN6500, mount-matrix ok
 -Audio Codec: Realtek ALC5642
@@ -559,10 +559,12 @@ Asus T100HA
 
 Asus T200TA
 -11.6" 1366x768 panel
--Touchscreen: sis9203 + sis9251
+-Touchscreen: SIS0817 (sis9203 + sis9251 ICs)
+-CPU: Bay Trail Z3775, 2G RAM
 -Wifi: AP6234
+-Accel: INVN6500, mount-matrix ok
 -Audio codec: ALC5640
--PMIC: ??, charging only through power-barrel 19.5V/1.75A
+-PMIC: Crystal Cove (BYT), charging only through power-barrel 19.5V/1.75A
 -ITE IT8568VG
 -GPS module: no markings
 
@@ -641,6 +643,30 @@ Lenovo Ideapad Miix 310
 -PMIC: AXP288, charging only through power-barrel, adapter 5V/4A
 
 Lenovo Ideapad Miix 320
--PMIC: AXP288 ?
- charging only through power-barrel, adapter 5V/4A ?
--DSDT: PMID = 0x02 ?
+-10.1" 800x1280 DSI panel
+-Touchscreen: ?
+-CPU: Cherry Trail x5-Z8350, 2G RAM
+-Wifi: ?
+-Accel: KIOX000A, mount-matrix ok
+-Audio codec: ALC5645
+-PMIC: AXP288, charging only through power-barrel, adapter 5V/4A
+-DSDT: PMID = 0x02
+
+Kazam Vision
+-10.1" 800x1280 DSI panel
+-Touchscreen: GDIX1001
+-CPU: Cherry Trail x5-Z8300, 2G RAM
+-Wifi: Intel 3165
+-Accel: KIOX000A, mount-matrix ok
+-Audio codec: ALC5645
+-PMIC: AXP288, charging only through micro-usb 5V/2A max
+-DSDT: PMID = 0x02
+
+Toshiba Click Mini L9W-B
+-8.9" 1920x1200 DSI panel
+-Touchscreen: SIS0817
+-CPU: Bay Trail Z3735F, 2G RAM
+-Wifi: RTL8723BS
+-Accel: HID sensors
+-Audio codec: ALC5640
+-PMIC: Dollar Cove TI PMIC
