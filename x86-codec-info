@@ -1,23 +1,29 @@
 rt5640:		Spk	Mic	JD	AIF		quirk	SoC	Quirk added
--Acer iconia 8
--Asus T100TA	stereo	IN1	JD2IN4N	SSP2 AIF1		BYT	yes
--Asus T100CHI
--Asus T200TA    stereo  DMIC1		SSP2 AIF1	403430	BYT
--Axxo WT1011	stereo	IN3-dff	JD1IN4P	SSP0 AIF1	543423	BYTCR
--Chuwi Vi8	mono	IN3-dff JD1IN4P SSP0 AIF1	563423	BYTCR
+-Asus T100CHI	stereo	DMIC1	JD2IN4N	SSP2 AIF1	403430	BYT	defaults
+-Asus T100TA	stereo	IN1	JD2IN4N	SSP2 AIF1	443432	BYT	yes
+-Asus T200TA    stereo  DMIC1	JD2IN4N	SSP2 AIF1	403430	BYT	defaults
 -Dell Ven8 5830	mono	DMIC1	JD2IN4N SSP2 AIF1	423430	BYT	yes
--HP stream 7
+-MSI S100	mono	IN1-dff	JD2IN4N	SSP2 AIF1	463432	BYT	yes
+-Acer iconia 8	stereo	DMIC1	JD1 (3)	SSP0 AIF1	503420	BYTCR	yes
+-Axxo WT1011	stereo	IN3-dff	JD1IN4P	SSP0 AIF1	543423	BYTCR	defaults
+-Chuwi Vi8	mono	IN3-dff JD1IN4P SSP0 AIF1	563423	BYTCR	yes
+-HP Pavilion x2	stereo	DMIC1	JD2 (2)	SSP0 AIF1(1)	502f30	BYTCR	yes
+-HP Stream 7	mono	IN3-dff	JD1-inv SSP0 AIF1	573423	BYTCR	yes
 -ITworks tw891	mono	IN3-dff	JD1IN4P SSP0 AIF1	563423	BYTCR	yes
--Lamina I8270
--MSI S100	mono	IN1-dff	JD2IN4N	SSP2 AIF1	463432	BYT
--Pavilion x2	stereo	DMIC1	JD2 (2)	SSP0 AIF1(1)	502f30	BYTCR	yes
--Peaq C1010
--Pipo W4
--PoV-mobii-800w mono	IN1-dff	JD2IN4N	SSP0 AIF2	663432	BYTCR
+-Lamina I8270	mono	IN3-dff	JD1-inv	SSP0 AIF1	573423	BYTCR	yes
+-Peaq C1010	stereo	IN3-dff	JD1IN4P	SSP0 AIF1	543423	BYTCR	defaults
+-Pipo W4	mono	IN3-dff JD1IN4P	SSP0 AIF1	563423	BYTCR	yes
+-PoV-mobii-800w mono	IN1-dff	JD2IN4N	SSP0 AIF2	663432	BYTCR	yes
 -Tos Click Mini	stereo	DMIC1	JD2 (2)	SSP0 AIF1(1)	502f30	BYTCR	yes
 
 1) BYTCR devices with routing not in BIOS table and not matching the default
 2) Needs OVCD settings of 1.5mA sf0.75 for button-press detect
+3) OVCD broken, sees everything as headset, no button-press
+
+Tested UCM profiles:
+bytcr-rt5640-mono-spk-in3-mic
+bytcr-rt5640-stereo-spk-dmic1-mic
+bytcr-rt5640-stereo-spk-in3-mic
 
 rt5645:		Spk	Mic	JDmod	UCM
 -Asus T100HA	stereo	dmic1	3 inv	custom

@@ -1,11 +1,11 @@
 Bay and Cherry Trail device status with linux-next
 
 		lcd wif tou acc bat c2a but bri sus spk pho jck hst dev blu c3a tpad lid
-Acer Ic. W1-810 yes NVR yes yes yes yes yes yes yes             yes -   FIR -   -
+Acer Ic. W1-810 yes NVR yes yes yes yes yes yes yes yes yes yes yes -   FIR -   -    -
 Asus T100TA	yes yes yes yes                     yes yes         -   FIR -   yes
-Asus T100HA	ROT yes yes no                                                  yes
-Asus T100CHI	yes yes yes yes                                     -   FIR -   yes
-Asus T200TA	yes yes no  yes yes -   yes yes yes yes         yes -   FIR -   yes  (3)
+Asus T100HA	ROT yes no  yes yes yes yes yes yes yes yes yes yes -   FIR -   yes  yes
+Asus T100CHI	yes yes yes yes yes yes yes yes yes yes yes yes yes -   FIR -   yes  yes
+Asus T200TA	yes yes no  yes yes -   yes yes yes yes yes yes yes -   FIR -   yes  (3)
 Axxo WT1011     yes yes yes yes yes yes yes yes yes yes yes yes yes -       -   (1)  yes
 Cube iWork8 Air	yes yes FIR yes     yes yes yes yes             yes yes     -   -
 Chuwi Hi8 Pro	yes yes FIR yes yes     yes yes                             -   -
@@ -19,10 +19,11 @@ HP Stream 7     DPI yes yes yes yes     yes yes yes yes         yes -       -   
 I.T.Works TW891 ROT yes yes yes yes yes yes yes yes yes yes yes yes -       -   (1)  yes
 Jump. EZpad m3	yes NVR FIR yes yes yes yes yes yes             yes yes FIR -   -
 Kazam Vision	yes yes yes yes yes yes yes yes yes yes yes yes yes yes yes -   -
-Lamina I8270    yes yes yes yes yes     yes yes yes             yes         -   -
+Lamina I8270    yes yes yes yes yes     yes yes yes yes yes yes yes         -   -    -
 MSI S100	yes yes yes     yes -   yes yes yes yes yes yes yes -       -   (1)  -
-Peaq MMC1010    yes yes yes yes yes yes yes yes yes             yes -       -   yes
+Peaq MMC1010    yes yes yes yes yes yes yes yes yes yes yes yes yes -       -   (1)  broken
 Pipo W2S	yes NVR FIR yes
+Pipo W4		yes yes yes yes yes yes yes yes yes yes yes yes yes ?       -   -    -
 Ployer Momo7w   yes yes FIR yes yes yes yes yes yes             yes -       -   -
 PoV TAB-P800W	yes yes FIR yes yes     yes yes yes             yes -       -   -
 Toshib Click(4) yes yes yes yes yes yes yes yes yes yes yes yes yes -       -   (2)  yes

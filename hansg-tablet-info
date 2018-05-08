@@ -389,7 +389,7 @@ GP-electronic T701 7 inch win10 tablet
 -Audio codec: ESS8316
 -PMIC: AXP288, charging only through micro USB 5V/2A
 
-hp-pavilion-x2
+HP Pavilion X2 10-n000nd
 -10" 1280x800 DSI panel
 -Touchscreen: SYNA7508
 -PCB: DORITOS1-6050A2755401-MB unreadable TPN-I121
@@ -413,7 +413,9 @@ hp-pavilion-x2
 -DSDT: PMID == 0x05
 
 Peaq 10.1" C1010 2-in-1
+-10.1" 1920x1200 DSI panel
 -Touchscreen: SIS0817 i2c-hid touchscreen
+-CPU: Bay Trail Z3736F, 2GB RAM
 -Wifi RTL8723BS
 -Accel: SMO8500, mount-matrix ok
 -Audio Codec: Realtek ALC5640
@@ -460,7 +462,7 @@ Chuwi Vi8 Plus (CWI519)
 -DSTD: PMID == 0x02
 
 Lamina I8270 (sticker on back) / T701BR.SE (dmi)
--8" 800x1280 LCD
+-7" 800x1280 DSI panel
 -Touchscreen: GDIX1001, without capacitive home-button
 -CPU: Bay Trail Z3735G, 1G RAM
 -Wifi: brcmfmac43430
@@ -476,9 +478,9 @@ Dell Venue 8 Pro 5830:
 
 Ployer Momo7w
 -7" 1024x600 panel
+-Touchscreen: gsl1686, with capacitive home-button, fw NOT in EFI
 -PCB: INET-I71-REV21 Zeng-gc 2015-07-07
 -CPU: Bay Trail Z3735G, 1G RAM
--Touchscreen: gsl1686, with capacitive home-button, fw NOT in EFI
 -Wifi: RTL8723BS
 -Accel: BMA250E, mount-matrix ok
 -Audio codec: ALC5651
@@ -488,18 +490,23 @@ Ployer Momo7w
 -PMIC: AXP288, charging only through micro USB 5V/2A
 
 HP stream 7:
+-7" 800x1280 DSI panel
 -Touchscreen: Goodix
+-CPU: Bay Trail Z3735G, 1G RAM
 -Wifi: RTL8723BS
 -Accel: SMO8500
 -Audio codec: ALC5640
 -PMIC: AXP288, charging only through micro USB 5V/2A
 
-Acer iconia 8
+Acer Iconia Tab 8 W1-810
+-8" 800x1280 DSI panel
 -Touchscreen: Goodix GT811
 -PCB: TQ080BT7_V11
+-CPU: Bay Trail Z3735G, 1G RAM
 -Wifi: AP6383
+-Accel: BMA250, mount matrix ok
 -Audio codec: ALC5640
--PMIC: ???, charging only through micro USB 5V/2A
+-PMIC: AXP288, charging only through micro USB 5V/2A
 
 I.T.Works TW891
 -8.9" 800x1280 panel, mounted 90 degrees rotated
@@ -552,10 +559,12 @@ Teclast X80 Pro
 
 Asus T100HA
 -10" 1280x800 panel
--Touchscreen: SIS0457 i2c-hid
+-Touchscreen: SIS0457 i2c-hid (IC: SIS9255)
 -CPU: Cherry Trail x5-Z8500, 2GB RAM
+-Wifi: AP6234A
 -Audio Codec: ALC5645
 -PMIC: Crystal Cove (CHT), charging only through micro USB 5V/2A or 9V/2A
+-EC: ITE8825FN
 
 Asus T200TA
 -11.6" 1366x768 panel
@@ -602,11 +611,11 @@ PIPO W2S
 -PMIC: AXP288, charging only through micro USB 5V/2A
 
 PIPO W4
--8" 800x1280 panel
+-8" 800x1280 DSI panel
 -Touchscreen: GDIX1001
 -CPU: Bay Trail Z3735G, 1G RAM
 -Wifi: RTL8723BS
--Accel: SMO8500, FIXME needs mount-matrix quirk
+-Accel: SMO8500, mount-matrix ok
 -Audio codec: ALC5640
 -PMIC: AXP288, charging only through micro USB 5V/2A
 
