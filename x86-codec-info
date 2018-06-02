@@ -1,4 +1,5 @@
 rt5640:		Spk	Mic	JD	AIF		quirk	SoC	Quirk added
+-Archos80Cesium	mono	IN3-dff	JD1IN4P	SSP0 AIF1	563423	BYTCR	yes
 -Asus T100CHI	stereo	DMIC1	JD2IN4N	SSP2 AIF1	403430	BYT	defaults
 -Asus T100TA	stereo	IN1	JD2IN4N	SSP2 AIF1	443432	BYT	yes
 -Asus T200TA    stereo  DMIC1	JD2IN4N	SSP2 AIF1	403430	BYT	defaults
@@ -11,6 +12,8 @@ rt5640:		Spk	Mic	JD	AIF		quirk	SoC	Quirk added
 -HP Stream 7	mono	IN3-dff	JD1-inv SSP0 AIF1	573423	BYTCR	yes
 -ITworks tw891	mono	IN3-dff	JD1IN4P SSP0 AIF1	563423	BYTCR	yes
 -Lamina I8270	mono	IN3-dff	JD1-inv	SSP0 AIF1	573423	BYTCR	yes
+-Nuv TM800W560	stereo	IN1-dff	JD2 (4)	SSP0 AIF1	553432	BYTCR	yes
+-ONDA V891w	stereo	IN3-dff JD1 (5)	SSP0 AIF1	543423	BYTCR	defaults
 -Peaq C1010	stereo	IN3-dff	JD1IN4P	SSP0 AIF1	543423	BYTCR	defaults
 -Pipo W4	mono	IN3-dff JD1IN4P	SSP0 AIF1	563423	BYTCR	yes
 -PoV-mobii-800w mono	IN1-dff	JD2IN4N	SSP0 AIF2	663432	BYTCR	yes
@@ -19,11 +22,8 @@ rt5640:		Spk	Mic	JD	AIF		quirk	SoC	Quirk added
 1) BYTCR devices with routing not in BIOS table and not matching the default
 2) Needs OVCD settings of 1.5mA sf0.75 for button-press detect
 3) OVCD broken, sees everything as headset, no button-press
-
-Tested UCM profiles:
-bytcr-rt5640-mono-spk-in3-mic
-bytcr-rt5640-stereo-spk-dmic1-mic
-bytcr-rt5640-stereo-spk-in3-mic
+4) Inverted, headset mic contact physically unreliable
+5) Uses OMTP headset pinout instead of the usual CTIA one
 
 rt5645:		Spk	Mic	JDmod	UCM
 -Asus T100HA	stereo	dmic1	3 inv	custom

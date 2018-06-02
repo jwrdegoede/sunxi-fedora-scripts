@@ -2,6 +2,7 @@ Bay and Cherry Trail device status with linux-next
 
 		lcd wif tou acc bat c2a but bri sus spk pho jck hst dev blu c3a tpad lid
 Acer Ic. W1-810 yes NVR yes yes yes yes yes yes yes yes yes yes yes -   FIR -   -    -
+Archos 80Cesium	yes yes yes yes yes yes yes yes yes     yes yes yes -   yes -   -    -
 Asus T100TA	yes yes yes yes                     yes yes         -   FIR -   yes
 Asus T100HA	ROT yes no  yes yes yes yes yes yes yes yes yes yes -   FIR -   yes  yes
 Asus T100CHI	yes yes yes yes yes yes yes yes yes yes yes yes yes -   FIR -   yes  yes
@@ -20,7 +21,9 @@ I.T.Works TW891 ROT yes yes yes yes yes yes yes yes yes yes yes yes -       -   
 Jump. EZpad m3	yes NVR FIR yes yes yes yes yes yes             yes yes FIR -   -
 Kazam Vision	yes yes yes yes yes yes yes yes yes yes yes yes yes yes yes -   -
 Lamina I8270    yes yes yes yes yes     yes yes yes yes yes yes yes         -   -    -
-MSI S100	yes yes yes     yes -   yes yes yes yes yes yes yes -       -   (1)  -
+MSI S100	yes yes yes yes yes -   yes yes yes yes yes yes yes -       -   (1)  -
+Nuv TM800W560	yes yes yes yes yes     yes yes yes yes yes yes yes -   yes -   -    -
+Onda V891w	yes yes yes yes yes     yes yes     yes yes yes yes -   yes -   -    -
 Peaq MMC1010    yes yes yes yes yes yes yes yes yes yes yes yes yes -       -   (1)  broken
 Pipo W2S	yes NVR FIR yes
 Pipo W4		yes yes yes yes yes yes yes yes yes yes yes yes yes ?       -   -    -

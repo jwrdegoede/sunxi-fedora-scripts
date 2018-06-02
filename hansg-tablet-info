@@ -548,6 +548,7 @@ Chuwi Vi8 (CWI506)
 -Audicodec: Realtek ALC5640, analog mic3, mono speaker
  -GPIO based headphone detect (AMCR0F28): yes!
 -PMIC: AXP288, charging only through micro USB 5V/2A
+-USB-phy: TI T1210B
 
 Teclast X80 Pro
 -8" 1200x1920 DSI panel
@@ -679,3 +680,33 @@ Toshiba Click Mini L9W-B
 -Accel: HID sensors
 -Audio codec: ALC5640
 -PMIC: Dollar Cove TI PMIC
+
+ONDA V891w P891WBEBV1B00 aka V1
+-8.9" 1920x1200 DSI panel
+-Touchscreen: Silead GSL3680, with capacitive home-button, fw NOT in EFI
+-PCB: INET-I80MB-REV02 2014-09-09
+-BIOS: ONDA.W89EBBN08
+-CPU: Bay Trail Z3735F, 2G RAM
+-Wifi: RTL8723BS
+-Accel: BMA250E
+-Audio codec: ALC5640
+-PMIC: AXP288, charging only through micro-usb 5V/2A max
+
+Archos 80 Cesium
+-8" 800x1280 DSI panel
+-Touchscreen: FTSC1000
+-CPU: Bay Trail Z3735G, 1G RAM
+-Wifi: RTL8723BS
+-Accel: SMO8500, mount-matrix ok
+-Audio codec: ALC5640
+-PMIC: AXP288, charging only through micro-usb 5V/2A max
+-USB-mux: SGM7223, lacks matching TI T1210B USB-phy, so no device mode
+
+Nuvision/TMAX TM800W560L
+-8: 1200x1920 DSI panel
+-Touchscreen: FTSC1000
+-CPU: Bay Trail Z3735G, 2G RAM
+-Wifi: RTL8723BS
+-Accel: KIOX000A, mount-matrix ok
+-Audio codec: ALC5640, jack headsetmic contact unreliable
+-PMIC: AXP288, charging only through micro-usb 5V/2A max
