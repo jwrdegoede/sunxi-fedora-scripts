@@ -10,23 +10,25 @@ Asus T200TA	yes yes no  yes yes -   yes yes yes yes yes yes yes -   FIR -   yes 
 Axxo WT1011     yes yes yes yes yes yes yes yes yes yes yes yes yes -       -   (1)  yes
 Cube iWork8 Air	yes yes FIR yes     yes yes yes yes             yes yes     -   -
 Chuwi Hi8 Pro	yes yes FIR yes yes     yes yes                             -   -
+Chuwi Vi8	yes yes FIR yes yes yes yes yes yes yes yes yes yes yes yes -   -    -
 Chuwi Vi8 Plus	yes NVR yes yes yes yes yes yes yes             yes yes FIR -   -
+Chuwi Vi10	yes yes FIR yes yes     yes yes yes yes yes yes yes     yes -   -    yes
 Dell Venue 5830 yes yes yes yes yes yes yes yes yes yes yes yes yes -       -   -    -
 Dell Venue 7130 yes yes yes yes yes yes yes yes yes yes         -   -       -   yes
 GP-elec. T701   ROT yes FIR yes yes yes yes yes yes             yes -       -   -
 GPD win		ROT NVR yes     yes yes yes yes yes yes yes yes yes yes FIR yes -
 HP Pavilion X2	yes yes yes     yes yes yes yes yes yes yes         -       no  (2)  yes
 HP Stream 7     DPI yes yes yes yes     yes yes yes yes         yes -       -   -
-I.T.Works TW891 ROT yes yes yes yes yes yes yes yes yes yes yes yes -       -   (1)  yes
+I.T.Works TW891 ROT yes yes yes yes yes yes yes yes yes yes yes yes         -   (1)  yes
 Jump. EZpad m3	yes NVR FIR yes yes yes yes yes yes             yes yes FIR -   -
 Kazam Vision	yes yes yes yes yes yes yes yes yes yes yes yes yes yes yes -   -
 Lamina I8270    yes yes yes yes yes     yes yes yes yes yes yes yes         -   -    -
 MSI S100	yes yes yes yes yes -   yes yes yes yes yes yes yes -       -   (1)  -
-Nuv TM800W560	yes yes yes yes yes     yes yes yes yes yes yes yes -   yes -   -    -
+Nuv TM800W560	yes yes yes yes yes     yes yes yes yes yes yes yes     yes -   -    -
 Onda V891w	yes yes yes yes yes     yes yes     yes yes yes yes -   yes -   -    -
 Peaq MMC1010    yes yes yes yes yes yes yes yes yes yes yes yes yes -       -   (1)  broken
 Pipo W2S	yes NVR FIR yes
-Pipo W4		yes yes yes yes yes yes yes yes yes yes yes yes yes ?       -   -    -
+Pipo W4		yes yes yes yes yes yes yes yes yes yes yes yes yes         -   -    -
 Ployer Momo7w   yes yes FIR yes yes yes yes yes yes             yes -       -   -
 PoV TAB-P800W	yes yes FIR yes yes     yes yes yes             yes -       -   -
 Toshib Click(4) yes yes yes yes yes yes yes yes yes yes yes yes yes -       -   (2)  yes

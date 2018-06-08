@@ -8,6 +8,7 @@ rt5640:		Spk	Mic	JD	AIF		quirk	SoC	Quirk added
 -Acer iconia 8	stereo	DMIC1	JD1 (3)	SSP0 AIF1	503420	BYTCR	yes
 -Axxo WT1011	stereo	IN3-dff	JD1IN4P	SSP0 AIF1	543423	BYTCR	defaults
 -Chuwi Vi8	mono	IN3-dff JD1IN4P SSP0 AIF1	563423	BYTCR	yes
+-Chuwi Vi10	stereo	IN1-dff JD2IN4N SSP0 AIF1	543432	BYTCR	yes
 -HP Pavilion x2	stereo	DMIC1	JD2 (2)	SSP0 AIF1(1)	502f30	BYTCR	yes
 -HP Stream 7	mono	IN3-dff	JD1-inv SSP0 AIF1	573423	BYTCR	yes
 -ITworks tw891	mono	IN3-dff	JD1IN4P SSP0 AIF1	563423	BYTCR	yes

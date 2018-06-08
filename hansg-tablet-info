@@ -519,6 +519,7 @@ I.T.Works TW891
 -PMIC: AXP288, charging only through micro USB 5V/2A
 -USB hub inside tablet: GL852G
 -0603:0002 USB keyboard/touchpad(mouse mode) combo dock
+-Appears to have a USB mux but no ULPI phy
 
 T-BAO Tbook Air 12.5
 -Wifi: Intel 3165D2W
@@ -703,10 +704,24 @@ Archos 80 Cesium
 -USB-mux: SGM7223, lacks matching TI T1210B USB-phy, so no device mode
 
 Nuvision/TMAX TM800W560L
--8: 1200x1920 DSI panel
+-8" 1200x1920 DSI panel
 -Touchscreen: FTSC1000
 -CPU: Bay Trail Z3735G, 2G RAM
 -Wifi: RTL8723BS
 -Accel: KIOX000A, mount-matrix ok
 -Audio codec: ALC5640, jack headsetmic contact unreliable
 -PMIC: AXP288, charging only through micro-usb 5V/2A max
+-USB-phy: TI T1210B
+
+Chuwi Vi10 (CWI505)
+-10" 1366x768 LVDS panel via LVDS to eDP chip
+-Touchscreen: Silead GSL3680, with capacitive home-button, fw NOT in EFI
+-CPU: Bay Trail Z3736F, 2G RAM
+-Wifi: RTL8723BS
+-Accel: BMA250E
+-Audio codec: ALC5640
+-PMIC: AXP288, charging only through micro-usb 5V/2A max
+-USB-phy: TI T1210B
+-USB-hub: FE 1.1 USB2.0 hub
+-DP-to-LVDS: Parade PS8622
+-Other: ATMLH434 02DM (probably flash or uc to bring up the PS8622)
