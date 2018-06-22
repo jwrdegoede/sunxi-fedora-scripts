@@ -469,6 +469,7 @@ Lamina I8270 (sticker on back) / T701BR.SE (dmi)
 -Accel: SMO8500, mount-matrix ok
 -Audio codec: ALC5640
 -PMIC: AXP288, charging only through micro USB 5V/2A
+-Appears to have a USB mux but no ULPI phy
 
 Dell Venue 8 Pro 5830:
 -Accel: HID-sensors
@@ -611,6 +612,7 @@ PIPO W2S
 -Accel: KIOX000A, mount-matrix ok
 -Audio codec: NAU8824
 -PMIC: AXP288, charging only through micro USB 5V/2A
+-Appears to have a USB mux but no ULPI phy
 
 PIPO W4
 -8" 800x1280 DSI panel
