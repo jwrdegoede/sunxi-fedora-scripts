@@ -487,7 +487,7 @@ Ployer Momo7w
 -Audio codec: ALC5651
  -GPIO based headphone detect (AMCR0F28): yes
  -ALC5651 headphone detect: uses pin RT5651_JD1_1
- -Mono speaker, internal mic on IN2, external MIC broken / not present ?
+ -Mono speaker, Uses OMTP headset pinout
 -PMIC: AXP288, charging only through micro USB 5V/2A
 
 HP stream 7:
@@ -601,7 +601,6 @@ I.T.Works TW701
 -Accel: BMA250E, mount-matrix ok
 -Audio codec: ALC5651
  -ALC5651 headphone detect: uses pin RT5651_JD1_1
- -Mono speaker, internal mic on IN2, external MIC on IN3
 -PMIC: AXP288, charging only through micro USB 5V/2A
 
 PIPO W2S
@@ -727,3 +726,23 @@ Chuwi Vi10 (CWI505)
 -USB-hub: FE 1.1 USB2.0 hub
 -DP-to-LVDS: Parade PS8622
 -Other: ATMLH434 02DM (probably flash or uc to bring up the PS8622)
+
+Connect Tablet 9
+-8.9" 800x1280 DSI panel
+-Touchscreen: Silead GSL3680, without capacitive home-button, fw NOT in EFI
+-CPU: Bay Trail Z3735G, 1G RAM
+-Wifi: RTL8723BS
+-Accel: KIOX000A, mount-matrix ok
+-Audio codec: ALC5640
+-PMIC: AXP288, charging only through micro-usb 5V/2A max
+-Appears to have a USB mux but no ULPI phy
+
+HP Pavilion X2 10-p0XX
+-10" 1280x800 eDP panel
+-Touchscreen: SYNP1000
+-CPU: Cherry Trail x5-Z8350, 2GB RAM
+-Wifi: Intel 3165
+-Sensor: HID-sensors, mount-matrix ok
+-Audio codec: ALC3276 aka ALC5640
+-PMIC: TI Dollar Cove, Type-C USB-PD charging at up to 15V 3A
+-Type-C only supports USB-2 speeds

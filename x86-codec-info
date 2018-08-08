@@ -3,6 +3,7 @@ rt5640:		Spk	Mic	JD	AIF		quirk	SoC	Quirk added
 -Asus T100CHI	stereo	DMIC1	JD2IN4N	SSP2 AIF1	403430	BYT	defaults
 -Asus T100TA	stereo	IN1	JD2IN4N	SSP2 AIF1	443432	BYT	yes
 -Asus T200TA    stereo  DMIC1	JD2IN4N	SSP2 AIF1	403430	BYT	defaults
+-ConnectTablet9	mono	IN3-dff JD1IN4P SSP0 AIF1	563423	BYTCR	yes
 -Dell Ven8 5830	mono	DMIC1	JD2IN4N SSP2 AIF1	423430	BYT	yes
 -MSI S100	mono	IN1-dff	JD2IN4N	SSP2 AIF1	463432	BYT	yes
 -Acer iconia 8	stereo	DMIC1	JD1 (3)	SSP0 AIF1	503420	BYTCR	yes
@@ -20,7 +21,7 @@ rt5640:		Spk	Mic	JD	AIF		quirk	SoC	Quirk added
 -PoV-mobii-800w mono	IN1-dff	JD2IN4N	SSP0 AIF2	663432	BYTCR	yes
 -Tos Click Mini	stereo	DMIC1	JD2 (2)	SSP0 AIF1(1)	502f30	BYTCR	yes
 
-1) BYTCR devices with routing not in BIOS table and not matching the default
+1) BYTCR devices without routing in BIOS table and not matching the default
 2) Needs OVCD settings of 1.5mA sf0.75 for button-press detect
 3) OVCD broken, sees everything as headset, no button-press
 4) Inverted, headset mic contact physically unreliable
@@ -34,3 +35,15 @@ rt5645:		Spk	Mic	JDmod	UCM
 -Lenovo Miix310 stereo	diff	3	chtrt5645
 -Lenovo Miix320 stereo	dmic2	3	custom
 -Teclast X80Pro	mono	ana	3	chtrt5645-mono-speaker-analog-mic
+
+rt5651:		Spk	Mic		JD
+-Chuwi Vi8 Plus mono	mono in2	JD1_1
+-Chuwi Vi8 Pro	mono	mono in2	JD1_1
+-ITWorks TW701	mono	mono in2	JD1_1
+-Ployer Momo7w	mono	mono in2	JD1_1 (1)
+-Trekstor win7	mono	mono in2	JD1_1
+-VIOS LTH17	stereo	stereo in1+in2	JD1_1
+-Yours 8"	mono	mono in2	JD1_1
+
+Note headset mic is always connected to in3
+1) Uses OMTP headset pinout instead of the usual CTIA one

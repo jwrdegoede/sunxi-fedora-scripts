@@ -8,11 +8,12 @@ Asus T100HA	ROT yes no  yes yes yes yes yes yes yes yes yes yes -   FIR -   yes 
 Asus T100CHI	yes yes yes yes yes yes yes yes yes yes yes yes yes -   FIR -   yes  yes
 Asus T200TA	yes yes no  yes yes -   yes yes yes yes yes yes yes -   FIR -   yes  (3)
 Axxo WT1011     yes yes yes yes yes yes yes yes yes yes yes yes yes -       -   (1)  yes
-Cube iWork8 Air	yes yes FIR yes     yes yes yes yes             yes yes     -   -
 Chuwi Hi8 Pro	yes yes FIR yes yes     yes yes                             -   -
 Chuwi Vi8	yes yes FIR yes yes yes yes yes yes yes yes yes yes yes yes -   -    -
 Chuwi Vi8 Plus	yes NVR yes yes yes yes yes yes yes             yes yes FIR -   -
 Chuwi Vi10	yes yes FIR yes yes     yes yes yes yes yes yes yes     yes -   -    yes
+Connect Tablet9	yes yes FIR yes yes     yes yes yes yes yes yes yes -   yes -   -
+Cube iWork8 Air	yes yes FIR yes     yes yes yes yes             yes yes     -   -
 Dell Venue 5830 yes yes yes yes yes yes yes yes yes yes yes yes yes -       -   -    -
 Dell Venue 7130 yes yes yes yes yes yes yes yes yes yes         -   -       -   yes
 GP-elec. T701   ROT yes FIR yes yes yes yes yes yes             yes -       -   -
