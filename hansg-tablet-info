@@ -360,7 +360,9 @@ EZpad mini 3
 -DSTD: BDID = One, OSID = Windows-8.1 ? One : ???, PMID = 0x02
 
 GPD-win
+-5.5" 720x1280 DSI panel, mounted 90 degree rotated
 -PCB: WINI55
+-CPU: Cherry Trail Z8700, 4G RAM
 -Accel: KIOX000A
 -Audio codec: ALC5645
 -PMIC: Intel 6835A P10 Whiskey Cove (CHT), charging only through Type-C PD 5-12V
@@ -450,6 +452,23 @@ Chuwi Hi8 Pro (CWI513)
 -Accel: BOSC0200 -> BMA250E, mount-matrix ok
 -Audio codec: ALC5651
 -PMIC: AXP288, charging only through Type-C 5V/2A
+-DSDT: PMID == 0x02
+-Does superspeed over Type-C only in 1 orientation?
+-Multi-boot menu:
+ -Needs to be in Android mode for USB device mode to work
+ -Having shim binaries under EFI/BOOT do fallback leads to a boot-loop
+ -Install Fedora which installs shimx64.efi as EFI\BOOT\BOOTX64.EFI
+ -You should now get Android as option in the graphical OS chooser built
+  into the BIOS, this is important because it remembers the last OS choosen.
+  It will be either in 32 bit UEFI mode using Windows settings or in
+  64 bit UEFI mode using Android settings, based on the last time an os
+  was chosen in the chooser.
+ -Choose Android at least once
+ -Insert an USB bootable media to break and use boot override from save/exit
+  firmware screen to boot it (to break the bootloop), from the USB booted OS:
+  -Add an entry pointing to EFI/fedora/shimx64.efi to efibootmgr list,
+   remove all other entries
+  -Remove all files under EFI/BOOT to hide the bootchooser and fix the bootloop
 
 Chuwi Vi8 Plus (CWI519)
 -8" 800x1280 LCD
@@ -746,3 +765,14 @@ HP Pavilion X2 10-p0XX
 -Audio codec: ALC3276 aka ALC5640
 -PMIC: TI Dollar Cove, Type-C USB-PD charging at up to 15V 3A
 -Type-C only supports USB-2 speeds
+
+Lenovo Thinkpad 8
+-PCB: ZIJI1 LA-A661P Rev:2.0 2013-11-01
+-Audio codec: ALC5672
+-Accel: Invensense MPU 6050 (through TI sensor hub)
+-I/O chip (superio?) ENE IO3737LU-B1
+-PMIC: ROHM2610 Crystal Cove (BYT), charging only through micro USB 5V/2A
+-Charge IC: TI bq24292i
+-Unknown IC 2x: 7047 ba3611 (regulator?)
+-Unknown IC: OE=FL S2A
+-Unknown IC: ZND8 1337 7CWM
