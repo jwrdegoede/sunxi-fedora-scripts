@@ -41,7 +41,7 @@ GPD-win
 -DSDT: OSID == One, PMID == 0x03, (BDID == 0x09) || (BDID == 0x0A)
 
 Point of View TAB-P800W (V 1-0) and (V2.1) appear to be identical
--8" 800x1280 LCD
+-8" 800x1280 DSI panel 24 bpp
 -Touchscreen: Silead gsl3692, with capacitive home-button, fw NOT in EFI
 -CPU: Bay Trail Z3735G, 1G RAM
 -Wifi: Realtek RTL8723BS
@@ -52,8 +52,20 @@ Point of View TAB-P800W (V 1-0) and (V2.1) appear to be identical
 -Charge IC: TI bq24192
 -Fuelgauge: TI bq27443a
 
+Point of View TAB-P1005W-232 (V2.0)
+-10" 800x1280 DSI panel 24 bpp
+-Touchscreen: GDIX1001
+-CPU: Bay Trail Z3735F, 2G RAM
+-Wifi: RTL8723BS
+-Accel: KIOX000A
+-Audio codec: ALC5640
+-PMIC: AXP288, charging only through micro USB 5V/2A
+-OTG:
+ -Has USB mux
+ -Does not have a PHY
+
 GP-electronic T701 7 inch win10 tablet
--7" 1024x600 panel, mounted upside-down
+-7" 1024x600 DSI panel 24 bpp, mounted upside-down
 -Touchscreen: Silead gsl1680, without capacitive home-button, fw NOT in EFI
 -CPU: Bay Trail Z3735G, 1G RAM
 -Wifi: RTL8723BS
@@ -144,7 +156,7 @@ Chuwi Vi8 Plus (CWI519)
 -8" 800x1280 LCD
 -Touchscreen Chipone ICN8505, fw in EFI
 -CPU: Cherry Trail x5-Z8300, 2G RAM
--Wifi: brcmfmac43430
+-Wifi: Soldered on PCB, with unmarked shield, brcmfmac43430
 -Accel: BOSC0200 -> BMA250E, mount-matrix ok
 -Audio codec: ALC5651
 -PMIC: AXP288, charging only through Type-C 5V/2A
@@ -154,7 +166,7 @@ Lamina I8270 (sticker on back) / T701BR.SE (dmi)
 -7" 800x1280 DSI panel
 -Touchscreen: GDIX1001, without capacitive home-button
 -CPU: Bay Trail Z3735G, 1G RAM
--Wifi: brcmfmac43430
+-Wifi: RTL8723BS
 -Accel: SMO8500, mount-matrix ok
 -Audio codec: ALC5640
 -PMIC: AXP288, charging only through micro USB 5V/2A
@@ -180,7 +192,7 @@ Ployer Momo7w
 -PMIC: AXP288, charging only through micro USB 5V/2A
 
 HP stream 7:
--7" 800x1280 DSI panel
+-7" 800x1280 DSI panel 24 bpp
 -Touchscreen: Goodix
 -CPU: Bay Trail Z3735G, 1G RAM
 -Wifi: RTL8723BS
@@ -193,7 +205,7 @@ Acer Iconia Tab 8 W1-810
 -Touchscreen: Goodix GT811
 -PCB: TQ080BT7_V11
 -CPU: Bay Trail Z3735G, 1G RAM
--Wifi: AP6383
+-Wifi: AP6383, brcmfmac4330-sdio
 -Accel: BMA250, mount matrix ok
 -Audio codec: ALC5640
 -PMIC: AXP288, charging only through micro USB 5V/2A
@@ -221,7 +233,9 @@ T-BAO Tbook Air 12.5
 -Touchpad: PCB: HTX9848TI+EFSA Touch IC: Hantick HTT5288, fingerprint: EM85F690
 
 AXXO WT-1011 10" 2-in-1
+-8" 1280x800 eDP panel
 -Touchscreen: FTSC1000 i2c-hid
+-CPU: Bay Trail Z3735F, 2GB RAM
 -Wifi RTL8723BS
 -Accel: SMO8500
 -Audio codec: ALC5640
@@ -230,7 +244,7 @@ Dock:
 -ite8595 keyboard + touchpad controller
 
 Chuwi Vi8 (CWI506)
--8" 800x1280 DSI panel
+-8" 800x1280 DSI panel 24 bpp
 -Touchscreen GSL3676, with capacitive home-button, fw NOT in EFI
 -PCB: INET-I86M-REV03 Zeng-gc 2014-12-19
 -CPU: Bay Trail Z3735F, 2GB RAM
@@ -283,7 +297,7 @@ VIOS LTH17
 -USB UVC webcam
 
 I.T.Works TW701
--7" 1024x600 panel
+-7" 1024x600 DSI panel 
 -Touchscreen: gsl1686, with capacitive home-button, fw NOT in EFI
 -CPU: Bay Trail Z3735G, 1G RAM
 -Wifi: RTL8723BS
@@ -452,8 +466,59 @@ Onda v975w (Carlos):
 -Touchscreen: GDIX1001
 -CPU: Bay Trail Z3735D, 2GB RAM
 -Wifi: RTL8723BS
--Sensor: SMO8500, mount-matrix ok
+-Accel: SMO8500, mount-matrix ok
 -Audio codec: ALC5640
 -PMIC: Crystal Cove (BYT), charging only through micro USB 5V/2A
 -FSA9285: MCPC-Compliant, USB-Port, Multimedia Switch with Auto-Detection
  Supports ACA on USB-micro
+
+Onda V80 plus (Android version):
+-8" 1200x1920 DSI panel
+-Touchscreen: Silead GSL3676
+-CPU: Cherry Trail x5-Z8300, 2GB RAM
+-Wifi: AP6212 brcmfmac43430a0
+-Accel: BOSC0200
+-Audio codec: ES8316, mono speaker
+-PMIC: AXP288, charging only through micro USB 5V/2A
+
+Meegopad T08
+-HDMI stick
+-CPU: Cherry Trail x5-Z8350, 4GB RAM
+-Wifi: AP6234 brcmfmac43340
+-Audio codec: ALC5645
+-HDMI level shifter: Parade PS8203
+-Type-C controller/mux: SlimPort ANX7428
+
+Acer One 10 (S1003)
+-10" 800x1280 DSI panel
+-Touchscreen: GDIX1001
+-CPU: Cherry Trail x5-Z8300, 2GB RAM
+-Wifi: AP6212 brcmfmac43430a0
+-Accel: KIOX0009, mount-matrix ok
+-Audio codec: ALC5645
+-PMIC: AXP288, charging only through micro USB 5V/2A
+
+Lenovo Yoga Tablet 2 1051F/L
+-10" 1920x1200 DSI panel
+-Touchscreen: SYNA0001
+-CPU: Bay Trail Z3745, 2GB RAM
+-Wifi: brcmfmac43241b4
+-Accel: ACCL0001: LSM303DA
+-Audio codec: WM5102 SPI!
+
+Prowise PT301
+-10" 1280x800 DSI panel 18 bpp (sparse)
+-Touchscreen: Goodix GT9271
+-PCB: M1042_MB
+-CPU: Bay Trail Z3736F, 2G RAM
+-Wifi: AP6330
+-Accel:
+-Audio codec: ALC5640
+-PMIC: AXP288, charging only through micro USB 5V/2A
+-OTG:
+ -USB-phy: TI T1210B
+ -USB-mux: has a mux, unknown which one
+ -Cannot test if gadget mode works because DWC3 disabled in locked BIOS GRRR
+-Unknown IC: IR 0331 H430P
+-Unknown IC: XKCJ9 51235 5214
+-Dock: Touchpad-IC: CY8CTMA140
