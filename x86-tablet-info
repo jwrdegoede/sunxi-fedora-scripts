@@ -522,3 +522,13 @@ Prowise PT301
 -Unknown IC: IR 0331 H430P
 -Unknown IC: XKCJ9 51235 5214
 -Dock: Touchpad-IC: CY8CTMA140
+
+Lenovo Miix 2 8
+-8" 800x1280 DSI panel 24 bpp
+-Touchscreen: ATML1000, with capacitive home button
+-CPU: Bay Trail Z3740, 2G RAM
+-Wifi: brcmfmac43241b4
+-Accel: INV6050 i2c-hid-sensor
+-Audio codec: ALC5640
+-PMIC: Crystal Cove (BYT), charging only through micro USB 5V/2A
+-OTG: does not appear to have a mux, locked BIOS
