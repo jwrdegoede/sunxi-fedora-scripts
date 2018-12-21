@@ -239,7 +239,7 @@ AXXO WT-1011 10" 2-in-1
 -Wifi RTL8723BS
 -Accel: SMO8500
 -Audio codec: ALC5640
--AXP288 PMIC, charging only through micro USB 5V/2A
+-PMIC: AXP288, charging only through micro USB 5V/2A
 Dock:
 -ite8595 keyboard + touchpad controller
 
@@ -259,9 +259,10 @@ Teclast X80 Pro
 -8" 1200x1920 DSI panel
 -Touchscreen: GDIX1001
 -CPU: Cherry Trail x5-Z8300, 2GB RAM
+-Wifi: RTL8723BS
 -Accel: KIOX000A
 -Audio Codec: ALC5645, jd_mode=3, mono speaker
--PMIC: ???, charging only through micro USB 5V/2A
+-PMIC: AXP288, charging only through micro USB 5V/2A
 
 Asus T100HA
 -10" 1280x800 panel
@@ -393,7 +394,7 @@ ONDA V891w P891WBEBV1B00 aka V1
 -BIOS: ONDA.W89EBBN08
 -CPU: Bay Trail Z3735F, 2G RAM
 -Wifi: RTL8723BS
--Accel: BMA250E
+-Accel: BMA250E, mount-matrix ok
 -Audio codec: ALC5640
 -PMIC: AXP288, charging only through micro-usb 5V/2A max
 
@@ -422,7 +423,7 @@ Chuwi Vi10 (CWI505)
 -Touchscreen: Silead GSL3680, with capacitive home-button, fw NOT in EFI
 -CPU: Bay Trail Z3736F, 2G RAM
 -Wifi: RTL8723BS
--Accel: BMA250E
+-Accel: BMA250E, mount-matrix ok
 -Audio codec: ALC5640
 -PMIC: AXP288, charging only through micro-usb 5V/2A max
 -USB-phy: TI T1210B
@@ -477,7 +478,7 @@ Onda V80 plus (Android version):
 -Touchscreen: Silead GSL3676
 -CPU: Cherry Trail x5-Z8300, 2GB RAM
 -Wifi: AP6212 brcmfmac43430a0
--Accel: BOSC0200
+-Accel: BOSC0200, mount-matrix ok
 -Audio codec: ES8316, mono speaker
 -PMIC: AXP288, charging only through micro USB 5V/2A
 
@@ -512,7 +513,7 @@ Prowise PT301
 -PCB: M1042_MB
 -CPU: Bay Trail Z3736F, 2G RAM
 -Wifi: AP6330
--Accel:
+-Accel: SMO8500, mount-matrix ok
 -Audio codec: ALC5640
 -PMIC: AXP288, charging only through micro USB 5V/2A
 -OTG:
@@ -528,7 +529,29 @@ Lenovo Miix 2 8
 -Touchscreen: ATML1000, with capacitive home button
 -CPU: Bay Trail Z3740, 2G RAM
 -Wifi: brcmfmac43241b4
--Accel: INV6050 i2c-hid-sensor
+-Accel: INV6050 i2c-hid-sensor, mount-matrix ok
 -Audio codec: ALC5640
 -PMIC: Crystal Cove (BYT), charging only through micro USB 5V/2A
 -OTG: does not appear to have a mux, locked BIOS
+
+Point of View TAB-P1006W-232-3G 
+-10" 1366x768 LVDS screen connected through eDP to LVDS convertor chip
+-Touchscreen: Silead GSL3692 with capacitive home button
+-CPU: Bay Trail Z3735F, 2G RAM
+-Wifi: BCM43341 AP6234
+-Accel: BSG2150: bmc150_accel + bmc150_magn, mount-matrix ok
+-Audio codec: ALC5651 (listed as 5640 in ACPI tables)
+-PMIC: Dollar Cove TI PMIC, charging only through micro USB 5V/2A
+-OTG: does not appear to have a mux
+-USB hub inside tablet: SMC USB2412
+-DP to LVDS IC: Parade ps8622
+-eMMC: Toshiba THGBMBG8D4KBAIR
+-WWAN Fibocom H350
+-Unknown IC: 105 E5H7
+-Fuelgauge: TI bq27441a
+-Dock:
+ -PCB: SIPODEV SP903KB+V14
+ -Keyb-controller: Unreadable: ? SSO YH ? 80c ?? sticker: F1106 FB0704FA
+ -Hub: GS850G
+ -Touchpad PCB: SIPODEV 
+ -Touchpad-controller sticker: FB0747
