@@ -83,6 +83,7 @@ HP Pavilion X2 10-n000nd
  Accel: BMC150A at addr 0x11
  Gyro: BMG160 at addr 0x68
  Magneto: BMC150B at addr 0x13 
+-Ambient light: Capella cm32181
 -Audio codec: ALC5642
 -PMIC: AXP288, charging only through Type-C 5V/2A, extra IC to detect 3A Type-C
 -I/O chip (superio?) ENE IO3737LU-B1
@@ -116,6 +117,7 @@ Asus T100TA
 -Touchscreen: Atmel MXT1664TXES-C2U 1330B TW QLG9F
 -Wifi: Broadcom BCM43241SFKFFBG TN1322 P24 294688 P3T
 -Accel: INVN6500, mount-matrix ok
+-Ambient light: Capella cm32181
 -Audio Codec: Realtek ALC5642
  -GPIO based headphone detect (AMCR0F28): no
 -PMIC: Crystal Cove (BYT), charging only through micro USB at 5V/2A
@@ -555,3 +557,14 @@ Point of View TAB-P1006W-232-3G
  -Hub: GS850G
  -Touchpad PCB: SIPODEV 
  -Touchpad-controller sticker: FB0747
+
+Toshiba WT10-A PDW0BE
+-10" 1280x800 eDP panel 18bpp
+-Touchscreen: eKTH3910AY digitizer: MCF-101-1525-03-V2
+-CPU: Bay Trail Z3735F, 2G RAM
+-Wifi: RTL8723BS
+-Accel: INVN6500
+-Audio codec: ALC5640
+-PMIC: Crystal Cove (BYT), charging only through micro USB 5V/2A
+-Embedded controller: Nuboton m058zdn 406ad
+-Unknown IC: mp65 f915c1

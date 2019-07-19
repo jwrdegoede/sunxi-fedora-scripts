@@ -16,6 +16,7 @@ Connect Tablet9	yes yes FIR yes yes     yes yes yes  yes yes yes yes -   yes -  
 Cube iWork8 Air	yes yes FIR yes     yes yes yes yes              yes yes     -   -
 Dell Venue 5830 yes yes yes yes yes yes yes yes yes  yes yes yes yes -       -   -    -
 Dell Venue 7130 yes yes yes yes yes yes yes yes yes  yes         -   -       -   yes
+Gl. TM800A550L	yes yes
 GP-elec. T701   ROT yes FIR yes yes yes yes yes yes              yes -       -   -
 GPD win		ROT yes yes     yes yes yes yes yes  yes yes yes yes yes FIR yes -
 HP Pavil X2 BYT	yes yes yes     yes yes yes yes yes  yes yes         -       no  yes  yes
@@ -33,7 +34,7 @@ Pipo W2S	yes yes FIR yes
 Pipo W4		yes yes yes yes yes yes yes yes yes  yes yes yes yes         -   -    -
 Ployer Momo7w   yes yes FIR yes yes yes yes yes yes              yes -       -   -
 PoV TAB-P800W	yes yes FIR yes yes     yes yes yes              yes -       -   -
-PoV TAB-P1006W	yes yes FIR yes yes yes yes yes S0i3
+PoV TAB-P1006W	yes yes FIR yes yes yes (5) yes S0i3 
 Toshib Click(3) yes yes yes yes yes yes yes yes yes  yes yes yes yes -       -   (2)  yes
 Trekstor (4)	yes yes FIR yes yes yes yes yes yes              yes -       -   -
 
@@ -54,3 +55,4 @@ DPI   DPI is wrong
 (2) Unreliable, hardware issue with my (battered) model?
 (3) Toshiba Click Mini L9W-B
 (4) Trekstor Surftab Wintron 7.0 ST70416-6
+(5) Has a rotation lock button which needs some work

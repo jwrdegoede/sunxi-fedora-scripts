@@ -31,6 +31,7 @@ rt5640:		Spk	Mic	JD	AIF		quirk	SoC	Quirk added
 5) Uses OMTP headset pinout instead of the usual CTIA one
 
 rt5645:		Spk	Mic	JDmod	UCM
+-Acer One S1003 stereo	ana	3	chtrt5645
 -Asus T100HA	stereo	dmic1	3 inv	custom
 -GPD Pocket	mono	diff	3 inv	chtrt5645-mono-speaker-analog-mic
 -GPD win	mono	ana	3 inv	chtrt5645-mono-speaker-analog-mic
@@ -44,9 +45,14 @@ rt5651:		Spk	Mic		JD
 -Chuwi Vi8 Pro	mono	mono in2	JD1_1
 -ITWorks TW701	mono	mono in2	JD1_1
 -Ployer Momo7w	mono	mono in2	JD1_1 (1)
+-PoV P1006Wv1.0	stereo	dmic + hs-in2	External GPIO
 -Trekstor win7	mono	mono in2	JD1_1
 -VIOS LTH17	stereo	stereo in1+in2	JD1_1
 -Yours 8"	mono	mono in2	JD1_1
 
 Note headset mic is always connected to in3
 1) Uses OMTP headset pinout instead of the usual CTIA one
+
+es8316:		Spk		Internal-Mic	Headset-Mic
+-ezpad mini 3	mono-diff	in1		in2
+-gp-elec t701	mono-diff	in2		in1
