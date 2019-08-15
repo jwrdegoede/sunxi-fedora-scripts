@@ -288,8 +288,9 @@ Asus T200TA
 
 VIOS LTH17
 -10" 800x1280 panel, mounted 90 degrees rotated
+ -!!!BGRT image is 800x1280 all black!!!
 -Touchscreen: No touchscreen
--Wifi: RTL8723BS
+-Wifi: RTL8188ETV
 -Accel: no accel
 -Audio codec: ALC5651
  -ALC5651 headphone detect: uses pin RT5651_JD1_1
@@ -568,3 +569,12 @@ Toshiba WT10-A PDW0BE
 -PMIC: Crystal Cove (BYT), charging only through micro USB 5V/2A
 -Embedded controller: Nuboton m058zdn 406ad
 -Unknown IC: mp65 f915c1
+
+Irbis TW90
+-10" 1200x1920 LCD
+-Touchscreen GSL3680?, with capacitive home-button
+-CPU: Cherry Trail x5-Z8350, 2G RAM
+-Wifi: RTL8723BS
+-Accel: BOSC0200, mount-matrix ok
+-Audio codec: ES8396
+-PMIC: AXP288, charging ... FIXME
