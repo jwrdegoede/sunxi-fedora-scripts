@@ -572,9 +572,18 @@ Toshiba WT10-A PDW0BE
 
 Irbis TW90
 -10" 1200x1920 LCD
--Touchscreen GSL3680?, with capacitive home-button
+-Touchscreen: GSL3680?, with capacitive home-button
 -CPU: Cherry Trail x5-Z8350, 2G RAM
 -Wifi: RTL8723BS
 -Accel: BOSC0200, mount-matrix ok
 -Audio codec: ES8396
 -PMIC: AXP288, charging ... FIXME
+
+Medion Akoya E2215T MD60198
+-11.6" 1366x768 eDP panel
+-Touchscreen: FTSC1000
+-CPU: Cherry Trail x5-Z8350, 2G RAM
+-Wifi: Intel 3165
+-Accel: KIOX000A, mount-matrix ok
+-Audio codec: NAU8824
+-PMIC: AXP288, charging only through power-barrel 5V/3A
