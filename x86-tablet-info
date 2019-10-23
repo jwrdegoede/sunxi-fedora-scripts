@@ -236,12 +236,16 @@ T-BAO Tbook Air 12.5
 
 AXXO WT-1011 10" 2-in-1
 -8" 1280x800 eDP panel
+ -Realtek RTD2136 eDP to LVDS chip
 -Touchscreen: FTSC1000 i2c-hid
+ -Square cam lens version: Digitizer cable id: 101178-01A-V2
+ -Round  cam lens version: Digitizer cable id: ?
 -CPU: Bay Trail Z3735F, 2GB RAM
 -Wifi RTL8723BS
 -Accel: SMO8500
 -Audio codec: ALC5640
 -PMIC: AXP288, charging only through micro USB 5V/2A
+-USB-phy: TI T1210B
 Dock:
 -ite8595 keyboard + touchpad controller
 
