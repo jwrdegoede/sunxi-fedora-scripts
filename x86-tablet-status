@@ -6,7 +6,7 @@ Archos 80Cesium	yes yes yes yes yes yes yes yes yes      yes yes yes -   yes -  
 Asus T100TA	yes yes yes yes                      yes yes         -   FIR -   yes
 Asus T100HA	ROT yes no  yes yes yes yes yes yes  yes yes yes yes -   FIR -   yes  yes
 Asus T100CHI	yes yes yes yes yes yes yes yes yes  yes yes yes yes -   FIR -   yes  yes
-Asus T200TA	yes yes no  yes yes -   yes yes yes  yes yes yes yes -   FIR -   yes  (2)
+Asus T200TA	yes yes no  yes yes -   yes yes S0i3 yes yes yes yes -   FIR -   yes  yes
 Axxo WT1011     yes yes yes yes yes yes yes yes yes  yes yes yes yes -       -   (1)  yes
 Chuwi Hi8 Pro	yes yes FIR yes yes     yes yes                              -   -
 Chuwi Vi8	yes yes FIR yes yes yes yes yes yes  yes yes yes yes yes yes -   -    -
@@ -30,13 +30,13 @@ MSI S100	yes yes yes yes yes -   yes yes yes  yes yes yes yes -       -   (1)  -
 Nuv TM800W560	yes yes yes yes yes     yes yes yes  yes yes yes yes     yes -   -    -
 Onda V80plus v3	yes yes FIR 
 Onda V891w	yes yes yes yes yes     yes yes      yes yes yes yes -   yes -   -    -
-Peaq MMC1010    yes yes yes yes yes yes yes yes yes  yes yes yes yes -       -   (1)  broken
+Peaq MMC1010    yes yes yes yes yes yes yes yes yes  yes yes yes yes -       -   (1)  yes
 Pipo W2S	yes yes FIR yes
 Pipo W4		yes yes yes yes yes yes yes yes yes  yes yes yes yes         -   -    -
 Ployer Momo7w   yes yes FIR yes yes yes yes yes yes              yes -       -   -
 PoV TAB-P800W	yes yes FIR yes yes     yes yes yes              yes -       -   -
-PoV TAB-P1006W	yes yes FIR yes yes yes (5) yes S0i3 
-Toshib Click(3) yes yes yes yes yes yes yes yes yes  yes yes yes yes -       -   (2)  yes
+PoV TAB-P1006W	yes yes FIR yes yes yes (2) yes S0i3
+Toshib Click(3) yes yes yes yes yes yes yes yes S0i3 yes yes yes yes -       -   yes  yes
 Trekstor (4)	yes yes FIR yes yes yes yes yes yes              yes -       -   -
 
 Legenda: wif(i) tou(chscreen) acc(el) bat(-mon) c(harge-)2a but(tons)
@@ -53,7 +53,6 @@ FIR   Needs firmware which is not in linux-firmware
 DPI   DPI is wrong
 
 (1) Only supports mouse emulation mode
-(2) Unreliable, hardware issue with my (battered) model?
+(2) Has a rotation lock button which needs some work
 (3) Toshiba Click Mini L9W-B
 (4) Trekstor Surftab Wintron 7.0 ST70416-6
-(5) Has a rotation lock button which needs some work
