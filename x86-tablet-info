@@ -591,3 +591,29 @@ Medion Akoya E2215T MD60198
 -Accel: KIOX000A, mount-matrix ok
 -Audio codec: NAU8824
 -PMIC: AXP288, charging only through power-barrel 5V/3A
+
+Terra Pad 1060
+-10" 1280x800 eDP panel 18bpp
+-Touchscreen: USB 03eb:8c17 "Atmel Atmel maXTouch Digitizer"
+-CPU: Bay Trail Celeron N2805, 2G RAM
+-Wifi: Intel 7260
+-Accel: USB 0483:91d1 "STMicroelectronics Sensor Hub"
+-Audio: HDA
+
+Terra Pad 1061
+-10" 1920x1200 DSI panel
+-Touchscreen: FTSC1000 with capacitive touch home button
+-CPU: Bay Trail Z3735F, 2G RAM
+-Wifi: RTL8723BS
+-Accel: KIOX000A, mount-matrix ok
+-Audio codec: ALC5640
+-PMIC: AXP288, charging only through micro USB 5V/2A
+-Micro-usb only supports charging, no other function (neither host nor device)
+Dock:
+-USB hub chip is marked: USB 2.0 HUB LD34686a308
+-Contains USB ethernet + USB sata bridges
+-HDMI port does not work, even though it is straight pass-through from the
+ tablet. I have the feeling that the pins may be shared with the mini-HDMI port
+ on the top of the tablet and that some mux should switch them over and that
+ this is not happening. I could be completely wrong though. It also does not
+ work under Windows 10, might be a defect in either the dock or the tablet.

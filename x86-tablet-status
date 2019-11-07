@@ -35,7 +35,9 @@ Pipo W2S	yes yes FIR yes
 Pipo W4		yes yes yes yes yes yes yes yes yes  yes yes yes yes         -   -    -
 Ployer Momo7w   yes yes FIR yes yes yes yes yes yes              yes -       -   -
 PoV TAB-P800W	yes yes FIR yes yes     yes yes yes              yes -       -   -
-PoV TAB-P1006W	yes yes FIR yes yes yes (2) yes S0i3
+PoV TAB-P1006W	yes yes FIR yes yes yes (2) yes S0i3                 -       -        -
+Terra Pad 1060  yes yes yes yes yes -   yes yes S3   yes         -   -       -   (1)  yes
+Terra Pad 1061  yes yes yes yes yes yes (2) (5) S0i3 yes         -   -       -   (1)  yes
 Toshib Click(3) yes yes yes yes yes yes yes yes S0i3 yes yes yes yes -       -   yes  yes
 Trekstor (4)	yes yes FIR yes yes yes yes yes yes              yes -       -   -
 
@@ -56,3 +58,5 @@ DPI   DPI is wrong
 (2) Has a rotation lock button which needs some work
 (3) Toshiba Click Mini L9W-B
 (4) Trekstor Surftab Wintron 7.0 ST70416-6
+(5) Works but not really, we need to preserve the firmware set period rather
+    then picking our own
