@@ -20,7 +20,7 @@ Cube iwork 8 Air
 -Other chips: winbond 25064fwig
 -DSTD: BDID = One, OSID = 0x04, PMID = 0x02
 
-EZpad mini 3
+Jumper EZpad mini 3
 -8" 1280x800 screen
 -Touchscreen: gsl3676, without capacitive home-button, fw NOT in EFI
 -Wifi: AP6212, needs firmware + nvram from: https://vps.vdwaa.nl/~jelle/brcm/
@@ -28,6 +28,10 @@ EZpad mini 3
 -Audio codec: es8316
 -PMIC: AXP288, charging only through micro USB 5V/2A
 -DSTD: BDID = One, OSID = Windows-8.1 ? One : ???, PMID = 0x02
+-USB3-A connector uses superspeed lines from the dual-mode port, if the
+ dwc3 device controller is enabled then unless the micro-otg is in host
+ mode, these lines will be in device mode and USB3 devices will not work
+ in the USB3-A connector. Solution: leave the dwc3 device controller disabled
 
 GPD-win
 -5.5" 720x1280 DSI panel, mounted 90 degree rotated
