@@ -1,5 +1,6 @@
 Trekstor Surftab Wintron 7.0 ST70416-6
 -7" 1024x600 screen
+ -No HDMI
 -Touchscreen: gsl1686, with capacitive home-button, fw NOT in EFI
 -CPU: Bay Trail Z3735G, 1G RAM
 -Wifi: RTL8723BS
@@ -22,6 +23,7 @@ Cube iwork 8 Air
 
 Jumper EZpad mini 3
 -8" 1280x800 screen
+ + micro HDMI
 -Touchscreen: gsl3676, without capacitive home-button, fw NOT in EFI
 -Wifi: AP6212, needs firmware + nvram from: https://vps.vdwaa.nl/~jelle/brcm/
 -Accel: BOSC0200 -> BMA222E
@@ -35,6 +37,7 @@ Jumper EZpad mini 3
 
 GPD-win
 -5.5" 720x1280 DSI panel, mounted 90 degree rotated
+ + mini HDMI
 -PCB: WINI55
 -CPU: Cherry Trail Z8700, 4G RAM
 -Accel: KIOX000A
@@ -46,6 +49,7 @@ GPD-win
 
 Point of View TAB-P800W (V 1-0) and (V2.1) appear to be identical
 -8" 800x1280 DSI panel 24 bpp
+ + micro HDMI
 -Touchscreen: Silead gsl3692, with capacitive home-button, fw NOT in EFI
 -CPU: Bay Trail Z3735G, 1G RAM
 -Wifi: Realtek RTL8723BS
@@ -103,6 +107,7 @@ HP Pavilion X2 10-n000nd
 
 Peaq 10.1" C1010 2-in-1
 -10.1" 1920x1200 DSI panel
+ + mini HDMI
 -Touchscreen: SIS0817 i2c-hid touchscreen
 -CPU: Bay Trail Z3736F, 2GB RAM
 -Wifi RTL8723BS
@@ -134,6 +139,7 @@ Asus T100TA
 
 Chuwi Hi8 Pro (CWI513)
 -8" 1200x1920 LCD
+ + micro HDMI
 -Touchscreen GSL3676, with capacitive home-button
 -CPU: Cherry Trail x5-Z8350, 2G RAM
 -Wifi: RTL8723BS
@@ -170,6 +176,7 @@ Chuwi Vi8 Plus (CWI519)
 
 Lamina I8270 (sticker on back) / T701BR.SE (dmi)
 -7" 800x1280 DSI panel
+ + micro HDMI
 -Touchscreen: GDIX1001, without capacitive home-button
 -CPU: Bay Trail Z3735G, 1G RAM
 -Wifi: RTL8723BS
@@ -179,13 +186,18 @@ Lamina I8270 (sticker on back) / T701BR.SE (dmi)
 -Appears to have a USB mux but no ULPI phy
 
 Dell Venue 8 Pro 5830:
+-8" ??? panel
+ -No HDMI
 -Accel: HID-sensors
 -Audio codec: ALC5640
  -GPIO based headphone detect (AMCR0F28): no
 -PMIC: ???, charging only through micro USB 5V/2A
+-OTG:
+ -Supports ACA mode (presumably, retest)
 
 Ployer Momo7w
 -7" 1024x600 panel
+ + mini HDMI
 -Touchscreen: gsl1686, with capacitive home-button, fw NOT in EFI
 -PCB: INET-I71-REV21 Zeng-gc 2015-07-07
 -CPU: Bay Trail Z3735G, 1G RAM
@@ -199,6 +211,7 @@ Ployer Momo7w
 
 HP stream 7:
 -7" 800x1280 DSI panel 24 bpp
+ -No HDMI
 -Touchscreen: Goodix
 -CPU: Bay Trail Z3735G, 1G RAM
 -Wifi: RTL8723BS
@@ -284,7 +297,7 @@ Asus T100HA
 -EC: ITE8825FN
 
 Asus T200TA
--11.6" 1366x768 panel
+-11.6" 1366x768 eDP panel
 -Touchscreen: SIS0817 (sis9203 + sis9251 ICs)
 -CPU: Bay Trail Z3775, 2G RAM
 -Wifi: AP6234
@@ -310,6 +323,7 @@ VIOS LTH17
 
 I.T.Works TW701
 -7" 1024x600 DSI panel 
+ -No HDMI
 -Touchscreen: gsl1686, with capacitive home-button, fw NOT in EFI
 -CPU: Bay Trail Z3735G, 1G RAM
 -Wifi: RTL8723BS
@@ -454,6 +468,7 @@ Connect Tablet 9
 
 HP Pavilion X2 10-p0XX
 -10" 1280x800 eDP panel
+ + micro HDMI
 -Touchscreen: SYNP1000
 -CPU: Cherry Trail x5-Z8350, 2GB RAM
 -Wifi: Intel 3165
@@ -463,15 +478,23 @@ HP Pavilion X2 10-p0XX
 -Type-C only supports USB-2 speeds
 
 Lenovo Thinkpad 8
+-8" 1200x1920 eDP panel
+ + Micro HDMI
+-Touchscreen: ATML1000, capacative touch home button, with haptic feedback
+-CPU: Bay Trail Z3770, 2GB RAM
 -PCB: ZIJI1 LA-A661P Rev:2.0 2013-11-01
 -Audio codec: ALC5672
 -Accel: Invensense MPU 6050 (through TI sensor hub)
 -I/O chip (superio?) ENE IO3737LU-B1
--PMIC: ROHM2610 Crystal Cove (BYT), charging only through micro USB 5V/2A
--Charge IC: TI bq24292i
 -Unknown IC 2x: 7047 ba3611 (regulator?)
 -Unknown IC: OE=FL S2A
 -Unknown IC: ZND8 1337 7CWM
+-Charge IC: TI bq24292i
+-PMIC: ROHM2610 Crystal Cove (BYT), charging only through micro USB 5V/2A,
+-OTG:
+ -Has a mux
+ -Locked BIOS cannot test for device-mode phy / gadget mode
+ -Supports ACA mode
 
 Onda v975w (Carlos):
 -9.7" 1536x2048 eDP panel
@@ -537,6 +560,7 @@ Prowise PT301
 
 Lenovo Miix 2 8
 -8" 800x1280 DSI panel 24 bpp
+ -No HDMI
 -Touchscreen: ATML1000, with capacitive home button
 -CPU: Bay Trail Z3740, 2G RAM
 -Wifi: brcmfmac43241b4
@@ -569,6 +593,7 @@ Point of View TAB-P1006W-232-3G
 
 Toshiba WT10-A PDW0BE
 -10" 1280x800 eDP panel 18bpp
+ + micro HDMI
 -Touchscreen: eKTH3910AY digitizer: MCF-101-1525-03-V2
 -CPU: Bay Trail Z3735F, 2G RAM
 -Wifi: RTL8723BS
@@ -606,6 +631,7 @@ Terra Pad 1060
 
 Terra Pad 1061
 -10" 1920x1200 DSI panel
+ + micro HDMI
 -Touchscreen: FTSC1000 with capacitive touch home button
 -CPU: Bay Trail Z3735F, 2G RAM
 -Wifi: RTL8723BS
