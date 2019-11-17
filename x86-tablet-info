@@ -48,7 +48,7 @@ GPD-win
 -DSDT: OSID == One, PMID == 0x03, (BDID == 0x09) || (BDID == 0x0A)
 
 Point of View TAB-P800W (V 1-0) and (V2.1) appear to be identical
--8" 800x1280 DSI panel 24 bpp
+-8" 800x1280 DSI panel 24 bpp, uses SoC/LPSS PWM
  + micro HDMI
 -Touchscreen: Silead gsl3692, with capacitive home-button, fw NOT in EFI
 -CPU: Bay Trail Z3735G, 1G RAM
@@ -59,6 +59,8 @@ Point of View TAB-P800W (V 1-0) and (V2.1) appear to be identical
 -PMIC: Crystal Cove (BYT), charging only through micro USB 5V/2A
 -Charge IC: TI bq24192
 -Fuelgauge: TI bq27443a
+-OTG:
+ -Does not have an USB mux
 
 Point of View TAB-P1005W-232 (V2.0)
 -10" 800x1280 DSI panel 24 bpp
@@ -288,7 +290,7 @@ Teclast X80 Pro
 -PMIC: AXP288, charging only through micro USB 5V/2A
 
 Asus T100HA
--10" 1280x800 panel
+-10" 1280x800 DSI panel 24 bpp, uses PMIC/CRC for PWM
  + Micro HDMI
 -Touchscreen: SIS0457 i2c-hid (IC: SIS9255)
 -CPU: Cherry Trail x5-Z8500, 2GB RAM
@@ -405,7 +407,7 @@ Kazam Vision
 -DSDT: PMID = 0x02
 
 Toshiba Click Mini L9W-B
--8.9" 1920x1200 DSI panel
+-8.9" 1920x1200 DSI panel, uses SoC/LPSS for PWM
 -Touchscreen: SIS0817
 -CPU: Bay Trail Z3735F, 2G RAM
 -Wifi: RTL8723BS
@@ -496,6 +498,8 @@ Lenovo Thinkpad 8
  -Has a mux
  -Locked BIOS cannot test for device-mode phy / gadget mode
  -Supports ACA mode
+-USB3 micro-B connector does superspeed host mode when used with a
+ UBS-3 micro-*A* to USB3-A receptacle cable
 
 Onda v975w (Carlos):
 -9.7" 1536x2048 eDP panel
@@ -605,8 +609,8 @@ Toshiba WT10-A PDW0BE
 -Unknown IC: mp65 f915c1
 
 Irbis TW90
--10" 1200x1920 LCD
--Touchscreen: GSL3680?, with capacitive home-button
+-10" 1200x1920 DSI panel 24bpp
+-Touchscreen: GSL3680?, with capacitive home-button, fw NOT in EFI
 -CPU: Cherry Trail x5-Z8350, 2G RAM
 -Wifi: RTL8723BS
 -Accel: BOSC0200, mount-matrix ok
@@ -631,7 +635,7 @@ Terra Pad 1060
 -Audio: HDA
 
 Terra Pad 1061
--10" 1920x1200 DSI panel
+-10" 1920x1200 DSI panel, uses SoC/LPSS PWM
  + micro HDMI
 -Touchscreen: FTSC1000 with capacitive touch home button
 -CPU: Bay Trail Z3735F, 2G RAM
@@ -648,3 +652,32 @@ Dock:
  on the top of the tablet and that some mux should switch them over and that
  this is not happening. I could be completely wrong though. It also does not
  work under Windows 10, might be a defect in either the dock or the tablet.
+
+Asus T100CHI
+-10" 1920x1200 DSI panel 24 bpp, PMIC/CRC PWM
+ + micro HDMI
+-Touchscreen: SYNA7508 06CB:11E5
+-CPU: Bay Trail Z3775, 2G RAM
+-Wifi: brcmfmac43241b4-sdio
+-Accel: INVN6500, mount-matrix ok
+-Ambient light: Capella cm32181
+-Audio codec: ALC5640
+-PMIC: Crystal Cove (BYT), supports 9V 2A charging with Asus adapt. (PD-1.0?)
+-USB3 micro-B connector does superspeed host mode when used with a
+ UBS-3 micro-*A* to USB3-A receptacle cable
+
+Acer Aspire Switch 10 (SW5-012)
+-10" 1280x800 DSI panel 24 bpp, uses SoC/LPSS PWM
+-Touchscreen: SYNA7300 06CB:0E75
+-CPU: Bay Trail Z3735F, 2G RAM
+-Wifi: RTL8723BS
+-Accel: INVN6500
+-Ambient light: Capella cm3218?
+-Audio codec: ALC5640
+-PMIC: Crystal Cove (BYT), charging only through power-barrel 12V, 1.5A
+-Dock:
+ -GL850G usb-hub
+ -GL3321G USB3 to 6gbps SATA chip
+ -ITE it8595e-128 keyboard + touchpad controller
+ -Touchpad controller: Synaptics S9102B or S91028
+-Note eMMC is broken, must boot from external media
