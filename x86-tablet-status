@@ -2,6 +2,7 @@ Bay and Cherry Trail device status with linux-next
 
 		lcd wif tou acc bat c2a but bri sus  spk pho jck hst dev blu c3a tpad lid
 Acer Ic. W1-810 yes yes yes yes yes yes yes yes yes  yes yes yes yes -   FIR -   -    -
+Acer SW5-012    yes yes yes yes yes yes yes (6) (6)  yes yes yes yes -       -   yes  (6)
 Archos 80Cesium	yes yes yes yes yes yes yes yes yes      yes yes yes -   yes -   -    -
 Asus T100TA	yes yes yes yes                      yes yes         -   FIR -   yes
 Asus T100HA	ROT yes no  yes yes yes yes yes yes  yes yes yes yes -   FIR -   yes  yes
@@ -60,3 +61,7 @@ DPI   DPI is wrong
 (4) Trekstor Surftab Wintron 7.0 ST70416-6
 (5) Works but not really, we need to preserve the firmware set period rather
     then picking our own
+(6) The Acer Switch 10 SW5-012 requires a DSDT override to fix several issues:
+    -PWM is not listed in ACPI, no backlight ctrl without override
+    -_LID is broken, needs DSDT-fix + button.lid_init_state=method to enable it
+    -S0i3 only works after fixing the missing PWM controller

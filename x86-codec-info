@@ -1,4 +1,5 @@
 rt5640:		Spk	Mic	JD	AIF		quirk	SoC	Quirk added
+-Acer SW5-012   stereo  DMIC1   JD2IN4N SSP0 AIF1       503430  BYTCR   yes
 -Archos80Cesium	mono	IN3-dff	JD1IN4P	SSP0 AIF1	563423	BYTCR	yes
 -Asus T100CHI	stereo	DMIC1	JD2IN4N	SSP2 AIF1	403430	BYT	defaults
 -Asus T100TA	stereo	IN1	JD2IN4N	SSP2 AIF1	443432	BYT	yes
