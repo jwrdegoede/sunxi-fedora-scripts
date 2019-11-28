@@ -356,6 +356,7 @@ PIPO W4
 
 Yours 8" Tablet (white no markings)
 -8" 800x1280 DSI panel
+ + micro HDMI
 -Touchscreen: GSL3676, with capacitive home-button, fw NOT in EFI
 -PCB: INET-I86M-REV21 Zeng-gc 2015-07-08
 -CPU: Bay Trail Z3735F, 2GB RAM
@@ -363,6 +364,8 @@ Yours 8" Tablet (white no markings)
 -Accel: BMA250E, mount-matrix ok
 -Audio codec: Realtek ALC5651, mono speaker
 -PMIC: AXP288, charging only through micro USB 5V/2A
+-OTG:
+ -Does not have an USB mux
 
 MSI S100 Tablet + keyboard cover
 -10.1" 1280x800 LVDS screen connected through eDP to LVDS convertor chip
@@ -469,7 +472,7 @@ Connect Tablet 9
 -PMIC: AXP288, charging only through micro-usb 5V/2A max
 -Appears to have a USB mux but no ULPI phy
 
-HP Pavilion X2 10-p0XX
+HP Pavilion X2 10-p002nd
 -10" 1280x800 eDP panel
  + micro HDMI
 -Touchscreen: SYNP1000
