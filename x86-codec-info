@@ -23,6 +23,7 @@ rt5640:		Spk	Mic	JD	AIF		quirk	SoC	Quirk added
 -PoV-mobii-800w mono	IN1-dff	JD2IN4N	SSP0 AIF2	663432	BYTCR	yes
 -PoV P1005w-232	stereo	IN1-dff JD2IN4N SSP0 AIF1	543432	BYTCR	yes
 -Prowise PT301	stereo	IN1-dff JD2IN4N SSP0 AIF1(1)	543432	BYTCR	yes
+-Teclast X89	stereo	IN3-dff	JD1 (5)	SSP0 AIF1	545423	BYTCR	yes
 -Terra Pad 1061 stereo  IN3-dff JD1IN4P SSP0 AIF1       543423  BYTCR   defaults
 -Tos Click Mini	stereo	DMIC1	JD2 (2)	SSP0 AIF1(1)	502f30	BYTCR	yes
 

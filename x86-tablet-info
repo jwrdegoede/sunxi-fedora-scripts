@@ -64,6 +64,7 @@ Point of View TAB-P800W (V 1-0) and (V2.1) appear to be identical
 
 Point of View TAB-P1005W-232 (V2.0)
 -10" 800x1280 DSI panel 24 bpp
+ + micro HDMI
 -Touchscreen: GDIX1001
 -CPU: Bay Trail Z3735F, 2G RAM
 -Wifi: RTL8723BS
@@ -113,7 +114,6 @@ Peaq 10.1" C1010 2-in-1
 -Touchscreen: SIS0817 i2c-hid touchscreen
 -CPU: Bay Trail Z3736F, 2GB RAM
 -Wifi RTL8723BS
--Accel: SMO8500, mount-matrix ok
 -Audio Codec: Realtek ALC5640
  -GPIO based headphone detect (AMCR0F28): no
 -AXP288 PMIC, charging only through power-barrel, adapter 5V/3A
@@ -558,10 +558,6 @@ Prowise PT301
 -Accel: SMO8500, mount-matrix ok
 -Audio codec: ALC5640
 -PMIC: AXP288, charging only through micro USB 5V/2A
--OTG:
- -USB-phy: TI T1210B
- -USB-mux: has a mux, unknown which one
- -Cannot test if gadget mode works because DWC3 disabled in locked BIOS GRRR
 -Unknown IC: IR 0331 H430P
 -Unknown IC: XKCJ9 51235 5214
 -Dock: Touchpad-IC: CY8CTMA140
@@ -686,3 +682,19 @@ Acer Aspire Switch 10 (SW5-012)
 -eMMC is broken, must boot from external media
 -PWM is not listed in ACPI, breaking backlight ctrl, requires DSDT override fix
 -_LID is broken requires DSDT override + button.lid_init_state=method to fix
+
+Teclast X89 E7ED
+-10" 1536x2048 eDP panel 18 bpp, mounted upside-down
+ + micro HDMI
+-Touchscreen: GDIX1001
+-CPU: Bay Trail Z3735F, 2G RAM
+-Wifi: RTL8723BS
+-Accel: SMO8500, mount-matrix ok
+-Audio codec: ALC5640
+-PMIC: AXP288, charging only through micro USB 5V/2A
+-OTG:
+ -USB-phy: TI T1210B
+ -USB-mux: has a mux, unknown which one
+ -Phy recognized by dwc3 controller when booting with broken Android BIOS
+  (e.g. no accel, touchscreen ACPI node borked) Locked Windows BIOS does
+  not enable the DWC3 controller <sigh>
