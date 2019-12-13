@@ -233,6 +233,8 @@ Acer Iconia Tab 8 W1-810
 
 I.T.Works TW891
 -8.9" 800x1280 panel, mounted 90 degrees rotated
+ + micro HDMI
+ - BGRT logo is just a black rectangle
 -Touchscreen: Silead GSL3670, without capacitive home-button, fw NOT in EFI
 -Wifi RTL8723BS
 -Accel: KIOX000A, mount-matrix ok
@@ -253,7 +255,7 @@ T-BAO Tbook Air 12.5
 -7934 small square 5 pins each side, unknown
 -Touchpad: PCB: HTX9848TI+EFSA Touch IC: Hantick HTT5288, fingerprint: EM85F690
 
-AXXO WT-1011 10" 2-in-1
+AXXO WT-1011 10" 2-in-1 (given away)
 -8" 1280x800 eDP panel
  -Realtek RTD2136 eDP to LVDS chip
 -Touchscreen: FTSC1000 i2c-hid
@@ -354,7 +356,7 @@ PIPO W4
 -Audio codec: ALC5640
 -PMIC: AXP288, charging only through micro USB 5V/2A
 
-Yours 8" Tablet (white no markings)
+Yours 8" Tablet (white no markings, defect)
 -8" 800x1280 DSI panel
  + micro HDMI
 -Touchscreen: GSL3676, with capacitive home-button, fw NOT in EFI
@@ -698,3 +700,21 @@ Teclast X89 E7ED
  -Phy recognized by dwc3 controller when booting with broken Android BIOS
   (e.g. no accel, touchscreen ACPI node borked) Locked Windows BIOS does
   not enable the DWC3 controller <sigh>
+
+Thundersoft TST178 PAD
+-7.8" 768x1024 DSI panel 24 bpp
+ + mini HDMI
+-Touchscreen: FT5406EE8 (ACPI: FTSC0001)
+-CPU: Bay Trail Z3745D, 1G RAM
+-Wifi: RTL8188EUS
+-Accel: BMA250E
+-Audio codec: ALC5640
+-PMIC: Crystal Cove (BYT), charging only through micro USB 5V/2A
+-OTG:
+ -USB-phy: TI T1210B
+ -USB-mux: has a mux, unknown which one
+-USB3 micro-B connector does superspeed host mode when used with a
+ UBS-3 micro-*A* to USB3-A receptacle cable
+-Unknown ICs:
+ MPDP 2625 B785
+ 201bc8 fuel-gauge?
