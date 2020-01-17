@@ -47,7 +47,7 @@ GPD-win
 -Unknown IC 17047 36a1s
 -DSDT: OSID == One, PMID == 0x03, (BDID == 0x09) || (BDID == 0x0A)
 
-Point of View TAB-P800W (V 1-0) and (V2.1) appear to be identical
+Point of View TAB-P800W (V1.0/V2.0/V2.1) (1 defect, 1 given away)
 -8" 800x1280 DSI panel 24 bpp, uses SoC/LPSS PWM
  + micro HDMI
 -Touchscreen: Silead gsl3692, with capacitive home-button, fw NOT in EFI
@@ -284,6 +284,7 @@ Chuwi Vi8 (CWI506)
 
 Teclast X80 Pro
 -8" 1200x1920 DSI panel
+ + micro HDMI
 -Touchscreen: GDIX1001
 -CPU: Cherry Trail x5-Z8300, 2GB RAM
 -Wifi: RTL8723BS
@@ -356,7 +357,7 @@ PIPO W4
 -Audio codec: ALC5640
 -PMIC: AXP288, charging only through micro USB 5V/2A
 
-Yours 8" Tablet (white no markings, defect)
+Yours 8" Tablet (white no markings) (1 defect, 1 given away)
 -8" 800x1280 DSI panel
  + micro HDMI
 -Touchscreen: GSL3676, with capacitive home-button, fw NOT in EFI
@@ -369,7 +370,7 @@ Yours 8" Tablet (white no markings, defect)
 -OTG:
  -Does not have an USB mux
 
-MSI S100 Tablet + keyboard cover
+MSI S100 Tablet + keyboard cover (given away)
 -10.1" 1280x800 LVDS screen connected through eDP to LVDS convertor chip
 -Touchscreen FTSC1000 i2c-hid hid-multitouch
 -PCB: T021_Z3770D_V1_2
@@ -393,16 +394,17 @@ Lenovo Ideapad Miix 310
 
 Lenovo Ideapad Miix 320
 -10.1" 800x1280 DSI panel
--Touchscreen: ?
+-Touchscreen: FTSC1000
 -CPU: Cherry Trail x5-Z8350, 2G RAM
--Wifi: ?
+-Wifi: Intel Wireless 3165
 -Accel: KIOX000A, mount-matrix ok
 -Audio codec: ALC5645
 -PMIC: AXP288, charging only through power-barrel, adapter 5V/4A
 -DSDT: PMID = 0x02
 
 Kazam Vision
--10.1" 800x1280 DSI panel
+-8" 800x1280 DSI panel
+ + micro HDMI
 -Touchscreen: GDIX1001
 -CPU: Cherry Trail x5-Z8300, 2G RAM
 -Wifi: Intel 3165
@@ -707,7 +709,7 @@ Thundersoft TST178 PAD
 -Touchscreen: FT5406EE8 (ACPI: FTSC0001)
 -CPU: Bay Trail Z3745D, 1G RAM
 -Wifi: RTL8188EUS
--Accel: BMA250E
+-Accel: BMA250E, mount-matrix ok
 -Audio codec: ALC5640
 -PMIC: Crystal Cove (BYT), charging only through micro USB 5V/2A
 -OTG:
