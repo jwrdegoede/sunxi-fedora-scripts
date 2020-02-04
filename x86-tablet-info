@@ -96,7 +96,9 @@ HP Pavilion X2 10-n000nd
  Magneto: BMC150B at addr 0x13 
 -Ambient light: Capella cm32181
 -Audio codec: ALC5642
--PMIC: AXP288, charging only through Type-C 5V/2A, extra IC to detect 3A Type-C
+-PMIC: AXP288, charging only through Type-C, no host functionality. Cc-pins not
+ connected at all so it does not work with PD chargers, only with chargers which
+ unconditionally send out 5V/3A. Input-current-limit hardcoded to 3A.
 -I/O chip (superio?) ENE IO3737LU-B1
 -Unknown IC: 89=2c w25 ??
 -Unknown IC: B7 k442 (type-c controller?)
@@ -720,3 +722,13 @@ Thundersoft TST178 PAD
 -Unknown ICs:
  MPDP 2625 B785
  201bc8 fuel-gauge?
+
+HP x2 10 variants:
+-10-n000nd, 10-n010nl BYT AXP288 PMIC
+ vendor "Hewlett-Packard" product "HP Pavilion x2 Detachable" board "815D"
+-10-n101ng CHT ??? PMIC
+ vendor "HP"              product "HP Pavilion x2 Detachable" board "813E"
+-10-p002nd, 10-p018wm CHT TI PMIC
+ vendor "HP" product "HP x2 Detachable 10-p0XX" board "827C"
+-x2-210-g2 CHT TI PMIC
+ vendor "HP" product "HP x2 210 G2" board "82F4"
