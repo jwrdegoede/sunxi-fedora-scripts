@@ -1,32 +1,36 @@
 Bay and Cherry Trail device status with linux-next
 
-		lcd wif tou acc bat c2a but bri sus  spk pho jck hst dev blu c3a tpad lid
+		lcd wif tou acc bat c2a but bri sus  spk pho jck hst dev blu c3a tpad lid tblt
 Acer Ic. W1-810 yes yes yes yes yes yes yes yes yes  yes yes yes yes -   FIR -   -    -
 Acer SW5-012    yes yes yes yes yes yes yes (6) (6)  yes yes yes yes -       -   yes  (6)
 Archos 80Cesium	yes yes yes yes yes yes yes yes yes      yes yes yes -   yes -   -    -
-Asus T100TA	yes yes yes yes                      yes yes         -   FIR -   yes
-Asus T100HA	ROT yes no  yes yes yes yes yes yes  yes yes yes yes -   FIR -   yes  yes
-Asus T100CHI	yes yes yes yes yes yes yes yes yes  yes yes yes yes -   FIR -   yes  yes
-Asus T200TA	yes yes no  yes yes -   yes yes S0i3 yes yes yes yes -   FIR -   yes  yes
+Asus T100TA	yes yes yes yes                      yes yes         -   FIR -   yes      yes
+Asus T100HA	ROT yes no  yes yes yes yes yes S0i3 yes yes yes yes -   FIR -   yes  yes yes
+Asus T100CHI	yes yes yes yes yes yes yes yes yes  yes yes yes yes -   FIR -   yes  yes yes
+Asus T200TA	yes yes no  yes yes -   yes yes S0i3 yes yes yes yes -   FIR -   yes  yes yes
 Axxo WT1011     yes yes yes yes yes yes yes yes yes  yes yes yes yes -       -   (1)  yes
-Chuwi Hi8 Pro	yes yes FIR yes yes     yes yes                              -   -
+Chuwi Hi8 Pro	yes yes FIR yes yes     yes yes S0i3 yes yes yes yes     yes -   -    -   yes (7)
 Chuwi Vi8	yes yes FIR yes yes yes yes yes yes  yes yes yes yes yes yes -   -    -
-Chuwi Vi8 Plus	yes yes yes yes yes yes yes yes yes              yes yes FIR -   -
+Chuwi Vi8 Plus	yes yes yes yes yes yes yes yes yes  yes yes yes yes yes FIR -   -    -   yes (7)
 Chuwi Vi10	yes yes FIR yes yes     yes yes yes  yes yes yes yes     yes -   -    yes
 Connect Tablet9	yes yes FIR yes yes     yes yes yes  yes yes yes yes -   yes -   -
-Cube iWork8 Air	yes yes FIR yes     yes yes yes yes              yes yes     -   -
+Cube iWork8 Air	yes yes FIR yes yes yes yes yes yes  yes yes yes yes yes yes -   -    -   -
 Dell Venue 5830 yes yes yes yes yes yes yes yes yes  yes yes yes yes -       -   -    -
 Dell Venue 7130 yes yes yes yes yes yes yes yes yes  yes         -   -       -   yes
 Gl. TM800A550L	yes yes
 GP-elec. T701   ROT yes FIR yes yes yes yes yes yes              yes -       -   -
 GPD win		ROT yes yes     yes yes yes yes yes  yes yes yes yes yes FIR yes -
-HP Pavil X2 BYT	yes yes yes     yes yes yes yes yes  yes yes         -       no  yes  yes
+HP Pavil X2 BYT	yes yes yes yes yes yes yes yes yes  yes yes         -       yes yes  yes yes
 HP Stream 7     DPI yes yes yes yes     yes yes yes  yes         yes -       -   -
-I.T.Works TW891 ROT yes yes yes yes yes yes yes yes  yes yes yes yes         -   (1)  yes
-Jump. EZpad m3	yes yes FIR yes yes yes yes yes yes              yes yes FIR -   -
+I.T.Works TW891 ROT yes yes yes yes yes yes yes yes  yes yes yes yes         -   (1)  yes yes
+Jump. EZpad m3	yes yes FIR yes yes yes yes yes yes  yes yes yes yes yes FIR -   -    yes yes (7)
 Kazam Vision	yes yes yes yes yes yes yes yes yes  yes yes yes yes yes yes -   -
 Lamina I8270    yes yes yes yes yes     yes yes yes  yes yes yes yes         -   -    -
-Medion E2215T   yes yes yes yes yes -   yes yes S0i3 yes yes yes yes -   yes -   (1)  yes
+Lenovo Miix300	yes yes yes yes yes -   yes yes S0i3 yes yes yes yes -   yes -   (1)  yes -
+Lenovo Miix310	ROT yes yes yes yes -   yes yes S0i3 yes yes yes yes -   yes -   (1)  yes yes 
+Lenovo Miix320  ROT yes yes yes yes -   yes yes S0i3 yes yes yes yes -   yes -   yes  yes yes
+Medion E2215T   yes yes yes yes yes -   yes yes S0i3 yes yes yes yes -   yes -   (1)  yes yes
+MPMAN MPWIN895	yes yes FIR yes yes yes yes yes S0i3 yes yes yes yes -   yes -   -    -
 MSI S100	yes yes yes yes yes -   yes yes yes  yes yes yes yes -       -   (1)  -
 Nuv TM800W560	yes yes yes yes yes     yes yes yes  yes yes yes yes     yes -   -    -
 Onda V80plus v3	yes yes FIR 
@@ -41,11 +45,13 @@ Teclast X89	yes yes yes yes yes yes yes yes S0i3 yes yes yes yes -       -   -  
 Terra Pad 1060  yes yes yes yes yes -   yes yes S3   yes         -   -       -   (1)  yes
 Terra Pad 1061  yes yes yes yes yes yes (2) (5) S0i3 yes yes yes -   -       -   (1)  yes
 Toshib Click(3) yes yes yes yes yes yes yes yes S0i3 yes yes yes yes -       -   yes  yes
+Toshiba WT8-A	yes yes yes yes yes yes yes yes S0i3 yes yes yes yes -   yes -   -    -   -
 Trekstor (4)	yes yes FIR yes yes yes yes yes yes              yes -       -   -
 
 Legenda: wif(i) tou(chscreen) acc(el) bat(-mon) c(harge-)2a but(tons)
 bri(ghtness) sus(pend&resume) sp(ea)k(er) (head)pho(nes) j(a)ck-detection
-(usb-)h(o)st (usb-)dev(ice) blu(e-tooth) c(harge-)3a t(ouch)pad
+(usb-)h(o)st (usb-)dev(ice) blu(e-tooth) c(harge-)3a t(ouch)pad lid
+t(a)bl(e)t(-mode-switch)
 
 yes   Works
 no    Does not work
@@ -66,3 +72,4 @@ DPI   DPI is wrong
     -PWM is not listed in ACPI, no backlight ctrl without override
     -_LID is broken, needs DSDT-fix + button.lid_init_state=method to enable it
     -S0i3 only works after fixing the missing PWM controller
+(7) The tablet-mode switch is fixed/locked in tablet-mode on these tablets

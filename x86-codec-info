@@ -15,6 +15,7 @@ rt5640:		Spk	Mic	JD	AIF		quirk	SoC	Quirk added
 -HP Stream 7	mono	IN3-dff	JD1-inv SSP0 AIF1	573423	BYTCR	yes
 -ITworks tw891	mono	IN3-dff	JD1IN4P SSP0 AIF1	563423	BYTCR	yes
 -Lamina I8270	mono	IN3-dff	JD1-inv	SSP0 AIF1	573423	BYTCR	yes
+-Lenovo miix300 stereo	IN3-dff JD1IN4P	SSP0 AIF1	543423	BYTCR	defaults
 -Nuv TM800W560	stereo	IN1-dff	JD2 (4)	SSP0 AIF1	553432	BYTCR	yes
 -ONDA V975w	stereo	IN1-dff JD2 (3)	SSP2 AIF1	443432	BYT	yes
 -ONDA V891w	stereo	IN3-dff JD1 (5)	SSP0 AIF1	543423	BYTCR	defaults
@@ -26,6 +27,7 @@ rt5640:		Spk	Mic	JD	AIF		quirk	SoC	Quirk added
 -Teclast X89	stereo	IN3-dff	JD1 (5)	SSP0 AIF1	545423	BYTCR	yes
 -Terra Pad 1061 stereo  IN3-dff JD1IN4P SSP0 AIF1       543423  BYTCR   defaults
 -Tos Click Mini	stereo	DMIC1	JD2 (2)	SSP0 AIF1(1)	502f30	BYTCR	yes
+-Toshiba WT8-A	stereo	DMIC1	JD2-inv SSP2 AIF1	413430	BYT	yes
 
 1) BYTCR devices without routing in BIOS table and not matching the default
 2) Needs OVCD settings of 1.5mA sf0.75 for button-press detect
@@ -33,15 +35,20 @@ rt5640:		Spk	Mic	JD	AIF		quirk	SoC	Quirk added
 4) Inverted, headset mic contact physically unreliable
 5) Uses OMTP headset pinout instead of the usual CTIA one
 
-rt5645:		Spk	Mic	JDmod	UCM
--Acer One S1003 stereo	ana	3	chtrt5645
--Asus T100HA	stereo	dmic1	3 inv	custom
--GPD Pocket	mono	diff	3 inv	chtrt5645-mono-speaker-analog-mic
--GPD win	mono	ana	3 inv	chtrt5645-mono-speaker-analog-mic
--Kazam Vision	stereo	ana	3	chtrt5645
--Lenovo Miix310 stereo	diff	3	chtrt5645
--Lenovo Miix320 stereo	dmic2	3	custom
--Teclast X80Pro	mono	ana	3	chtrt5645-mono-speaker-analog-mic
+rt5645:		Spk	Mic	JDmod	  UCM
+-Acer One S1003 stereo	ana	3	  chtrt5645
+-Asus T100HA	stereo	dmic1	3 inv (1) chtrt5645-dmic1
+-GPD Pocket	mono	diff	3 inv	  chtrt5645-mono-speaker-analog-mic
+-GPD win	mono	ana	3 inv	  chtrt5645-mono-speaker-analog-mic
+-Kazam Vision	stereo	ana	3	  chtrt5645
+-Lenovo Miix310 stereo	diff	3	  chtrt5645
+-Lenovo Miix320 stereo	dmic2	3	  chtrt5645-dmic2
+-Medion E1239T	stereo	dmic2	3         chtrt5645-dmic2
+-Teclast X80Pro	mono	ana	3	  chtrt5645-mono-speaker-analog-mic
+
+1) Uses an ALC3270 which according to Realtek themselves does not support
+   TRRS jacks only TRS jack, so no headset detection or headset-mic support
+
 
 rt5651:		Spk	Mic		JD
 -Chuwi Vi8 Plus mono	mono in2	JD1_1
