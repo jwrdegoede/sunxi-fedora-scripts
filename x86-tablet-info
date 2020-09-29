@@ -38,7 +38,7 @@ Jumper EZpad mini 3
 
 GPD-win
 -5.5" 720x1280 DSI panel, mounted 90 degree rotated
- + mini HDMI
+ + mini HDMI + DP-over-type-C
 -PCB: WINI55
 -CPU: Cherry Trail Z8700, 4G RAM
 -Accel: KIOX000A
@@ -48,8 +48,16 @@ GPD-win
 -Unknown IC 17047 36a1s
 -DSDT: OSID == One, PMID == 0x03, (BDID == 0x09) || (BDID == 0x0A)
 
+GPD-pocket
+-7" 1200x1920 DSI, 24 bpp, PWM: LPSS, freq: actual 21972 VBT 22000, 20-255
+ -mounted 90 degree rotated
+ + mini HDMI + DP-over-type-C
+-CPU: Cherry Trail Z8750, 8G RAM
+-Audio codec: ALC5645
+-PMIC: Whiskey Cove (CHT), charging only through Type-C PD 5-12V
+
 Point of View TAB-P800W (V1.0/V2.0/V2.1) (1 defect, 1 given away)
--8" 800x1280 DSI panel 24 bpp, uses SoC/LPSS PWM
+-8" 800x1280 DSI 24 bpp, PWM: LPSS, freq: actual 30136 VBT 30000, 10-255
  + micro HDMI
 -Touchscreen: Silead gsl3692, with capacitive home-button, fw NOT in EFI
 -CPU: Bay Trail Z3735G, 1G RAM
@@ -60,8 +68,7 @@ Point of View TAB-P800W (V1.0/V2.0/V2.1) (1 defect, 1 given away)
 -PMIC: Crystal Cove (BYT), charging only through micro USB 5V/2A
 -Charge IC: TI bq24192
 -Fuelgauge: TI bq27443a
--OTG:
- -Does not have an USB mux
+-OTG: Does not have an USB mux
 
 Point of View TAB-P1005W-232 (V2.0)
 -10" 800x1280 DSI panel 24 bpp
@@ -86,8 +93,8 @@ GP-electronic T701 7 inch win10 tablet
 -PMIC: AXP288, charging only through micro USB 5V/2A
 
 HP Pavilion X2 10-n000nd
--10" 1280x800 DSI panel
--Touchscreen: SYNA7508
+-10" 1280x800 DSI panel, PWM: LPSS, freq: actual 9918 VBT 10000, 0-255
+-Touchscreen: SYNA7508, with support for PR77S pen, without capacitive home-button
 -PCB: DORITOS1-6050A2755401-MB unreadable TPN-I121
 -CPU: Bay Trail Z3736F, 2GB RAM
 -Wifi: RTL8723BS
@@ -111,8 +118,8 @@ HP Pavilion X2 10-n000nd
 -USB-2 hub: gl852g
 -DSDT: PMID == 0x05
 
-Peaq 10.1" C1010 2-in-1
--10.1" 1920x1200 DSI panel
+Peaq 10" C1010 2-in-1
+-10" 1920x1200 DSI 24 bpp, PWM: LPSS, freq: actual 40054 VBT 40000, 10-255
  + mini HDMI
 -Touchscreen: SIS0817 i2c-hid touchscreen
 -CPU: Bay Trail Z3736F, 2GB RAM
@@ -126,8 +133,14 @@ Peaq 10.1" C1010 2-in-1
  -mt5036 step up converter
  -mt2000 513g1 ?
  -ite8595e-128 keyboard + touchpad controller
+ -048d:8595: HID descriptors match those of devices which support multi-touch
+  through the custom HID protocol supported by HID-asus, but this does not
+  work on this model. 
+  Touchpad on/off toggle key handled inside kbd-dock, does not send events.
 
 Asus T100TA
+-10" 1368x768 DSI 24 bpp, PWM: CRC, freq: actual 200 VBT 200, 0-255
+ + micro HDMI
 -Touchscreen: Atmel MXT1664TXES-C2U 1330B TW QLG9F
 -Wifi: Broadcom BCM43241SFKFFBG TN1322 P24 294688 P3T
 -Accel: INVN6500, mount-matrix ok
@@ -154,21 +167,48 @@ Chuwi Hi8 Pro (CWI513)
 -PMIC: AXP288, charging only through Type-C 5V/2A
 -DSDT: PMID == 0x02
 -Does superspeed over Type-C only in 1 orientation?
+-Android Model: Hi8 pro, Android version: 5.1, kernel 3.14.37-x86_64-L1-R517
+-Camera info atomisp-css2401a0_v21 front camera:
+ Front camera android sensor-driver gc2355:
+ -gc2355 i2c-GCTI2355:01: camera pdata: port: 0 lanes: 1 order: 00000000
+ -gpio-306 (cam_gpio0) when camera goes on, GPIO goes from low -> high
+ -gpio-313 (cam_gpio1) when camera goes on, GPIO goes from high -> low
+ -clock pltclk 4 using source 0 (25 MHz crystal)
+-Camera info atomisp-css2401a0_v21 back camera:
+ -gc2355b i2c-GCT2355:00: camera pdata: port: 1 lanes: 1 order: 00000000
+ -gpio-396 (cam_gpio0) when camera goes on, GPIO goes from low -> high
+ -gpio-388 (cam_gpio1) when camera goes on, GPIO goes from high -> low
+ -clock pltclk 4 using source 0 (25 MHz crystal)
 -Multi-boot menu:
- -Needs to be in Android mode for USB device mode to work
- -Having shim binaries under EFI/BOOT do fallback leads to a boot-loop
- -Install Fedora which installs shimx64.efi as EFI\BOOT\BOOTX64.EFI
- -You should now get Android as option in the graphical OS chooser built
-  into the BIOS, this is important because it remembers the last OS choosen.
-  It will be either in 32 bit UEFI mode using Windows settings or in
-  64 bit UEFI mode using Android settings, based on the last time an os
-  was chosen in the chooser.
- -Choose Android at least once
- -Insert an USB bootable media to break and use boot override from save/exit
-  firmware screen to boot it (to break the bootloop), from the USB booted OS:
-  -Add an entry pointing to EFI/fedora/shimx64.efi to efibootmgr list,
-   remove all other entries
-  -Remove all files under EFI/BOOT to hide the bootchooser and fix the bootloop
+ -Fedora only install:
+  -Having shim binaries under EFI/BOOT do fallback leads to a boot-loop
+  -Install Fedora which installs shimx64.efi as EFI\BOOT\BOOTX64.EFI
+  -You should now get Android as option in the graphical OS chooser built
+   into the BIOS, this is important because it remembers the last OS choosen.
+   It will be either in 32 bit UEFI mode using Windows settings or in
+   64 bit UEFI mode using Android settings, based on the last time an os
+   was chosen in the chooser.
+  -Choose Android at least once to get 64 bit UEFI
+  -Insert an USB bootable media to break and use boot override from save/exit
+   firmware screen to boot it (to break the bootloop), from the USB booted OS:
+   -Add an entry pointing to EFI/fedora/shimx64.efi to efibootmgr list,
+    remove all other entries
+   -Remove all files under EFI/BOOT to hide the bootchooser and fix the bootloop
+ -Android + Fedora dual-boot install
+  -Install Android
+  -Install Fedora in free-space
+  -Boot from bootable USB to break bootloop
+  -Run as root
+   # For Android
+   cp /boot/efi/loader.efi/boot/efi/EFI/BOOT/bootx64.efi
+   # For Windows (really Fedora)
+   mkdir -p /boot/efi/EFI/MICROSOFT/BOOT
+   cp /boot/efi/EFI/fedora/grubia32.efi /boot/efi/EFI/BOOT/BOOTIA32.EFI
+   cp /boot/efi/EFI/fedora/grubia32.efi /boot/efi/EFI/MICROSOFT/BOOT/BOOTMGFW.EFI
+  -Remove all efibootmgr entries to let the BIOS do its default thing
+  -Go into BIOS and do F3 to load defaults, change USB mode from auto to PCI,
+   F4 to save and reboot
+  -Now we should get the OS choser with both OS-es visible
 
 Chuwi Vi8 Plus (CWI519)
 -8" 800x1280 LCD
@@ -180,6 +220,17 @@ Chuwi Vi8 Plus (CWI519)
 -Audio codec: ALC5651
 -PMIC: AXP288, charging only through Type-C 5V/2A
 -DSTD: PMID == 0x02
+-Camera info atomisp-css2401a0_v21 front camera:
+ Front camera android sensor-driver gc2355:
+ -ov2680 i2c-front:10: camera pdata: port: 0 lanes: 1 order: 00000002
+ -gpio-306 (cam_gpio0) when camera goes on, GPIO goes from low -> high
+ -gpio-313 (cam_gpio1) when camera goes on, GPIO goes from low -> high
+ -clock pltclk 2 using source 0 (25 MHz crystal)
+-Camera info atomisp-css2401a0_v21 back camera:
+ -ov2680b i2c-rear:36: camera pdata: port: 1 lanes: 1 order: 00000002
+ -gpio-396 (cam_gpio0) when camera goes on, GPIO goes from low -> high
+ -gpio-388 (cam_gpio1) when camera goes on, GPIO goes from low -> high
+ -clock pltclk 4 using source 0 (25 MHz crystal)
 
 Lamina I8270 (sticker on back) / T701BR.SE (dmi)
 -7" 800x1280 DSI panel
@@ -193,14 +244,19 @@ Lamina I8270 (sticker on back) / T701BR.SE (dmi)
 -Appears to have a USB mux but no ULPI phy
 
 Dell Venue 8 Pro 5830:
--8" ??? panel
+-8" 800x1280 DSI 24bpp, PWM: CRC, freq: actual 200 VBT 200, 15-255
  -No HDMI
+-Touchscreen: SYNA7500, with support for PR77S pen, without capacitive home-button
+-CPU: Bay Trail Z3740D, 2G RAM
+-Wifi: Atheros ar6004
 -Accel: HID-sensors
 -Audio codec: ALC5640
  -GPIO based headphone detect (AMCR0F28): no
--PMIC: ???, charging only through micro USB 5V/2A
+-PMIC: Crystal Cove (BYT), charging only through micro USB 5V/2A
 -OTG:
- -Supports ACA mode (presumably, retest)
+ -Has a mux
+ -Locked BIOS cannot test for device-mode phy / gadget mode
+ -Supports ACA mode
 
 Ployer Momo7w
 -7" 1024x600 panel
@@ -237,9 +293,10 @@ Acer Iconia Tab 8 W1-810
 -PMIC: AXP288, charging only through micro USB 5V/2A
 
 I.T.Works TW891
--8.9" 800x1280 panel, mounted 90 degrees rotated
- + micro HDMI
+-8.9" 800x1280 DSI, 24 bpp, PWM: LPSS, freq: actual 199920 VBT 20000, 0-255
+ - mounted 90 degrees rotated
  - BGRT logo is just a black rectangle
+ + micro HDMI
 -Touchscreen: Silead GSL3670, without capacitive home-button, fw NOT in EFI
 -Wifi RTL8723BS
 -Accel: KIOX000A, mount-matrix ok
@@ -298,7 +355,7 @@ Teclast X80 Pro
 -PMIC: AXP288, charging only through micro USB 5V/2A
 
 Asus T100HA
--10" 1280x800 DSI panel 24 bpp, uses PMIC/CRC for PWM
+-10" 1280x800 DSI panel 24 bpp, PWM: CRC, freq: actual 200 VBT 200
  + Micro HDMI
 -Touchscreen: SIS0457 i2c-hid (IC: SIS9255)
 -CPU: Cherry Trail x5-Z8500, 2GB RAM
@@ -306,6 +363,17 @@ Asus T100HA
 -Audio Codec: ALC5645
 -PMIC: Crystal Cove (CHT), charging only through micro USB 5V/2A or 9V/2A
 -EC: ITE8825FN
+-Keyboard: USB 0b05:1807 multi-touch touchpad supported by hid-asus (ITE 8910?)
+
+Asus T101HA
+-10" 800x1280 DSI 24 bpp, PWM: LPSS, freq: actual 292 VBT 200, 15-255
+ + Micro HDMI
+-Touchscreen: SIS0457 i2c-hid
+-CPU: Cherry Trail x5-Z8350, 4GB RAM
+-Wifi: Atheros QCA9377
+-Audio Codec: ALC5645
+-PMIC: TI, charging only through micro USB 5V/2A or 9V/2A
+-Keyboard: USB 0b05:183d standard HID multi-touch touchpad
 
 Asus T200TA
 -11.6" 1366x768 eDP panel
@@ -377,7 +445,7 @@ Yours 8" Tablet (white no markings) (1 defect, 1 given away)
  -Does not have an USB mux
 
 MSI S100 Tablet + keyboard cover (given away)
--10.1" 1280x800 LVDS screen connected through eDP to LVDS convertor chip
+-10" 1280x800 LVDS screen connected through eDP to LVDS convertor chip
 -Touchscreen FTSC1000 i2c-hid hid-multitouch
 -PCB: T021_Z3770D_V1_2
 -CPU Bay Trail Z3770D, 2GB RAM
@@ -390,7 +458,7 @@ MSI S100 Tablet + keyboard cover (given away)
 -EC: IT8568E, also an i2c-hid keyb/mouse (which does not do anything)
 
 Lenovo Ideapad Miix 300
--10.1" 800x1280 DSI panel, 24bpp
+-10" 800x1280 DSI, 24 bpp, PWM: LPSS, freq: actual 19836 VBT 20000, 26-255
  + micro HDMI
 -Touchscreen FTSC1000 i2c-hid hid-multitouch
 -CPU Bay Trail Z3735F, 2GB RAM
@@ -402,7 +470,7 @@ Lenovo Ideapad Miix 300
  Touchpad on/off toggle key handled inside kbd-dock, does not send events
 
 Lenovo Ideapad Miix 310
--10.1" 800x1280 DSI panel
+-10" 800x1280 DSI panel
 -Touchscreen FTSC1000 i2c-hid hid-multitouch
 -CPU: Cherry Trail x5-Z8350, 2G RAM
 -Wifi: RTL8723BS
@@ -412,7 +480,7 @@ Lenovo Ideapad Miix 310
 -Keyboard: USB 258a:1015 keyboard/touchpad(mouse mode only) combo dock
 
 Lenovo Ideapad Miix 320
--10.1" 800x1280 DSI panel
+-10" 800x1280 DSI panel
 -Touchscreen: FTSC1000
 -CPU: Cherry Trail x5-Z8350, 2G RAM
 -Wifi: Intel Wireless 3165
@@ -487,6 +555,9 @@ Chuwi Vi10 (CWI505)
 -USB-hub: FE 1.1 USB2.0 hub
 -DP-to-LVDS: Parade PS8622
 -Other: ATMLH434 02DM (probably flash or uc to bring up the PS8622)
+-Keyboard: USB 1c4f:0075 keyboard/touchpad(mouse mode only) combo dock
+ Touchpad on/off toggle key handled inside kbd-dock, does not send events
+
 
 Connect Tablet 9
 -8.9" 800x1280 DSI panel
@@ -566,6 +637,12 @@ Acer One 10 (S1003)
 -Accel: KIOX0009, mount-matrix ok
 -Audio codec: ALC5645
 -PMIC: AXP288, charging only through micro USB 5V/2A
+ -BIOS reacts to ID pin, host mode + charging not possible at same time
+-DSDT: PMID = 0x02
+-Dock, seems to have 2 separate USB connections on the dock connector,
+ 1 for the A-port and one for the kbd/mouse
+ -ITE8910 kbd controller
+ -Touchpad controller: Synaptics S910ZB?
 
 Lenovo Yoga Tablet 2 1051F/L
 -10" 1920x1200 DSI panel
@@ -576,8 +653,8 @@ Lenovo Yoga Tablet 2 1051F/L
 -Audio codec: WM5102 SPI!
 
 Prowise PT301
--10" 1280x800 DSI panel 18 bpp (sparse)
--Touchscreen: Goodix GT9271
+-10" 1280x800 DSI 18 bpp (sparse) PWM: LPSS freq: actual 19836 VBT 20000 (30-255)
+-Touchscreen: Goodix GT9271, with capacitive home button
 -PCB: M1042_MB
 -CPU: Bay Trail Z3736F, 2G RAM
 -Wifi: AP6330
@@ -586,10 +663,13 @@ Prowise PT301
 -PMIC: AXP288, charging only through micro USB 5V/2A
 -Unknown IC: IR 0331 H430P
 -Unknown IC: XKCJ9 51235 5214
--Dock: Touchpad-IC: CY8CTMA140
+-Dock:
+ -Touchpad-IC: CY8CTMA140
+ -USB 258a:6a88 keyboard/touchpad(mouse mode only) combo dock
+  Touchpad on/off toggle key handled inside kbd-dock, does not send events
 
 Lenovo Miix 2 8
--8" 800x1280 DSI panel 24 bpp
+-8" 800x1280 DSI 24 bpp, PWM CRC, freq: actual 23531 VBT 20000, 0-255
  -No HDMI
 -Touchscreen: ATML1000, with capacitive home button
 -CPU: Bay Trail Z3740, 2G RAM
@@ -601,6 +681,7 @@ Lenovo Miix 2 8
 
 Point of View TAB-P1006W-232-3G 
 -10" 1366x768 LVDS screen connected through eDP to LVDS convertor chip
+ + micro HDMI
 -Touchscreen: Silead GSL3692 with capacitive home button
 -CPU: Bay Trail Z3735F, 2G RAM
 -Wifi: BCM43341 AP6234
@@ -620,6 +701,8 @@ Point of View TAB-P1006W-232-3G
  -Hub: GS850G
  -Touchpad PCB: SIPODEV 
  -Touchpad-controller sticker: FB0747
+ -USB 0603:0002 keyboard / touchpad (mouse emulation only) combo dock
+  Touchpad on/off toggle key handled inside kbd-dock, does not send events
 
 Toshiba WT10-A PDW0BE
 -10" 1280x800 eDP panel 18bpp
@@ -632,9 +715,16 @@ Toshiba WT10-A PDW0BE
 -PMIC: Crystal Cove (BYT), charging only through micro USB 5V/2A
 -Embedded controller: Nuboton m058zdn 406ad
 -Unknown IC: mp65 f915c1
+-OTG:
+ -Has a mux
+ -Locked BIOS cannot test for device-mode phy / gadget mode
+ -Does NOT support ACA mode
+-Keyboard: BT 04F2:1408 keyboard / touchpad (mouse mode only) combo dock
+ Touchpad on/off toggle key handled inside kbd-dock, does not send events
 
 Irbis TW90
--10" 1200x1920 DSI panel 24bpp
+-10" 1200x1920 DSI 24bpp, PWM: LPSS, freq: actual 19921 VBT 20000, 13-255
+ + mini HDMI
 -Touchscreen: GSL3680?, with capacitive home-button, fw NOT in EFI
 -CPU: Cherry Trail x5-Z8350, 2G RAM
 -Wifi: RTL8723BS
@@ -662,9 +752,10 @@ Terra Pad 1060
 -Accel: USB 0483:91d1 "STMicroelectronics Sensor Hub"
 -Audio: HDA
 -Keyboard-cover: USB 1017:1006 touchpad seems to only support mouse-emulation
+ Touchpad on/off toggle key handled inside kbd-dock, does not send events
 
 Terra Pad 1061
--10" 1920x1200 DSI panel, uses SoC/LPSS PWM
+-10" 1920x1200 DSI 24 bpp, PWM: LPSS, freq: actual 381 VBT 400, 11-255
  + micro HDMI
 -Touchscreen: FTSC1000 with capacitive touch home button
 -CPU: Bay Trail Z3735F, 2G RAM
@@ -673,19 +764,18 @@ Terra Pad 1061
 -Audio codec: ALC5640
 -PMIC: AXP288, charging only through micro USB 5V/2A
 -Micro-usb only supports charging, no other function (neither host nor device)
+-Has a broadcom BCM4752 GPS (HTR4752) on serial1-0 ?
 Dock:
 -USB hub chip is marked: USB 2.0 HUB LD34686a308
 -Contains USB ethernet + USB sata bridges
--HDMI port does not work, even though it is straight pass-through from the
- tablet. I have the feeling that the pins may be shared with the mini-HDMI port
- on the top of the tablet and that some mux should switch them over and that
- this is not happening. I could be completely wrong though. It also does not
- work under Windows 10, might be a defect in either the dock or the tablet.
+-HDMI port does not work with Aten CS1764A KVM unless the focus is switched
+ away when it is probed, so that the cached EDID is returned. Otherwise the
+ I2C signal is too degraded it seems.
 
 Asus T100CHI
 -10" 1920x1200 DSI panel 24 bpp, PMIC/CRC PWM
  + micro HDMI
--Touchscreen: SYNA7508 06CB:11E5
+-Touchscreen: SYNA7508 06CB:11E5, with support for PR77S pen, without capacitive home-button
 -CPU: Bay Trail Z3775, 2G RAM
 -Wifi: brcmfmac43241b4-sdio
 -Accel: INVN6500, mount-matrix ok
@@ -697,7 +787,7 @@ Asus T100CHI
 -Webcam LED on INT33FC:01 pin 24
 
 Acer Aspire Switch 10 (SW5-012)
--10" 1280x800 DSI panel 24 bpp, uses SoC/LPSS PWM
+-10" 1280x800 DSI 24 bpp, PWM: LPSS, freq: actual 1525 VBT 1600, 13-255
 -Touchscreen: SYNA7300 06CB:0E75
 -CPU: Bay Trail Z3735F, 2G RAM
 -Wifi: RTL8723BS
@@ -710,13 +800,13 @@ Acer Aspire Switch 10 (SW5-012)
  -GL3321G USB3 to 6gbps SATA chip
  -ITE it8595e-128 keyboard + touchpad controller
   -USB 06cb:81a7 supports standard HID multi-touch
-  -Touchpad controller: Synaptics S9102B or S91028
+  -Touchpad controller: Synaptics S9102B or S91028 likely: S910ZB
 -eMMC is broken, must boot from external media
 -PWM is not listed in ACPI, breaking backlight ctrl, requires DSDT override fix
 -_LID is broken requires DSDT override + button.lid_init_state=method to fix
 
 Teclast X89 E7ED
--10" 1536x2048 eDP panel 18 bpp, mounted upside-down
+-8" 1536x2048 eDP panel 18 bpp, mounted upside-down
  + micro HDMI
 -Touchscreen: GDIX1001, without capacitive home-button
 -CPU: Bay Trail Z3735F, 2G RAM
@@ -732,7 +822,7 @@ Teclast X89 E7ED
   not enable the DWC3 controller <sigh>
 
 Thundersoft TST178 PAD
--7.8" 768x1024 DSI panel 24 bpp
+-7.8" 768x1024 DSI 24 bpp, PWM: CRC, freq: actual 200 VBT 200, 0-255 (inverted)
  + mini HDMI
 -Touchscreen: FT5406EE8 (ACPI: FTSC0001)
 -CPU: Bay Trail Z3745D, 1G RAM
@@ -744,7 +834,7 @@ Thundersoft TST178 PAD
  -USB-phy: TI T1210B
  -USB-mux: has a mux, unknown which one
 -USB3 micro-B connector does superspeed host mode when used with a
- UBS-3 micro-*A* to USB3-A receptacle cable
+ USB-3 micro-*A* to USB3-A receptacle cable
 -Unknown ICs:
  MPDP 2625 B785
  201bc8 fuel-gauge?
@@ -757,6 +847,7 @@ Medion Akoya E1239T MD60568
 -Wifi: Intel Wireless 3165
 -Accel: KIOX0009, mount-matrix ok
 -Audio codec: ALC5645
+ -Internal DMIC fried when resoldering the power-barrel which sits next to it :(
 -AXP288 PMIC, charging only through power-barrel, adapter 5V/3A
 -USB Type-C connector doing superspeed through Etrontech EJ179V switch
 -Keyboard: USB 048d:ce50 multi-touch touchpad supported by hid-asus (ITE 8910?)
@@ -767,7 +858,7 @@ MPMAN MPWIN895CL
  contains a Silead touschscreen firmware in EFI, but NOT the right one!
 -CPU: Bay Trail Z3735G, 1G RAM
 -Wifi: RTL8723BS
--Accel: BMA250E, TODO: mount-matrix 
+-Accel: BMA250E, mount-matrix ok
 -Audio codec: ALC5640
 -PMIC: AXP288, charging only through micro USB 5V/2A
 -OTG: Does not have an USB mux
@@ -786,7 +877,7 @@ Chuwi Hi13
  Touchpad on/off toggle key handled inside kbd-dock, does not send events
 
 Toshiba WT8-A
--8" 800x1280 DSI panel 24 bpp
+-8" 800x1280 DSI 24 bpp, PWM: CRC, freq: actual 23531 VBT 20000, 60-255
  + micro HDMI
 -Light sensor: hid-sensor
 -Touschscreen: ATML1000 i2c-hid touchscreen, with capacitive home-button
@@ -796,6 +887,40 @@ Toshiba WT8-A
 -Audio codec: ALC5640
 -PMIC: Crystal Cove (BYT), charging only through micro USB 5V/2A
 -OTG: Does not have an USB mux
+
+Trekstor SurfTab Twin 10.1 ST10432-8
+-10" 1280x800 DSI 24 bpp, PWM: LPSS, freq: actual 19836 VBT 20000, 0-255
+ + mini HDMI
+-Touchscreen: gsl3670 ??? with capacitive home-button, fw NOT in EFI ???
+-CPU: Bay Trail Z3735F, 2G RAM
+-Wifi: RTL8723BS
+-Accel: KIOX000A, TODO mount-matrix quirk
+-Audio codec: ALC5640
+-PMIC: AXP288, charging only through micro USB 5V/2A
+-Micro-usb only supports charging, no other function (neither host nor device)
+-Keyboard-cover: USB 0911:2188 touchpad seems to only support mouse-emulation
+ Touchpad on/off toggle key handled inside kbd-dock, does not send events
+
+Lenovo Miix 2 10
+-10" 1920x1200 DSI 24 bpp, PWM: CRC, freq: VBT 200, 00255
+ + micro HDMI
+-Touchscreen: ELAN1001, i2c HID multi-touch
+-CPU: Bay Trail Z3740, 2G RAM
+-Wifi: brcmfmac43241b4, BCM4324/5, nvram in EFI, 5GHz support
+-Accel: SMO91D0, i2c HID sensor-hub, including ALS
+-Audio codec: ALC5672, does not use codec IRQ, jack detect switch directly
+ connected to BYT SoC
+-PMIC: Crystal Cove (BYT), charging only through power-barrel 12V/1.5A
+-OTG:
+ -Has a mux
+ -Locked BIOS cannot test for device-mode phy / gadget mode
+-Dock:
+ -Speakers which piggy-back on the I2S data link to the ALC5672 codec, the
+  link must be in I2S 2 ch 24 bit mode for this to work. Dock speakers are
+  Enabled by GPIO1 on the ALC5672
+ -3 port USB-2 hub
+ -USB 0416:c141 Winbond kbd/mouse combo, only supports mouse-emulation
+  Touchpad on/off toggle key handled inside kbd-dock, does not send events
 
 
 HP x2 10 variants:

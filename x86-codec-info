@@ -28,6 +28,8 @@ rt5640:		Spk	Mic	JD	AIF		quirk	SoC	Quirk added
 -Terra Pad 1061 stereo  IN3-dff JD1IN4P SSP0 AIF1       543423  BYTCR   defaults
 -Tos Click Mini	stereo	DMIC1	JD2 (2)	SSP0 AIF1(1)	502f30	BYTCR	yes
 -Toshiba WT8-A	stereo	DMIC1	JD2-inv SSP2 AIF1	413430	BYT	yes
+-Toshiba WT10-A	stereo	DMIC1	JD1IN4P SSP0 AIF2	603420	BYTCR	yes
+-Trekstortwin10 stereo	IN3-dff JD1IN4P	SSP0 AIF1	543423	BYTCR	defaults
 
 1) BYTCR devices without routing in BIOS table and not matching the default
 2) Needs OVCD settings of 1.5mA sf0.75 for button-press detect
@@ -43,12 +45,12 @@ rt5645:		Spk	Mic	JDmod	  UCM
 -Kazam Vision	stereo	ana	3	  chtrt5645
 -Lenovo Miix310 stereo	diff	3	  chtrt5645
 -Lenovo Miix320 stereo	dmic2	3	  chtrt5645-dmic2
--Medion E1239T	stereo	dmic2	3         chtrt5645-dmic2
+-Medion E1239T	stereo	dmic2(2)3         chtrt5645-dmic2
 -Teclast X80Pro	mono	ana	3	  chtrt5645-mono-speaker-analog-mic
 
 1) Uses an ALC3270 which according to Realtek themselves does not support
    TRRS jacks only TRS jack, so no headset detection or headset-mic support
-
+2) DMIC fried when resoldering the power-barrel which sits next to it :(
 
 rt5651:		Spk	Mic		JD
 -Chuwi Vi8 Plus mono	mono in2	JD1_1

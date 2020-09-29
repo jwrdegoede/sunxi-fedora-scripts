@@ -1,0 +1,38 @@
+Logitech 27MHz mouse RF-id list:
+0x26: M-RAK898 "Cordless Click / Plus" mouse
+0x29: M-RAK89D "Cordless Rechargeable Desktop" set mouse
+0x36: ??       S510 desktop set mouse
+0x38: M-RAZ105 MX3000 desktop set mouse (button 6 marked as zoom 100%)
+0x3a: M-RAZ105 MX3200 desktop set mouse (button 6 marked as search)
+0x3f: M-RCE95  EX100 / EX110 desktop set mouse
+
+0x42: Y-RH35  "Cordless Access Keyboard"
+0x54: Y-RK49  "Cordless Rechargeable Desktop" keyboard
+0x49: Y-RR53  LX501 keyboard
+0x55: Y-RAZ71 EX110 desktop set keyboard
+0x56: Y-RAK73 S510 keyboard
+0x57: Y-RAM74 MX3000 desktop set keyboard
+0x5c: Y-RAV80 MX3200 desktop set keyboard
+0x65: Y-RBH94 EX100 desktop set keyboard
+0x66: Y-RBA97 S520 keyboard
+
+0xfe: R-RD8   S510 set remote control
+
+Reset keyboard encryption:
+
+1: Press left Ctrl + left Alt + F12
+   If your keyboard has a battery indicator LED it will start flashing now
+2: Press the receiver connection button (don't hold, just press and release)
+   If your receiver has 3 LEDs they will show a pattern where 1 LED lights at
+   a time
+   If your receiver has a single LED it will start blinking
+   If your receiver has no LEDs there will be no visible feedback
+3: Press the connection button on the keyboard (don't hold, just press and release)
+   If your receiver has 3 LEDs then all 3 LEDs will turn on now for 2 seconds
+   before returning to the walking LEDs pattern
+4: Hit the Esc key
+   The keyboard's battery indicator LED will stop flashing now
+   The LEDs on the receiver will return to their normal operation / mode
+
+Note there is a 15 second timeout for the entire sequence,
+so you must not wait too long between each step.

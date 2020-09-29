@@ -1,0 +1,32 @@
+-brcmfmac wifi notes:
+ -Asus T100CHI           brcmfmac43241b4-sdio / efivar / ccode=XV/1    / 5GHz  *
+ -Asus T100TA            brcmfmac43241b4-sdio / efivar / ccode=XV/1    / 5GHz  *
+ -Lenovo Mixx 2 8        brcmfmac43241b4-sdio / efivar / ccode=ALL/0 **/ 5GHz  *
+ -Lenovo Yoga2 tablet 10 brcmfmac43241b4-sdio / efivar / ccode=DE      / 5GHz  *
+ -Toshiba wt8-a-102      brcmfmac43241b4-sdio / efivar / ccode=XT/13   / 5GHz  *
+ -Lenovo Thinkpad 8      brcmfmac43241b5-sdio / efivar / ccode=XT/27   / 5GHz  *
+ -Acer Iconia Tab8 w1-8  brcmfmac4330-sdio    / efivar / ccode=XV      / no-5G *
+ -Asus T200TA            brcmfmac43340-sdio   / efivar / ccode=ALL   **/ 5GHz  *
+ -Asus T100HA            brcmfmac43340-sdio   / efivar / ccode=XV/1  **/ 5GHz  *
+ -Meegopad T08           brcmfmac43340-sdio   / noefiv / ccode=ALL->X2 / 5Ghz  *
+ -Acer One 10            brcmfmac43430a0-sdio / efivar / ccode=NL      / no-5G *
+ -Jumper ezPad mini 3    brcmfmac43430a0-sdio / noefiv / ccode=ALL->X2 / no-5G *
+ -Onda V80 Plus          brcmfmac43430a0-sdio / noefiv / ccode=ALL->X2 / no-5G *
+ -Chuwi Vi8 plus(CWI519) brcmfmac43430-sdio   / noefiv / ccode=ALL->X2 / no-5G *
+ -GPD win                brcmfmac4356-pcie    / noefiv / ccode=US->X2  / 5GHz  *
+  ** nvram ccode is a problem
+
+-brcmfmac hci_bcm notes:
+ -Asus T100CHI           BCM2E39 / brcmfmac43241b4-sdio / BCM4324B3-37.4M.hcd
+ -Asus T100TA            BCM2E39 / brcmfmac43241b4-sdio / BCM4324B3-37.4M.hcd
+ -Toshiba wt8-a-102      BCM2E38 / brcmfmac43241b4-sdio / BCM4324B3-37.4M.hcd
+ -Lenovo Thinkpad 8      BCM2E55 / brcmfmac43241b5-sdio / BCM4324B5-37.4M.hcd
+ -Acer Iconia Tab8 w1-8  BCM2E83 / brcmfmac4330-sdio    / BCM4330B1-26M.hcd
+ -Asus T200TA            BCM2E65 / brcmfmac43340-sdio   / BCM43341B0-37.4M.hcd
+ -Asus T100HA            BCM2E72 / brcmfmac43340-sdio   / BCM43341B0-37.4M.hcd
+ -Meegopad T08           BCM2E90 / brcmfmac43340-sdio   / BCM43341B0-37.4M.hcd
+ -Jumper ezPad mini 3    BCM2E74 / brcmfmac43430a0-sdio / BCM4343A0-26M.hcd
+ -Onda V80 Plus          BCM2E74 / brcmfmac43430a0-sdio / BCM4343A0-26M.hcd
+ -Chuwi Vi8 plus(CWI519) BCM2EAA / brcmfmac43430-sdio   / BCM43430A1-26M.hcd
+ -GPD win                BCM2E7E / brcmfmac4356-pcie    / BCM4356A2-37.4M.hcd
+
