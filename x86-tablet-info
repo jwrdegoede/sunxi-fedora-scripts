@@ -587,7 +587,7 @@ Lenovo Thinkpad 8
 -CPU: Bay Trail Z3770, 2GB RAM
 -PCB: ZIJI1 LA-A661P Rev:2.0 2013-11-01
 -Audio codec: ALC5672
--Accel: Invensense MPU 6050 (through TI sensor hub)
+-Accel: i2c-hid Invensense MPU 6050 (through TI sensor hub)
 -I/O chip (superio?) ENE IO3737LU-B1
 -Unknown IC 2x: 7047 ba3611 (regulator?)
 -Unknown IC: OE=FL S2A
@@ -643,6 +643,9 @@ Acer One 10 (S1003)
  1 for the A-port and one for the kbd/mouse
  -ITE8910 kbd controller
  -Touchpad controller: Synaptics S910ZB?
+ -Touchpad on/off toggle is handled inside the dock,
+  touchpad stops sending events when toggled
+ -No HID events are send when the touchpad is toggled on/off
 
 Lenovo Yoga Tablet 2 1051F/L
 -10" 1920x1200 DSI panel
@@ -695,6 +698,7 @@ Point of View TAB-P1006W-232-3G
 -WWAN Fibocom H350
 -Unknown IC: 105 E5H7
 -Fuelgauge: TI bq27441a
+-Does not have any SW_TABLET_MODE functionality (emulate by kbd usb-id)
 -Dock:
  -PCB: SIPODEV SP903KB+V14
  -Keyb-controller: Unreadable: ? SSO YH ? 80c ?? sticker: F1106 FB0704FA
@@ -729,9 +733,9 @@ Irbis TW90
 -CPU: Cherry Trail x5-Z8350, 2G RAM
 -Wifi: RTL8723BS
 -Accel: BOSC0200, mount-matrix ok
--Audio codec: ES8396
--PMIC: AXP288, charging ... FIXME
--USB WWAN modem ?
+-Audio codec: ES8396 with stereo speakers and analog mic
+-PMIC: AXP288, charging 5V/2A through micro-usb or power-barrel
+-USB M2 Fibocom H380 3G modem
 -Keyboard-cover: USB 0911:2188 touchpad seems to only support mouse-emulation
 
 Medion Akoya E2215T MD60198
@@ -742,7 +746,23 @@ Medion Akoya E2215T MD60198
 -Accel: KIOX000A, mount-matrix ok
 -Audio codec: NAU8824
 -PMIC: AXP288, charging only through power-barrel 5V/3A
--Keyboard: USB 0911:2188 touchpad seems to only support mouse-emulation
+ Appears (from i2c probing) to also have a bq24297 charger on i2c bus 1 0x6b,
+ which is charging the battery in tandem with the axp288 ???
+-Keyboard: USB 0911:2188 touchpad only supports mouse-emulation
+ Touchpad on/off toggle key handled inside kbd-controller, does not send events
+
+Medion Akoya E2228T MD60250
+-11.6" 1920x1080 eDP panel
+-Touchscreen: FTSC1000
+-CPU: Cherry Trail x5-Z8300, 4G RAM
+-Wifi: Intel 3165
+-Accel: KIOX010A + KIOX020A yoga style laptop accel pair
+-Audio codec: NAU8824
+-PMIC: AXP288, charging only through power-barrel 5V/3A
+ Appears (from i2c probing) to also have a bq24297 charger on i2c bus 1 0x6b,
+ which is charging the battery in tandem with the axp288 ???
+-Keyboard: USB 0911:2188 touchpad only supports mouse-emulation
+ Touchpad on/off toggle key handled inside kbd-controller, does not send events
 
 Terra Pad 1060
 -10" 1280x800 eDP panel 18bpp
@@ -801,9 +821,11 @@ Acer Aspire Switch 10 (SW5-012)
  -ITE it8595e-128 keyboard + touchpad controller
   -USB 06cb:81a7 supports standard HID multi-touch
   -Touchpad controller: Synaptics S9102B or S91028 likely: S910ZB
--eMMC is broken, must boot from external media
+  -Touchpad on/off toggle is handled inside the dock,
+   touchpad stops sending events when toggled
+  -HID events are send when the touchpad is toggled on/off, mapped to KEY_TOUCHPAD_ON / _OFF
+-eMMC is broken, booting mini USB thumb-drive in kbd-dock + root on microsd
 -PWM is not listed in ACPI, breaking backlight ctrl, requires DSDT override fix
--_LID is broken requires DSDT override + button.lid_init_state=method to fix
 
 Teclast X89 E7ED
 -8" 1536x2048 eDP panel 18 bpp, mounted upside-down
@@ -904,7 +926,7 @@ Trekstor SurfTab Twin 10.1 ST10432-8
 Lenovo Miix 2 10
 -10" 1920x1200 DSI 24 bpp, PWM: CRC, freq: VBT 200, 00255
  + micro HDMI
--Touchscreen: ELAN1001, i2c HID multi-touch
+-Touchscreen: ELAN1001, i2c HID multi-touch, with home button with haptic feedback
 -CPU: Bay Trail Z3740, 2G RAM
 -Wifi: brcmfmac43241b4, BCM4324/5, nvram in EFI, 5GHz support
 -Accel: SMO91D0, i2c HID sensor-hub, including ALS
@@ -921,6 +943,18 @@ Lenovo Miix 2 10
  -3 port USB-2 hub
  -USB 0416:c141 Winbond kbd/mouse combo, only supports mouse-emulation
   Touchpad on/off toggle key handled inside kbd-dock, does not send events
+
+Predia Basic Tablet
+-10" 800x1280 DSI panel 24 bpp, PWM: LPSS
+ + Micro HDMI
+-Touchscreen: Silead GSL3676, firmware NOT in EFI
+-CPU: Cherry Trail x5-Z8300, 2GB RAM
+-Wifi: AP6234 brcmfmac43340
+-Accel: BOSC0200
+-Audio codec: es8316
+-PMIC: AXP288, charging only through micro USB 5V/2A
+-Keyboard-dock: USB 1017:1006, only supports mouse-emulation
+ Touchpad on/off toggle key handled inside kbd-dock, does not send events
 
 
 HP x2 10 variants:

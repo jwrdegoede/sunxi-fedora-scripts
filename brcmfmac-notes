@@ -9,6 +9,7 @@
  -Asus T200TA            brcmfmac43340-sdio   / efivar / ccode=ALL   **/ 5GHz  *
  -Asus T100HA            brcmfmac43340-sdio   / efivar / ccode=XV/1  **/ 5GHz  *
  -Meegopad T08           brcmfmac43340-sdio   / noefiv / ccode=ALL->X2 / 5Ghz  *
+ -Predia Basic           brcmfmac43340-sdio   / noefiv / ccode=NL->X2  / 5Ghz  *
  -Acer One 10            brcmfmac43430a0-sdio / efivar / ccode=NL      / no-5G *
  -Jumper ezPad mini 3    brcmfmac43430a0-sdio / noefiv / ccode=ALL->X2 / no-5G *
  -Onda V80 Plus          brcmfmac43430a0-sdio / noefiv / ccode=ALL->X2 / no-5G *

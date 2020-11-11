@@ -2,16 +2,16 @@ Bay and Cherry Trail device status with linux-next
 
 		lcd wif tou acc bat c2a but bri sus  spk pho jck hst dev blu c3a tpad lid tblt
 Acer Ic. W1-810 yes yes yes yes yes yes yes yes yes  yes yes yes yes -   FIR -   -    -
-Acer SW5-012    yes yes yes yes yes yes yes (6) (6)  yes yes yes yes -       -   yes  (6)
+Acer SW5-012    yes yes yes yes yes yes yes (6) (6)  yes yes yes yes -       -   yes  yes yes
 Archos 80Cesium	yes yes yes yes yes yes yes yes yes      yes yes yes -   yes -   -    -
 Asus T100TA	yes yes yes yes                      yes yes         -   FIR -   yes      yes
 Asus T100HA	ROT yes no  yes yes yes yes yes S0i3 yes yes yes yes -   FIR -   yes  yes yes
 Asus T100CHI	yes yes yes yes yes yes yes yes yes  yes yes yes yes -   FIR -   yes  yes yes
 Asus T200TA	yes yes no  yes yes -   yes yes S0i3 yes yes yes yes -   FIR -   yes  yes yes
 Axxo WT1011     yes yes yes yes yes yes yes yes yes  yes yes yes yes -       -   (1)  yes
-Chuwi Hi8 Pro	yes yes FIR yes yes     yes yes S0i3 yes yes yes yes     yes -   -    -   yes (7)
+Chuwi Hi8 Pro	yes yes FIR yes yes     yes yes S0i3 yes yes yes yes     yes -   -    -   yes (2)
 Chuwi Vi8	yes yes FIR yes yes yes yes yes yes  yes yes yes yes yes yes -   -    -
-Chuwi Vi8 Plus	yes yes yes yes yes yes yes yes yes  yes yes yes yes yes FIR -   -    -   yes (7)
+Chuwi Vi8 Plus	yes yes yes yes yes yes yes yes yes  yes yes yes yes yes FIR -   -    -   yes (2)
 Chuwi Vi10	yes yes FIR yes yes     yes yes yes  yes yes yes yes     yes -   -    yes
 Connect Tablet9	yes yes FIR yes yes     yes yes yes  yes yes yes yes -   yes -   -
 Cube iWork8 Air	yes yes FIR yes yes yes yes yes yes  yes yes yes yes yes yes -   -    -   -
@@ -23,10 +23,10 @@ GPD win		ROT yes yes     yes yes yes yes yes  yes yes yes yes yes FIR yes -
 HP Pavil X2 BYT	yes yes yes yes yes yes yes yes yes  yes yes         -       yes yes  yes yes
 HP Stream 7     DPI yes yes yes yes     yes yes yes  yes         yes -       -   -
 I.T.Works TW891 ROT yes yes yes yes yes yes yes yes  yes yes yes yes         -   (1)  yes yes
-Jump. EZpad m3	yes yes FIR yes yes yes yes yes yes  yes yes yes yes yes FIR -   -    yes yes (7)
+Jump. EZpad m3	yes yes FIR yes yes yes yes yes yes  yes yes yes yes yes FIR -   -    yes yes (2)
 Kazam Vision	yes yes yes yes yes yes yes yes yes  yes yes yes yes yes yes -   -
 Lamina I8270    yes yes yes yes yes     yes yes yes  yes yes yes yes         -   -    -
-Lenovo Miix2-10 yes yes yes yes yes -   yes yes S0i3 yes yes yes yes -   FIR -   (1)  yes -
+Lenovo Miix2-10 yes yes yes yes yes -   yes yes (7)  yes yes yes yes -   FIR -   (1)  yes -
 Lenovo Miix300	yes yes yes yes yes -   yes yes S0i3 yes yes yes yes -   yes -   (1)  yes -
 Lenovo Miix310	ROT yes yes yes yes -   yes yes S0i3 yes yes yes yes -   yes -   (1)  yes yes 
 Lenovo Miix320  ROT yes yes yes yes -   yes yes S0i3 yes yes yes yes -   yes -   yes  yes yes
@@ -41,10 +41,10 @@ Pipo W2S	yes yes FIR yes
 Pipo W4		yes yes yes yes yes yes yes yes yes  yes yes yes yes         -   -    -
 Ployer Momo7w   yes yes FIR yes yes yes yes yes yes              yes -       -   -
 PoV TAB-P800W	yes yes FIR yes yes     yes yes yes              yes -       -   -
-PoV TAB-P1006W	yes yes FIR yes yes yes (2) yes S0i3                 -       -        -
+PoV TAB-P1006W	yes yes FIR yes yes yes yes yes S0i3                 -       -        -
 Teclast X89	yes yes yes yes yes yes yes yes S0i3 yes yes yes yes -       -   -    -
 Terra Pad 1060  yes yes yes yes yes -   yes yes S3   yes         -   -       -   (1)  yes
-Terra Pad 1061  yes yes yes yes yes yes (2) yes S0i3 yes yes yes -   -       -   (1)  yes
+Terra Pad 1061  yes yes yes yes yes yes yes yes S0i3 yes yes yes -   -       -   (1)  yes
 Toshib Click(3) yes yes yes yes yes yes yes yes S0i3 yes yes yes yes -       -   yes  yes
 Toshiba WT8-A	yes yes yes yes yes yes yes yes S0i3 yes yes yes yes -   yes -   -    -   -
 Toshiba WT10-A	yes yes yes yes yes yes yes yes S0i3 yes yes yes yes -   yes -   (1)  -   -
@@ -66,12 +66,12 @@ FIR   Needs firmware which is not in linux-firmware
 DPI   DPI is wrong
 
 (1) Only supports mouse emulation mode
-(2) Has a rotation lock button which needs some work
+(2) The tablet-mode switch is fixed/locked in tablet-mode on these tablets
 (3) Toshiba Click Mini L9W-B
 (4) Trekstor Surftab Wintron 7.0 ST70416-6
 (5) Trekstor Surftab Twin 10.1 ST10432-8
-(6) The Acer Switch 10 SW5-012 requires a DSDT override to fix several issues:
-    -PWM is not listed in ACPI, no backlight ctrl without override
-    -_LID is broken, needs DSDT-fix + button.lid_init_state=method to enable it
-    -S0i3 only works after fixing the missing PWM controller
-(7) The tablet-mode switch is fixed/locked in tablet-mode on these tablets
+(6) The Acer Switch 10 SW5-012 requires a DSDT override to fix the PWM not being
+    listed in ACPI, no backlight ctrl without override. Also S0i3 is not reached when
+    we do not turn off the PWM controller on suspend.
+(7) Suspend (S0i3) only works on second and later suspends after boot, first
+    suspend gets woken up by EC
