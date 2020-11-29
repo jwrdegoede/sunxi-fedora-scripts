@@ -373,7 +373,8 @@ Asus T101HA
 -Wifi: Atheros QCA9377
 -Audio Codec: ALC5645
 -PMIC: TI, charging only through micro USB 5V/2A or 9V/2A
--Keyboard: USB 0b05:183d standard HID multi-touch touchpad
+-Keyboard: USB 0b05:183d standard HID multi-touch touchpad, touchpad-toggle key
+ sends touchpad-toggle key-press, handled by userspace
 
 Asus T200TA
 -11.6" 1366x768 eDP panel
@@ -958,11 +959,23 @@ Predia Basic Tablet
 
 
 HP x2 10 variants:
--10-n000nd, 10-n010nl BYT AXP288 PMIC
- vendor "Hewlett-Packard" product "HP Pavilion x2 Detachable" board "815D"
--10-n101ng CHT AXP288 PMIC
- vendor "HP"              product "HP Pavilion x2 Detachable" board "813E"
--10-p002nd, 10-p018wm CHT TI PMIC
- vendor "HP" product "HP x2 Detachable 10-p0XX" board "827C"
--x2-210-g2 CHT TI PMIC
- vendor "HP" product "HP x2 210 G2" board "82F4"
+1. Bay Trail SoC + AXP288 PMIC, Micro-USB charging (10-k010nz, ...)
+   DMI_SYS_VENDOR: "Hewlett-Packard"
+   DMI_PRODUCT_NAME: "HP Pavilion x2 Detachable PC 10"
+   DMI_BOARD_NAME: "8021"
+2. Bay Trail SoC + AXP288 PMIC, Type-C charging (10-n000nd, 10-n010nl, ...)
+   DMI_SYS_VENDOR: "Hewlett-Packard"
+   DMI_PRODUCT_NAME: "HP Pavilion x2 Detachable"
+   DMI_BOARD_NAME: "815D"
+3. Cherry Trail SoC + AXP288 PMIC, Type-C charging (10-n101ng, ...)
+   DMI_SYS_VENDOR: "HP"
+   DMI_PRODUCT_NAME: "HP Pavilion x2 Detachable"
+   DMI_BOARD_NAME: "813E"
+4. Cherry Trail SoC + TI PMIC, Type-C charging (10-p002nd, 10-p018wm, ...)
+   DMI_SYS_VENDOR: "HP"
+   DMI_PRODUCT_NAME: "HP x2 Detachable 10-p0XX"
+   DMI_BOARD_NAME: "827C"
+5. Cherry Trail SoC + TI PMIC, Type-C charging (x2-210-g2, ...)
+   DMI_SYS_VENDOR: "HP"
+   DMI_PRODUCT_NAME: "HP x2 210 G2"
+   DMI_BOARD_NAME: "82F4"
