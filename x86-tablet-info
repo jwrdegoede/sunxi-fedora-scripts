@@ -2,7 +2,8 @@
 
 Acer Aspire Switch 10 (SW5-012)
 -10" 1280x800 DSI 24 bpp, PWM: LPSS, freq: actual 1525 VBT 1600, 13-255
--Touchscreen: SYNA7300 06CB:0E75
+-Touchscreen: SYNA7300 06CB:0E75, without capacitive home-button
+ -Has separate physical home button
 -CPU: Bay Trail Z3735F, 2G RAM
 -Wifi: RTL8723BS
 -Accel: INVN6500
@@ -18,18 +19,33 @@ Acer Aspire Switch 10 (SW5-012)
   -Touchpad on/off toggle is handled inside the dock,
    touchpad stops sending events when toggled
   -HID events are send when the touchpad is toggled on/off, mapped to KEY_TOUCHPAD_ON / _OFF
--eMMC is broken, booting mini USB thumb-drive in kbd-dock + root on microsd
 -PWM is not listed in ACPI, breaking backlight ctrl, requires DSDT override fix
 
 Acer Aspire Switch 10E (SW3-016)
 -FIXME
+-Touchscreen: ????, without capacitive home-button
+ -Has separate physical home button
 
 Acer One 10 (S1002)
--FIXME
+-10" 1280x800 DSI 24 bpp, PWM: LPSS
+-Touchscreen: FTSC9999 2808:5012
+ -With capacative home-button through gpio-keys
+-CPU: Bay Trail Z3735G, 1G RAM
+-Wifi: RTL8723BS
+-Accel: SMO8500, mount-matrix ok
+-Audio codec: ALC5640
+-PMIC: Crystal Cove (BYT), charging through both power-barrel 5V/3A or micro-usb 5V/2A
+-Dock:
+ -ITE8910 kbd controller
+  -USB 06cb:73f4 supports standard HID multi-touch
+  -Touchpad on/off toggle is handled inside the dock,
+   touchpad stops sending events when toggled
+  -HID events are send when the touchpad is toggled on/off, mapped to KEY_TOUCHPAD_ON / _OFF
 
 Acer One 10 (S1003)
 -10" 800x1280 DSI panel
--Touchscreen: GDIX1001
+-Touchscreen: GDIX1001, without capacitive home-button
+ -Has separate physical home button
 -CPU: Cherry Trail x5-Z8300, 2GB RAM
 -Wifi: AP6212 brcmfmac43430a0
 -Accel: KIOX0009, mount-matrix ok
@@ -47,7 +63,8 @@ Acer One 10 (S1003)
 
 Acer Iconia Tab 8 W1-810
 -8" 800x1280 DSI panel
--Touchscreen: Goodix GT811
+-Touchscreen: Goodix GT811, without capacitive home-button
+ -and without separate physical home button
 -PCB: TQ080BT7_V11
 -CPU: Bay Trail Z3735G, 1G RAM
 -Wifi: AP6383, brcmfmac4330-sdio
@@ -74,7 +91,8 @@ Archos 80 Cesium
 Asus T100TA
 -10" 1368x768 DSI 24 bpp, PWM: CRC, freq: actual 200 VBT 200, 0-255
  + micro HDMI
--Touchscreen: Atmel MXT1664TXES-C2U 1330B TW QLG9F
+-Touchscreen: Atmel MXT1664TXES-C2U 1330B TW QLG9F, without capacitive home-button
+ -Has separate physical home button
 -Wifi: Broadcom BCM43241SFKFFBG TN1322 P24 294688 P3T
 -Accel: INVN6500, mount-matrix ok
 -Ambient light: Capella cm32181
@@ -294,6 +312,7 @@ Cube iwork 8 Air
 -8" 1200x1920 screen
  + micro HDMI
 -Touchscreen: gsl3670, without capacitive home-button, fw in EFI
+ -Has separate physical home button
 -CPU: Cherry Trail Z8300, 2G RAM
 -Wifi: RTL8723BS
 -Accel: KIOX000A, mount-matrix ok
@@ -309,6 +328,7 @@ Dell Venue 8 Pro 5830:
 -8" 800x1280 DSI 24bpp, PWM: CRC, freq: actual 200 VBT 200, 15-255
  -No HDMI
 -Touchscreen: SYNA7500, with support for PR77S pen, without capacitive home-button
+ -Has separate physical home button
 -CPU: Bay Trail Z3740D, 2G RAM
 -Wifi: Atheros ar6004
 -Accel: HID-sensors
@@ -349,6 +369,7 @@ GPD-pocket
 GP-electronic T701 7 inch win10 tablet
 -7" 1024x600 DSI panel 24 bpp, mounted upside-down
 -Touchscreen: Silead gsl1680, without capacitive home-button, fw NOT in EFI
+ -and without separate physical home button
 -CPU: Bay Trail Z3735G, 1G RAM
 -Wifi: RTL8723BS
 -Accel: KIOX000A, mount-matrix ok
@@ -361,6 +382,7 @@ GP-electronic T701 7 inch win10 tablet
 HP Pavilion X2 10-n000nd
 -10" 1280x800 DSI panel, PWM: LPSS, freq: actual 9918 VBT 10000, 0-255
 -Touchscreen: SYNA7508, with support for PR77S pen, without capacitive home-button
+ -Has separate physical home button
 -PCB: DORITOS1-6050A2755401-MB unreadable TPN-I121
 -CPU: Bay Trail Z3736F, 2GB RAM
 -Wifi: RTL8723BS
@@ -387,7 +409,8 @@ HP Pavilion X2 10-n000nd
 HP Pavilion X2 10-p002nd
 -10" 1280x800 eDP panel
  + micro HDMI
--Touchscreen: SYNP1000
+-Touchscreen: SYNP1000, without capacitive home-button
+ -and without separate physical home button
 -CPU: Cherry Trail x5-Z8350, 2GB RAM
 -Wifi: Intel 3165
 -Sensor: HID-sensors, mount-matrix ok
@@ -420,12 +443,13 @@ HP x2 10 variant info:
 HP Stream 7:
 -7" 800x1280 DSI panel 24 bpp
  -No HDMI
--Touchscreen: Goodix
+-Touchscreen: Goodix GDIX1001 0416:038f, with capacitive home-button
 -CPU: Bay Trail Z3735G, 1G RAM
 -Wifi: RTL8723BS
--Accel: SMO8500
+-Accel: SMO8500, mount-matrix ok
 -Audio codec: ALC5640
 -PMIC: AXP288, charging only through micro USB 5V/2A
+-OTG: no mux
 
 
 ============ Irbis ============
@@ -462,6 +486,7 @@ I.T.Works TW891
  - BGRT logo is just a black rectangle
  + micro HDMI
 -Touchscreen: Silead GSL3670, without capacitive home-button, fw NOT in EFI
+ -Has separate physical home button
 -Wifi RTL8723BS
 -Accel: KIOX000A, mount-matrix ok
 -Audio codec: ALC5640
@@ -479,6 +504,7 @@ Jumper EZpad mini 3
 -8" 1280x800 screen
  + micro HDMI
 -Touchscreen: gsl3676, without capacitive home-button, fw NOT in EFI
+ -and without separate physical home button
 -Wifi: AP6212, needs firmware + nvram from: https://vps.vdwaa.nl/~jelle/brcm/
 -Accel: BOSC0200 -> BMA222E
 -Audio codec: es8316
@@ -510,6 +536,7 @@ Lamina I8270 (sticker on back) / T701BR.SE (dmi)
 -7" 800x1280 DSI panel
  + micro HDMI
 -Touchscreen: GDIX1001, without capacitive home-button
+ -Has separate physical home button
 -CPU: Bay Trail Z3735G, 1G RAM
 -Wifi: RTL8723BS
 -Accel: SMO8500, mount-matrix ok
@@ -521,12 +548,17 @@ Lamina I8270 (sticker on back) / T701BR.SE (dmi)
 ============ Lenovo ============
 
 Lenovo Yoga Tablet 2 1051F/L
--10" 1920x1200 DSI panel
+-10" 1920x1200 DSI 24 bpp, PWM: CRC
+ + micro HDMI
 -Touchscreen: SYNA0001
+ -With capacative home-button through gpio-keys (requires low-level-irq quirk)
 -CPU: Bay Trail Z3745, 2GB RAM
--Wifi: brcmfmac43241b4
--Accel: ACCL0001: LSM303DA
+-Wifi: BCM4324/5 brcmfmac43241b4-sdio
+-Accel: ACCL0001: LSM303D (also magnetic compass)
 -Audio codec: WM5102 SPI!
+-PMIC: Crystal Cove (BYT), charging only through micro USB 5V/2A
+-OTG: does not appear to have a mux, locked BIOS, will only charge when directly
+ connected to a charger. Does not work with charging hubs.
 
 Lenovo Miix 2 8
 -8" 800x1280 DSI 24 bpp, PWM CRC, freq: actual 23531 VBT 20000, 0-255
@@ -537,6 +569,10 @@ Lenovo Miix 2 8
 -Accel: INV6050 i2c-hid-sensor, mount-matrix ok
 -Audio codec: ALC5640
 -PMIC: Crystal Cove (BYT), charging only through micro USB 5V/2A
+-Cameras:
+ -Front camera LED can be controlled by:
+  gpioset 'INT33FC:01' 25=1
+  gpioset 'INT33FC:01' 25=0
 -OTG: does not appear to have a mux, locked BIOS
 
 Lenovo Miix 2 10
@@ -560,10 +596,11 @@ Lenovo Miix 2 10
  -USB 0416:c141 Winbond kbd/mouse combo, only supports mouse-emulation
   Touchpad on/off toggle key handled inside kbd-dock, does not send events
 
-Lenovo Thinkpad 8
+Lenovo ThinkPad 8
 -8" 1200x1920 eDP panel
  + Micro HDMI
--Touchscreen: ATML1000, capacative touch home button, with haptic feedback
+-Touchscreen: ATML1000
+ -With capacative home-button through gpio-keys, with haptic feedback
 -CPU: Bay Trail Z3770, 2GB RAM
 -PCB: ZIJI1 LA-A661P Rev:2.0 2013-11-01
 -Audio codec: ALC5672
@@ -580,6 +617,18 @@ Lenovo Thinkpad 8
  -Supports ACA mode
 -USB3 micro-B connector does superspeed host mode when used with a
  UBS-3 micro-*A* to USB3-A receptacle cable
+
+Lenovo ThinkPad 10
+-10" 1920x1200 eDP, 18 bpp
+ + micro HDMI
+-Touchscreen: ATML1000 03EB:8C15
+ -With capacative home-button through gpio-keys, with haptic feedback
+-CPU Bay Trail Z3795, 2GB RAM
+-Wifi: BCM4324/6 brcmfmac43241b5-sdio
+-Accel: HID-sensors
+-Audio codec: ALC5672
+-PMIC: Crystal Cove (BYT), charging only through mini Thinkpad charger
+-Keyboard: USB 17ef:6062 ThinkPad 10 Ultrabook kbd/touchpad (mouse mode only) combo dock
 
 Lenovo Ideapad Miix 300
 -10" 800x1280 DSI, 24 bpp, PWM: LPSS, freq: actual 19836 VBT 20000, 26-255
@@ -672,6 +721,23 @@ Meegopad T08
 
 ============ MPMAN ============
 
+MPMAN Converter9
+-8.9" 800x1280 DSI, 24 bpp, PWM: LPSS
+ - 90 degrees rotated when docked in kbd dock, but logo is in portrait mode
+   like the panel is, so not a candidate for a panel-orientation quirk
+ + micro HDMI
+-Touchscreen: Silead GSL3670, without capacitive home-button, fw NOT in EFI
+ -Has separate physical home button
+-CPU: Bay Trail Z3735F, 2G RAM
+-Wifi RTL8723BS
+-Accel: SMO8500, mount-matrix ok
+-Audio codec: ALC5640
+-PMIC: AXP288, charging only through micro USB 5V/2A
+-USB hub inside tablet: GL852G
+-Keyboard: USB 0911:2188 touchpad only supports mouse-emulation
+ Touchpad on/off toggle key handled inside kbd-controller, does not send events
+-Appears to have a USB mux but no ULPI phy
+
 MPMAN MPWIN895CL
 -8.9": 1024x600 DSI panel 24 bpp
 -Touschscreen: Silead gsl3680, with capacitive home-button
@@ -704,7 +770,7 @@ MSI S100 Tablet + keyboard cover (given away)
 
 Nuvision/TMAX TM800W560L
 -8" 1200x1920 DSI panel
--Touchscreen: FTSC1000
+-Touchscreen: FTSC1000, with capacitive home-button ...
 -CPU: Bay Trail Z3735G, 2G RAM
 -Wifi: RTL8723BS
 -Accel: KIOX000A, mount-matrix ok
@@ -739,7 +805,7 @@ Onda v975w (Carlos):
 
 Onda V80 plus (Android version):
 -8" 1200x1920 DSI panel
--Touchscreen: Silead GSL3676
+-Touchscreen: Silead GSL3676, with capacitive home-button, firmware in EFI
 -CPU: Cherry Trail x5-Z8300, 2GB RAM
 -Wifi: AP6212 brcmfmac43430a0
 -Accel: BOSC0200, mount-matrix ok
@@ -752,7 +818,8 @@ Onda V80 plus (Android version):
 Peaq 10" C1010 2-in-1
 -10" 1920x1200 DSI 24 bpp, PWM: LPSS, freq: actual 40054 VBT 40000, 10-255
  + mini HDMI
--Touchscreen: SIS0817 i2c-hid touchscreen
+-Touchscreen: SIS0817 i2c-hid touchscreen, without capacitive home-button
+ -and without separate physical home button
 -CPU: Bay Trail Z3736F, 2GB RAM
 -Wifi RTL8723BS
 -Audio Codec: Realtek ALC5640
@@ -870,7 +937,7 @@ Point of View TAB-P1006W-232-3G
 Predia Basic Tablet
 -10" 800x1280 DSI panel 24 bpp, PWM: LPSS
  + Micro HDMI
--Touchscreen: Silead GSL3676, firmware NOT in EFI
+-Touchscreen: Silead GSL3676 with capacitive home button, firmware NOT in EFI
 -CPU: Cherry Trail x5-Z8300, 2GB RAM
 -Wifi: AP6234 brcmfmac43340
 -Accel: BOSC0200
@@ -917,6 +984,7 @@ Teclast X80 Pro
 -8" 1200x1920 DSI panel
  + micro HDMI
 -Touchscreen: GDIX1001, without capacitive home-button
+ -and without separate physical home button
 -CPU: Cherry Trail x5-Z8300, 2GB RAM
 -Wifi: RTL8723BS
 -Accel: KIOX000A
@@ -927,6 +995,7 @@ Teclast X89 E7ED
 -8" 1536x2048 eDP panel 18 bpp, mounted upside-down
  + micro HDMI
 -Touchscreen: GDIX1001, without capacitive home-button
+ -and without separate physical home button
 -CPU: Bay Trail Z3735F, 2G RAM
 -Wifi: RTL8723BS
 -Accel: SMO8500, mount-matrix ok
@@ -976,7 +1045,8 @@ Dock:
 Thundersoft TST178 PAD
 -7.8" 768x1024 DSI 24 bpp, PWM: CRC, freq: actual 200 VBT 200, 0-255 (inverted)
  + mini HDMI
--Touchscreen: FT5406EE8 (ACPI: FTSC0001)
+-Touchscreen: FT5406EE8 (ACPI: FTSC0001), without capacitive home-button
+ -Has separate physical home button
 -CPU: Bay Trail Z3745D, 1G RAM
 -Wifi: RTL8188EUS
 -Accel: BMA250E, mount-matrix ok
@@ -1018,13 +1088,14 @@ Toshiba WT8-A
 Toshiba WT10-A PDW0BE
 -10" 1280x800 eDP panel 18bpp
  + micro HDMI
--Touchscreen: eKTH3910AY digitizer: MCF-101-1525-03-V2
+-Touchscreen: eKTH3910AY digitizer: MCF-101-1525-03-V2, without capacitive home-button
+ -Has separate physical home button
 -CPU: Bay Trail Z3735F, 2G RAM
 -Wifi: RTL8723BS
 -Accel: INVN6500
 -Audio codec: ALC5640
 -PMIC: Crystal Cove (BYT), charging only through micro USB 5V/2A
--Embedded controller: Nuboton m058zdn 406ad
+-Embedded controller: Nuvoton m058zdn 406ad
 -Unknown IC: mp65 f915c1
 -OTG:
  -Has a mux
