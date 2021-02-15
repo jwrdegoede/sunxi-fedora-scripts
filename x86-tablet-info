@@ -20,11 +20,36 @@ Acer Aspire Switch 10 (SW5-012)
    touchpad stops sending events when toggled
   -HID events are send when the touchpad is toggled on/off, mapped to KEY_TOUCHPAD_ON / _OFF
 -PWM is not listed in ACPI, breaking backlight ctrl, requires DSDT override fix
+-https://linux-hardware.org/index.php?computer=d0a7a08478d7
 
 Acer Aspire Switch 10E (SW3-016)
--FIXME
--Touchscreen: ????, without capacitive home-button
+-10" 1280x800 DSI 24 bpp, PWM: LPSS
+-Touchscreen: ELAN1001 i2c-hid, without capacitive home-button
  -Has separate physical home button
+ -Looses calibration after a while and then starts ging crazy with ghost touches
+  (touchscreen controller got toasted (a bit) by bad charger used by previous owner?)
+  -Workaround:
+   1. Run a systemd timer which does:
+      gpioset 'INT33FF:01' 25=0
+      gpioset 'INT33FF:01' 25=1
+      Which resets the controller every 2 minutes
+   2. Run a bash script which monitors SW_TABLET_MODE and resets the
+      touchscreen controller immediately if SW_TABLET_MODE changes
+-CPU: Cherry Trail x5-Z8300, 2GB RAM
+-Wifi: RTL8723BS
+-Accel: KIOX0009, mount matrix ok
+-ALS: CPLM3218
+-Audio codec: ALC5640
+-PMIC: TI Dollar Cove, charging only through micro USB 5V/2A
+-Dock, seems to have 2 separate USB connections on the dock connector,
+ 1 for the A-port and one for the kbd/mouse
+ -ITE8910 kbd controller
+ -USB 06cb:73f5 (same as S1003) supports standard HID multi-touch
+ -Touchpad on/off toggle is handled inside the dock,
+  touchpad stops sending events when toggled
+ -HID events are send when the touchpad is toggled on/off, mapped to KEY_TOUCHPAD_ON / _OFF
+-https://linux-hardware.org/index.php?computer=7af9d429ab03
+-https://www.acer.com/ac/en/US/content/support-product/6460?b=1&pn=NT.G8VEH.004
 
 Acer One 10 (S1002)
 -10" 1280x800 DSI 24 bpp, PWM: LPSS
@@ -37,10 +62,10 @@ Acer One 10 (S1002)
 -PMIC: Crystal Cove (BYT), charging through both power-barrel 5V/3A or micro-usb 5V/2A
 -Dock:
  -ITE8910 kbd controller
-  -USB 06cb:73f4 supports standard HID multi-touch
-  -Touchpad on/off toggle is handled inside the dock,
-   touchpad stops sending events when toggled
-  -HID events are send when the touchpad is toggled on/off, mapped to KEY_TOUCHPAD_ON / _OFF
+ -USB 06cb:73f4 supports standard HID multi-touch
+ -Touchpad on/off toggle is handled inside the dock,
+  touchpad stops sending events when toggled
+ -HID events are send when the touchpad is toggled on/off, mapped to KEY_TOUCHPAD_ON / _OFF
 
 Acer One 10 (S1003)
 -10" 800x1280 DSI panel
@@ -56,10 +81,14 @@ Acer One 10 (S1003)
 -Dock, seems to have 2 separate USB connections on the dock connector,
  1 for the A-port and one for the kbd/mouse
  -ITE8910 kbd controller
+ -USB 06cb:73f5 supports standard HID multi-touch
  -Touchpad controller: Synaptics S910ZB?
  -Touchpad on/off toggle is handled inside the dock,
   touchpad stops sending events when toggled
- -No HID events are send when the touchpad is toggled on/off
+ -No HID events are send when the touchpad is toggled on/off, where as
+  the Aspire Switch 10E (SW3-016) kbd-dock with the same usb-id (but
+  physcially different) does send HID events for this
+-https://linux-hardware.org/index.php?computer=c0e64319d0b1
 
 Acer Iconia Tab 8 W1-810
 -8" 800x1280 DSI panel
@@ -341,6 +370,24 @@ Dell Venue 8 Pro 5830:
  -Supports ACA mode
 
 
+============ Estar ============
+
+Beauty HD MID 7316R
+-7" 1024x600 DSI 24bpp, PWM: LPSS
+ -No HDMI
+-Touchscreen: Goodix GDIX1001, without capacitive home-button
+ -and without separate physical home button
+-CPU: Bay Trail Z3735G, 1G RAM
+-Wifi: RTL8723BS
+-Accel: SMO8500, mount-matrix ok
+-Audio codec: ALC5640, uses OMTP headset pinout instead of the usual CTIA one
+-PMIC: AXP288, charging only through micro USB 5V/2A
+-OTG:
+ -Has a mux
+ -Locked BIOS cannot test for device-mode phy / gadget mode
+-https://linux-hardware.org/?probe=59c1597fbb
+
+
 ============ GPD ============
 
 GPD-win
@@ -515,6 +562,23 @@ Jumper EZpad mini 3
  mode, these lines will be in device mode and USB3 devices will not work
  in the USB3-A connector. Solution: leave the dwc3 device controller disabled
 
+Jumper EZpad 7
+-10.1" 1200x1920 eDP 24 bpp screen
+ + micro HDMI
+-Touchscreen: gsl3680, without capacitive home-button, firmware not in EFI
+ -and without separate physical home button
+-CPU: Cherry Trail x5-Z8350, 4G RAM
+-Wifi: RTL8723BS
+-Accel: KIOX0009, mount-matrix ok
+-Audio codec: ALC5651 with inverted jack-detect
+-PMIC: AXP288, charging only through power-barel USB 5V/2A
+-No micro-usb connector, instead has an USB3-A port using the OTG-USB SoC pins
+-Keyboard: USB 1018:1006 keyboard/touchpad(mouse mode only) combo kbd cover
+ Touchpad on/off toggle key handled inside kbd. Toggle sends a completely empty
+ boot-kbd report, which does not contain enough info to report touchpad state
+-DSDT: BDID = One, OSID = One
+-https://linux-hardware.org/index.php?probe=ab39f4f442
+
 
 ============ Kazam ============
 
@@ -555,10 +619,12 @@ Lenovo Yoga Tablet 2 1051F/L
 -CPU: Bay Trail Z3745, 2GB RAM
 -Wifi: BCM4324/5 brcmfmac43241b4-sdio
 -Accel: ACCL0001: LSM303D (also magnetic compass)
+-ALS: al3320 (b?) should work with kernel als3320a driver
 -Audio codec: WM5102 SPI!
 -PMIC: Crystal Cove (BYT), charging only through micro USB 5V/2A
 -OTG: does not appear to have a mux, locked BIOS, will only charge when directly
  connected to a charger. Does not work with charging hubs.
+-Has a broadcom BCM4752 GPS ?
 
 Lenovo Miix 2 8
 -8" 800x1280 DSI 24 bpp, PWM CRC, freq: actual 23531 VBT 20000, 0-255
@@ -628,6 +694,8 @@ Lenovo ThinkPad 10
 -Accel: HID-sensors
 -Audio codec: ALC5672
 -PMIC: Crystal Cove (BYT), charging only through mini Thinkpad charger
+ -Gives: "i2c i2c-0: i2c write failed: -121" errors every 2 minutes when the LCD
+  is turned off, it seems that the EC does not respond when the LD is off.
 -Keyboard: USB 17ef:6062 ThinkPad 10 Ultrabook kbd/touchpad (mouse mode only) combo dock
 
 Lenovo Ideapad Miix 300
@@ -719,6 +787,21 @@ Meegopad T08
 -Type-C controller/mux: SlimPort ANX7428
 
 
+============ Mele ============
+
+PCG03
+-Mini PC with HDMI output + Analogic ANX9833 DP to VGA chip for VGA output on eDP
+-CPU: Bay Trail Z3735F, 2 GB RAM
+-Wifi RTL8723BS
+-Audio codec: ALC5640
+ -Codec does not have MCLK connected, speaker outputs are shorted, enabling speaker
+  outputs causes the codec to crash, headset mic works and is on IN2P as usual
+ -Jack-detect not hooked up and enabling it also causes codec instability
+-PMIC: AXP288, charging only through power-barel 12V/1A
+-USB hub inside: 1a40:0101 Terminus Technology Inc.
+-https://linux-hardware.org/index.php?probe=e2f9dbb383
+
+
 ============ MPMAN ============
 
 MPMAN Converter9
@@ -770,7 +853,7 @@ MSI S100 Tablet + keyboard cover (given away)
 
 Nuvision/TMAX TM800W560L
 -8" 1200x1920 DSI panel
--Touchscreen: FTSC1000, with capacitive home-button ...
+-Touchscreen: FTSC1000 i2c-hid, with capacitive home-button which sends left-ctrl+esc ?
 -CPU: Bay Trail Z3735G, 2G RAM
 -Wifi: RTL8723BS
 -Accel: KIOX000A, mount-matrix ok
@@ -789,7 +872,7 @@ ONDA V891w P891WBEBV1B00 aka V1
 -CPU: Bay Trail Z3735F, 2G RAM
 -Wifi: RTL8723BS
 -Accel: BMA250E, mount-matrix ok
--Audio codec: ALC5640
+-Audio codec: ALC5640, uses OMTP headset pinout instead of the usual CTIA one
 -PMIC: AXP288, charging only through micro-usb 5V/2A max
 
 Onda v975w (Carlos):
@@ -839,7 +922,7 @@ Peaq 10" C1010 2-in-1
 
 ============ Pipo ============
 
-PIPO W2S
+PIPO W2S (borrowed, given back)
 -8" 1200x1920 panel
 -Touchscreen: gsl????, without capacitive home-button, fw in EFI
 -CPU: Cherry Trail x5-Z8350, 2G RAM
@@ -1014,12 +1097,15 @@ Teclast X89 E7ED
 Terra Pad 1060
 -10" 1280x800 eDP panel 18bpp
 -Touchscreen: USB 03eb:8c17 "Atmel Atmel maXTouch Digitizer"
+ -With capacative home-button through ps/2 kbd, with haptic feedback
 -CPU: Bay Trail Celeron N2805, 2G RAM
--Wifi: Intel 7260
+-Wifi: Intel 7260 on a replace wifi module
 -Accel: USB 0483:91d1 "STMicroelectronics Sensor Hub"
 -Audio: HDA
+-Uses an M2 2242 SATA SSD, has space for up to 2280 (with some hacking)
 -Keyboard-cover: USB 1017:1006 touchpad seems to only support mouse-emulation
  Touchpad on/off toggle key handled inside kbd-dock, does not send events
+-https://linux-hardware.org/?probe=8f2478944c
 
 Terra Pad 1061
 -10" 1920x1200 DSI 24 bpp, PWM: LPSS, freq: actual 381 VBT 400, 11-255
@@ -1119,13 +1205,23 @@ Trekstor Surftab Wintron 7.0 ST70416-6
 -Other: 25lq64cvig, 7191 1545, OPI MP or DPI MP?
 -DSDT: PMID = 0x05
 
+Trekstor Surftab Wintron 10.2 ST10432-3
+-10" 1280x800 DSI 24 bpp, PWM: LPSS
+ + mini HDMI
+-Touchscreen: FTSC1000, with capacitive home button handled by gpio-keys
+-CPU: Bay Trail Z3735F, 2G RAM
+-Wifi: RTL8723BS
+-Accel: SMO8500, TODO mount-matrix quirk
+-PMIC: AXP288, charging through power-barrel 9v/1.5A only
+-OTG: host mode only, no charging
+
 Trekstor SurfTab Twin 10.1 ST10432-8
 -10" 1280x800 DSI 24 bpp, PWM: LPSS, freq: actual 19836 VBT 20000, 0-255
  + mini HDMI
 -Touchscreen: gsl3670 ??? with capacitive home-button, fw NOT in EFI ???
 -CPU: Bay Trail Z3735F, 2G RAM
 -Wifi: RTL8723BS
--Accel: KIOX000A, TODO mount-matrix quirk
+-Accel: KIOX000A, mount-matrix ok
 -Audio codec: ALC5640
 -PMIC: AXP288, charging only through micro USB 5V/2A
 -Micro-usb only supports charging, no other function (neither host nor device)
@@ -1148,6 +1244,26 @@ VIOS LTH17
 -PMIC: AXP288, charging only through power-barrel, adapter 5V/3A
 -USB HID-MT keyboard / MT-touchpad combo
 -USB UVC webcam
+
+
+============ Voyo ============
+
+Voyo winpad A15
+-11.6" 1366x768 DSI 24 bpp, PWM: CRC
+-Touchscreen: ACPI: SIS0817 chip: SIS9255, digitizer cable: SSET 04-1160-06078 2014.09.20
+ digitizer cable is ripped/torn does not work
+-CPU: Bay Trail Z3770, 4G RAM
+-Wifi: BCM4330/4 brcmfmac4330-sdio
+-Accel: SMO8500, mount-matrix ok
+-Audio codec: ALC5640, headset mic contact physically unreliable
+-PMIC: Crystal Cove (BYT), charging only through micro-usb 5V/2A
+-OTG: Used for charging only
+-ITE IT8568E EC
+-Keyboard-cover: USB 7219:0602 keyboard/touchpad(mouse mode only)
+-Tends to hang on reboot and after a power-cycle with not enough time between
+ turning it off and back on again, busted hardware or Linux issue ?
+ The device is reliable once booted.
+-https://linux-hardware.org/?probe=92b33844dc
 
 
 ============ Yours ============

@@ -3,6 +3,7 @@ Bay and Cherry Trail device status with linux-next
 		lcd wif tou acc bat c2a but bri sus  spk pho jck hst dev blu c3a tpad lid tblt
 Acer Ic. W1-810 yes yes yes yes yes yes yes yes yes  yes yes yes yes -   FIR -   -    -
 Acer SW5-012    yes yes yes yes yes yes yes (6) (6)  yes yes yes yes -       -   yes  yes yes
+Acer SW3-016    yes yes yes yes yes yes yes yes S0i3 yes yes yes yes -   yes -   yes  yes yes
 Archos 80Cesium	yes yes yes yes yes yes yes yes yes      yes yes yes -   yes -   -    -
 Asus T100TA	yes yes yes yes                      yes yes         -   FIR -   yes      yes
 Asus T100HA	ROT yes no  yes yes yes yes yes S0i3 yes yes yes yes -   FIR -   yes  yes yes
@@ -17,6 +18,7 @@ Connect Tablet9	yes yes FIR yes yes     yes yes yes  yes yes yes yes -   yes -  
 Cube iWork8 Air	yes yes FIR yes yes yes yes yes yes  yes yes yes yes yes yes -   -    -   -
 Dell Venue 5830 yes yes yes yes yes yes yes yes yes  yes yes yes yes -       -   -    -   -
 Dell Venue 7130 yes yes yes yes yes yes yes yes yes  yes         -   -       -   yes
+Estar BeautyHD	yes yes FIR yes yes yes yes yes S0i3 yes yes yes yes -   yes -   -    -   -
 Gl. TM800A550L	yes yes
 GP-elec. T701   ROT yes FIR yes yes yes yes yes yes              yes -       -   -
 GPD win		ROT yes yes     yes yes yes yes yes  yes yes yes yes yes FIR yes -
@@ -24,6 +26,7 @@ HP Pavil X2 BYT	yes yes yes yes yes yes yes yes yes  yes yes         -       yes
 HP Stream 7     DPI yes yes yes yes     yes yes yes  yes         yes -       -   -
 I.T.Works TW891 ROT yes yes yes yes yes yes yes yes  yes yes yes yes         -   (1)  yes yes
 Jump. EZpad m3	yes yes FIR yes yes yes yes yes yes  yes yes yes yes yes FIR -   -    yes yes (2)
+Jump. EZpad 7	yes yes FIR yes yes -   yes yes S0i3 yes yes yes -   -   yes -        yes -
 Kazam Vision	yes yes yes yes yes yes yes yes yes  yes yes yes yes yes yes -   -
 Lamina I8270    yes yes yes yes yes     yes yes yes  yes yes yes yes         -   -    -
 Lenovo Miix2-10 yes yes yes yes yes -   yes yes (7)  yes yes yes yes -   FIR -   (1)  yes -
@@ -50,6 +53,7 @@ Toshiba WT8-A	yes yes yes yes yes yes yes yes S0i3 yes yes yes yes -   yes -   -
 Toshiba WT10-A	yes yes yes yes yes yes yes yes S0i3 yes yes yes yes -   yes -   (1)  -   -
 Trekstor 7 (4)	yes yes FIR yes yes yes yes yes yes              yes -       -   -
 Trekstor 10 (5)	yes yes FIR yes yes yes yes yes S0i3 yes yes yes -   -   yes -   (1)  -   -
+Voyo Winpad A15	yes yes -   yes yes yes yes yes S0i3 yes yes yes -   -   FIR -   (1)  -   -
 
 Legenda: wif(i) tou(chscreen) acc(el) bat(-mon) c(harge-)2a but(tons)
 bri(ghtness) sus(pend&resume) sp(ea)k(er) (head)pho(nes) j(a)ck-detection

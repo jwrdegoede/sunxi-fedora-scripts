@@ -1,42 +1,51 @@
-rt5640:		Spk	Mic	JD	AIF		quirk	SoC	Quirk?	  SOF tested
--Acer SW5-012   stereo  DMIC1   JD2IN4N SSP0 AIF1       503430  BYTCR   yes
--Archos80Cesium	mono	IN3-dff	JD1IN4P	SSP0 AIF1	563423	BYTCR	yes
--Asus T100CHI	stereo	DMIC1	JD2IN4N	SSP2 AIF1	403430	BYT	defaults
+rt5640:		Spk	Mic	JD	AIF		quirk	SoC	Quirk?	SOF tested
+-Asus T100CHI	stereo	DMIC1	JD2IN4N	SSP2 AIF1	403430	BYT	def
 -Asus T100TA	stereo	IN1	JD2IN4N	SSP2 AIF1	443432	BYT	yes
--Asus T200TA    stereo  DMIC1	JD2IN4N	SSP2 AIF1	403430	BYT	defaults
--ConnectTablet9	mono	IN3-dff JD1IN4P SSP0 AIF1	563423	BYTCR	yes
+-Asus T200TA	stereo	DMIC1	JD2IN4N	SSP2 AIF1	403430	BYT	def
 -Dell Ven8 5830	mono	DMIC1	JD2IN4N SSP2 AIF1	423430	BYT	yes
 -MSI S100	mono	IN1-dff	JD2IN4N	SSP2 AIF1	463432	BYT	yes
--Acer iconia 8	stereo	DMIC1	JD1 (3)	SSP0 AIF1	503420	BYTCR	yes
--Axxo WT1011	stereo	IN3-dff	JD1IN4P	SSP0 AIF1	543423	BYTCR	defaults
+-ONDA V975w	stereo	IN1-dff JD2 (4)	SSP2 AIF1	443432	BYT	yes
+-Toshiba WT8-A	stereo	DMIC1	JD2-inv SSP2 AIF1	413430	BYT	yes
+-Voyo WinpadA15 stereo	IN1-dff	JD2 (5)	SSP2 AIF1	443432	BYT	yes	yes
+-Acer iconia 8	stereo	DMIC1	JD1 (4)	SSP0 AIF1	503420	BYTCR	yes
+-Acer SW5-012	stereo	DMIC1	JD2IN4N	SSP0 AIF1	503430	BYTCR	yes
+-Archos80Cesium	mono	IN3-dff	JD1IN4P	SSP0 AIF1	563423	BYTCR	yes
+-Axxo WT1011	stereo	IN3-dff	JD1IN4P	SSP0 AIF1	543423	BYTCR	def
 -Chuwi Vi8	mono	IN3-dff JD1IN4P SSP0 AIF1	563423	BYTCR	yes
 -Chuwi Vi10	stereo	IN1-dff JD2IN4N SSP0 AIF1	543432	BYTCR	yes
--HP Pavilion x2	stereo	DMIC1	JD2 (2)	SSP0 AIF1(1)	502f30	BYTCR	yes
+-ConnectTablet9	mono	IN3-dff JD1IN4P SSP0 AIF1	563423	BYTCR	yes
+-Estar BeautyHD	mono	IN3-dff JD1 (2) SSP0 AIF1	563423	BYTCR	yes	yes
+-HP Pavilion x2	stereo	DMIC1	JD2 (3)	SSP0 AIF1 (1)	502f30	BYTCR	yes
 -HP Stream 7	mono	IN3-dff	JD1-inv SSP0 AIF1	573423	BYTCR	yes
 -ITworks tw891	mono	IN3-dff	JD1IN4P SSP0 AIF1	563423	BYTCR	yes
 -Lamina I8270	mono	IN3-dff	JD1-inv	SSP0 AIF1	573423	BYTCR	yes
--Lenovo miix300 stereo	IN3-dff JD1IN4P	SSP0 AIF1	543423	BYTCR	defaults
--Mpm Converter9	mono	IN3-dff	JD1IN4P SSP0 AIF1	563423	BYTCR	yes	  yes
--Nuv TM800W560	stereo	IN1-dff	JD2 (4)	SSP0 AIF1	553432	BYTCR	yes
--ONDA V975w	stereo	IN1-dff JD2 (3)	SSP2 AIF1	443432	BYT	yes
--ONDA V891w	stereo	IN3-dff JD1 (5)	SSP0 AIF1	543423	BYTCR	defaults
--Peaq C1010	stereo	IN3-dff	JD1IN4P	SSP0 AIF1	543423	BYTCR	defaults
+-Lenovo miix300 stereo	IN3-dff JD1IN4P	SSP0 AIF1	543423	BYTCR	def
+-Mele PCG03	none	none	none	SSP0 AIF1 (1)  1100004	BYTCR	yes	yes
+-Mpm Converter9	mono	IN3-dff	JD1IN4P	SSP0 AIF1	563423	BYTCR	yes
+-Nuv TM800W560	stereo	IN1-dff	JD2 (6)	SSP0 AIF1	553432	BYTCR	yes
+-ONDA V891w	stereo	IN3-dff JD1 (2)	SSP0 AIF1	543423	BYTCR	def
+-Peaq C1010	stereo	IN3-dff	JD1IN4P	SSP0 AIF1	543423	BYTCR	def
 -Pipo W4	mono	IN3-dff JD1IN4P	SSP0 AIF1	563423	BYTCR	yes
 -PoV-mobii-800w mono	IN1-dff	JD2IN4N	SSP0 AIF2	663432	BYTCR	yes
 -PoV P1005w-232	stereo	IN1-dff JD2IN4N SSP0 AIF1	543432	BYTCR	yes
--Prowise PT301	stereo	IN1-dff JD2IN4N SSP0 AIF1(1)	543432	BYTCR	yes
--Teclast X89	stereo	IN3-dff	JD1 (5)	SSP0 AIF1	545423	BYTCR	yes
--Terra Pad 1061 stereo  IN3-dff JD1IN4P SSP0 AIF1       543423  BYTCR   defaults
--Tos Click Mini	stereo	DMIC1	JD2 (2)	SSP0 AIF1(1)	502f30	BYTCR	yes
--Toshiba WT8-A	stereo	DMIC1	JD2-inv SSP2 AIF1	413430	BYT	yes
+-Prowise PT301	stereo	IN1-dff JD2IN4N SSP0 AIF1 (1)	543432	BYTCR	yes
+-Teclast X89	stereo	IN3-dff	JD1 (2)	SSP0 AIF1	545423	BYTCR	yes
+-Terra Pad 1061	stereo	IN3-dff	JD1IN4P	SSP0 AIF1	543423	BYTCR	def
+-Tos Click Mini	stereo	DMIC1	JD2 (3)	SSP0 AIF1 (1)	502f30	BYTCR	yes
 -Toshiba WT10-A	stereo	DMIC1	JD1IN4P SSP0 AIF2	603420	BYTCR	yes
--Trekstortwin10 stereo	IN3-dff JD1IN4P	SSP0 AIF1	543423	BYTCR	defaults
+-Trekstortwin10 stereo	IN3-dff JD1IN4P	SSP0 AIF1	543423	BYTCR	def
+-Trekswintron10	stereo	IN3-dff	JD1IN4P	SSP0 AIF1	543423	BYTCR	def
+-Acer SW3-016	stereo	DMIC1	JD2IN4N SSP2 AIF1	403430	CHT	def	yes
 
 1) BYTCR devices without routing in BIOS table and not matching the default
-2) Needs OVCD settings of 1.5mA sf0.75 for button-press detect
-3) OVCD broken, sees everything as headset, no button-press
-4) Inverted, headset mic contact physically unreliable
-5) Uses OMTP headset pinout instead of the usual CTIA one
+2) Uses OMTP headset pinout instead of the usual CTIA one
+3) Needs OVCD settings of 1.5mA sf0.75 for button-press detect
+4) OVCD broken, sees everything as headset, no button-press
+5) Case is aluminum, this causes the sleeve to be physically short-circuited to ground
+   this is ok because it uses an OMTP headset pinout. But the case is also too thick
+   causing the mic contact (second ring in TRRS) to not make proper contact.
+6) Mic contact is physically unreliable, case is aluminum, maybe the same problem as 5.
+   Todo: verify if the case is the problem by testing without case
 
 
 rt5645:		Spk	Mic	JDmod	  UCM
@@ -55,10 +64,11 @@ rt5645:		Spk	Mic	JDmod	  UCM
 2) DMIC fried when resoldering the power-barrel which sits next to it :(
 
 
-rt5651:		Spk	Mic		JD
+rt5651:		Spk	Mic		JD		SOF tested
 -Chuwi Vi8 Plus mono	mono in2	JD1_1
 -Chuwi Vi8 Pro	mono	mono in2	JD1_1
 -ITWorks TW701	mono	mono in2	JD1_1
+-Jumper EZpad 7 stereo	mono in2	JD1_1 inverted	yes
 -Ployer Momo7w	mono	mono in2	JD1_1 (1)
 -PoV P1006Wv1.0	stereo	dmic + hs-in2	External GPIO
 -Trekstor win7	mono	mono in2	JD1_1
@@ -70,6 +80,8 @@ Note headset mic is always connected to in3
 
 
 rt5670:		Spk:	Mic		JD		SOF tested
+-Thinkpad 8	stereo	DMIC2		mode 1
+-Thinkpad 10	stereo	DMIC1		mode 1		yes
 -Len miix 2-10	stereo	DMIC1		mode 2
 
 
