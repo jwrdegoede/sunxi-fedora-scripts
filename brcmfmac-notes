@@ -13,6 +13,7 @@
  -Acer One 10            brcmfmac43430a0-sdio / efivar / ccode=NL      / no-5G *
  -Jumper ezPad mini 3    brcmfmac43430a0-sdio / noefiv / ccode=ALL->X2 / no-5G *
  -Onda V80 Plus          brcmfmac43430a0-sdio / noefiv / ccode=ALL->X2 / no-5G *
+ -Chuwi Hi8 (CWI509)     brcmfmac43430a0-sdio / noefiv / ccode=ALL->X2 / no-5G *
  -Chuwi Vi8 plus(CWI519) brcmfmac43430-sdio   / noefiv / ccode=ALL->X2 / no-5G *
  -GPD win                brcmfmac4356-pcie    / noefiv / ccode=US->X2  / 5GHz  *
   ** nvram ccode is a problem
@@ -28,6 +29,7 @@
  -Meegopad T08           BCM2E90 / brcmfmac43340-sdio   / BCM43341B0-37.4M.hcd
  -Jumper ezPad mini 3    BCM2E74 / brcmfmac43430a0-sdio / BCM4343A0-26M.hcd
  -Onda V80 Plus          BCM2E74 / brcmfmac43430a0-sdio / BCM4343A0-26M.hcd
+ -Chuwi Hi8 (CWI509)     BCM2E74 / brcmfmac43430a0-sdio / BCM4343A0-26M.hcd
  -Chuwi Vi8 plus(CWI519) BCM2EAA / brcmfmac43430-sdio   / BCM43430A1-26M.hcd
  -GPD win                BCM2E7E / brcmfmac4356-pcie    / BCM4356A2-37.4M.hcd
 

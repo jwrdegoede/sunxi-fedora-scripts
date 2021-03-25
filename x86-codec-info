@@ -9,6 +9,7 @@ rt5640:		Spk	Mic	JD	AIF		quirk	SoC	Quirk?	SOF tested
 -Voyo WinpadA15 stereo	IN1-dff	JD2 (5)	SSP2 AIF1	443432	BYT	yes	yes
 -Acer iconia 8	stereo	DMIC1	JD1 (4)	SSP0 AIF1	503420	BYTCR	yes
 -Acer SW5-012	stereo	DMIC1	JD2IN4N	SSP0 AIF1	503430	BYTCR	yes
+-Acer S1002	stereo	IN1-dff	JD2IN4N	SSP0 AIF2	643432	BYTCR	yes	yes
 -Archos80Cesium	mono	IN3-dff	JD1IN4P	SSP0 AIF1	563423	BYTCR	yes
 -Axxo WT1011	stereo	IN3-dff	JD1IN4P	SSP0 AIF1	543423	BYTCR	def
 -Chuwi Vi8	mono	IN3-dff JD1IN4P SSP0 AIF1	563423	BYTCR	yes
@@ -36,6 +37,7 @@ rt5640:		Spk	Mic	JD	AIF		quirk	SoC	Quirk?	SOF tested
 -Trekstortwin10 stereo	IN3-dff JD1IN4P	SSP0 AIF1	543423	BYTCR	def
 -Trekswintron10	stereo	IN3-dff	JD1IN4P	SSP0 AIF1	543423	BYTCR	def
 -Acer SW3-016	stereo	DMIC1	JD2IN4N SSP2 AIF1	403430	CHT	def	yes
+-HP Pavilion x2	stereo	DMIC1	JD1IN4P	SSP2 AIF1	403420	CHT	yes	yes
 
 1) BYTCR devices without routing in BIOS table and not matching the default
 2) Uses OMTP headset pinout instead of the usual CTIA one
@@ -48,16 +50,17 @@ rt5640:		Spk	Mic	JD	AIF		quirk	SoC	Quirk?	SOF tested
    Todo: verify if the case is the problem by testing without case
 
 
-rt5645:		Spk	Mic	JDmod	  UCM
--Acer One S1003 stereo	ana	3	  chtrt5645
--Asus T100HA	stereo	dmic1	3 inv (1) chtrt5645-dmic1
--GPD Pocket	mono	diff	3 inv	  chtrt5645-mono-speaker-analog-mic
--GPD win	mono	ana	3 inv	  chtrt5645-mono-speaker-analog-mic
--Kazam Vision	stereo	ana	3	  chtrt5645
--Lenovo Miix310 stereo	diff	3	  chtrt5645
--Lenovo Miix320 stereo	dmic2	3	  chtrt5645-dmic2
--Medion E1239T	stereo	dmic2(2)3         chtrt5645-dmic2
--Teclast X80Pro	mono	ana	3	  chtrt5645-mono-speaker-analog-mic
+rt5645:		Spk	Mic	JDmod
+-Acer One S1003 stereo	ana	3
+-Asus T100HA	stereo	dmic1	3 inv (1)
+-Asus T101HA	stereo	dmic1	3 (1)
+-GPD Pocket	mono	diff	3 inv
+-GPD win	mono	ana	3 inv
+-Kazam Vision	stereo	ana	3
+-Lenovo Miix310 stereo	diff	3
+-Lenovo Miix320 stereo	dmic2	3
+-Medion E1239T	stereo	dmic2(2)3
+-Teclast X80Pro	mono	ana	3
 
 1) Uses an ALC3270 which according to Realtek themselves does not support
    TRRS jacks only TRS jack, so no headset detection or headset-mic support

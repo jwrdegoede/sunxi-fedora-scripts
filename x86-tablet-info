@@ -60,12 +60,15 @@ Acer One 10 (S1002)
 -Accel: SMO8500, mount-matrix ok
 -Audio codec: ALC5640
 -PMIC: Crystal Cove (BYT), charging through both power-barrel 5V/3A or micro-usb 5V/2A
+ Charge-IC BQ24192
+-OTG: No mux, host mode only
 -Dock:
  -ITE8910 kbd controller
  -USB 06cb:73f4 supports standard HID multi-touch
  -Touchpad on/off toggle is handled inside the dock,
   touchpad stops sending events when toggled
  -HID events are send when the touchpad is toggled on/off, mapped to KEY_TOUCHPAD_ON / _OFF
+-https://linux-hardware.org/?probe=23688b2708
 
 Acer One 10 (S1003)
 -10" 800x1280 DSI panel
@@ -119,7 +122,7 @@ Archos 80 Cesium
 
 Asus T100TA
 -10" 1368x768 DSI 24 bpp, PWM: CRC, freq: actual 200 VBT 200, 0-255
- + micro HDMI
+ + Micro HDMI
 -Touchscreen: Atmel MXT1664TXES-C2U 1330B TW QLG9F, without capacitive home-button
  -Has separate physical home button
 -Wifi: Broadcom BCM43241SFKFFBG TN1322 P24 294688 P3T
@@ -138,7 +141,7 @@ Asus T100TA
 
 Asus T100CHI
 -10" 1920x1200 DSI panel 24 bpp, PMIC/CRC PWM
- + micro HDMI
+ + Micro HDMI
 -Touchscreen: SYNA7508 06CB:11E5, with support for PR77S pen, without capacitive home-button
 -CPU: Bay Trail Z3775, 2G RAM
 -Wifi: brcmfmac43241b4-sdio
@@ -232,9 +235,24 @@ Chuwi Vi8 (CWI506)
 -PMIC: AXP288, charging only through micro USB 5V/2A
 -USB-phy: TI T1210B
 
+Chuwi Hi8 (CWI509)
+-8" 1200x1920 DSI panel 24 bpp, PWM: LPSS
+ -No HDMI
+-Touchscreen GSL3676, with capacitive home-button, fw NOT in EFI
+-CPU: Bay Trail Z3736F, 2GB RAM
+-Wifi: brcmfmac43430a0
+-Accel: BMA250E
+-ALS: CPLM3218
+-Audio codec: ALC5640
+-PMIC: AXP288, charging only through micro USB 5V/2A
+-OTG:
+ -5V boost converter not working, host mode needs external power
+ -Has mux
+ -USB-phy: TI T1210B
+
 Chuwi Hi8 Pro (CWI513)
 -8" 1200x1920 LCD
- + micro HDMI
+ + Micro HDMI
 -Touchscreen GSL3676, with capacitive home-button
 -CPU: Cherry Trail x5-Z8350, 2G RAM
 -Wifi: RTL8723BS
@@ -288,7 +306,7 @@ Chuwi Hi8 Pro (CWI513)
 
 Chuwi Vi8 Plus (CWI519)
 -8" 800x1280 LCD
- + micro HDMI
+ + Micro HDMI
 -Touchscreen Chipone ICN8505, fw in EFI
 -CPU: Cherry Trail x5-Z8300, 2G RAM
 -Wifi: Soldered on PCB, with unmarked shield, brcmfmac43430
@@ -310,7 +328,7 @@ Chuwi Vi8 Plus (CWI519)
 
 Chuwi Hi13
 -13" 3000x2000 eDP panel 24bpp
- + micro HDMI
+ + Micro HDMI
 -Light sensor: CM32181
 -Touschscreen: GDIX1002 goodix touchscreen, with capacitive home-button
 -CPU: Apollo Lake N3450, 4G RAM
@@ -339,7 +357,7 @@ Connect Tablet 9
 
 Cube iwork 8 Air
 -8" 1200x1920 screen
- + micro HDMI
+ + Micro HDMI
 -Touchscreen: gsl3670, without capacitive home-button, fw in EFI
  -Has separate physical home button
 -CPU: Cherry Trail Z8300, 2G RAM
@@ -368,6 +386,20 @@ Dell Venue 8 Pro 5830:
  -Has a mux
  -Locked BIOS cannot test for device-mode phy / gadget mode
  -Supports ACA mode
+
+Dell Venue 11 Pro 7130 vPro
+-10.8" 1920x1080 eDP
+ -Mini HDMI
+-Touchscreen: SYNA7500
+ -With capacitive home-button with force-feedback, reported through AT keyboard
+-CPU: i5-4300Y, 4G RAM
+-Wifi: Intel AC7260
+-Accel: SMO91D0 HID sensors
+-ALS: SMO91D0 HID sensors
+-OTG: Micro-usb connector is for charging with special Dell charger which supports
+ 19.5V/1.2A or 5V/2A only
+-Modem: Dell Wireless 5570e HSPA+ aka Sierra Wireless AirPrime EM8805
+-https://linux-hardware.org/?probe=9cbca84e95
 
 
 ============ Estar ============
@@ -455,7 +487,7 @@ HP Pavilion X2 10-n000nd
 
 HP Pavilion X2 10-p002nd
 -10" 1280x800 eDP panel
- + micro HDMI
+ + Micro HDMI
 -Touchscreen: SYNP1000, without capacitive home-button
  -and without separate physical home button
 -CPU: Cherry Trail x5-Z8350, 2GB RAM
@@ -531,7 +563,7 @@ I.T.Works TW891
 -8.9" 800x1280 DSI, 24 bpp, PWM: LPSS, freq: actual 199920 VBT 20000, 0-255
  - mounted 90 degrees rotated
  - BGRT logo is just a black rectangle
- + micro HDMI
+ + Micro HDMI
 -Touchscreen: Silead GSL3670, without capacitive home-button, fw NOT in EFI
  -Has separate physical home button
 -Wifi RTL8723BS
@@ -549,7 +581,7 @@ I.T.Works TW891
 
 Jumper EZpad mini 3
 -8" 1280x800 screen
- + micro HDMI
+ + Micro HDMI
 -Touchscreen: gsl3676, without capacitive home-button, fw NOT in EFI
  -and without separate physical home button
 -Wifi: AP6212, needs firmware + nvram from: https://vps.vdwaa.nl/~jelle/brcm/
@@ -564,7 +596,7 @@ Jumper EZpad mini 3
 
 Jumper EZpad 7
 -10.1" 1200x1920 eDP 24 bpp screen
- + micro HDMI
+ + Micro HDMI
 -Touchscreen: gsl3680, without capacitive home-button, firmware not in EFI
  -and without separate physical home button
 -CPU: Cherry Trail x5-Z8350, 4G RAM
@@ -584,7 +616,7 @@ Jumper EZpad 7
 
 Kazam Vision
 -8" 800x1280 DSI panel
- + micro HDMI
+ + Micro HDMI
 -Touchscreen: GDIX1001, with capacitive home-button
 -CPU: Cherry Trail x5-Z8300, 2G RAM
 -Wifi: Intel 3165
@@ -598,7 +630,7 @@ Kazam Vision
 
 Lamina I8270 (sticker on back) / T701BR.SE (dmi)
 -7" 800x1280 DSI panel
- + micro HDMI
+ + Micro HDMI
 -Touchscreen: GDIX1001, without capacitive home-button
  -Has separate physical home button
 -CPU: Bay Trail Z3735G, 1G RAM
@@ -613,7 +645,7 @@ Lamina I8270 (sticker on back) / T701BR.SE (dmi)
 
 Lenovo Yoga Tablet 2 1051F/L
 -10" 1920x1200 DSI 24 bpp, PWM: CRC
- + micro HDMI
+ + Micro HDMI
 -Touchscreen: SYNA0001
  -With capacative home-button through gpio-keys (requires low-level-irq quirk)
 -CPU: Bay Trail Z3745, 2GB RAM
@@ -643,7 +675,7 @@ Lenovo Miix 2 8
 
 Lenovo Miix 2 10
 -10" 1920x1200 DSI 24 bpp, PWM: CRC, freq: VBT 200, 00255
- + micro HDMI
+ + Micro HDMI
 -Touchscreen: ELAN1001, i2c HID multi-touch, with home button with haptic feedback
 -CPU: Bay Trail Z3740, 2G RAM
 -Wifi: brcmfmac43241b4, BCM4324/5, nvram in EFI, 5GHz support
@@ -686,7 +718,7 @@ Lenovo ThinkPad 8
 
 Lenovo ThinkPad 10
 -10" 1920x1200 eDP, 18 bpp
- + micro HDMI
+ + Micro HDMI
 -Touchscreen: ATML1000 03EB:8C15
  -With capacative home-button through gpio-keys, with haptic feedback
 -CPU Bay Trail Z3795, 2GB RAM
@@ -700,7 +732,7 @@ Lenovo ThinkPad 10
 
 Lenovo Ideapad Miix 300
 -10" 800x1280 DSI, 24 bpp, PWM: LPSS, freq: actual 19836 VBT 20000, 26-255
- + micro HDMI
+ + Micro HDMI
 -Touchscreen FTSC1000 i2c-hid hid-multitouch
 -CPU Bay Trail Z3735F, 2GB RAM
 -Wifi: RTL8723BS
@@ -808,7 +840,7 @@ MPMAN Converter9
 -8.9" 800x1280 DSI, 24 bpp, PWM: LPSS
  - 90 degrees rotated when docked in kbd dock, but logo is in portrait mode
    like the panel is, so not a candidate for a panel-orientation quirk
- + micro HDMI
+ + Micro HDMI
 -Touchscreen: Silead GSL3670, without capacitive home-button, fw NOT in EFI
  -Has separate physical home button
 -CPU: Bay Trail Z3735F, 2G RAM
@@ -963,7 +995,7 @@ Ployer Momo7w
 
 Point of View TAB-P800W (V1.0/V2.0/V2.1) (1 defect, 1 given away)
 -8" 800x1280 DSI 24 bpp, PWM: LPSS, freq: actual 30136 VBT 30000, 10-255
- + micro HDMI
+ + Micro HDMI
 -Touchscreen: Silead gsl3692, with capacitive home-button, fw NOT in EFI
 -CPU: Bay Trail Z3735G, 1G RAM
 -Wifi: Realtek RTL8723BS
@@ -977,7 +1009,7 @@ Point of View TAB-P800W (V1.0/V2.0/V2.1) (1 defect, 1 given away)
 
 Point of View TAB-P1005W-232 (V2.0)
 -10" 800x1280 DSI panel 24 bpp
- + micro HDMI
+ + Micro HDMI
 -Touchscreen: GDIX1001, with capacitive home-button
 -CPU: Bay Trail Z3735F, 2G RAM
 -Wifi: RTL8723BS
@@ -990,7 +1022,7 @@ Point of View TAB-P1005W-232 (V2.0)
 
 Point of View TAB-P1006W-232-3G 
 -10" 1366x768 LVDS screen connected through eDP to LVDS convertor chip
- + micro HDMI
+ + Micro HDMI
 -Touchscreen: Silead GSL3692 with capacitive home button
 -CPU: Bay Trail Z3735F, 2G RAM
 -Wifi: BCM43341 AP6234
@@ -1028,6 +1060,7 @@ Predia Basic Tablet
 -PMIC: AXP288, charging only through micro USB 5V/2A
 -Keyboard-dock: USB 1017:1006, only supports mouse-emulation
  Touchpad on/off toggle key handled inside kbd-dock, does not send events
+-https://linux-hardware.org/?probe=9820f25f9c
 
 
 ============ Prowise ============
@@ -1065,7 +1098,7 @@ T-BAO Tbook Air 12.5
 
 Teclast X80 Pro
 -8" 1200x1920 DSI panel
- + micro HDMI
+ + Micro HDMI
 -Touchscreen: GDIX1001, without capacitive home-button
  -and without separate physical home button
 -CPU: Cherry Trail x5-Z8300, 2GB RAM
@@ -1076,7 +1109,7 @@ Teclast X80 Pro
 
 Teclast X89 E7ED
 -8" 1536x2048 eDP panel 18 bpp, mounted upside-down
- + micro HDMI
+ + Micro HDMI
 -Touchscreen: GDIX1001, without capacitive home-button
  -and without separate physical home button
 -CPU: Bay Trail Z3735F, 2G RAM
@@ -1109,7 +1142,7 @@ Terra Pad 1060
 
 Terra Pad 1061
 -10" 1920x1200 DSI 24 bpp, PWM: LPSS, freq: actual 381 VBT 400, 11-255
- + micro HDMI
+ + Micro HDMI
 -Touchscreen: FTSC1000 with capacitive touch home button
 -CPU: Bay Trail Z3735F, 2G RAM
 -Wifi: RTL8723BS
@@ -1161,7 +1194,7 @@ Toshiba Click Mini L9W-B
 
 Toshiba WT8-A
 -8" 800x1280 DSI 24 bpp, PWM: CRC, freq: actual 23531 VBT 20000, 60-255
- + micro HDMI
+ + Micro HDMI
 -Light sensor: hid-sensor
 -Touschscreen: ATML1000 i2c-hid touchscreen, with capacitive home-button
 -CPU: Bay Trail Z3740, 2G RAM
@@ -1173,7 +1206,7 @@ Toshiba WT8-A
 
 Toshiba WT10-A PDW0BE
 -10" 1280x800 eDP panel 18bpp
- + micro HDMI
+ + Micro HDMI
 -Touchscreen: eKTH3910AY digitizer: MCF-101-1525-03-V2, without capacitive home-button
  -Has separate physical home button
 -CPU: Bay Trail Z3735F, 2G RAM
@@ -1205,15 +1238,17 @@ Trekstor Surftab Wintron 7.0 ST70416-6
 -Other: 25lq64cvig, 7191 1545, OPI MP or DPI MP?
 -DSDT: PMID = 0x05
 
-Trekstor Surftab Wintron 10.2 ST10432-3
+Trekstor Surftab Wintron 10.1 ST10432-3
 -10" 1280x800 DSI 24 bpp, PWM: LPSS
  + mini HDMI
 -Touchscreen: FTSC1000, with capacitive home button handled by gpio-keys
 -CPU: Bay Trail Z3735F, 2G RAM
 -Wifi: RTL8723BS
--Accel: SMO8500, TODO mount-matrix quirk
+-Accel: SMO8500, mount-matrix ok
 -PMIC: AXP288, charging through power-barrel 9v/1.5A only
 -OTG: host mode only, no charging
+-USB-A: USB-2.0 USB-A port
+-https://linux-hardware.org/?probe=90ffd16d35
 
 Trekstor SurfTab Twin 10.1 ST10432-8
 -10" 1280x800 DSI 24 bpp, PWM: LPSS, freq: actual 19836 VBT 20000, 0-255
@@ -1270,7 +1305,7 @@ Voyo winpad A15
 
 Yours 8" Tablet (white no markings) (1 defect, 1 given away)
 -8" 800x1280 DSI panel
- + micro HDMI
+ + Micro HDMI
 -Touchscreen: GSL3676, with capacitive home-button, fw NOT in EFI
 -PCB: INET-I86M-REV21 Zeng-gc 2015-07-08
 -CPU: Bay Trail Z3735F, 2GB RAM
