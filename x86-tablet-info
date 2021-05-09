@@ -235,7 +235,7 @@ Chuwi Vi8 (CWI506)
 -PMIC: AXP288, charging only through micro USB 5V/2A
 -USB-phy: TI T1210B
 
-Chuwi Hi8 (CWI509)
+Chuwi Hi8 Super (CWI509)
 -8" 1200x1920 DSI panel 24 bpp, PWM: LPSS
  -No HDMI
 -Touchscreen GSL3676, with capacitive home-button, fw NOT in EFI
@@ -253,7 +253,7 @@ Chuwi Hi8 (CWI509)
 Chuwi Hi8 Pro (CWI513)
 -8" 1200x1920 LCD
  + Micro HDMI
--Touchscreen GSL3676, with capacitive home-button
+-Touchscreen GSL3676, with capacitive home-button, fw in EFI
 -CPU: Cherry Trail x5-Z8350, 2G RAM
 -Wifi: RTL8723BS
 -Accel: BOSC0200 -> BMA250E, mount-matrix ok
@@ -342,15 +342,17 @@ Chuwi Hi13
 
 ============ Connect ============
 
-Connect Tablet 9
+Connect Tablet 9 (given away)
 -8.9" 800x1280 DSI panel
 -Touchscreen: Silead GSL3680, without capacitive home-button, fw NOT in EFI
+ -Has separate physical home button
 -CPU: Bay Trail Z3735G, 1G RAM
 -Wifi: RTL8723BS
 -Accel: KIOX000A, mount-matrix ok
 -Audio codec: ALC5640
 -PMIC: AXP288, charging only through micro-usb 5V/2A max
 -Appears to have a USB mux but no ULPI phy
+-https://linux-hardware.org/?probe=6d68fde5d8
 
 
 ============ Cube ============
@@ -387,9 +389,26 @@ Dell Venue 8 Pro 5830:
  -Locked BIOS cannot test for device-mode phy / gadget mode
  -Supports ACA mode
 
+Dell Venue 10 Pro 5055 8BN8J52
+-10.1" 1280x800 DSI 24 bpp, PWM: LPSS
+ + Micro HDMI
+-Touchscreen: WCOM4802, without capacitive home-button
+ -Has separate physical home button
+-CPU: Bay Trail Z3735F, 2G RAM
+-Wifi: brcmfmac43241b4-sdio 2.4GHz + 5GHz
+-Audio codec: ALC5672
+-PMIC: TI Dollar Cove, charging only through micro USB 5V/2A
+-OTG:
+ -Has a mux
+ -Locked BIOS cannot test for device-mode phy / gadget mode
+ -Does NOT support ACA mode
+-Has a vibrator, which according to the schematic I found is connected to a PWM of
+ the SoC, presumably PWM2, the schematic might be for the Android version though
+-https://linux-hardware.org/?probe=39feaef221
+
 Dell Venue 11 Pro 7130 vPro
 -10.8" 1920x1080 eDP
- -Mini HDMI
+ + Mini HDMI
 -Touchscreen: SYNA7500
  -With capacitive home-button with force-feedback, reported through AT keyboard
 -CPU: i5-4300Y, 4G RAM
@@ -399,6 +418,9 @@ Dell Venue 11 Pro 7130 vPro
 -OTG: Micro-usb connector is for charging with special Dell charger which supports
  19.5V/1.2A or 5V/2A only
 -Modem: Dell Wireless 5570e HSPA+ aka Sierra Wireless AirPrime EM8805
+ -Needs a manual "qmicli -p -d /dev/cdc-wdm0 --dms-set-fcc-authentication"
+  before the WWAN connection will work
+ -https://gitlab.freedesktop.org/mobile-broadband/ModemManager/-/issues/339
 -https://linux-hardware.org/?probe=9cbca84e95
 
 
@@ -415,9 +437,33 @@ Beauty HD MID 7316R
 -Audio codec: ALC5640, uses OMTP headset pinout instead of the usual CTIA one
 -PMIC: AXP288, charging only through micro USB 5V/2A
 -OTG:
- -Has a mux
- -Locked BIOS cannot test for device-mode phy / gadget mode
+ -USB-phy: TI T1210B
+ -USB-mux: has a mux, unknown which one
 -https://linux-hardware.org/?probe=59c1597fbb
+
+
+============ Glavey ============
+
+Glavey TM800A550L
+-Needs "dis_ucode_ldr" on the kernel commandline
+-8" 800x1280 DSI 24bpp, PWM: LPSS
+ -No HDMI
+-Touchscreen: Goodix GODX0911, chip GT912 1550-H09D
+ -Needs firmware upload to work
+ -without capacitive home-button and without separate physical home button
+  I2C addr: 0x14
+  IRQ: GPO2 pin 3
+  Reset: GPO1 pin 26
+-PCB: PX4S78T rev 4.0
+ -BIOS chip: Winbond 25Q64F
+-CPU: Bay Trail Z3735G, 1G RAM
+-Wifi: RTL8723BS
+-Accel: KXCJ9000, needs mount-matrix quirk to be added
+-Audio codec: ALC5640, Stereo speakers, analog mic
+-PMIC: AXP288, charging only through micro USB 5V/2A
+-OTG:
+ -Has a mux
+ -USB-phy: TI T1210B
 
 
 ============ GPD ============
@@ -535,7 +581,7 @@ HP Stream 7:
 
 Irbis TW90
 -10" 1200x1920 DSI 24bpp, PWM: LPSS, freq: actual 19921 VBT 20000, 13-255
- + mini HDMI
+ + Mini HDMI
 -Touchscreen: GSL3680?, with capacitive home-button, fw NOT in EFI
 -CPU: Cherry Trail x5-Z8350, 2G RAM
 -Wifi: RTL8723BS
@@ -543,12 +589,13 @@ Irbis TW90
 -Audio codec: ES8396 with stereo speakers and analog mic
 -PMIC: AXP288, charging 5V/2A through micro-usb or power-barrel
 -USB M2 Fibocom H380 3G modem
--Keyboard-cover: USB 0911:2188 touchpad seems to only support mouse-emulation
+-Keyboard-cover: Hantick USB 0911:2188 touchpad seems to only support mouse-emulation
+-https://linux-hardware.org/?probe=129d1bda9e
 
 
 ============ I.T.Works ============
 
-I.T.Works TW701
+I.T.Works TW701 (given away)
 -7" 1024x600 DSI panel 
  -No HDMI
 -Touchscreen: gsl1686, with capacitive home-button, fw NOT in EFI
@@ -558,6 +605,9 @@ I.T.Works TW701
 -Audio codec: ALC5651
  -ALC5651 headphone detect: uses pin RT5651_JD1_1
 -PMIC: AXP288, charging only through micro USB 5V/2A
+-OTG: No mux, host mode only
+-https://linux-hardware.org/?probe=ec749b6624
+
 
 I.T.Works TW891
 -8.9" 800x1280 DSI, 24 bpp, PWM: LPSS, freq: actual 199920 VBT 20000, 0-255
@@ -597,7 +647,7 @@ Jumper EZpad mini 3
 Jumper EZpad 7
 -10.1" 1200x1920 eDP 24 bpp screen
  + Micro HDMI
--Touchscreen: gsl3680, without capacitive home-button, firmware not in EFI
+-Touchscreen: gsl3680, without capacitive home-button, fw not in EFI
  -and without separate physical home button
 -CPU: Cherry Trail x5-Z8350, 4G RAM
 -Wifi: RTL8723BS
@@ -694,13 +744,30 @@ Lenovo Miix 2 10
  -USB 0416:c141 Winbond kbd/mouse combo, only supports mouse-emulation
   Touchpad on/off toggle key handled inside kbd-dock, does not send events
 
+Lenovo Miix 3 830
+-7.85" 768x1024 DSI 18 bpp, PWM: LPSS
+ -No HDMI
+-Touchscreen: GDIX1000, without capacitive home-button
+ -and without separate physical home button
+-PCB: RIO_MB ver: C (below rf-cover for CPU + RAM)
+-CPU: Bay Trail Z3735F, 2G RAM
+-Wifi: RTL8723BS
+-Accel: SMO8500
+-Audio codec: ALC5640
+-PMIC: AXP288, charging only through micro USB 5V/2A
+-OTG:
+ -Has mux
+ -USB-phy: TI T1210B (based on PCB pictures from blogspot link)
+  Cannot test, locked BIOS, no IFR ?
+-https://hackcorrelation.blogspot.com/2016/01/inside-stuff-lenovo-miix-3-830-tablet.html
+
 Lenovo ThinkPad 8
 -8" 1200x1920 eDP panel
  + Micro HDMI
 -Touchscreen: ATML1000
  -With capacative home-button through gpio-keys, with haptic feedback
--CPU: Bay Trail Z3770, 2GB RAM
 -PCB: ZIJI1 LA-A661P Rev:2.0 2013-11-01
+-CPU: Bay Trail Z3770, 2GB RAM
 -Audio codec: ALC5672
 -Accel: i2c-hid Invensense MPU 6050 (through TI sensor hub)
 -I/O chip (superio?) ENE IO3737LU-B1
@@ -727,7 +794,7 @@ Lenovo ThinkPad 10
 -Audio codec: ALC5672
 -PMIC: Crystal Cove (BYT), charging only through mini Thinkpad charger
  -Gives: "i2c i2c-0: i2c write failed: -121" errors every 2 minutes when the LCD
-  is turned off, it seems that the EC does not respond when the LD is off.
+  is turned off, it seems that the EC does not respond when the LCD is off.
 -Keyboard: USB 17ef:6062 ThinkPad 10 Ultrabook kbd/touchpad (mouse mode only) combo dock
 
 Lenovo Ideapad Miix 300
@@ -821,17 +888,37 @@ Meegopad T08
 
 ============ Mele ============
 
-PCG03
+Mele PCG03
 -Mini PC with HDMI output + Analogic ANX9833 DP to VGA chip for VGA output on eDP
 -CPU: Bay Trail Z3735F, 2 GB RAM
 -Wifi RTL8723BS
+-Ethernet ASIX AX88772C USB2.0
 -Audio codec: ALC5640
  -Codec does not have MCLK connected, speaker outputs are shorted, enabling speaker
   outputs causes the codec to crash, headset mic works and is on IN2P as usual
  -Jack-detect not hooked up and enabling it also causes codec instability
 -PMIC: AXP288, charging only through power-barel 12V/1A
--USB hub inside: 1a40:0101 Terminus Technology Inc.
+-USB hub inside: FE1.1S USB2.0 hub 1a40:0101 Terminus Technology Inc.
 -https://linux-hardware.org/index.php?probe=e2f9dbb383
+
+Mele PCG09
+-Mini PC with HDMI output + Analogic ANX9833 DP to VGA chip for VGA output on eDP
+-CPU: Bay Trail Z3735F, 2 GB RAM
+-Wifi AP6330 brcmfmac4330-sdio
+ -Wifi type is wrong in BIOS (RTL8723BS) and the setting is grayed-out, breaking bluetooth
+ -Can be fixed with grub build with:
+  https://github.com/datasone/grub-mod-setup_var
+  "efi_var_3 0x110 2"
+  Only use this if your BIOS version matches mine: Version: 5.6.5 Release Date: 09/11/2015
+  SHA256 (bios.bin) = 96fdcd87352c6bbd35209e0286f97c6a53aebaf0bd2b2c13cb0f1eec62d72c5b
+-Ethernet ASIX AX88772C USB2.0
+-Audio codec: ALC5640
+ -Codec does not have MCLK connected, speaker outputs are shorted, enabling speaker
+  outputs causes the codec to crash, headset mic works and is on IN2P as usual
+ -Jack-detect not hooked up and enabling it also causes codec instability
+-PMIC: AXP288, charging only through power-barel 12V/1A
+-USB hub inside: FE1.1S USB2.0 hub 1a40:0101 Terminus Technology Inc.
+-USB3 to SATA chip for 2.5inch drive: GL3321G
 
 
 ============ MPMAN ============
@@ -853,7 +940,7 @@ MPMAN Converter9
  Touchpad on/off toggle key handled inside kbd-controller, does not send events
 -Appears to have a USB mux but no ULPI phy
 
-MPMAN MPWIN895CL
+MPMAN MPWIN895CL (given away)
 -8.9": 1024x600 DSI panel 24 bpp
 -Touschscreen: Silead gsl3680, with capacitive home-button
  contains a Silead touschscreen firmware in EFI, but NOT the right one!
@@ -863,6 +950,7 @@ MPMAN MPWIN895CL
 -Audio codec: ALC5640
 -PMIC: AXP288, charging only through micro USB 5V/2A
 -OTG: Does not have an USB mux
+-https://linux-hardware.org/?probe=3c21016b82
 
 
 ============ MSI ============
@@ -889,7 +977,10 @@ Nuvision/TMAX TM800W560L
 -CPU: Bay Trail Z3735G, 2G RAM
 -Wifi: RTL8723BS
 -Accel: KIOX000A, mount-matrix ok
--Audio codec: ALC5640, jack headsetmic contact unreliable
+-Audio codec: ALC5640
+ Case is aluminum and the jack uses the std CTIA pinout, causing the headset mic
+ contact to be shorted to the ground from the aliminum case. Putting some tape around
+ part of the sleeve-contact of the headset's jack can work around this.
 -PMIC: AXP288, charging only through micro-usb 5V/2A max
 -USB-phy: TI T1210B
 
@@ -920,7 +1011,7 @@ Onda v975w (Carlos):
 
 Onda V80 plus (Android version):
 -8" 1200x1920 DSI panel
--Touchscreen: Silead GSL3676, with capacitive home-button, firmware in EFI
+-Touchscreen: Silead GSL3676, with capacitive home-button, fw in EFI
 -CPU: Cherry Trail x5-Z8300, 2GB RAM
 -Wifi: AP6212 brcmfmac43430a0
 -Accel: BOSC0200, mount-matrix ok
@@ -963,7 +1054,7 @@ PIPO W2S (borrowed, given back)
 -Audio codec: NAU8824
 -PMIC: AXP288, charging only through micro USB 5V/2A
 
-PIPO W4
+PIPO W4 (given away)
 -8" 800x1280 DSI panel
 -Touchscreen: GDIX1001, with capacitive home-button
 -CPU: Bay Trail Z3735G, 1G RAM
@@ -972,11 +1063,12 @@ PIPO W4
 -Audio codec: ALC5640
 -PMIC: AXP288, charging only through micro USB 5V/2A
 -Appears to have a USB mux but no ULPI phy
+-https://linux-hardware.org/?probe=71cec0648d
 
 
 ============ Ployer ============
 
-Ployer Momo7w
+Ployer Momo7w (given away)
 -7" 1024x600 panel
  + mini HDMI
 -Touchscreen: gsl1686, with capacitive home-button, fw NOT in EFI
@@ -989,11 +1081,13 @@ Ployer Momo7w
  -ALC5651 headphone detect: uses pin RT5651_JD1_1
  -Mono speaker, Uses OMTP headset pinout
 -PMIC: AXP288, charging only through micro USB 5V/2A
+-OTG: No mux, host mode only
+-https://linux-hardware.org/?probe=763921a4a1
 
 
 ============ Point of View ============
 
-Point of View TAB-P800W (V1.0/V2.0/V2.1) (1 defect, 1 given away)
+Point of View TAB-P800W (V1.0/V2.0/V2.1) (1 working, 1 defect, 1 given away)
 -8" 800x1280 DSI 24 bpp, PWM: LPSS, freq: actual 30136 VBT 30000, 10-255
  + Micro HDMI
 -Touchscreen: Silead gsl3692, with capacitive home-button, fw NOT in EFI
@@ -1052,7 +1146,7 @@ Point of View TAB-P1006W-232-3G
 Predia Basic Tablet
 -10" 800x1280 DSI panel 24 bpp, PWM: LPSS
  + Micro HDMI
--Touchscreen: Silead GSL3676 with capacitive home button, firmware NOT in EFI
+-Touchscreen: Silead GSL3676 with capacitive home button, fw NOT in EFI
 -CPU: Cherry Trail x5-Z8300, 2GB RAM
 -Wifi: AP6234 brcmfmac43340
 -Accel: BOSC0200
@@ -1096,6 +1190,26 @@ T-BAO Tbook Air 12.5
 
 ============ Teclast ============
 
+Teclast Tbook 11
+-10"
+ + Micro HDMI
+-Touchscreen: Silead GSL3692, with capacitive home-button, fw in EFI
+-PCB: CT106-MAIN-v1.1 2016-.... (date covered by touchscreen cable)
+-CPU: Cherry Trail x5-Z83xx, 4GB RAM
+-Wifi: RTL8723BS
+-Accel: KIOX000A, mount matrix ok
+-Audio Codec: ALC5645
+-PMIC: AXP288, charging only through micro USB 5V/2A
+-Keyboard-cover:
+ -Sigmachip USB 17ef:6018 (abuses Lenovo Slim USB keyboard VID:PID <sigh>)
+ -Touchpad seems to only support mouse-emulation
+ -Keyboard interface sends: MSC_SCAN 458949 on touchpad on/off toggle, but no way to
+  tell which we are toggling :|
+ -Keyboard interface sends: MSC_SCAN 458950 on right mouse button click, this is
+  a duplicate event, the mouse interface also sends this
+ -Keyboard interface sends: MSC_SCAN 458951 on left mouse button click, this is
+  a duplicate event, the mouse interface also sends this
+ 
 Teclast X80 Pro
 -8" 1200x1920 DSI panel
  + Micro HDMI
@@ -1120,9 +1234,15 @@ Teclast X89 E7ED
 -OTG:
  -USB-phy: TI T1210B
  -USB-mux: has a mux, unknown which one
- -Phy recognized by dwc3 controller when booting with broken Android BIOS
-  (e.g. no accel, touchscreen ACPI node borked) Locked Windows BIOS does
-  not enable the DWC3 controller <sigh>
+-There are 2 BIOS-es available
+ -When using the Windows BIOS
+-Android BIOS which has broken Device entries for several devices since the
+ Android kernel seems to just hardcode interrupts, GPIOs, etc. (e.g. no accel,
+ touchscreen ACPI node borked)
+-Windows BIOS, everything works with this BIOS except for the OTG XHCI controller
+ which is disabled and the setting for this is hidden in the BIOS. This can be
+ worked around by changing the setting from within grub with "setup_var_3 0xda 1"
+-https://manguiro.blogspot.com/2015/03/guide-teclast-x89-installation-guide.html
 
 
 ============ Terra ============
@@ -1218,7 +1338,7 @@ Toshiba WT10-A PDW0BE
 -Unknown IC: mp65 f915c1
 -OTG:
  -Has a mux
- -Locked BIOS cannot test for device-mode phy / gadget mode
+ -Does not have a PHY
  -Does NOT support ACA mode
 -Keyboard: BT 04F2:1408 keyboard / touchpad (mouse mode only) combo dock
  Touchpad on/off toggle key handled inside kbd-dock, does not send events
@@ -1226,17 +1346,19 @@ Toshiba WT10-A PDW0BE
 
 ============ Trekstor ============
 
-Trekstor Surftab Wintron 7.0 ST70416-6
+Trekstor Surftab Wintron 7.0 ST70416-6 (given away)
 -7" 1024x600 screen
  -No HDMI
 -Touchscreen: gsl1686, with capacitive home-button, fw NOT in EFI
--CPU: Bay Trail Z3735G, 1G RAM
+-CPU: Bay Trail Z3735G, 1G RAM        
 -Wifi: RTL8723BS
 -Accel: BMA250E, mount-matrix ok
 -Audio codec: ALC5651
 -PMIC: AXP288, charging only through micro USB 5V/2A
+-OTG: No Mux
 -Other: 25lq64cvig, 7191 1545, OPI MP or DPI MP?
 -DSDT: PMID = 0x05
+-https://linux-hardware.org/?probe=12af9205b0
 
 Trekstor Surftab Wintron 10.1 ST10432-3
 -10" 1280x800 DSI 24 bpp, PWM: LPSS
@@ -1303,7 +1425,7 @@ Voyo winpad A15
 
 ============ Yours ============
 
-Yours 8" Tablet (white no markings) (1 defect, 1 given away)
+Yours Y8W81 8" Tablet (white or black no markings) (1 working, 1 defect, 1 given away)
 -8" 800x1280 DSI panel
  + Micro HDMI
 -Touchscreen: GSL3676, with capacitive home-button, fw NOT in EFI
