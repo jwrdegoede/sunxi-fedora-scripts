@@ -191,7 +191,7 @@ Asus T101HA
 ============ Axxo ============
 
 AXXO WT-1011 10" 2-in-1 (given away)
--8" 1280x800 eDP panel
+-10" 1280x800 eDP panel
  -Realtek RTD2136 eDP to LVDS chip
 -Touchscreen: FTSC1000 i2c-hid
  -Square cam lens version: Digitizer cable id: 101178-01A-V2
@@ -258,9 +258,10 @@ Chuwi Hi8 Pro (CWI513)
 -Wifi: RTL8723BS
 -Accel: BOSC0200 -> BMA250E, mount-matrix ok
 -Audio codec: ALC5651
--PMIC: AXP288, charging only through Type-C 5V/2A
+-PMIC: AXP288, charging only through Type-C 5V/2A, does not do PD needs to
+ charge with USB-A charger + USB-A to C cable, otherwise it charges at only 500mA
+-Type-C: host + gadget + charging, does superspeed only in 1 orientation?
 -DSDT: PMID == 0x02
--Does superspeed over Type-C only in 1 orientation?
 -Android Model: Hi8 pro, Android version: 5.1, kernel 3.14.37-x86_64-L1-R517
 -Camera info atomisp-css2401a0_v21 front camera:
  Front camera android sensor-driver gc2355:
@@ -304,6 +305,22 @@ Chuwi Hi8 Pro (CWI513)
    F4 to save and reboot
   -Now we should get the OS choser with both OS-es visible
 
+Chuwi HiBook (CWI514)
+-10.1" 1200x1920 DSI panel 24 bpp, PWM: LPSS
+ + Micro HDMI
+-Touchscreen MSSL0017 GSL36??, with capacitive home-button, fw in EFI ?? pen support ??
+-CPU: Cherry Trail x5-Z8300, 4G RAM
+-Wifi: RTL8723BS
+-Accel: BOSC0200, mount-matrix ??
+-ALS: CPLM3218
+-Audio codec: ALC5651
+-PMIC: AXP288, charging only through Type-C 5V/2A, does not do PD needs to
+ charge with USB-A charger + USB-A to C cable, otherwise it charges at only 500mA
+-Type-C: host + gadget + charging, USB-3 / superspeed
+-Micro-B: USB-2 host-only
+-Keyboard: USB 1c4f:0063 keyboard/touchpad(mouse mode only) combo dock
+ Touchpad on/off toggle key handled inside kbd-dock, does not send events
+
 Chuwi Vi8 Plus (CWI519)
 -8" 800x1280 LCD
  + Micro HDMI
@@ -312,10 +329,11 @@ Chuwi Vi8 Plus (CWI519)
 -Wifi: Soldered on PCB, with unmarked shield, brcmfmac43430
 -Accel: BOSC0200 -> BMA250E, mount-matrix ok
 -Audio codec: ALC5651
--PMIC: AXP288, charging only through Type-C 5V/2A
+-PMIC: AXP288, charging only through Type-C 5V/2A, does not do PD needs to
+ charge with USB-A charger + USB-A to C cable, otherwise it charges at only 500mA
+-Type-C: host + gadget + charging, USB-2 only
 -DSTD: PMID == 0x02
 -Camera info atomisp-css2401a0_v21 front camera:
- Front camera android sensor-driver gc2355:
  -ov2680 i2c-front:10: camera pdata: port: 0 lanes: 1 order: 00000002
  -gpio-306 (cam_gpio0) when camera goes on, GPIO goes from low -> high
  -gpio-313 (cam_gpio1) when camera goes on, GPIO goes from low -> high
@@ -325,6 +343,38 @@ Chuwi Vi8 Plus (CWI519)
  -gpio-396 (cam_gpio0) when camera goes on, GPIO goes from low -> high
  -gpio-388 (cam_gpio1) when camera goes on, GPIO goes from low -> high
  -clock pltclk 4 using source 0 (25 MHz crystal)
+
+Chuwi Hi10 Plus (CWI527)
+-10.8" 1920x1280 DSI panel 24 bpp, PWM: LPSS
+ + Micro HDMI
+-Touchscreen GSL36??, with capacitive home-button, fw in EFI, pen support
+-CPU: Cherry Trail x5-Z8350, 4G RAM ??
+-Wifi: RTL8723BS
+-Accel: BOSC0200, mount-matrix ok
+-ALS: CPLM3218
+-Audio codec: ALC5651
+-PMIC: AXP288, charging only through Type-C 5V/2A, does not do PD needs to
+ charge with USB-A charger + USB-A to C cable, otherwise it charges at only 500mA
+-Type-C: host + gadget + charging, USB-3 / superspeed
+-Micro-B: USB-2 host-only
+-Keyboard: USB 6080:8060 keyboard/touchpad(mouse mode only) combo dock
+ Touchpad on/off toggle key handled inside kbd-dock, sends empty
+ consumer-page keys input-report
+
+Chuwi Hi10 Pro (CWI529)
+-10.1" 1200x1920 DSI panel 24 bpp, PWM: LPSS
+ + Micro HDMI
+-Touchscreen GSL36??, with capacitive home-button, fw in EFI
+-CPU: Cherry Trail x5-Z8350, 4G RAM
+-Wifi: RTL8723BS
+-Accel: BOSC0200, mount-matrix ok
+-Audio codec: ALC5651
+-PMIC: AXP288, charging only through Type-C 5V/2A, does not do PD needs to
+ charge with USB-A charger + USB-A to C cable, otherwise it charges at only 500mA
+-Type-C: host + gadget + charging, USB-3 / superspeed
+-Micro-B: USB-2 host-only
+-Keyboard: USB 1c4f:0063 keyboard/touchpad(mouse mode only) combo dock
+ Touchpad on/off toggle key handled inside kbd-dock, does not send events
 
 Chuwi Hi13
 -13" 3000x2000 eDP panel 24bpp
@@ -653,7 +703,7 @@ Jumper EZpad 7
 -Wifi: RTL8723BS
 -Accel: KIOX0009, mount-matrix ok
 -Audio codec: ALC5651 with inverted jack-detect
--PMIC: AXP288, charging only through power-barel USB 5V/2A
+-PMIC: AXP288, charging only through power-barrel 5V/2A
 -No micro-usb connector, instead has an USB3-A port using the OTG-USB SoC pins
 -Keyboard: USB 1018:1006 keyboard/touchpad(mouse mode only) combo kbd cover
  Touchpad on/off toggle key handled inside kbd. Toggle sends a completely empty
@@ -674,6 +724,22 @@ Kazam Vision
 -Audio codec: ALC5645
 -PMIC: AXP288, charging only through micro-usb 5V/2A max
 -DSDT: PMID = 0x02
+
+
+============ Kurio ============
+
+Kurio Smart C15200
+-8.9" 800x1280 DSI, 24 bpp, PWM: LPSS
+ + Micro HDMI
+-Touchscreen: FTSC1000 i2c-hid, without capacitive home-button
+ -Has separate physical home button
+-CPU: Bay Trail Z3735G, 1G RAM
+-Wifi: RTL8723BS
+-Accel: SMO8500
+-Audio codec: ALC5640
+-PMIC: AXP288, charging only through power-barrel 5V/2.5A
+-OTG: No mux, host mode only
+-Keyboard: USB 258a:6a88 keyboard/touchpad(mouse mode only) combo kbd dock
 
 
 ============ Lamina ============
@@ -832,6 +898,17 @@ Lenovo Ideapad Miix 320
 -Keyboard: USB 048d:8911 standard HID multi-touch touchpad (ITE 8911?)
  Touchpad on/off toggle key handled inside kbd-dock, does not send events
 
+Lenovo Yoga 300-11IBR
+-11.6" 1366x768 eDP panel, 18 bpp
+ + Full size HDMI
+-Touchscreen: ATML1000 i2c-hid, without capacitive touch home-button
+-CPU: Celeron N3060, 2G RAM
+-Wifi: Intel Wireless 3160
+-Ethernet: RTL8111
+-Accel: DUAL250E, 2x BCM250A accelerometers (yoga)
+-Audio codec: HDA
+-Keyboard: PS/2 with SynPS/2 touchpad
+
 
 ============ Medion ============
 
@@ -847,6 +924,8 @@ Medion Akoya E1239T MD60568
 -AXP288 PMIC, charging only through power-barrel, adapter 5V/3A
 -USB Type-C connector doing superspeed through Etrontech EJ179V switch
 -Keyboard: USB 048d:ce50 multi-touch touchpad supported by hid-asus (ITE 8910?)
+ -With touchpad on/off toggle key reporting toggle press events through the mouse/tp
+  USB interface. Actual toggling must be handled in software (hid-asus sends KEY_F21)
 
 Medion Akoya E2215T MD60198
 -11.6" 1366x768 eDP panel
@@ -897,7 +976,7 @@ Mele PCG03
  -Codec does not have MCLK connected, speaker outputs are shorted, enabling speaker
   outputs causes the codec to crash, headset mic works and is on IN2P as usual
  -Jack-detect not hooked up and enabling it also causes codec instability
--PMIC: AXP288, charging only through power-barel 12V/1A
+-PMIC: AXP288, charging only through power-barrel 12V/1A
 -USB hub inside: FE1.1S USB2.0 hub 1a40:0101 Terminus Technology Inc.
 -https://linux-hardware.org/index.php?probe=e2f9dbb383
 
@@ -916,7 +995,7 @@ Mele PCG09
  -Codec does not have MCLK connected, speaker outputs are shorted, enabling speaker
   outputs causes the codec to crash, headset mic works and is on IN2P as usual
  -Jack-detect not hooked up and enabling it also causes codec instability
--PMIC: AXP288, charging only through power-barel 12V/1A
+-PMIC: AXP288, charging only through power-barrel 12V/1A
 -USB hub inside: FE1.1S USB2.0 hub 1a40:0101 Terminus Technology Inc.
 -USB3 to SATA chip for 2.5inch drive: GL3321G
 
@@ -1346,7 +1425,7 @@ Toshiba WT10-A PDW0BE
 
 ============ Trekstor ============
 
-Trekstor Surftab Wintron 7.0 ST70416-6 (given away)
+Trekstor Surftab Wintron 7.0 ST70416-6 (1 given away, 2 working)
 -7" 1024x600 screen
  -No HDMI
 -Touchscreen: gsl1686, with capacitive home-button, fw NOT in EFI
