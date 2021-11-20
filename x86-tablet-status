@@ -12,12 +12,15 @@ Asus T100CHI	yes yes yes yes yes yes yes yes yes  yes yes yes yes -   FIR -   ye
 Asus T101HA	ROT yes yes yes yes yes yes yes S0i3 yes yes yes yes -   yes -   yes  yes yes
 Asus T200TA	yes yes no  yes yes -   yes yes S0i3 yes yes yes yes -   FIR -   yes  yes yes
 Axxo WT1011     yes yes yes yes yes yes yes yes yes  yes yes yes yes -       -   (1)  yes
-Chuwi Hi8 Pro	yes yes FIR yes yes     yes yes S0i3 yes yes yes yes     yes -   -    -   yes (2)
+Chuwi Hi8 Pro	yes yes yes yes yes     yes yes S0i3 yes yes yes yes     yes -   -    -   yes (2)
+Chuwi Hi10 Plus	yes yes yes yes yes yes yes yes S0i3 yes yes yes yes     yes -   (1)  yes yes
+Chuwi Hi10 Pro	yes yes yes yes yes yes yes yes S0i3 yes yes yes yes     yes -   (1)  yes yes
+Chuwi HiBook	ROT yes yes yes yes yes yes yes S0i3 yes yes yes yes     yes -   (1)  yes yes
 Chuwi Vi8	yes yes FIR yes yes yes yes yes yes  yes yes yes yes yes yes -   -    -
 Chuwi Vi8 Plus	yes yes yes yes yes yes yes yes yes  yes yes yes yes yes FIR -   -    -   yes (2)
 Chuwi Vi10	yes yes FIR yes yes     yes yes yes  yes yes yes yes     yes -   -    yes
 Connect Tablet9	yes yes FIR yes yes     yes yes yes  yes yes yes yes -   yes -   -
-Cube iWork8 Air	yes yes FIR yes yes yes yes yes yes  yes yes yes yes yes yes -   -    -   -
+Cube iWork8 Air	yes yes yes yes yes yes yes yes yes  yes yes yes yes yes yes -   -    -   -
 Dell Venue 5830 yes yes yes yes yes yes yes yes yes  yes yes yes yes -       -   -    -   -
 Dell Venue 7130 yes yes yes yes yes yes yes yes yes  yes         -   -       -   yes
 Estar BeautyHD	yes yes FIR yes yes yes yes yes S0i3 yes yes yes yes -   yes -   -    -   -
@@ -39,10 +42,10 @@ Medion E2215T   yes yes yes yes yes -   yes yes S0i3 yes yes yes yes -   yes -  
 MPMAN MPWIN895	yes yes FIR yes yes yes yes yes S0i3 yes yes yes yes -   yes -   -    -
 MSI S100	yes yes yes yes yes -   yes yes yes  yes yes yes yes -       -   (1)  -
 Nuv TM800W560	yes yes yes yes yes     yes yes yes  yes yes yes yes     yes -   -    -
-Onda V80plus v3	yes yes FIR 
+Onda V80plus v3	yes yes yes 
 Onda V891w	yes yes yes yes yes     yes yes      yes yes yes yes -   yes -   -    -
 Peaq MMC1010    yes yes yes yes yes yes yes yes yes  yes yes yes yes -       -   (1)  yes
-Pipo W2S	yes yes FIR yes
+Pipo W2S	yes yes yes yes
 Pipo W4		yes yes yes yes yes yes yes yes yes  yes yes yes yes         -   -    -
 Ployer Momo7w   yes yes FIR yes yes yes yes yes yes              yes -       -   -
 PoV TAB-P800W	yes yes FIR yes yes     yes yes yes              yes -       -   -

@@ -148,10 +148,30 @@ Asus T100CHI
 -Accel: INVN6500, mount-matrix ok
 -Ambient light: Capella cm32181
 -Audio codec: ALC5640
--PMIC: Crystal Cove (BYT), supports 9V 2A charging with Asus adapt. (PD-1.0?)
+-PMIC: Crystal Cove (BYT), supports 9V 2A charging with Asus adapt. Using a Qualcomm
+ SMB1357 QC2.0 charger chip in the tablet, using a separate charging micro-B connector
 -USB3 micro-B connector does superspeed host mode when used with a
  UBS-3 micro-*A* to USB3-A receptacle cable
 -Webcam LED on INT33FC:01 pin 24
+
+Asus TF103c (aka K010)
+-10"
+-Audio codec: ALC5640
+-I2C devices:
+ -bq24192 charger IC at 1-006b
+ -ug31xx-gauge at 1-0070
+ -rt5640 at 2-001c (present in DSDT as "10EC5640")
+ -bcm2079x-i2c at 2-0077 -> This is an NFC controller, false positive ?
+ -asuspec at 3-001b -> embedded-controller / dock-keyboard ?
+  Present in DSDT as "NPCE69A", but all the GPIOs it uses are not listed
+  as resources
+ -gc0339 camera sensor at 4-0021
+ -hm2056b camera sensor at 4-0024
+ -SAK0991 / akm09911 compass sensor at 5-000c, present in DSDT as "AKM9911"
+ -KXTJ2100 sensor at 5-000f, present in DSDT as "KXTJ2100"
+ -atmel_mxt_ts touchscreen at 6-004a, present in DSDT as "ATML1664", DSDT
+  claims it is HID over I2C compatible, which it is not
+ -Crystal Cove PMIC at 7-005e + 7-006e, present in DSDT as "INT33FD"
 
 Asus T200TA
 -11.6" 1366x768 eDP panel
@@ -235,7 +255,7 @@ Chuwi Vi8 (CWI506)
 -PMIC: AXP288, charging only through micro USB 5V/2A
 -USB-phy: TI T1210B
 
-Chuwi Hi8 Super (CWI509)
+Chuwi Hi8 Super (CWI509, Q32G22150910320)
 -8" 1200x1920 DSI panel 24 bpp, PWM: LPSS
  -No HDMI
 -Touchscreen GSL3676, with capacitive home-button, fw NOT in EFI
@@ -249,6 +269,22 @@ Chuwi Hi8 Super (CWI509)
  -5V boost converter not working, host mode needs external power
  -Has mux
  -USB-phy: TI T1210B
+-BIOS settings hack from patched grub, only use with H1D_S806_206 10/29/2014 BIOS!!!
+ menuentry 'Set BIOS to Windows' {
+        setup_var_3 0x215 1
+        reboot
+ }
+ menuentry 'Set BIOS to Android' {
+        setup_var_3 0x215 2
+        reboot
+ }
+ menuentry 'Fixup Windows settings' {
+        # Enable DWC3
+        setup_var_3 0x137 1
+        # Put ISP on PCI device 00:03.0
+        setup_var_3 0x12b 2
+        reboot
+ }
 
 Chuwi Hi8 Pro (CWI513)
 -8" 1200x1920 LCD
@@ -308,18 +344,25 @@ Chuwi Hi8 Pro (CWI513)
 Chuwi HiBook (CWI514)
 -10.1" 1200x1920 DSI panel 24 bpp, PWM: LPSS
  + Micro HDMI
--Touchscreen MSSL0017 GSL36??, with capacitive home-button, fw in EFI ?? pen support ??
+-Touchscreen MSSL0017 GSL36??, with capacitive home-button, fw in EFI, no pen support
 -CPU: Cherry Trail x5-Z8300, 4G RAM
 -Wifi: RTL8723BS
--Accel: BOSC0200, mount-matrix ??
+-Accel: BOSC0200, mount-matrix ok
 -ALS: CPLM3218
 -Audio codec: ALC5651
 -PMIC: AXP288, charging only through Type-C 5V/2A, does not do PD needs to
  charge with USB-A charger + USB-A to C cable, otherwise it charges at only 500mA
--Type-C: host + gadget + charging, USB-3 / superspeed
+-Type-C: host + gadget + charging, USB-2 - only
 -Micro-B: USB-2 host-only
+-Camera info atomisp-css2401a0_v21 front camera:
+ -ov2680 i2c-front:10: camera pdata: port: 0 lanes: 1 order: 00000002
+ -clock pltclk 2 using source 0 (25 MHz crystal)
+-Camera info atomisp-css2401a0_v21 back camera:
+ -ppr_cam(ov5648) i2c-INT5648:00:36: camera pdata: port: 1 lanes: 2 order: 00000002
+ -clock pltclk 4 using source 0 (25 MHz crystal)
 -Keyboard: USB 1c4f:0063 keyboard/touchpad(mouse mode only) combo dock
  Touchpad on/off toggle key handled inside kbd-dock, does not send events
+-https://linux-hardware.org/?probe=c1a354c2e2
 
 Chuwi Vi8 Plus (CWI519)
 -8" 800x1280 LCD
@@ -373,6 +416,12 @@ Chuwi Hi10 Pro (CWI529)
  charge with USB-A charger + USB-A to C cable, otherwise it charges at only 500mA
 -Type-C: host + gadget + charging, USB-3 / superspeed
 -Micro-B: USB-2 host-only
+-Camera info atomisp-css2401a0_v21 front camera:
+ -hm2051 i2c-HIMT2051:00: camera pdata: port: 0 lanes: 1 order: 00000002
+ -clock pltclk 2 using source 0 (25 MHz crystal)
+-Camera info atomisp-css2401a0_v21 back camera:
+ -hm2051b i2c-HIMX2051:00: camera pdata: port: 1 lanes: 1 order: 00000002
+ -clock pltclk 4 using source 0 (25 MHz crystal)
 -Keyboard: USB 1c4f:0063 keyboard/touchpad(mouse mode only) combo dock
  Touchpad on/off toggle key handled inside kbd-dock, does not send events
 
@@ -421,6 +470,26 @@ Cube iwork 8 Air
 -DSTD: BDID = One, OSID = 0x04, PMID = 0x02
 
 
+============ CyberBook ============
+
+CyberBook T116:
+-10.1" 800x1280 DSI 24 bpp, PWM: LPSS
+ -Mini HDMI
+-Touchscreen: GDIX1001, without capacitive home-button, probably with pen support?
+ -Has separate physical home button
+-CPU: Cherry Trail Z8350, 2G RAM
+-Wifi: brcmfmac43455
+-Accel: KIOX000A
+-ALS: CPLM3218
+-Audio codec: NAU8824
+-PMIC: AXP288, charging through micro USB 5V/2A or power-barrel 5V/2A
+-CP210x RS232, CP210x internal connector for barcode scanner
+-r8152 100Mbit ethernet
+-12d1:15c1 Huawei Technologies Co., Ltd. ME906s LTE M.2 Module
+-Ublox G7020 GPS receiver
+ https://wiki.odroid.com/accessory/connectivity/usb_gps
+
+
 ============ Dell ============
 
 Dell Venue 8 Pro 5830:
@@ -438,6 +507,18 @@ Dell Venue 8 Pro 5830:
  -Has a mux
  -Locked BIOS cannot test for device-mode phy / gadget mode
  -Supports ACA mode
+
+Dell Venue 8 Pro 5855:
+-8" 1200x1920 DSI 24bpp, PWM: CRC
+ -No HDMI
+-Touchscreen: WCOM4809, without capacitive home-button
+ -Has separate physical home button
+-CPU: Cherry Trail x5-Z8550, 4G RAM
+-Wifi: Intel Dual Band Wireless AC 826
+-Accel: ISH HID-sensors
+-Audio codec: ALC5672
+-PMIC: Crystal Cove (CHT), charging through Type-C connector (5V or 20V USB-PD)
+-Type-C: Supports DP-altmode
 
 Dell Venue 10 Pro 5055 8BN8J52
 -10.1" 1280x800 DSI 24 bpp, PWM: LPSS
@@ -728,7 +809,7 @@ Kazam Vision
 
 ============ Kurio ============
 
-Kurio Smart C15200
+Kurio Smart C15200 (given away)
 -8.9" 800x1280 DSI, 24 bpp, PWM: LPSS
  + Micro HDMI
 -Touchscreen: FTSC1000 i2c-hid, without capacitive home-button
@@ -863,7 +944,7 @@ Lenovo ThinkPad 10
   is turned off, it seems that the EC does not respond when the LCD is off.
 -Keyboard: USB 17ef:6062 ThinkPad 10 Ultrabook kbd/touchpad (mouse mode only) combo dock
 
-Lenovo Ideapad Miix 300
+Lenovo Ideapad Miix 300 (given away)
 -10" 800x1280 DSI, 24 bpp, PWM: LPSS, freq: actual 19836 VBT 20000, 26-255
  + Micro HDMI
 -Touchscreen FTSC1000 i2c-hid hid-multitouch
@@ -927,7 +1008,7 @@ Medion Akoya E1239T MD60568
  -With touchpad on/off toggle key reporting toggle press events through the mouse/tp
   USB interface. Actual toggling must be handled in software (hid-asus sends KEY_F21)
 
-Medion Akoya E2215T MD60198
+Medion Akoya E2215T MD60198 (given away)
 -11.6" 1366x768 eDP panel
 -Touchscreen: FTSC1000
 -CPU: Cherry Trail x5-Z8350, 2G RAM
@@ -939,6 +1020,7 @@ Medion Akoya E2215T MD60198
  which is charging the battery in tandem with the axp288 ???
 -Keyboard: USB 0911:2188 touchpad only supports mouse-emulation
  Touchpad on/off toggle key handled inside kbd-controller, does not send events
+-Microsd-slot: Uses rtsx_usb driver instead of SoC MMC controller
 
 Medion Akoya E2228T MD60250
 -11.6" 1920x1080 eDP panel
