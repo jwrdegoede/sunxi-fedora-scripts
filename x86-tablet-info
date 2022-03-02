@@ -72,7 +72,7 @@ Acer One 10 (S1002)
 
 Acer One 10 (S1003)
 -10" 800x1280 DSI panel
--Touchscreen: GDIX1001, without capacitive home-button
+-Touchscreen: GDIX1001, without capacitive home-button, no pen support
  -Has separate physical home button
 -CPU: Cherry Trail x5-Z8300, 2GB RAM
 -Wifi: AP6212 brcmfmac43430a0
@@ -255,7 +255,7 @@ Chuwi Vi8 (CWI506)
 -PMIC: AXP288, charging only through micro USB 5V/2A
 -USB-phy: TI T1210B
 
-Chuwi Hi8 Super (CWI509, Q32G22150910320)
+Chuwi Hi8 (CWI509, Q32G22150910320)
 -8" 1200x1920 DSI panel 24 bpp, PWM: LPSS
  -No HDMI
 -Touchscreen GSL3676, with capacitive home-button, fw NOT in EFI
@@ -304,12 +304,12 @@ Chuwi Hi8 Pro (CWI513)
  -gc2355 i2c-GCTI2355:01: camera pdata: port: 0 lanes: 1 order: 00000000
  -gpio-306 (cam_gpio0) when camera goes on, GPIO goes from low -> high
  -gpio-313 (cam_gpio1) when camera goes on, GPIO goes from high -> low
- -clock pltclk 4 using source 0 (25 MHz crystal)
+ -clock pltclk 4 using source 0 (19.2 MHz Xosc)
 -Camera info atomisp-css2401a0_v21 back camera:
  -gc2355b i2c-GCT2355:00: camera pdata: port: 1 lanes: 1 order: 00000000
  -gpio-396 (cam_gpio0) when camera goes on, GPIO goes from low -> high
  -gpio-388 (cam_gpio1) when camera goes on, GPIO goes from high -> low
- -clock pltclk 4 using source 0 (25 MHz crystal)
+ -clock pltclk 4 using source 0 (19.2 MHz Xosc)
 -Multi-boot menu:
  -Fedora only install:
   -Having shim binaries under EFI/BOOT do fallback leads to a boot-loop
@@ -356,10 +356,17 @@ Chuwi HiBook (CWI514)
 -Micro-B: USB-2 host-only
 -Camera info atomisp-css2401a0_v21 front camera:
  -ov2680 i2c-front:10: camera pdata: port: 0 lanes: 1 order: 00000002
- -clock pltclk 2 using source 0 (25 MHz crystal)
+ -clock pltclk 2 using source 0 (19.2 MHz Xosc)
+ -V1P6_ELDO1
+ -V1P8_ELDO2 
+ -V2P8_ALDO1
 -Camera info atomisp-css2401a0_v21 back camera:
  -ppr_cam(ov5648) i2c-INT5648:00:36: camera pdata: port: 1 lanes: 2 order: 00000002
- -clock pltclk 4 using source 0 (25 MHz crystal)
+ -clock pltclk 4 using source 0 (19.2 MHz Xosc)
+ -V1P8_ELDO2 
+ -V2P8_ALDO1
+ -appears to have non-fixed-focus / vcm
+-FLDO1 + FLDO2 are permanently on at 1.25V (p-o-r defaults)
 -Keyboard: USB 1c4f:0063 keyboard/touchpad(mouse mode only) combo dock
  Touchpad on/off toggle key handled inside kbd-dock, does not send events
 -https://linux-hardware.org/?probe=c1a354c2e2
@@ -380,12 +387,12 @@ Chuwi Vi8 Plus (CWI519)
  -ov2680 i2c-front:10: camera pdata: port: 0 lanes: 1 order: 00000002
  -gpio-306 (cam_gpio0) when camera goes on, GPIO goes from low -> high
  -gpio-313 (cam_gpio1) when camera goes on, GPIO goes from low -> high
- -clock pltclk 2 using source 0 (25 MHz crystal)
+ -clock pltclk 2 using source 0 (19.2 MHz Xosc)
 -Camera info atomisp-css2401a0_v21 back camera:
  -ov2680b i2c-rear:36: camera pdata: port: 1 lanes: 1 order: 00000002
  -gpio-396 (cam_gpio0) when camera goes on, GPIO goes from low -> high
  -gpio-388 (cam_gpio1) when camera goes on, GPIO goes from low -> high
- -clock pltclk 4 using source 0 (25 MHz crystal)
+ -clock pltclk 4 using source 0 (19.2 MHz Xosc)
 
 Chuwi Hi10 Plus (CWI527)
 -10.8" 1920x1280 DSI panel 24 bpp, PWM: LPSS
@@ -418,10 +425,10 @@ Chuwi Hi10 Pro (CWI529)
 -Micro-B: USB-2 host-only
 -Camera info atomisp-css2401a0_v21 front camera:
  -hm2051 i2c-HIMT2051:00: camera pdata: port: 0 lanes: 1 order: 00000002
- -clock pltclk 2 using source 0 (25 MHz crystal)
+ -clock pltclk 2 using source 0 (19.2 MHz Xosc)
 -Camera info atomisp-css2401a0_v21 back camera:
  -hm2051b i2c-HIMX2051:00: camera pdata: port: 1 lanes: 1 order: 00000002
- -clock pltclk 4 using source 0 (25 MHz crystal)
+ -clock pltclk 4 using source 0 (19.2 MHz Xosc)
 -Keyboard: USB 1c4f:0063 keyboard/touchpad(mouse mode only) combo dock
  Touchpad on/off toggle key handled inside kbd-dock, does not send events
 
@@ -429,7 +436,7 @@ Chuwi Hi13
 -13" 3000x2000 eDP panel 24bpp
  + Micro HDMI
 -Light sensor: CM32181
--Touschscreen: GDIX1002 goodix touchscreen, with capacitive home-button
+-Touschscreen: GDIX1002 goodix touchscreen, with capacitive home-button, with pen support
 -CPU: Apollo Lake N3450, 4G RAM
 -Wifi: Intel 3165
 -Accel: BOSC0200, mount-matrix ok 
@@ -475,7 +482,7 @@ Cube iwork 8 Air
 CyberBook T116:
 -10.1" 800x1280 DSI 24 bpp, PWM: LPSS
  -Mini HDMI
--Touchscreen: GDIX1001, without capacitive home-button, probably with pen support?
+-Touchscreen: GDIX1001, without capacitive home-button, with pen support
  -Has separate physical home button
 -CPU: Cherry Trail Z8350, 2G RAM
 -Wifi: brcmfmac43455
@@ -554,6 +561,17 @@ Dell Venue 11 Pro 7130 vPro
  -https://gitlab.freedesktop.org/mobile-broadband/ModemManager/-/issues/339
 -https://linux-hardware.org/?probe=9cbca84e95
 
+Dell Latitude 7285
+-12.3" 2880x1920 eDP 24bpp
+ -2x TB3
+-Touchscreen: WCOM484F, with pen support, reports pen-battery through HID on
+ touchscreen resulting in 0% battery reading when no pen is used
+-CPU: Core i5-7Y57, 8G RAM
+-Wifi: Intel 8265
+-Accel + ALS: ISH HID sensors
+-Audio: HDA (non sof)
+-USB-PD charging through 2x TB3 connectors
+
 
 ============ Estar ============
 
@@ -579,7 +597,7 @@ Glavey TM800A550L
 -Needs "dis_ucode_ldr" on the kernel commandline
 -8" 800x1280 DSI 24bpp, PWM: LPSS
  -No HDMI
--Touchscreen: Goodix GODX0911, chip GT912 1550-H09D
+-Touchscreen: Goodix GT912 1550-H09D
  -Needs firmware upload to work
  -without capacitive home-button and without separate physical home button
   I2C addr: 0x14
@@ -601,7 +619,9 @@ Glavey TM800A550L
 
 GPD-win
 -5.5" 720x1280 DSI panel, mounted 90 degree rotated
+ -mounted 90 degree rotated
  + mini HDMI + DP-over-type-C
+-Touchscreen: GDIX1001, without capacitive home-button, no pen support
 -PCB: WINI55
 -CPU: Cherry Trail Z8700, 4G RAM
 -Accel: KIOX000A
@@ -615,6 +635,7 @@ GPD-pocket
 -7" 1200x1920 DSI, 24 bpp, PWM: LPSS, freq: actual 21972 VBT 22000, 20-255
  -mounted 90 degree rotated
  + mini HDMI + DP-over-type-C
+-Touchscreen: GDIX1001, without capacitive home-button
 -CPU: Cherry Trail Z8750, 8G RAM
 -Audio codec: ALC5645
 -PMIC: Whiskey Cove (CHT), charging only through Type-C PD 5-12V
@@ -840,7 +861,7 @@ Lamina I8270 (sticker on back) / T701BR.SE (dmi)
 
 ============ Lenovo ============
 
-Lenovo Yoga Tablet 2 1051F/L
+Lenovo Yoga Tablet 2 1051L
 -10" 1920x1200 DSI 24 bpp, PWM: CRC
  + Micro HDMI
 -Touchscreen: SYNA0001
@@ -853,7 +874,9 @@ Lenovo Yoga Tablet 2 1051F/L
 -PMIC: Crystal Cove (BYT), charging only through micro USB 5V/2A
 -OTG: does not appear to have a mux, locked BIOS, will only charge when directly
  connected to a charger. Does not work with charging hubs.
+-Has a ??? LTE modem
 -Has a broadcom BCM4752 GPS ?
+
 
 Lenovo Miix 2 8
 -8" 800x1280 DSI 24 bpp, PWM CRC, freq: actual 23531 VBT 20000, 0-255
@@ -894,7 +917,7 @@ Lenovo Miix 2 10
 Lenovo Miix 3 830
 -7.85" 768x1024 DSI 18 bpp, PWM: LPSS
  -No HDMI
--Touchscreen: GDIX1000, without capacitive home-button
+-Touchscreen: GDIX1000, without capacitive home-button, no pen support
  -and without separate physical home button
 -PCB: RIO_MB ver: C (below rf-cover for CPU + RAM)
 -CPU: Bay Trail Z3735F, 2G RAM
@@ -979,7 +1002,7 @@ Lenovo Ideapad Miix 320
 -Keyboard: USB 048d:8911 standard HID multi-touch touchpad (ITE 8911?)
  Touchpad on/off toggle key handled inside kbd-dock, does not send events
 
-Lenovo Yoga 300-11IBR
+Lenovo Yoga 300-11IBR (given away)
 -11.6" 1366x768 eDP panel, 18 bpp
  + Full size HDMI
 -Touchscreen: ATML1000 i2c-hid, without capacitive touch home-button
@@ -989,6 +1012,19 @@ Lenovo Yoga 300-11IBR
 -Accel: DUAL250E, 2x BCM250A accelerometers (yoga)
 -Audio codec: HDA
 -Keyboard: PS/2 with SynPS/2 touchpad
+
+Lenovo ThinkPad Yoga 11e 4th gen
+-11.6" 1366x768 eDP panel, 18 bpp
+ + Full size HDMI
+-Touchscreen: WCOM50BD i2c-hid, without capacitive touch home-button,
+ with active pen support (works with Wacom Bamboo Ink pen)
+-CPU: Celeron N3450, 4G RAM
+-Wifi: Intel Wireless 7265
+-Ethernet: RTL8111
+-Accel: BOSC0200, 2x BCM250A accelerometers (yoga)
+-Audio codec: HDA
+-Keyboard: PS/2 with SynPS/2 touchpad
+-Full size sdcard slot
 
 
 ============ Medion ============
@@ -1361,6 +1397,21 @@ Teclast Tbook 11
 -Accel: KIOX000A, mount matrix ok
 -Audio Codec: ALC5645
 -PMIC: AXP288, charging only through micro USB 5V/2A
+-Camera regulators (shared between both):
+ -V1P8_ELDO2 
+ -V2P8_ALDO1
+ -Set on by Android when the cam is streaming but NOT necessary:
+  -V1P6_ELDO1
+  -V1P2_FLDO2
+-Camera info atomisp-css2401a0_v21 front camera:
+ -ov2680 i2c-OVTI2680:00: camera pdata: port: 0 lanes: 1 order: 00000002
+ -I2C addr 0x10
+ -clock pltclk 2 using source 0 (19.2 MHz Xosc)
+-Camera info atomisp-css2401a0_v21 back camera:
+ -ov2680 i2c-OVTI2680:01: camera pdata: port: 1 lanes: 1 order: 00000002
+ -I2C addr 0x36
+ -clock pltclk 4 using source 0 (19.2 MHz Xosc)
+-FLDO1 is permanently on at 1.25V (p-o-r defaults), used for MIPI DSI PHY
 -Keyboard-cover:
  -Sigmachip USB 17ef:6018 (abuses Lenovo Slim USB keyboard VID:PID <sigh>)
  -Touchpad seems to only support mouse-emulation
@@ -1370,7 +1421,7 @@ Teclast Tbook 11
   a duplicate event, the mouse interface also sends this
  -Keyboard interface sends: MSC_SCAN 458951 on left mouse button click, this is
   a duplicate event, the mouse interface also sends this
- 
+
 Teclast X80 Pro
 -8" 1200x1920 DSI panel
  + Micro HDMI
@@ -1507,6 +1558,20 @@ Toshiba WT10-A PDW0BE
 
 ============ Trekstor ============
 
+Trekstor Surftab duo W1 10.1 ST10432-10b
+-10.1" 1920x1200 DSI panel 24 bpp, LPSS PWM
+ -Mini HDMI
+-Touchscreen GDIX1001, with capacitive home-button, with pen support
+-CPU: Cherry Trail x5-Z8300, 2GB RAM
+-Wifi: RTL8723BS
+-Accel: BOSC0200, mount matrix ok
+-ALS: CPLM3218
+-Audio codec: ALC5651
+-PMIC: AXP288, charging only through micro-USB, super-micro-USB does not charge
+-super-micro-A does superspeed with regular super-micro-USB to super-A female cable
+-Keyboard-cover: USB 1C4F:0063 touchpad seems to only support mouse-emulation
+ Touchpad on/off toggle key handled inside kbd-dock, does not send events
+
 Trekstor Surftab Wintron 7.0 ST70416-6 (1 given away, 2 working)
 -7" 1024x600 screen
  -No HDMI
@@ -1517,6 +1582,7 @@ Trekstor Surftab Wintron 7.0 ST70416-6 (1 given away, 2 working)
 -Audio codec: ALC5651
 -PMIC: AXP288, charging only through micro USB 5V/2A
 -OTG: No Mux
+-Camera sensors: front: OV2680 back: OV2680
 -Other: 25lq64cvig, 7191 1545, OPI MP or DPI MP?
 -DSDT: PMID = 0x05
 -https://linux-hardware.org/?probe=12af9205b0

@@ -3,7 +3,7 @@ Bay and Cherry Trail device status with linux-next
 		lcd wif tou acc bat c2a but bri sus  spk pho jck hst dev blu c3a tpad lid tblt
 Acer Ic. W1-810 yes yes yes yes yes yes yes yes yes  yes yes yes yes -   FIR -   -    -
 Acer One S1002	yes yes yes yes yes yes yes yes S0i3 yes yes yes yes -   yes -   yes  yes -
-Acer SW5-012    yes yes yes yes yes yes yes (7) (7)  yes yes yes yes -       -   yes  yes yes
+Acer SW5-012    yes yes yes yes yes yes yes (8) (8)  yes yes yes yes -       -   yes  yes yes
 Acer SW3-016    yes yes yes yes yes yes yes yes S0i3 yes yes yes yes -   yes -   yes  yes yes
 Archos 80Cesium	yes yes yes yes yes yes yes yes yes      yes yes yes -   yes -   -    -
 Asus T100TA	yes yes yes yes                      yes yes         -   FIR -   yes      yes
@@ -34,7 +34,7 @@ Jump. EZpad m3	yes yes FIR yes yes yes yes yes yes  yes yes yes yes yes FIR -   
 Jump. EZpad 7	yes yes FIR yes yes -   yes yes S0i3 yes yes yes -   -   yes -        yes -
 Kazam Vision	yes yes yes yes yes yes yes yes yes  yes yes yes yes yes yes -   -a
 Lamina I8270    yes yes yes yes yes     yes yes yes  yes yes yes yes         -   -    -
-Lenovo Miix2-10 yes yes yes yes yes -   yes yes (8)  yes yes yes yes -   FIR -   (1)  yes -
+Lenovo Miix2-10 yes yes yes yes yes -   yes yes (9)  yes yes yes yes -   FIR -   (1)  yes -
 Lenovo Miix300	yes yes yes yes yes -   yes yes S0i3 yes yes yes yes -   yes -   (1)  yes -
 Lenovo Miix310	ROT yes yes yes yes -   yes yes S0i3 yes yes yes yes -   yes -   (1)  yes yes 
 Lenovo Miix320  ROT yes yes yes yes -   yes yes S0i3 yes yes yes yes -   yes -   yes  yes yes
@@ -60,6 +60,7 @@ Toshiba WT10-A	yes yes yes yes yes yes yes yes S0i3 yes yes yes yes -   yes -   
 Trekstor 7 (4)	yes yes FIR yes yes yes yes yes yes              yes -       -   -
 Trekstor 10 (5)	yes yes yes yes yes -   yes yes S0i3 yes yes yes yes -   yes -   -    -   -
 Trekstor 10 (6)	yes yes FIR yes yes yes yes yes S0i3 yes yes yes -   -   yes -   (1)  -   -
+Trekstor 10 (7)	yes yes yes yes yes yes yes yes S0i3 yes yes yes yes -   yes -   (1)  yes yes
 Voyo Winpad A15	yes yes -   yes yes yes yes yes S0i3 yes yes yes -   -   FIR -   (1)  -   -
 
 Legenda: wif(i) tou(chscreen) acc(el) bat(-mon) c(harge-)2a but(tons)
@@ -82,8 +83,9 @@ DPI   DPI is wrong
 (4) Trekstor SurfTab Wintron 7.0 ST70416-6
 (5) Trekstor SurfTab Wintron 10.1 ST10432-3
 (6) Trekstor SurfTab Twin 10.1 ST10432-8
-(7) The Acer Switch 10 SW5-012 requires a DSDT override to fix the PWM not being
+(7) Trekstor SurfTab Duo W1 ST10432-10b
+(8) The Acer Switch 10 SW5-012 requires a DSDT override to fix the PWM not being
     listed in ACPI, no backlight ctrl without override. Also S0i3 is not reached when
     we do not turn off the PWM controller on suspend.
-(8) Suspend (S0i3) only works on second and later suspends after boot, first
+(9) Suspend (S0i3) only works on second and later suspends after boot, first
     suspend gets woken up by EC

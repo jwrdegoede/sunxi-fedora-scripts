@@ -6,17 +6,19 @@
  -Toshiba wt8-a-102      brcmfmac43241b4-sdio / efivar / ccode=XT/13   / 5GHz
  -Lenovo Thinkpad 8      brcmfmac43241b5-sdio / efivar / ccode=XT/27   / 5GHz
  -Acer Iconia Tab8 w1-8  brcmfmac4330-sdio    / efivar / ccode=XV      / no-5G
+ -Mele PCG09             brcmfmac4330-sdio    / efivar / ccode=ALL   * / 5Ghz
  -Asus T200TA            brcmfmac43340-sdio   / efivar / ccode=ALL   * / 5GHz
  -Asus T100HA            brcmfmac43340-sdio   / efivar / ccode=XV/1  * / 5GHz
+ -Asus TF103C            brcmfmac43340-sdio   / noefiv / ccode=X2      / 5GHz  ch13-ok
  -Meegopad T08           brcmfmac43340-sdio   / noefiv / ccode=ALL->X2 / 5Ghz
- -Mele PCG09             brcmfmac4330-sdio    / efivar / ccode=ALL   * / 5Ghz
  -Predia Basic           brcmfmac43340-sdio   / noefiv / ccode=NL->X2  / 5Ghz
+ -Asus ME176C            brcmfmac43362-sdio   / noefiv / ccode=X2      / no-5G ch13-ok
  -Acer One 10            brcmfmac43430a0-sdio / efivar / ccode=NL      / no-5G
  -Jumper ezPad mini 3    brcmfmac43430a0-sdio / noefiv / ccode=ALL->X2 / no-5G
  -Onda V80 Plus          brcmfmac43430a0-sdio / noefiv / ccode=ALL->X2 / no-5G
- -Chuwi Hi8 (CWI509)     brcmfmac43430a0-sdio / noefiv / ccode=ALL->X2 / no-5G
+ -Chuwi Hi8 (CWI509)     brcmfmac43430a0-sdio / noefiv / ccode=ALL->X2 / no-5G ch13-ok
  -Chuwi Vi8 plus(CWI519) brcmfmac43430-sdio   / noefiv / ccode=ALL->X2 / no-5G
- -GPD win                brcmfmac4356-pcie    / noefiv / ccode=US->X2  / 5GHz
+ -GPD win                brcmfmac4356-pcie    / noefiv / ccode=US->X2  / 5GHz  ch13-ok
   * nvram ccode is a problem
 
 -brcmfmac hci_bcm notes:
