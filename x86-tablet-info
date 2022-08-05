@@ -139,6 +139,16 @@ Asus T100TA
 -SANDISK 9.15 XC4*00 SanDisk32G (The eMMC storage unit, 32GB version)
 -Webcam LED on INT33FC:02 pin 8
 
+Asus T100TAF
+-10" 1368x768 DSI 24 bpp, PWM: LPSS
+ + Micro HDMI
+-Touchscreen: SIS0817:00 0457:1071, without capacitive home-button
+ -Has separate physical home button
+-Wifi: brcmfmac43340 2.4 + 5 Ghz
+-Accel: INVN6500
+-Audio Codec: Realtek ALC5642
+-PMIC: TI Dollar Cove, charging only through micro USB 5V/2A
+
 Asus T100CHI
 -10" 1920x1200 DSI panel 24 bpp, PMIC/CRC PWM
  + Micro HDMI
@@ -286,7 +296,7 @@ Chuwi Hi8 (CWI509, Q32G22150910320)
         reboot
  }
 
-Chuwi Hi8 Pro (CWI513)
+Chuwi Hi8 Pro, silead + rtl8723bs model (CWI513, serial: ...)
 -8" 1200x1920 LCD
  + Micro HDMI
 -Touchscreen GSL3676, with capacitive home-button, fw in EFI
@@ -340,6 +350,20 @@ Chuwi Hi8 Pro (CWI513)
   -Go into BIOS and do F3 to load defaults, change USB mode from auto to PCI,
    F4 to save and reboot
   -Now we should get the OS choser with both OS-es visible
+
+Chuwi Hi8 Pro, chipone + brcmfmac43430a0 model (CWI513, serial: PQ32G221604 11929)
+-8" 1200x1920 LCD
+ + Micro HDMI
+-Touchscreen Chipone ICN8505
+  ??? , fw in EFI ???
+-CPU: Cherry Trail x5-Z8300, 2G RAM
+-Wifi: brcmfmac43430a0
+-Accel: BOSC0200 -> BMA250E, mount-matrix ok
+-Audio codec: ALC5651
+-PMIC: AXP288, charging only through Type-C 5V/2A, does not do PD needs to
+ charge with USB-A charger + USB-A to C cable, otherwise it charges at only 500mA
+-Type-C: host + gadget + charging, USB2 highspeed only?
+-DSDT: PMID == 0x02
 
 Chuwi HiBook (CWI514)
 -10.1" 1200x1920 DSI panel 24 bpp, PWM: LPSS
