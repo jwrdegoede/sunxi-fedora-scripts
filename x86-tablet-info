@@ -296,8 +296,8 @@ Chuwi Hi8 (CWI509, Q32G22150910320)
         reboot
  }
 
-Chuwi Hi8 Pro, silead + rtl8723bs model (CWI513, serial: ...)
--8" 1200x1920 LCD
+Chuwi Hi8 Pro, silead + rtl8723bs model (CWI513, serial: PQ32G22170904949)
+-8" 1200x1920 DSI panel 24 bpp, PWM: LPSS
  + Micro HDMI
 -Touchscreen GSL3676, with capacitive home-button, fw in EFI
 -CPU: Cherry Trail x5-Z8350, 2G RAM
@@ -341,7 +341,7 @@ Chuwi Hi8 Pro, silead + rtl8723bs model (CWI513, serial: ...)
   -Boot from bootable USB to break bootloop
   -Run as root
    # For Android
-   cp /boot/efi/loader.efi/boot/efi/EFI/BOOT/bootx64.efi
+   cp /boot/efi/loader.efi /boot/efi/EFI/BOOT/bootx64.efi
    # For Windows (really Fedora)
    mkdir -p /boot/efi/EFI/MICROSOFT/BOOT
    cp /boot/efi/EFI/fedora/grubia32.efi /boot/efi/EFI/BOOT/BOOTIA32.EFI
@@ -351,11 +351,11 @@ Chuwi Hi8 Pro, silead + rtl8723bs model (CWI513, serial: ...)
    F4 to save and reboot
   -Now we should get the OS choser with both OS-es visible
 
-Chuwi Hi8 Pro, chipone + brcmfmac43430a0 model (CWI513, serial: PQ32G221604 11929)
--8" 1200x1920 LCD
+Chuwi Hi8 Pro, chipone + brcmfmac43430a0 model (CWI513, serial: PQ32G22160411929)
+-8" 1200x1920 DSI panel 24 bpp, PWM: LPSS
  + Micro HDMI
--Touchscreen Chipone ICN8505
-  ??? , fw in EFI ???
+-Touchscreen Chipone ICN8505, with capacitive home-button
+ -FW not in EFI, for multi-boot OS-choser press volume-up for Android, down for Windows
 -CPU: Cherry Trail x5-Z8300, 2G RAM
 -Wifi: brcmfmac43430a0
 -Accel: BOSC0200 -> BMA250E, mount-matrix ok
@@ -417,8 +417,35 @@ Chuwi Vi8 Plus (CWI519)
  -gpio-396 (cam_gpio0) when camera goes on, GPIO goes from low -> high
  -gpio-388 (cam_gpio1) when camera goes on, GPIO goes from low -> high
  -clock pltclk 4 using source 0 (19.2 MHz Xosc)
+-Battery is dead (browns out an consumption peaks)
+ -needs to always have a charger connected
+ -to re-install Fedora:
+  1. Charge battery to 100% (in sofar this helps), then turn off
+  2. Connect an OTG charging hub (one which always passes the 5V),
+     with kbd + Fedora live USB connected:
+     -with the switch in OTG mode
+     -without 5V connected to the hub
+     -power on the tablet, press ESC repeatedly to enter BIOS
+  3. At BIOS screen connected 5V, change switch to charging mode and
+     then press ctrl+alt+del to reboot and press ESC to enter BIOS again.
+     Now the tablet is charging while the USB port is in host mode
+  4. In BIOS in the Save & Exit tab select the Fedora live USB from
+     the boot override menu
+  5. Edit kernel commandline, add the following to avoid the kernel switching
+     the port back to device-mode causing the livecd to loose its rootfs:
+     modprobe.blaclist=extcon_intel_int3496 gpiolib_acpi.run_edge_events_on_boot=0 3
+     (the 3 is to enter text mode, rather then starting gdm)
+  6. Use a static compiled i2cset to tweak the charger settings so that the tablet
+     gets enough power:
+     # set current input limit to 2A
+     i2cset -y -f 6 0x34 0x35 0x48
+     # set vhold to 4.3V
+     i2cset -y -f 6 0x34 0x30 0x1a
+     # lower brightness for power saving
+     echo 20 > /sys/class/backlight/intel_backlight/brightness
+  7. Run "systemctl start gdm" to start the graphical session and install as usual
 
-Chuwi Hi10 Plus (CWI527)
+Chuwi Hi10 Plus (CWI527) (given away)
 -10.8" 1920x1280 DSI panel 24 bpp, PWM: LPSS
  + Micro HDMI
 -Touchscreen GSL36??, with capacitive home-button, fw in EFI, pen support
