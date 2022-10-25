@@ -22,7 +22,7 @@ Acer Aspire Switch 10 (SW5-012)
 -PWM is not listed in ACPI, breaking backlight ctrl, requires DSDT override fix
 -https://linux-hardware.org/index.php?computer=d0a7a08478d7
 
-Acer Aspire Switch 10E (SW3-016)
+Acer Aspire Switch 10E (SW3-016) (in hema bin behind amplifier)
 -10" 1280x800 DSI 24 bpp, PWM: LPSS
 -Touchscreen: ELAN1001 i2c-hid, without capacitive home-button
  -Has separate physical home button
@@ -51,7 +51,7 @@ Acer Aspire Switch 10E (SW3-016)
 -https://linux-hardware.org/index.php?computer=7af9d429ab03
 -https://www.acer.com/ac/en/US/content/support-product/6460?b=1&pn=NT.G8VEH.004
 
-Acer One 10 (S1002)
+Acer One 10 (S1002 (aka N15P2) (in hema bin behind amplifier)
 -10" 1280x800 DSI 24 bpp, PWM: LPSS
 -Touchscreen: FTSC9999 2808:5012
  -With capacative home-button through gpio-keys
@@ -70,7 +70,7 @@ Acer One 10 (S1002)
  -HID events are send when the touchpad is toggled on/off, mapped to KEY_TOUCHPAD_ON / _OFF
 -https://linux-hardware.org/?probe=23688b2708
 
-Acer One 10 (S1003)
+Acer One 10 (S1003) (in hema bin next to spkr)
 -10" 800x1280 DSI panel
 -Touchscreen: GDIX1001, without capacitive home-button, no pen support
  -Has separate physical home button
@@ -117,10 +117,13 @@ Archos 80 Cesium
 -PMIC: AXP288, charging only through micro-usb 5V/2A max
 -USB-mux: SGM7223, lacks matching TI T1210B USB-phy, so no device mode
 
+Acer Aspire One 532 (ao532) (in hema bin next to spkr)
+-10" netbook ...
+
 
 ============ Asus ============
 
-Asus T100TA
+Asus T100TA (in black straightpower 450W psy box)
 -10" 1368x768 DSI 24 bpp, PWM: CRC, freq: actual 200 VBT 200, 0-255
  + Micro HDMI
 -Touchscreen: Atmel MXT1664TXES-C2U 1330B TW QLG9F, without capacitive home-button
@@ -139,7 +142,7 @@ Asus T100TA
 -SANDISK 9.15 XC4*00 SanDisk32G (The eMMC storage unit, 32GB version)
 -Webcam LED on INT33FC:02 pin 8
 
-Asus T100TAF
+Asus T100TAF (in hema bin next to spkr)
 -10" 1368x768 DSI 24 bpp, PWM: LPSS
  + Micro HDMI
 -Touchscreen: SIS0817:00 0457:1071, without capacitive home-button
@@ -149,7 +152,7 @@ Asus T100TAF
 -Audio Codec: Realtek ALC5642
 -PMIC: TI Dollar Cove, charging only through micro USB 5V/2A
 
-Asus T100CHI
+Asus T100CHI (defect, in dark blue asics shoebox)
 -10" 1920x1200 DSI panel 24 bpp, PMIC/CRC PWM
  + Micro HDMI
 -Touchscreen: SYNA7508 06CB:11E5, with support for PR77S pen, without capacitive home-button
@@ -164,7 +167,7 @@ Asus T100CHI
  UBS-3 micro-*A* to USB3-A receptacle cable
 -Webcam LED on INT33FC:01 pin 24
 
-Asus TF103c (aka K010)
+Asus TF103c (aka K010) (in hema bin next to spkr)
 -10"
 -Audio codec: ALC5640
 -I2C devices:
@@ -183,7 +186,7 @@ Asus TF103c (aka K010)
   claims it is HID over I2C compatible, which it is not
  -Crystal Cove PMIC at 7-005e + 7-006e, present in DSDT as "INT33FD"
 
-Asus T200TA
+Asus T200TA (on top of shoeboxes)
 -11.6" 1366x768 eDP panel
 -Touchscreen: SIS0817 (sis9203 + sis9251 ICs)
 -CPU: Bay Trail Z3775, 2G RAM
@@ -195,7 +198,7 @@ Asus T200TA
 -GPS module: no markings
 -Webcam LED on INT33FC:02 pin 8
 
-Asus T100HA
+Asus T100HA (on top of shoeboxes)
 -10" 1280x800 DSI panel 24 bpp, PWM: CRC, freq: actual 200 VBT 200
  + Micro HDMI
 -Touchscreen: SIS0457 i2c-hid (IC: SIS9255)
@@ -206,7 +209,7 @@ Asus T100HA
 -EC: ITE8825FN
 -Keyboard: USB 0b05:1807 multi-touch touchpad supported by hid-asus (ITE 8910?)
 
-Asus T101HA
+Asus T101HA (on top of shoeboxes)
 -10" 800x1280 DSI 24 bpp, PWM: LPSS, freq: actual 292 VBT 200, 15-255
  + Micro HDMI
 -Touchscreen: SIS0457 i2c-hid
@@ -238,7 +241,7 @@ Dock:
 
 ============ Chuwi ============
 
-Chuwi Vi10 (CWI505)
+Chuwi Vi10 (CWI505) (on top of shoeboxes)
 -10" 1366x768 LVDS panel via LVDS to eDP chip
 -Touchscreen: Silead GSL3680, with capacitive home-button, fw NOT in EFI
 -CPU: Bay Trail Z3736F, 2G RAM
@@ -265,7 +268,7 @@ Chuwi Vi8 (CWI506)
 -PMIC: AXP288, charging only through micro USB 5V/2A
 -USB-phy: TI T1210B
 
-Chuwi Hi8 (CWI509, Q32G22150910320)
+Chuwi Hi8 (CWI509, Q32G22150910320, given away, Q32G221512035xx 2x)
 -8" 1200x1920 DSI panel 24 bpp, PWM: LPSS
  -No HDMI
 -Touchscreen GSL3676, with capacitive home-button, fw NOT in EFI
@@ -276,7 +279,7 @@ Chuwi Hi8 (CWI509, Q32G22150910320)
 -Audio codec: ALC5640
 -PMIC: AXP288, charging only through micro USB 5V/2A
 -OTG:
- -5V boost converter not working, host mode needs external power
+ -5V boost converter not working, host mode needs external power (only Q32G22150910320)
  -Has mux
  -USB-phy: TI T1210B
 -BIOS settings hack from patched grub, only use with H1D_S806_206 10/29/2014 BIOS!!!
@@ -351,7 +354,7 @@ Chuwi Hi8 Pro, silead + rtl8723bs model (CWI513, serial: PQ32G22170904949)
    F4 to save and reboot
   -Now we should get the OS choser with both OS-es visible
 
-Chuwi Hi8 Pro, chipone + brcmfmac43430a0 model (CWI513, serial: PQ32G22160411929)
+Chuwi Hi8 Pro, chipone + brcmfmac43430a0 model (CWI513, serial: PQ32G22160411929, given away)
 -8" 1200x1920 DSI panel 24 bpp, PWM: LPSS
  + Micro HDMI
 -Touchscreen Chipone ICN8505, with capacitive home-button
@@ -612,6 +615,18 @@ Dell Venue 11 Pro 7130 vPro
  -https://gitlab.freedesktop.org/mobile-broadband/ModemManager/-/issues/339
 -https://linux-hardware.org/?probe=9cbca84e95
 
+Dell Latitude D430 (in hema bin behind amplifier)
+-12.1" ...
+
+Dell Latitude E6430
+-14.1" 1600x900 LVDS (intel iGPU + Nvidia GF108GLM)
+ +HDMI
+-CPU i5-3320M + 8G (2 DDR3 DIMM slots, 1 x 8G, 1 x empty)
+-Wifi: Intel N6300
+-Bluetooth: BCM20702A1
+-Audio: HDA
+-https://linux-hardware.org/?probe=c7a98ce916
+
 Dell Latitude 7285
 -12.3" 2880x1920 eDP 24bpp
  -2x TB3
@@ -691,6 +706,14 @@ GPD-pocket
 -Audio codec: ALC5645
 -PMIC: Whiskey Cove (CHT), charging only through Type-C PD 5-12V
 
+GPD Micro PC (in hema bin next to spkr)
+-6" 1280x720 DSI panel 24bpp, mounted 90° rotated, right side up
+-No touchscreen
+-CPU: Celeron N4100 (Gemini Lake), 8G RAM
+-M2 2442 256GB sata SSD
+-Wifi: Intel Wireless 3165
+-Ethernet: RTL8111
+
 
 ============ GP-electronic ============
 
@@ -706,6 +729,9 @@ GP-electronic T701 7 inch win10 tablet
 
 
 ============ HP ============
+
+HP ElitePad 1000 G2 (in 2nd hema bin behind amplifier)
+-10.1" ...
 
 HP Pavilion X2 10-n000nd
 -10" 1280x800 DSI panel, PWM: LPSS, freq: actual 9918 VBT 10000, 0-255
@@ -944,7 +970,7 @@ Lenovo Miix 2 8
   gpioset 'INT33FC:01' 25=0
 -OTG: does not appear to have a mux, locked BIOS
 
-Lenovo Miix 2 10
+Lenovo Miix 2 10 (in hema bin behind amplifier)
 -10" 1920x1200 DSI 24 bpp, PWM: CRC, freq: VBT 200, 00255
  + Micro HDMI
 -Touchscreen: ELAN1001, i2c HID multi-touch, with home button with haptic feedback
@@ -1004,7 +1030,7 @@ Lenovo ThinkPad 8
 -USB3 micro-B connector does superspeed host mode when used with a
  UBS-3 micro-*A* to USB3-A receptacle cable
 
-Lenovo ThinkPad 10
+Lenovo ThinkPad 10 (in hema bin next to spkr)
 -10" 1920x1200 eDP, 18 bpp
  + Micro HDMI
 -Touchscreen: ATML1000 03EB:8C15
@@ -1030,7 +1056,7 @@ Lenovo Ideapad Miix 300 (given away)
 -Keyboard: USB 258a:1015 keyboard/touchpad(mouse mode only) combo dock
  Touchpad on/off toggle key handled inside kbd-dock, does not send events
 
-Lenovo Ideapad Miix 310
+Lenovo Ideapad Miix 310 (in dark blue asics shoebox)
 -10" 800x1280 DSI panel
 -Touchscreen FTSC1000 i2c-hid hid-multitouch
 -CPU: Cherry Trail x5-Z8350, 2G RAM
@@ -1040,7 +1066,7 @@ Lenovo Ideapad Miix 310
 -PMIC: AXP288, charging only through power-barrel, adapter 5V/4A
 -Keyboard: USB 258a:1015 keyboard/touchpad(mouse mode only) combo dock
 
-Lenovo Ideapad Miix 320
+Lenovo Ideapad Miix 320 (in dark blue asics shoebox)
 -10" 800x1280 DSI panel
 -Touchscreen: FTSC1000
 -CPU: Cherry Trail x5-Z8350, 2G RAM
@@ -1080,7 +1106,7 @@ Lenovo ThinkPad Yoga 11e 4th gen
 
 ============ Medion ============
 
-Medion Akoya E1239T MD60568
+Medion Akoya E1239T MD60568 (in hema bin next to spkr)
 -10": 1920x1200 EDP panel 18 bpp
  + mini HDMI
 -Touchscreen: FTSC1000
@@ -1109,7 +1135,7 @@ Medion Akoya E2215T MD60198 (given away)
  Touchpad on/off toggle key handled inside kbd-controller, does not send events
 -Microsd-slot: Uses rtsx_usb driver instead of SoC MMC controller
 
-Medion Akoya E2228T MD60250
+Medion Akoya E2228T MD60250 (in orange giga shoebox)
 -11.6" 1920x1080 eDP panel
 -Touchscreen: FTSC1000
 -CPU: Cherry Trail x5-Z8300, 4G RAM
@@ -1215,6 +1241,19 @@ MSI S100 Tablet + keyboard cover (given away)
 -Charge IC: TI bq24192i
 -DP to LVDS IC: Parade ps8622
 -EC: IT8568E, also an i2c-hid keyb/mouse (which does not do anything)
+
+
+============ Nanote ============
+
+Nanote UMPC-01
+-7" 1200x1920 DSI panel 24 bpp, PWM: LPSS
+-Touchscreen: GDIX1001
+-CPU: Cherry Trail x5-Z8350, 4G RAM
+-Wifi: RTL8723BS
+-Accel: BOSC0200, 2x (yoga style), mount-matrix in ACPI tables
+-Audio codec: ESS8316
+-PMIC: AXP288, charging only through Type-C USB 5V/2A, sees everything as DCP
+-Type-C: ?
 
 
 ============ Nuvision ============
@@ -1391,7 +1430,7 @@ Point of View TAB-P1006W-232-3G
 
 ============ Predia ============
 
-Predia Basic Tablet
+Predia Basic Tablet (in hema bin behind amplifier)
 -10" 800x1280 DSI panel 24 bpp, PWM: LPSS
  + Micro HDMI
 -Touchscreen: Silead GSL3676 with capacitive home button, fw NOT in EFI
@@ -1510,7 +1549,7 @@ Teclast X89 E7ED
 
 ============ Terra ============
 
-Terra Pad 1060
+Terra Pad 1060 (given away)
 -10" 1280x800 eDP panel 18bpp
 -Touchscreen: USB 03eb:8c17 "Atmel Atmel maXTouch Digitizer"
  -With capacative home-button through ps/2 kbd, with haptic feedback
@@ -1523,7 +1562,7 @@ Terra Pad 1060
  Touchpad on/off toggle key handled inside kbd-dock, does not send events
 -https://linux-hardware.org/?probe=8f2478944c
 
-Terra Pad 1061
+Terra Pad 1061 (in hema bin next to spkr)
 -10" 1920x1200 DSI 24 bpp, PWM: LPSS, freq: actual 381 VBT 400, 11-255
  + Micro HDMI
 -Touchscreen: FTSC1000 with capacitive touch home button
@@ -1638,7 +1677,7 @@ Trekstor Surftab Wintron 7.0 ST70416-6 (1 given away, 2 working)
 -DSDT: PMID = 0x05
 -https://linux-hardware.org/?probe=12af9205b0
 
-Trekstor Surftab Wintron 10.1 ST10432-3
+Trekstor Surftab Wintron 10.1 ST10432-3 (in hema bin behind amplifier)
 -10" 1280x800 DSI 24 bpp, PWM: LPSS
  + mini HDMI
 -Touchscreen: FTSC1000, with capacitive home button handled by gpio-keys
@@ -1683,7 +1722,7 @@ VIOS LTH17
 
 ============ Voyo ============
 
-Voyo winpad A15
+Voyo winpad A15 (in hema bin behind amplifier)
 -11.6" 1366x768 DSI 24 bpp, PWM: CRC
 -Touchscreen: ACPI: SIS0817 chip: SIS9255, digitizer cable: SSET 04-1160-06078 2014.09.20
  digitizer cable is ripped/torn does not work
