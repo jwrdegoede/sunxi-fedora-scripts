@@ -27,7 +27,6 @@ Acer Aspire Switch 10E (SW3-016) (in hema bin behind amplifier)
 -Touchscreen: ELAN1001 i2c-hid, without capacitive home-button
  -Has separate physical home button
  -Looses calibration after a while and then starts ging crazy with ghost touches
-  (touchscreen controller got toasted (a bit) by bad charger used by previous owner?)
   -Workaround:
    1. Run a systemd timer which does:
       gpioset 'INT33FF:01' 25=0
@@ -50,6 +49,30 @@ Acer Aspire Switch 10E (SW3-016) (in hema bin behind amplifier)
  -HID events are send when the touchpad is toggled on/off, mapped to KEY_TOUCHPAD_ON / _OFF
 -https://linux-hardware.org/index.php?computer=7af9d429ab03
 -https://www.acer.com/ac/en/US/content/support-product/6460?b=1&pn=NT.G8VEH.004
+
+Acer Aspire Switch V 10 (SW5-017)
+-10" 1280x800 DSI 24 bpp, PWM: LPSS
+-Touchscreen: FTSC1000 i2c-hid, without capacitive home-button
+ -Has separate physical home button
+-CPU: Cherry Trail x5-Z8350, $GB RAM
+-Wifi: Atheros QCA6174 802.11ac (PCI)
+-Accel: BOSC0200, mount matrix ok
+-ALS: CPLM3218
+-Audio codec: ALC5645
+-PMIC: TI Dollar Cove, charging through power-barrel at 12V 1.5A, or through
+ Type-C with PD also at 12V
+-Type-C connector: superspeed, PD charging at 12V, DP altmode, everything works OOTB
+-Camera sensor HIMX2051: Supported by unicam driver in android_kernel_intel_cherrytrail
+-Camera sensor OVTI5670: Has sensor driver in main kernel
+ Also in Kernel-for-Asus-Zenfone-2/drivers/external_drivers/camera/drivers/media/i2c/ov5670.c
+-Dock, seems to have 2 separate USB connections on the dock connector,
+ 1 for the A-port and one for the kbd/mouse
+ -ITE8910 kbd controller
+ -USB 06cb:73f6 supports standard HID multi-touch
+ -Touchpad on/off toggle is handled inside the dock,
+  touchpad stops sending events when toggled
+ -HID events are send when the touchpad is toggled on/off, mapped to KEY_TOUCHPAD_ON / _OFF
+-https://linux-hardware.org/?probe=d4ff3ee29e
 
 Acer One 10 (S1002 (aka N15P2) (in hema bin behind amplifier)
 -10" 1280x800 DSI 24 bpp, PWM: LPSS
