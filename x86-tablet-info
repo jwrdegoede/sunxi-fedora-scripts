@@ -128,6 +128,23 @@ Acer Iconia Tab 8 W1-810
 -PMIC: AXP288, charging only through micro USB 5V/2A
 
 
+============ Advantech ============
+
+Advantech MICA-071 (in red kickers shoebox, dock in hema bin next to spkr)
+-7" 800x1280 eDP panel
+ -Full size HDMI connector on dock
+ -Non capacitive home button through gpio-buttons
+-Touchscreen: FTSC1000 (i2c-hid)
+-CPU: Bay Trail Z3770, 4G RAM
+-Wifi: brcmfmac43241b4 2.4G + 5G
+-Accel: SMO91D0, mount-matrix ok
+-Audio codec: ALC5640
+-PMIC: Crystal Cove (BYT), charging only from dock. Dock power-barrel: 5V, 4A
+-Dock: ASM 174c:2074 USB2 hub, ASM 174c:3074 USB3 hub, rtl8153 USB3 gbit ethernet,
+ 2 USB-2 ports, 1 USB-3 port, Full size HDMI
+-https://linux-hardware.org/?probe=d7025eb475
+
+
 ============ Archos ============
 
 Archos 80 Cesium
@@ -145,6 +162,9 @@ Acer Aspire One 532 (ao532) (in hema bin next to spkr)
 
 
 ============ Asus ============
+
+Asus ME176c (aka R013) (in red kickers shoebox)
+-7" ...
 
 Asus T100TA (in black straightpower 450W psy box)
 -10" 1368x768 DSI 24 bpp, PWM: CRC, freq: actual 200 VBT 200, 0-255
@@ -916,7 +936,7 @@ Jumper EZpad 7
 
 ============ Kazam ============
 
-Kazam Vision
+Kazam Vision (in red kickers shoebox)
 -8" 800x1280 DSI panel
  + Micro HDMI
 -Touchscreen: GDIX1001, with capacitive home-button
@@ -1268,7 +1288,7 @@ MSI S100 Tablet + keyboard cover (given away)
 
 ============ Nanote ============
 
-Nanote UMPC-01
+Nanote UMPC-01 (in red kickers shoebox)
 -7" 1200x1920 DSI panel 24 bpp, PWM: LPSS
 -Touchscreen: GDIX1001
 -CPU: Cherry Trail x5-Z8350, 4G RAM

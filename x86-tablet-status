@@ -5,6 +5,7 @@ Acer Ic. W1-810 yes yes yes yes yes yes yes yes yes  yes yes yes yes -   FIR -  
 Acer One S1002	yes yes yes yes yes yes yes yes S0i3 yes yes yes yes -   yes -   yes  yes -
 Acer SW5-012    yes yes yes yes yes yes yes (8) (8)  yes yes yes yes -       -   yes  yes yes
 Acer SW3-016    yes yes yes yes yes yes yes yes S0i3 yes yes yes yes -   yes -   yes  yes yes
+Advant MICA-071 yes yes yes yes yes yes yes yes S0i3 yes yes yes yes     FIR -   -    -   -
 Archos 80Cesium	yes yes yes yes yes yes yes yes yes      yes yes yes -   yes -   -    -
 Asus T100TA	yes yes yes yes                      yes yes         -   FIR -   yes      yes
 Asus T100HA	ROT yes no  yes yes yes yes yes S0i3 yes yes yes yes -   FIR -   yes  yes yes
@@ -32,8 +33,8 @@ HP Stream 7     DPI yes yes yes yes     yes yes yes  yes         yes -       -  
 I.T.Works TW891 ROT yes yes yes yes yes yes yes yes  yes yes yes yes         -   (1)  yes yes
 Jump. EZpad m3	yes yes FIR yes yes yes yes yes yes  yes yes yes yes yes FIR -   -    yes yes (2)
 Jump. EZpad 7	yes yes FIR yes yes -   yes yes S0i3 yes yes yes -   -   yes -        yes -
-Kazam Vision	yes yes yes yes yes yes yes yes yes  yes yes yes yes yes yes -   -a
-Lamina I8270    yes yes yes yes yes     yes yes yes  yes yes yes yes         -   -    -
+Kazam Vision	yes yes yes yes yes yes yes yes yes  yes yes yes yes yes yes -   -
+Lamina I8270    yes yes yes yes yes     yes yes yes  yes yes yes yes         -   -
 Lenovo Miix2-10 yes yes yes yes yes -   yes yes (9)  yes yes yes yes -   FIR -   (1)  yes -
 Lenovo Miix300	yes yes yes yes yes -   yes yes S0i3 yes yes yes yes -   yes -   (1)  yes -
 Lenovo Miix310	ROT yes yes yes yes -   yes yes S0i3 yes yes yes yes -   yes -   (1)  yes yes 
