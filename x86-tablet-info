@@ -116,7 +116,7 @@ Acer One 10 (S1003) (in hema bin next to spkr)
   physcially different) does send HID events for this
 -https://linux-hardware.org/index.php?computer=c0e64319d0b1
 
-Acer Iconia Tab 8 W1-810
+Acer Iconia Tab 8 W1-810 (in big Caterpillar shoebox)
 -8" 800x1280 DSI panel
 -Touchscreen: Goodix GT811, without capacitive home-button
  -and without separate physical home button
@@ -127,14 +127,27 @@ Acer Iconia Tab 8 W1-810
 -Audio codec: ALC5640
 -PMIC: AXP288, charging only through micro USB 5V/2A
 
+Acer Iconia W4-820
+-8" 800x1280 DSI 24 bpp, PWM: CRC
+ + Micro HDMI
+-Touchscreen: SYNA7300 i2c-hid,
+ -with separate physical home button
+-CPU: Bay Trail Z3740, 2G RAM
+-Wifi: brcmfmac43241b4 2.4G + 5G
+-Accel: SMO91D0
+-Audio codec: ALC5640
+-PMIC: Crystal Cove (BYT), charging only through micro USB at 5V/2A
+-Appears to have a USB mux but no ULPI phy
+-https://linux-hardware.org/?probe=cf25eeba85
+
 
 ============ Advantech ============
 
 Advantech MICA-071 (in red kickers shoebox, dock in hema bin next to spkr)
 -7" 800x1280 eDP panel
- -Full size HDMI connector on dock
- -Non capacitive home button through gpio-buttons
+ +Full size HDMI connector on dock
 -Touchscreen: FTSC1000 (i2c-hid)
+ -Non capacitive home button through gpio-buttons
 -CPU: Bay Trail Z3770, 4G RAM
 -Wifi: brcmfmac43241b4 2.4G + 5G
 -Accel: SMO91D0, mount-matrix ok
@@ -195,7 +208,7 @@ Asus T100TAF (in hema bin next to spkr)
 -Audio Codec: Realtek ALC5642
 -PMIC: TI Dollar Cove, charging only through micro USB 5V/2A
 
-Asus T100CHI (defect, in dark blue asics shoebox)
+Asus T100CHI (defect, in dark blue asics shoebox, kbd 2x)
 -10" 1920x1200 DSI panel 24 bpp, PMIC/CRC PWM
  + Micro HDMI
 -Touchscreen: SYNA7508 06CB:11E5, with support for PR77S pen, without capacitive home-button
@@ -342,7 +355,7 @@ Chuwi Hi8 (CWI509, Q32G22150910320, given away, Q32G221512035xx 2x)
         reboot
  }
 
-Chuwi Hi8 Pro, silead + rtl8723bs model (CWI513, serial: PQ32G22170904949)
+Chuwi Hi8 Pro (CWI513, serial: PQ32G22170904949) (in big Caterpillar shoebox)
 -8" 1200x1920 DSI panel 24 bpp, PWM: LPSS
  + Micro HDMI
 -Touchscreen GSL3676, with capacitive home-button, fw in EFI
@@ -441,7 +454,7 @@ Chuwi HiBook (CWI514)
  Touchpad on/off toggle key handled inside kbd-dock, does not send events
 -https://linux-hardware.org/?probe=c1a354c2e2
 
-Chuwi Vi8 Plus (CWI519)
+Chuwi Vi8 Plus (CWI519) (in big Caterpillar shoebox)
 -8" 800x1280 LCD
  + Micro HDMI
 -Touchscreen Chipone ICN8505, fw in EFI
@@ -560,7 +573,7 @@ Connect Tablet 9 (given away)
 
 ============ Cube ============
 
-Cube iwork 8 Air
+Cube iwork 8 Air (in big Caterpillar shoebox)
 -8" 1200x1920 screen
  + Micro HDMI
 -Touchscreen: gsl3670, without capacitive home-button, fw in EFI
@@ -596,7 +609,7 @@ CyberBook T116:
 
 ============ Dell ============
 
-Dell Venue 8 Pro 5830:
+Dell Venue 8 Pro 5830: (in big Caterpillar shoebox)
 -8" 800x1280 DSI 24bpp, PWM: CRC, freq: actual 200 VBT 200, 15-255
  -No HDMI
 -Touchscreen: SYNA7500, with support for PR77S pen, without capacitive home-button
@@ -612,7 +625,7 @@ Dell Venue 8 Pro 5830:
  -Locked BIOS cannot test for device-mode phy / gadget mode
  -Supports ACA mode
 
-Dell Venue 8 Pro 5855:
+Dell Venue 8 Pro 5855: (in big Caterpillar shoebox)
 -8" 1200x1920 DSI 24bpp, PWM: CRC
  -No HDMI
 -Touchscreen: WCOM4809, without capacitive home-button
@@ -684,7 +697,7 @@ Dell Latitude 7285
 
 ============ Estar ============
 
-Beauty HD MID 7316R
+Beauty HD MID 7316R (in big Caterpillar shoebox)
 -7" 1024x600 DSI 24bpp, PWM: LPSS
  -No HDMI
 -Touchscreen: Goodix GDIX1001, without capacitive home-button
@@ -702,7 +715,8 @@ Beauty HD MID 7316R
 
 ============ Glavey ============
 
-Glavey TM800A550L
+Glavey TM800A550L (in big Caterpillar shoebox)
+-Android x86 tablet
 -Needs "dis_ucode_ldr" on the kernel commandline
 -8" 800x1280 DSI 24bpp, PWM: LPSS
  -No HDMI
@@ -760,7 +774,7 @@ GPD Micro PC (in hema bin next to spkr)
 
 ============ GP-electronic ============
 
-GP-electronic T701 7 inch win10 tablet
+GP-electronic T701 (in big Caterpillar shoebox)
 -7" 1024x600 DSI panel 24 bpp, mounted upside-down
 -Touchscreen: Silead gsl1680, without capacitive home-button, fw NOT in EFI
  -and without separate physical home button
@@ -837,7 +851,7 @@ HP x2 10 variant info:
    DMI_PRODUCT_NAME: "HP x2 210 G2"
    DMI_BOARD_NAME: "82F4"
 
-HP Stream 7:
+HP Stream 7: (in big Caterpillar shoebox)
 -7" 800x1280 DSI panel 24 bpp
  -No HDMI
 -Touchscreen: Goodix GDIX1001 0416:038f, with capacitive home-button
@@ -847,6 +861,10 @@ HP Stream 7:
 -Audio codec: ALC5640
 -PMIC: AXP288, charging only through micro USB 5V/2A
 -OTG: no mux
+
+HP Pro Tablet 608 (in Poelman shoebox)
+...
+Type-C: Charges only at 5V, needs 3A Rp (or PD?) for charging with > 1A
 
 
 ============ Irbis ============
@@ -881,7 +899,7 @@ I.T.Works TW701 (given away)
 -https://linux-hardware.org/?probe=ec749b6624
 
 
-I.T.Works TW891
+I.T.Works TW891 (in Poelman shoebox)
 -8.9" 800x1280 DSI, 24 bpp, PWM: LPSS, freq: actual 199920 VBT 20000, 0-255
  - mounted 90 degrees rotated
  - BGRT logo is just a black rectangle
@@ -966,7 +984,7 @@ Kurio Smart C15200 (given away)
 
 ============ Lamina ============
 
-Lamina I8270 (sticker on back) / T701BR.SE (dmi)
+Lamina I8270 (sticker on back) / T701BR.SE (dmi) (in big Caterpillar shoebox)
 -7" 800x1280 DSI panel
  + Micro HDMI
 -Touchscreen: GDIX1001, without capacitive home-button
@@ -998,7 +1016,7 @@ Lenovo Yoga Tablet 2 1051L
 -Has a broadcom BCM4752 GPS ?
 
 
-Lenovo Miix 2 8
+Lenovo Miix 2 8 (in big Caterpillar shoebox)
 -8" 800x1280 DSI 24 bpp, PWM CRC, freq: actual 23531 VBT 20000, 0-255
  -No HDMI
 -Touchscreen: ATML1000, with capacitive home button
@@ -1034,7 +1052,7 @@ Lenovo Miix 2 10 (in hema bin behind amplifier)
  -USB 0416:c141 Winbond kbd/mouse combo, only supports mouse-emulation
   Touchpad on/off toggle key handled inside kbd-dock, does not send events
 
-Lenovo Miix 3 830
+Lenovo Miix 3 830 (in Poelman shoebox)
 -7.85" 768x1024 DSI 18 bpp, PWM: LPSS
  -No HDMI
 -Touchscreen: GDIX1000, without capacitive home-button, no pen support
@@ -1051,7 +1069,7 @@ Lenovo Miix 3 830
   Cannot test, locked BIOS, no IFR ?
 -https://hackcorrelation.blogspot.com/2016/01/inside-stuff-lenovo-miix-3-830-tablet.html
 
-Lenovo ThinkPad 8
+Lenovo ThinkPad 8 (in big Caterpillar shoebox, 2x)
 -8" 1200x1920 eDP panel
  + Micro HDMI
 -Touchscreen: ATML1000
@@ -1301,7 +1319,7 @@ Nanote UMPC-01 (in red kickers shoebox)
 
 ============ Nuvision ============
 
-Nuvision/TMAX TM800W560L
+Nuvision/TMAX TM800W560L (in big Caterpillar shoebox)
 -8" 1200x1920 DSI panel
 -Touchscreen: FTSC1000 i2c-hid, with capacitive home-button which sends left-ctrl+esc ?
 -CPU: Bay Trail Z3735G, 2G RAM
@@ -1339,7 +1357,7 @@ Onda v975w (Carlos):
 -FSA9285: MCPC-Compliant, USB-Port, Multimedia Switch with Auto-Detection
  Supports ACA on USB-micro
 
-Onda V80 plus (Android version):
+Onda V80 plus (Android version): (in big Caterpillar shoebox)
 -8" 1200x1920 DSI panel
 -Touchscreen: Silead GSL3676, with capacitive home-button, fw in EFI
 -CPU: Cherry Trail x5-Z8300, 2GB RAM
@@ -1417,7 +1435,7 @@ Ployer Momo7w (given away)
 
 ============ Point of View ============
 
-Point of View TAB-P800W (V1.0/V2.0/V2.1) (1 working, 1 defect, 1 given away)
+Point of View TAB-P800W (in Poelman shoebox) (V1.0/V2.0/V2.1) (1 working, 1 defect, 1 given away)
 -8" 800x1280 DSI 24 bpp, PWM: LPSS, freq: actual 30136 VBT 30000, 10-255
  + Micro HDMI
 -Touchscreen: Silead gsl3692, with capacitive home-button, fw NOT in EFI
@@ -1555,7 +1573,7 @@ Teclast Tbook 11
  -Keyboard interface sends: MSC_SCAN 458951 on left mouse button click, this is
   a duplicate event, the mouse interface also sends this
 
-Teclast X80 Pro
+Teclast X80 Pro (in big Caterpillar shoebox)
 -8" 1200x1920 DSI panel
  + Micro HDMI
 -Touchscreen: GDIX1001, without capacitive home-button
@@ -1566,7 +1584,7 @@ Teclast X80 Pro
 -Audio Codec: ALC5645, jd_mode=3, mono speaker
 -PMIC: AXP288, charging only through micro USB 5V/2A
 
-Teclast X89 E7ED
+Teclast X89 E7ED (in Poelman shoebox)
 -8" 1536x2048 eDP panel 18 bpp, mounted upside-down
  + Micro HDMI
 -Touchscreen: GDIX1001, without capacitive home-button
@@ -1626,7 +1644,7 @@ Dock:
 
 ============ Thundersoft ============
 
-Thundersoft TST178 PAD
+Thundersoft TST178 PAD (in Poelman shoebox)
 -7.8" 768x1024 DSI 24 bpp, PWM: CRC, freq: actual 200 VBT 200, 0-255 (inverted)
  + mini HDMI
 -Touchscreen: FT5406EE8 (ACPI: FTSC0001), without capacitive home-button
@@ -1648,7 +1666,7 @@ Thundersoft TST178 PAD
 
 ============ Toshiba ============
 
-Toshiba Click Mini L9W-B
+Toshiba Click Mini L9W-B (in big Caterpillar shoebox)
 -8.9" 1920x1200 DSI panel, uses SoC/LPSS for PWM
 -Touchscreen: SIS0817
 -CPU: Bay Trail Z3735F, 2G RAM
@@ -1657,7 +1675,7 @@ Toshiba Click Mini L9W-B
 -Audio codec: ALC5640
 -PMIC: Dollar Cove TI PMIC
 
-Toshiba WT8-A
+Toshiba WT8-A (in Poelman shoebox)
 -8" 800x1280 DSI 24 bpp, PWM: CRC, freq: actual 23531 VBT 20000, 60-255
  + Micro HDMI
 -Light sensor: hid-sensor
@@ -1705,7 +1723,7 @@ Trekstor Surftab duo W1 10.1 ST10432-10b
 -Keyboard-cover: USB 1C4F:0063 touchpad seems to only support mouse-emulation
  Touchpad on/off toggle key handled inside kbd-dock, does not send events
 
-Trekstor Surftab Wintron 7.0 ST70416-6 (1 given away, 2 working)
+Trekstor Surftab Wintron 7.0 ST70416-6 (in big Caterpillar shoebox) (1 given away, 2 working)
 -7" 1024x600 screen
  -No HDMI
 -Touchscreen: gsl1686, with capacitive home-button, fw NOT in EFI
@@ -1785,7 +1803,7 @@ Voyo winpad A15 (in hema bin behind amplifier)
 
 ============ Yours ============
 
-Yours Y8W81 8" Tablet (white or black no markings) (1 working, 1 defect, 1 given away)
+Yours Y8W81 8" Tablet (in big Caterpillar shoebox) (white or black no markings) (1 working, 1 defect, 1 given away)
 -8" 800x1280 DSI panel
  + Micro HDMI
 -Touchscreen: GSL3676, with capacitive home-button, fw NOT in EFI
