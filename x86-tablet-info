@@ -312,6 +312,17 @@ Chuwi Vi10 (CWI505) (on top of shoeboxes)
 -Keyboard: USB 1c4f:0075 keyboard/touchpad(mouse mode only) combo dock
  Touchpad on/off toggle key handled inside kbd-dock, does not send events
 
+Chuwi Vi8 (CWI501, Q32G22150103200)
+-8" 800x1280 DSI panel 24 bpp, PWM: LPSS
+-Touchscreen GSL3676, with capacitive home-button, fw NOT in EFI
+-PCB: INET-I86M-REV03 Zeng-gc 2014-12-19
+-CPU: Bay Trail Z3735F, 2GB RAM
+-Wifi: RTL8723BS
+-Accel: BMA250E
+-Audicodec: Realtek ALC5640
+-PMIC: AXP288, charging only through micro USB 5V/2A
+-No mux? No phy (yet OTG controller enabled by default in BIOS?)
+
 Chuwi Vi8 (CWI506)
 -8" 800x1280 DSI panel 24 bpp
 -Touchscreen GSL3676, with capacitive home-button, fw NOT in EFI
@@ -688,6 +699,7 @@ Dell Latitude 7285
  -2x TB3
 -Touchscreen: WCOM484F, with pen support, reports pen-battery through HID on
  touchscreen resulting in 0% battery reading when no pen is used
+ touchscreen if flakey on my model, only works on some boots
 -CPU: Core i5-7Y57, 8G RAM
 -Wifi: Intel 8265
 -Accel + ALS: ISH HID sensors
