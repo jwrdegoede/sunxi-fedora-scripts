@@ -157,6 +157,9 @@ Advantech MICA-071 (in red kickers shoebox, dock in hema bin next to spkr)
  2 USB-2 ports, 1 USB-3 port, Full size HDMI
 -https://linux-hardware.org/?probe=d7025eb475
 
+Acer Aspire One 532 (ao532) (in hema bin next to spkr)
+-10" netbook ...
+
 
 ============ Archos ============
 
@@ -169,9 +172,6 @@ Archos 80 Cesium
 -Audio codec: ALC5640
 -PMIC: AXP288, charging only through micro-usb 5V/2A max
 -USB-mux: SGM7223, lacks matching TI T1210B USB-phy, so no device mode
-
-Acer Aspire One 532 (ao532) (in hema bin next to spkr)
--10" netbook ...
 
 
 ============ Asus ============
