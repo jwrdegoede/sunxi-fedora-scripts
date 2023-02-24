@@ -22,6 +22,7 @@
   * nvram ccode is a problem
 
 -brcmfmac hci_bcm notes:
+ -Acer Iconia W4-820     BCM2E3F / brcmfmac43241b4-sdio / BCM4324B3-37.4M.hcd
  -Asus T100CHI           BCM2E39 / brcmfmac43241b4-sdio / BCM4324B3-37.4M.hcd
  -Asus T100TA            BCM2E39 / brcmfmac43241b4-sdio / BCM4324B3-37.4M.hcd
  -Toshiba wt8-a-102      BCM2E38 / brcmfmac43241b4-sdio / BCM4324B3-37.4M.hcd

@@ -116,6 +116,16 @@ Acer One 10 (S1003) (in hema bin next to spkr)
   physcially different) does send HID events for this
 -https://linux-hardware.org/index.php?computer=c0e64319d0b1
 
+Acer Iconia One 7 B1-750
+-7" 800x1280 DSI panel 24 bpp, PWM: LPSS
+-Touchscreen: Novatouch NVT-ts, without capacitive home-button
+ -and without separate physical home button
+-CPU: Bay Trail Z3735G, 1G RAM
+-Wifi: brcmfmac43340-sdio
+-Accel: BMA250, mount matrix ok
+-Audio codec: ALC5640
+-PMIC: AXP288, charging only through micro USB 5V/2A
+
 Acer Iconia Tab 8 W1-810 (in big Caterpillar shoebox)
 -8" 800x1280 DSI panel
 -Touchscreen: Goodix GT811, without capacitive home-button
@@ -127,7 +137,7 @@ Acer Iconia Tab 8 W1-810 (in big Caterpillar shoebox)
 -Audio codec: ALC5640
 -PMIC: AXP288, charging only through micro USB 5V/2A
 
-Acer Iconia W4-820
+Acer Iconia W4-820 (in red kickers shoebox)
 -8" 800x1280 DSI 24 bpp, PWM: CRC
  + Micro HDMI
 -Touchscreen: SYNA7300 i2c-hid,
@@ -620,7 +630,7 @@ CyberBook T116:
 
 ============ Dell ============
 
-Dell Venue 8 Pro 5830: (in big Caterpillar shoebox)
+Dell Venue 8 Pro 5830: (1 in big Caterpillar shoebox, 1 in Be Quiet psy box)
 -8" 800x1280 DSI 24bpp, PWM: CRC, freq: actual 200 VBT 200, 15-255
  -No HDMI
 -Touchscreen: SYNA7500, with support for PR77S pen, without capacitive home-button
@@ -1011,7 +1021,61 @@ Lamina I8270 (sticker on back) / T701BR.SE (dmi) (in big Caterpillar shoebox)
 
 ============ Lenovo ============
 
-Lenovo Yoga Tablet 2 1051L
+Lenovo Yoga Tablet 2 830F (Android, silver, in Be Quiet psy box)
+-8" 1200x1920 DSI 24 bpp, backlight control through lp8557 i2c chip
+ -No HDMI
+-Touchscreen: rmi4_i2c, without capacitive home-button
+ -No separate physical home button
+-CPU: Bay Trail Z3745, 2GB RAM
+-Wifi: BCM4324/5 brcmfmac43241b4-sdio
+-Accel: ACCL0001: LSM303D (also magnetic compass)
+-ALS: al3320 (b?) should work with kernel als3320a driver
+-Kickstand angle sensor MXM1120 HALL sensor
+-Unknown I2C device on I2C2 addr 0x1b
+-Audio codec: WM5102 over SPI (also reachable on I2C2 addr 0x1b)
+-PMIC: Crystal Cove (BYT), charging only through micro USB 5V/2A
+-OTG: Has mux, USB-phy: TI T1210B
+-Camera sensors: ov8865 ov9760
+-To disconnect battery for storage:
+ i2cset -y -f 0 0x6b 0x07 0x6b
+
+Lenovo Yoga Tablet 2 851F (Windows, black, in Be Quiet psy box)
+-8" 1200x1920 DSI 24 bpp, PWM: CRC
+ -No HDMI
+-Touchscreen: SYNA0001, without capacitive home-button
+ -Has separate physical home button
+-CPU: Bay Trail Z3745, 2GB RAM
+-Wifi: BCM4324/5 brcmfmac43241b4-sdio
+-Accel: ACCL0001: LSM303D (also magnetic compass)
+-ALS: al3320 (b?) should work with kernel als3320a driver
+-Kickstand angle sensor MXM1120 HALL sensor
+-Audio codec: WM5102 over SPI (also reachable on I2C2 addr 0x1b)
+-PMIC: Crystal Cove (BYT), charging only through micro USB 5V/2A
+-OTG: does not appear to have a mux, locked BIOS, will only charge when directly
+ connected to a charger. Does not work with charging hubs.
+-Camera sensors: OVTI8865 OVTI9760
+-https://linux-hardware.org/?probe=8466ce344b
+
+Lenovo Yoga Tablet 2 1050L (Android, silver)
+-10" 1920x1200 DSI 24 bpp, PWM: CRC (PWM control an i2c attached lp8557)
+ -No HDMI
+-Touchscreen: rmi4_i2c, without capacitive home-button
+ -No separate physical home button
+-CPU: Bay Trail Z3745, 2GB RAM
+-Wifi: BCM4324/5 brcmfmac43241b4-sdio
+-Accel: ACCL0001: LSM303D (also magnetic compass)
+-ALS: al3320 (b?) should work with kernel als3320a driver
+-Kickstand angle sensor MXM1120 HALL sensor
+-Audio codec: WM5102 SPI!
+-PMIC: Crystal Cove (BYT), charging only through micro USB 5V/2A
+-OTG: Has mux, USB-phy: TI T1210B
+-Camera sensors: ov8865 ov9760
+-Has a ??? LTE modem
+-Has a broadcom BCM4752 GPS ?
+-To disconnect battery for storage:
+ i2cset -y -f 0 0x6b 0x07 0x6b
+
+Lenovo Yoga Tablet 2 1051L (Windows, black)
 -10" 1920x1200 DSI 24 bpp, PWM: CRC
  + Micro HDMI
 -Touchscreen: SYNA0001
@@ -1020,13 +1084,13 @@ Lenovo Yoga Tablet 2 1051L
 -Wifi: BCM4324/5 brcmfmac43241b4-sdio
 -Accel: ACCL0001: LSM303D (also magnetic compass)
 -ALS: al3320 (b?) should work with kernel als3320a driver
+-Kickstand angle sensor MXM1120 HALL sensor
 -Audio codec: WM5102 SPI!
 -PMIC: Crystal Cove (BYT), charging only through micro USB 5V/2A
 -OTG: does not appear to have a mux, locked BIOS, will only charge when directly
  connected to a charger. Does not work with charging hubs.
 -Has a ??? LTE modem
 -Has a broadcom BCM4752 GPS ?
-
 
 Lenovo Miix 2 8 (in big Caterpillar shoebox)
 -8" 800x1280 DSI 24 bpp, PWM CRC, freq: actual 23531 VBT 20000, 0-255
@@ -1131,16 +1195,19 @@ Lenovo Ideapad Miix 300 (given away)
 
 Lenovo Ideapad Miix 310 (in dark blue asics shoebox)
 -10" 800x1280 DSI panel
+ + Micro HDMI
 -Touchscreen FTSC1000 i2c-hid hid-multitouch
 -CPU: Cherry Trail x5-Z8350, 2G RAM
 -Wifi: RTL8723BS
 -Accel: KIOX000A, mount-matrix ok
 -Audio codec: ALC5645
 -PMIC: AXP288, charging only through power-barrel, adapter 5V/4A
+-Camera sensors: front: OV2680 back: OV5648
 -Keyboard: USB 258a:1015 keyboard/touchpad(mouse mode only) combo dock
 
 Lenovo Ideapad Miix 320 (in dark blue asics shoebox)
 -10" 800x1280 DSI panel
+ + Micro HDMI
 -Touchscreen: FTSC1000
 -CPU: Cherry Trail x5-Z8350, 2G RAM
 -Wifi: Intel Wireless 3165
@@ -1248,7 +1315,7 @@ Mele PCG03
 -USB hub inside: FE1.1S USB2.0 hub 1a40:0101 Terminus Technology Inc.
 -https://linux-hardware.org/index.php?probe=e2f9dbb383
 
-Mele PCG09
+Mele PCG09 (in Be Quiet psy box)
 -Mini PC with HDMI output + Analogic ANX9833 DP to VGA chip for VGA output on eDP
 -CPU: Bay Trail Z3735F, 2 GB RAM
 -Wifi AP6330 brcmfmac4330-sdio
@@ -1287,7 +1354,7 @@ MPMAN Converter9
  Touchpad on/off toggle key handled inside kbd-controller, does not send events
 -Appears to have a USB mux but no ULPI phy
 
-MPMAN MPWIN895CL (given away)
+MPMAN MPWIN895CL (1 in Be Quiet psy box, 1 given away)
 -8.9": 1024x600 DSI panel 24 bpp
 -Touschscreen: Silead gsl3680, with capacitive home-button
  contains a Silead touschscreen firmware in EFI, but NOT the right one!
@@ -1391,6 +1458,7 @@ Peaq 10" C1010 2-in-1
 -Audio Codec: Realtek ALC5640
  -GPIO based headphone detect (AMCR0F28): no
 -AXP288 PMIC, charging only through power-barrel, adapter 5V/3A
+-Cameras: INT5648(CAM1) + HIMX2056(CAM3)
 -Dock:
  -GL850G usb-hub
  -realtek rts5170 sdcard reader
