@@ -35,5 +35,5 @@
  -Onda V80 Plus          BCM2E74 / brcmfmac43430a0-sdio / BCM4343A0-26M.hcd
  -Chuwi Hi8 (CWI509)     BCM2E74 / brcmfmac43430a0-sdio / BCM4343A0-26M.hcd
  -Chuwi Vi8 plus(CWI519) BCM2EAA / brcmfmac43430-sdio   / BCM43430A1-26M.hcd
+ -Lenovo Yogabook X91F   BCM2E8A / brcmfmac4356-pcie    / BCM4356A2-37.4M.hcd
  -GPD win                BCM2E7E / brcmfmac4356-pcie    / BCM4356A2-37.4M.hcd
-

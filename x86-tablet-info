@@ -1,6 +1,6 @@
 ============ Acer ============
 
-Acer Aspire Switch 10 (SW5-012)
+Acer Aspire Switch 10 (SW5-012) (in big black unmarked shoebox)
 -10" 1280x800 DSI 24 bpp, PWM: LPSS, freq: actual 1525 VBT 1600, 13-255
 -Touchscreen: SYNA7300 06CB:0E75, without capacitive home-button
  -Has separate physical home button
@@ -218,7 +218,7 @@ Asus T100TAF (in hema bin next to spkr)
 -Audio Codec: Realtek ALC5642
 -PMIC: TI Dollar Cove, charging only through micro USB 5V/2A
 
-Asus T100CHI (defect, in dark blue asics shoebox, kbd 2x)
+Asus T100CHI (in dark blue asics shoebox, kbd 2x)
 -10" 1920x1200 DSI panel 24 bpp, PMIC/CRC PWM
  + Micro HDMI
 -Touchscreen: SYNA7508 06CB:11E5, with support for PR77S pen, without capacitive home-button
@@ -333,7 +333,7 @@ Chuwi Vi8 (CWI501, Q32G22150103200)
 -PMIC: AXP288, charging only through micro USB 5V/2A
 -No mux? No phy (yet OTG controller enabled by default in BIOS?)
 
-Chuwi Vi8 (CWI506)
+Chuwi Vi8 (CWI506) (in big black unmarked shoebox)
 -8" 800x1280 DSI panel 24 bpp
 -Touchscreen GSL3676, with capacitive home-button, fw NOT in EFI
 -PCB: INET-I86M-REV03 Zeng-gc 2014-12-19
@@ -344,21 +344,26 @@ Chuwi Vi8 (CWI506)
  -GPIO based headphone detect (AMCR0F28): yes!
 -PMIC: AXP288, charging only through micro USB 5V/2A
 -USB-phy: TI T1210B
+-With cover with bluetooth keyboard
 
-Chuwi Hi8 (CWI509, Q32G22150910320, given away, Q32G221512035xx 2x)
+Chuwi Hi8 (CWI509)
+-4x Q32G22150910320 given away, 2x Q32G221512035xx, Q32G22160505024
 -8" 1200x1920 DSI panel 24 bpp, PWM: LPSS
  -No HDMI
 -Touchscreen GSL3676, with capacitive home-button, fw NOT in EFI
+ -Q32G22160505024 has wrong fw in EFI
 -CPU: Bay Trail Z3736F, 2GB RAM
--Wifi: brcmfmac43430a0
+-Wifi: brcmfmac43430a0 (Q32G22150910320, Q32G221512035xx)
+       brcmfmac43430a1 (Q32G22160505024)
 -Accel: BMA250E
 -ALS: CPLM3218
 -Audio codec: ALC5640
 -PMIC: AXP288, charging only through micro USB 5V/2A
 -OTG:
- -5V boost converter not working, host mode needs external power (only Q32G22150910320)
+ -5V boost converter broken on Q32G22150910320
  -Has mux
  -USB-phy: TI T1210B
+-Camera sensors: ov2680, gc0310 (on all versions?)
 -BIOS settings hack from patched grub, only use with H1D_S806_206 10/29/2014 BIOS!!!
  menuentry 'Set BIOS to Windows' {
         setup_var_3 0x215 1
@@ -375,8 +380,10 @@ Chuwi Hi8 (CWI509, Q32G22150910320, given away, Q32G221512035xx 2x)
         setup_var_3 0x12b 2
         reboot
  }
+-2x with cover with bluetooth keyboard
 
-Chuwi Hi8 Pro (CWI513, serial: PQ32G22170904949) (in big Caterpillar shoebox)
+Chuwi Hi8 Pro (CWI513) (in big Caterpillar shoebox)
+-2x serial: PQ32G22170904949, serial: PQ32G22170801975
 -8" 1200x1920 DSI panel 24 bpp, PWM: LPSS
  + Micro HDMI
 -Touchscreen GSL3676, with capacitive home-button, fw in EFI
@@ -402,7 +409,7 @@ Chuwi Hi8 Pro (CWI513, serial: PQ32G22170904949) (in big Caterpillar shoebox)
  -clock pltclk 4 using source 0 (19.2 MHz Xosc)
 -Multi-boot menu:
  -Fedora only install:
-  -Having shim binaries under EFI/BOOT do fallback leads to a boot-loop
+  -Having shim binaries under EFI/BOOT do fallback leads to fbx64.efi getting run
   -Install Fedora which installs shimx64.efi as EFI\BOOT\BOOTX64.EFI
   -You should now get Android as option in the graphical OS chooser built
    into the BIOS, this is important because it remembers the last OS choosen.
@@ -410,16 +417,19 @@ Chuwi Hi8 Pro (CWI513, serial: PQ32G22170904949) (in big Caterpillar shoebox)
    64 bit UEFI mode using Android settings, based on the last time an os
    was chosen in the chooser.
   -Choose Android at least once to get 64 bit UEFI
-  -Insert an USB bootable media to break and use boot override from save/exit
-   firmware screen to boot it (to break the bootloop), from the USB booted OS:
+  -Select always continue boot on fbx64.efi menu shown to avoid boot-looping
+  -Optionally to hide OS chooser build into BIOS:
    -Add an entry pointing to EFI/fedora/shimx64.efi to efibootmgr list,
     remove all other entries
-   -Remove all files under EFI/BOOT to hide the bootchooser and fix the bootloop
+   -Remove all files under EFI/BOOT to hide the bootchooser and fix fb64x64.efi
+    getting run every boot
  -Android + Fedora dual-boot install
   -Install Android
   -Install Fedora in free-space
-  -Boot from bootable USB to break bootloop
+  -Select always continue boot on fbx64.efi menu shown to avoid boot-looping
   -Run as root
+   # Avoid updates overwriting /boot/efi/EFI/BOOT/boot*.efi files:
+   rpm -e shim-x64 shim-ia32
    # For Android
    cp /boot/efi/loader.efi /boot/efi/EFI/BOOT/bootx64.efi
    # For Windows (really Fedora)
@@ -430,6 +440,7 @@ Chuwi Hi8 Pro (CWI513, serial: PQ32G22170904949) (in big Caterpillar shoebox)
   -Go into BIOS and do F3 to load defaults, change USB mode from auto to PCI,
    F4 to save and reboot
   -Now we should get the OS choser with both OS-es visible
+ -https://linux-hardware.org/?probe=e7eb855568
 
 Chuwi Hi8 Pro, chipone + brcmfmac43430a0 model (CWI513, serial: PQ32G22160411929, given away)
 -8" 1200x1920 DSI panel 24 bpp, PWM: LPSS
@@ -445,7 +456,7 @@ Chuwi Hi8 Pro, chipone + brcmfmac43430a0 model (CWI513, serial: PQ32G22160411929
 -Type-C: host + gadget + charging, USB2 highspeed only?
 -DSDT: PMID == 0x02
 
-Chuwi HiBook (CWI514)
+Chuwi HiBook (CWI514) (in big black unmarked shoebox)
 -10.1" 1200x1920 DSI panel 24 bpp, PWM: LPSS
  + Micro HDMI
 -Touchscreen MSSL0017 GSL36??, with capacitive home-button, fw in EFI, no pen support
@@ -891,7 +902,7 @@ Type-C: Charges only at 5V, needs 3A Rp (or PD?) for charging with > 1A
 
 ============ Irbis ============
 
-Irbis TW90
+Irbis TW90 (in big black unmarked shoebox)
 -10" 1200x1920 DSI 24bpp, PWM: LPSS, freq: actual 19921 VBT 20000, 13-255
  + Mini HDMI
 -Touchscreen: GSL3680?, with capacitive home-button, fw NOT in EFI
@@ -1056,7 +1067,7 @@ Lenovo Yoga Tablet 2 851F (Windows, black, in Be Quiet psy box)
 -Camera sensors: OVTI8865 OVTI9760
 -https://linux-hardware.org/?probe=8466ce344b
 
-Lenovo Yoga Tablet 2 1050L (Android, silver)
+Lenovo Yoga Tablet 2 1050L (Android, silver, in orange giga shoebox)
 -10" 1920x1200 DSI 24 bpp, PWM: CRC (PWM control an i2c attached lp8557)
  -No HDMI
 -Touchscreen: rmi4_i2c, without capacitive home-button
@@ -1074,8 +1085,9 @@ Lenovo Yoga Tablet 2 1050L (Android, silver)
 -Has a broadcom BCM4752 GPS ?
 -To disconnect battery for storage:
  i2cset -y -f 0 0x6b 0x07 0x6b
+-https://linux-hardware.org/?probe=3dcf212c95
 
-Lenovo Yoga Tablet 2 1051L (Windows, black)
+Lenovo Yoga Tablet 2 1051L (Windows, black, on top of shoeboxes)
 -10" 1920x1200 DSI 24 bpp, PWM: CRC
  + Micro HDMI
 -Touchscreen: SYNA0001
@@ -1230,7 +1242,7 @@ Lenovo Yoga 300-11IBR (given away)
 -Audio codec: HDA
 -Keyboard: PS/2 with SynPS/2 touchpad
 
-Lenovo ThinkPad Yoga 11e 4th gen
+Lenovo ThinkPad Yoga 11e 4th gen (in orange cellini shoebox)
 -11.6" 1366x768 eDP panel, 18 bpp
  + Full size HDMI
 -Touchscreen: WCOM50BD i2c-hid, without capacitive touch home-button,
@@ -1382,6 +1394,15 @@ MSI S100 Tablet + keyboard cover (given away)
 -DP to LVDS IC: Parade ps8622
 -EC: IT8568E, also an i2c-hid keyb/mouse (which does not do anything)
 
+MSI S270 laptop (in orange cellini shoebox)
+-12.1" 1280x800 LVDS screen using msi-laptop-bl backlight control
+-CPU AMD Turion 64 MT-30, 2G RAM
+-Wifi: Ralink RT2500
+-Bluetooth: 0db0:a970 MSI USB BT dongle
+-Ethernet: RTL8139
+-SSD: Transcend 120G SATA M2 2242 through 2.5" pata to M2 SATA convertor
+-Charging through power-barrel, 19.2V 3.42A
+
 
 ============ Nanote ============
 
@@ -1444,6 +1465,19 @@ Onda V80 plus (Android version): (in big Caterpillar shoebox)
 -Accel: BOSC0200, mount-matrix ok
 -Audio codec: ES8316, mono speaker
 -PMIC: AXP288, charging only through micro USB 5V/2A
+
+
+============ Packard Bell ============
+
+Packard Bell Dot SC (in orange cellini shoebox)
+-Same hw as Acer Aspire One AOD270
+-10.1" 1024x600 LVDS panel, ACPI video backlight control
+-CPU: Atom N2600 (cedarview, gma500), 4GB RAM (3G usable)
+-Wifi: Qualcomm Atheros AR9462
+-Bluetooth 04c5:1330 USB BT
+-Ethernet: RTL8105e
+-SSD: 2.5" SATA SSD Intenso 120GB
+-Charging through power-barrel, 19.2V 2.34A
 
 
 ============ Peaq ============
@@ -1587,7 +1621,7 @@ Predia Basic Tablet (in hema bin behind amplifier)
 
 ============ Prowise ============
 
-Prowise PT301
+Prowise PT301 (in big black unmarked shoebox)
 -10" 1280x800 DSI 18 bpp (sparse) PWM: LPSS freq: actual 19836 VBT 20000 (30-255)
 -Touchscreen: Goodix GT9271, with capacitive home button
 -PCB: M1042_MB
@@ -1618,7 +1652,7 @@ T-BAO Tbook Air 12.5
 
 ============ Teclast ============
 
-Teclast Tbook 11
+Teclast Tbook 11 (in big black unmarked shoebox)
 -10"
  + Micro HDMI
 -Touchscreen: Silead GSL3692, with capacitive home-button, fw in EFI
@@ -1690,7 +1724,7 @@ Teclast X89 E7ED (in Poelman shoebox)
 
 ============ Terra ============
 
-Terra Pad 1060 (given away)
+Terra Pad 1060 (in big black unmarked shoebox)
 -10" 1280x800 eDP panel 18bpp
 -Touchscreen: USB 03eb:8c17 "Atmel Atmel maXTouch Digitizer"
  -With capacative home-button through ps/2 kbd, with haptic feedback
