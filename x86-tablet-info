@@ -1,3 +1,9 @@
+========== 96Boards ==========
+
+DragonBoard 410C (in big black unmarked shoebox)
+-...
+
+
 ============ Acer ============
 
 Acer Aspire Switch 10 (SW5-012) (in big black unmarked shoebox)
@@ -54,7 +60,7 @@ Acer Aspire Switch V 10 (SW5-017)
 -10" 1280x800 DSI 24 bpp, PWM: LPSS
 -Touchscreen: FTSC1000 i2c-hid, without capacitive home-button
  -Has separate physical home button
--CPU: Cherry Trail x5-Z8350, $GB RAM
+-CPU: Cherry Trail x5-Z8350, 4GB RAM
 -Wifi: Atheros QCA6174 802.11ac (PCI)
 -Accel: BOSC0200, mount matrix ok
 -ALS: CPLM3218
@@ -65,6 +71,7 @@ Acer Aspire Switch V 10 (SW5-017)
 -Camera sensor HIMX2051: Supported by unicam driver in android_kernel_intel_cherrytrail
 -Camera sensor OVTI5670: Has sensor driver in main kernel
  Also in Kernel-for-Asus-Zenfone-2/drivers/external_drivers/camera/drivers/media/i2c/ov5670.c
+-USB fingerprint reader
 -Dock, seems to have 2 separate USB connections on the dock connector,
  1 for the A-port and one for the kbd/mouse
  -ITE8910 kbd controller
@@ -314,6 +321,7 @@ Chuwi Vi10 (CWI505) (on top of shoeboxes)
 -Wifi: RTL8723BS
 -Accel: BMA250E, mount-matrix ok
 -Audio codec: ALC5640
+-Cameras: back: ov2680 front: HIMX2056
 -PMIC: AXP288, charging only through micro-usb 5V/2A max
 -USB-phy: TI T1210B
 -USB-hub: FE 1.1 USB2.0 hub
@@ -321,6 +329,8 @@ Chuwi Vi10 (CWI505) (on top of shoeboxes)
 -Other: ATMLH434 02DM (probably flash or uc to bring up the PS8622)
 -Keyboard: USB 1c4f:0075 keyboard/touchpad(mouse mode only) combo dock
  Touchpad on/off toggle key handled inside kbd-dock, does not send events
+-Can use the same BIOS settings hack from patched grub as Hi8 (CWI509) models,
+ tested with G1D_S165_206 10/29/2014 BIOS
 
 Chuwi Vi8 (CWI501, Q32G22150103200)
 -8" 800x1280 DSI panel 24 bpp, PWM: LPSS
@@ -347,7 +357,9 @@ Chuwi Vi8 (CWI506) (in big black unmarked shoebox)
 -With cover with bluetooth keyboard
 
 Chuwi Hi8 (CWI509)
--4x Q32G22150910320 given away, 2x Q32G221512035xx, Q32G22160505024
+-1x Q32G22150910320 (given away)
+-2x Q32G221512035xx (with cover with bluetooth keyboard, in black boost (yellow letters) shoebox)
+-1x Q32G22160505024 (in big Caterpillar shoebox)
 -8" 1200x1920 DSI panel 24 bpp, PWM: LPSS
  -No HDMI
 -Touchscreen GSL3676, with capacitive home-button, fw NOT in EFI
@@ -380,7 +392,10 @@ Chuwi Hi8 (CWI509)
         setup_var_3 0x12b 2
         reboot
  }
--2x with cover with bluetooth keyboard
+-hw-probe brcmfmac43430a0 version:
+ https://linux-hardware.org/?probe=d089301e66
+-hw-probe brcmfmac43430a1 version:
+ https://linux-hardware.org/?probe=3a3ccd7c55
 
 Chuwi Hi8 Pro (CWI513) (in big Caterpillar shoebox)
 -2x serial: PQ32G22170904949, serial: PQ32G22170801975
@@ -553,7 +568,7 @@ Chuwi Hi10 Plus (CWI527) (given away)
  Touchpad on/off toggle key handled inside kbd-dock, sends empty
  consumer-page keys input-report
 
-Chuwi Hi10 Pro (CWI529)
+Chuwi Hi10 Pro (CWI529, in black straightpower 450W psy box)
 -10.1" 1200x1920 DSI panel 24 bpp, PWM: LPSS
  + Micro HDMI
 -Touchscreen GSL36??, with capacitive home-button, fw in EFI
@@ -669,7 +684,7 @@ Dell Venue 8 Pro 5855: (in big Caterpillar shoebox)
 -PMIC: Crystal Cove (CHT), charging through Type-C connector (5V or 20V USB-PD)
 -Type-C: Supports DP-altmode
 
-Dell Venue 10 Pro 5055 8BN8J52
+Dell Venue 10 Pro 5055 8BN8J52 (in orange giga shoebox)
 -10.1" 1280x800 DSI 24 bpp, PWM: LPSS
  + Micro HDMI
 -Touchscreen: WCOM4802, without capacitive home-button
@@ -900,6 +915,20 @@ HP Pro Tablet 608 (in Poelman shoebox)
 Type-C: Charges only at 5V, needs 3A Rp (or PD?) for charging with > 1A
 
 
+============ Intels ============
+
+Intel Compute Stick STK1AW32SC (in black straightpower 450W psy box)
+-HDMI
+-CPU: Cherry Trail x5-Z8330, 2GB RAM
+-...
+
+Intel Edison (in black straightpower 450W psy box)
+-...
+
+-Intel MinnonwBoard MAX (in big black unmarked shoebox)
+-...
+
+
 ============ Irbis ============
 
 Irbis TW90 (in big black unmarked shoebox)
@@ -967,7 +996,7 @@ Jumper EZpad mini 3
  mode, these lines will be in device mode and USB3 devices will not work
  in the USB3-A connector. Solution: leave the dwc3 device controller disabled
 
-Jumper EZpad 7
+Jumper EZpad 7 (in black straightpower 450W psy box)
 -10.1" 1200x1920 eDP 24 bpp screen
  + Micro HDMI
 -Touchscreen: gsl3680, without capacitive home-button, fw not in EFI
@@ -1067,7 +1096,7 @@ Lenovo Yoga Tablet 2 851F (Windows, black, in Be Quiet psy box)
 -Camera sensors: OVTI8865 OVTI9760
 -https://linux-hardware.org/?probe=8466ce344b
 
-Lenovo Yoga Tablet 2 1050L (Android, silver, in orange giga shoebox)
+Lenovo Yoga Tablet 2 1050L (Android, silver, in black boost (yellow letters) shoebox)
 -10" 1920x1200 DSI 24 bpp, PWM: CRC (PWM control an i2c attached lp8557)
  -No HDMI
 -Touchscreen: rmi4_i2c, without capacitive home-button
@@ -1095,7 +1124,7 @@ Lenovo Yoga Tablet 2 1051L (Windows, black, on top of shoeboxes)
 -CPU: Bay Trail Z3745, 2GB RAM
 -Wifi: BCM4324/5 brcmfmac43241b4-sdio
 -Accel: ACCL0001: LSM303D (also magnetic compass)
--ALS: al3320 (b?) should work with kernel als3320a driver
+-ALS: al3320
 -Kickstand angle sensor MXM1120 HALL sensor
 -Audio codec: WM5102 SPI!
 -PMIC: Crystal Cove (BYT), charging only through micro USB 5V/2A
@@ -1103,6 +1132,50 @@ Lenovo Yoga Tablet 2 1051L (Windows, black, on top of shoeboxes)
  connected to a charger. Does not work with charging hubs.
 -Has a ??? LTE modem
 -Has a broadcom BCM4752 GPS ?
+
+Lenovo Yoga Tab 3 (yt3-x90f, Android, in black boost (yellow letters) shoebox)
+-10" 1600x2560 DSI 24 bpp, backlight controlled through lp8557 chip
+ -No HDMI
+-Touschscreen: HiDeep IST520E in native HiDeep mode, without any home-button
+-CPU: Cherry Trail x5-Z8550, 4G RAM
+-Wifi: brcmfmac4356-pcie
+-Accel + ALS: HID sensors over intel_ish bridge
+-Audio codec: WM5102 SPI
+-PMIC: Whiskey Cove (CHT), charging through micro USB with pump-express 12V/2A
+-https://linux-hardware.org/?probe=6c58138c35
+-To disconnect battery for storage:
+ i2cset -y -f  0 0x6b 0x09 0x64
+ i2cset -y -f 15 0x6b 0x09 0x64
+
+Lenovo Yoga Book (yb1-x90f, Android, in original box)
+-10" 1200x1920 DSI 24 bpp, backlight controlled through lp8557 chip
+ + Micro HDMI
+-Touschscreen: HiDeep IST940E in native HiDeep mode, without any home-button
+-CPU: Cherry Trail x5-Z8550, 4G RAM
+-Wifi: brcmfmac4356-pcie
+-Accel + ALS: HID sensors
+-Audio: RT5677 codec + TS3A227E headset type-detection/cross-switch
+-PMIC: Whiskey Cove (CHT), charging through micro USB with pump-express 12V/2A
+-Keyboard half: Goodix touchscreen for touch keyboard with fixed backlit key pattern
+-Keyboard half: Wacom i2c-hid digitizer
+-https://linux-hardware.org/?probe=edf1d60e46
+-To disconnect battery for storage:
+ i2cset -y -f 15 0x6b 0x09 0x64
+
+Lenovo Yoga Book (yb1-x91f, Windows, in orange giga shoebox)
+-10" 1200x1920 DSI 24 bpp, PWM: LPSS
+ + Micro HDMI
+-Touschscreen: HiDeep IST940E in i2c-hid mode, without any home-button
+-CPU: Cherry Trail x5-Z8550, 4G RAM
+-Wifi: brcmfmac4356-pcie
+-Accel + ALS: HID sensors
+-Audio: RT5677 codec + TS3A227E headset type-detection/cross-switch
+-PMIC: Whiskey Cove (CHT), charging through micro USB with pump-express 12V/2A
+-Keyboard half: Goodix touchscreen for touch keyboard with fixed backlit key pattern
+-Keyboard half: Wacom i2c-hid digitizer
+-https://linux-hardware.org/?probe=3316360d7a
+-To disconnect battery for storage:
+ i2cset -y -f 14 0x6b 0x09 0x64
 
 Lenovo Miix 2 8 (in big Caterpillar shoebox)
 -8" 800x1280 DSI 24 bpp, PWM CRC, freq: actual 23531 VBT 20000, 0-255
@@ -1347,7 +1420,21 @@ Mele PCG09 (in Be Quiet psy box)
 -USB3 to SATA chip for 2.5inch drive: GL3321G
 
 
-============ MPMAN ============
+============ Microsoft ============
+
+Microsoft Surface 3 (in orange cellini shoebox)
+-10.8" 1920x1280 DSI, 24 bpp, PWM: CRC
+ + Mini Displayport (broken)
+-Touchscreen: SPI Capacitive TouchScreen with Pen input
+ -With capacative home-button through gpio-keys
+-CPU: Cherry Trail Z8700, 4G RAM
+-Wifi: Marvell 88W8897
+-Accel + ALS: MSHW0102 HID sensors
+-Audio codec: rt5645
+-PMIC: Crystal Cove (CHT), charging only through micro USB at 5.2V/2.5A
+
+
+============= MPMAN ===============
 
 MPMAN Converter9
 -8.9" 800x1280 DSI, 24 bpp, PWM: LPSS
@@ -1415,6 +1502,31 @@ Nanote UMPC-01 (in red kickers shoebox)
 -Audio codec: ESS8316
 -PMIC: AXP288, charging only through Type-C USB 5V/2A, sees everything as DCP
 -Type-C: ?
+
+
+============ Nextbook ============
+
+Nextbook Ares 8 (in black boost (yellow letters) shoebox)
+-8" 800x1280 DSI panel 24 bpp, PWM: LPSS
+ + Micro HDMI
+-Touchscreen: Focal Tech FT5416DQ9 (ft5416)
+-CPU Bay Trail Z3736G, 1GB RAM
+-Wifi: RTL8723BS
+-Accel: Freescale MMA8653FC, mount-matrix in x86-android-tablets.c
+-Audio codec: ALC5640, mono speaker on right channel, needs work
+-PMIC: AXP288, charging only through micro-usb 5V/2A max
+-https://linux-hardware.org/?probe=151efb0278
+
+Nextbook Ares 8A (in black boost (yellow letters) shoebox)
+-8" 800x1280 DSI panel 24 bpp, PWM: LPSS
+ + Micro HDMI
+-Touchscreen: Focal Tech FT5416DQ9 (ft5416)
+-CPU: Cherry Trail x5-Z8350, 2G RAM
+-Wifi: RTL8723BS
+-Accel: Freescale MMA8653FC, mount-matrix in x86-android-tablets.c
+-Audio codec: ALC5651, mono speaker
+-PMIC: AXP288, charging only through micro-usb 5V/2A max
+-https://linux-hardware.org/?probe=a9f658c8af
 
 
 ============ Nuvision ============
@@ -1549,7 +1661,10 @@ Ployer Momo7w (given away)
 
 ============ Point of View ============
 
-Point of View TAB-P800W (in Poelman shoebox) (V1.0/V2.0/V2.1) (1 working, 1 defect, 1 given away)
+Point of View TAB-P800W
+-V1.0 defect (in black straightpower 450W psy box)
+-V2.0 given away
+-V2.1 working (in Poelman shoebox)
 -8" 800x1280 DSI 24 bpp, PWM: LPSS, freq: actual 30136 VBT 30000, 10-255
  + Micro HDMI
 -Touchscreen: Silead gsl3692, with capacitive home-button, fw NOT in EFI
@@ -1576,7 +1691,7 @@ Point of View TAB-P1005W-232 (V2.0)
  -Has USB mux
  -Does not have a PHY
 
-Point of View TAB-P1006W-232-3G 
+Point of View TAB-P1006W-232-3G (in orange giga shoebox)
 -10" 1366x768 LVDS screen connected through eDP to LVDS convertor chip
  + Micro HDMI
 -Touchscreen: Silead GSL3692 with capacitive home button
@@ -1636,6 +1751,14 @@ Prowise PT301 (in big black unmarked shoebox)
  -Touchpad-IC: CY8CTMA140
  -USB 258a:6a88 keyboard/touchpad(mouse mode only) combo dock
   Touchpad on/off toggle key handled inside kbd-dock, does not send events
+
+
+============ Sony =============
+
+Sony Vaio vpc-x11z1e (in orange cellini shoebox)
+-11.1" 1366x768 ...
+-Intel Atom Z550 (32bit, gma500 gfx)
+-No battery
 
 
 ============ T-BAO ============
@@ -1864,7 +1987,7 @@ Trekstor Surftab Wintron 10.1 ST10432-3 (in hema bin behind amplifier)
 -USB-A: USB-2.0 USB-A port
 -https://linux-hardware.org/?probe=90ffd16d35
 
-Trekstor SurfTab Twin 10.1 ST10432-8
+Trekstor SurfTab Twin 10.1 ST10432-8 (in black straightpower 450W psy box)
 -10" 1280x800 DSI 24 bpp, PWM: LPSS, freq: actual 19836 VBT 20000, 0-255
  + mini HDMI
 -Touchscreen: gsl3670 ??? with capacitive home-button, fw NOT in EFI ???
@@ -1880,10 +2003,11 @@ Trekstor SurfTab Twin 10.1 ST10432-8
 
 ============ VIOS ============
 
-VIOS LTH17
--10" 800x1280 panel, mounted 90 degrees rotated
+VIOS LTH17 (in orange giga shoebox)
+-10" 800x1280 DSI 24 bpp, PWM: LPSS, mounted 90 degrees rotated
  -!!!BGRT image is 800x1280 all black!!!
 -Touchscreen: No touchscreen
+-CPU: Cherry Trail x5-Z8350, 2GB RAM
 -Wifi: RTL8188ETV
 -Accel: no accel
 -Audio codec: ALC5651
@@ -1893,6 +2017,7 @@ VIOS LTH17
 -PMIC: AXP288, charging only through power-barrel, adapter 5V/3A
 -USB HID-MT keyboard / MT-touchpad combo
 -USB UVC webcam
+-https://linux-hardware.org/?probe=4d1a86ee61
 
 
 ============ Voyo ============
