@@ -636,22 +636,26 @@ Cube iwork 8 Air (in big Caterpillar shoebox)
 
 ============ CyberBook ============
 
-CyberBook T116:
+CyberBook T116 (in hema bin next to spkr)
 -10.1" 800x1280 DSI 24 bpp, PWM: LPSS
  -Mini HDMI
 -Touchscreen: GDIX1001, without capacitive home-button, with pen support
- -Has separate physical home button
+ -Has 2 programmable buttons labeled P and F
 -CPU: Cherry Trail Z8350, 2G RAM
 -Wifi: brcmfmac43455
 -Accel: KIOX000A
 -ALS: CPLM3218
 -Audio codec: NAU8824
+-Cameras: back: ov5648 front: ov2680
 -PMIC: AXP288, charging through micro USB 5V/2A or power-barrel 5V/2A
+-OTG: micro-USB id pin appears hard-wired to V5 boost output. Can do host +
+ gadget (untested) mode but need to manually set usb_role ...
 -CP210x RS232, CP210x internal connector for barcode scanner
 -r8152 100Mbit ethernet
 -12d1:15c1 Huawei Technologies Co., Ltd. ME906s LTE M.2 Module
 -Ublox G7020 GPS receiver
  https://wiki.odroid.com/accessory/connectivity/usb_gps
+-https://linux-hardware.org/?probe=9569a530e8
 
 
 ============ Dell ============
