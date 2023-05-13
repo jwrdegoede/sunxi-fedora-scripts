@@ -1018,6 +1018,19 @@ Jumper EZpad 7 (in black straightpower 450W psy box)
 -https://linux-hardware.org/index.php?probe=ab39f4f442
 
 
+============= Juno =============
+
+Juno Tablet (in mustache cover on top of Björndal shoebox with chargers)
+-10.1" 1920×1200 ... panel
+ + Micro HDMI + DP-over-type-C
+-Touchscreen: GDIX1002, without capacitive home-button
+-CPU: Jasperlake 5100, 8G RAM
+-Wifi: ?
+-Accel: ?
+-Audio codec: ESS8336
+-Charging through powerbarrel 12V 3A or Type-C PD 20V
+
+
 ============ Kazam ============
 
 Kazam Vision (in red kickers shoebox)
@@ -1436,6 +1449,13 @@ Microsoft Surface 3 (in orange cellini shoebox)
 -Accel + ALS: MSHW0102 HID sensors
 -Audio codec: rt5645
 -PMIC: Crystal Cove (CHT), charging only through micro USB at 5.2V/2.5A
+
+Microsoft Surface Go 1 (in case logic cover on top of Björndal shoebox with chargers)
+-10.1" 1800x1200 ... panel
+ + DP-over-type-C
+-Touchscreen: ...
+-CPU: Pentium Gold 4415Y, ? GB RAM
+-...
 
 
 ============= MPMAN ===============
@@ -2042,6 +2062,24 @@ Voyo winpad A15 (in hema bin behind amplifier)
  turning it off and back on again, busted hardware or Linux issue ?
  The device is reliable once booted.
 -https://linux-hardware.org/?probe=92b33844dc
+
+
+============ Xiaomi ===========
+
+Xiaomi Mi Pad 2 (in black boost (yellow letters) shoebox)
+-7.9" 1536x2048 DSI panel 24 bpp, backlight control through lp8557 i2c chip
+ -No HDMI
+-Touchscreen: FTSC1000 i2c-hid, with 3 separate touch buttons
+-CPU: Cherry Trail x5-Z8500, 2GB RAM
+-Wifi: BCM4356 pcie
+-Accel: ISH HID-sensors
+-Audio codec: RT5659 ? needs work
+-PMIC: Whiskey Cove, charging only through Type-C 5V/2A, does not do PD needs to
+ charge with USB-A charger + USB-A to C cable, otherwise it charges at only 500mA
+-Type-C: host + gadget + USB2 only
+-https://linux-hardware.org/?probe=c3c41b0bae
+-To disconnect battery for storage:
+ i2cset -y -f 14 0x6a 0x09 0x64
 
 
 ============ Yours ============
