@@ -17,6 +17,7 @@ Axxo WT1011     yes yes yes yes yes yes yes yes yes  yes yes yes yes -       -  
 Chuwi Hi8 Pro	yes yes yes yes yes     yes yes S0i3 yes yes yes yes     yes -   -    -   yes (2)
 Chuwi Hi10 Plus	yes yes yes yes yes yes yes yes S0i3 yes yes yes yes     yes -   (1)  yes yes
 Chuwi Hi10 Pro	yes yes yes yes yes yes yes yes S0i3 yes yes yes yes     yes -   (1)  yes yes
+Chuwi Hi12	yes yes yes yes yes yes yes yes S0i3 yes yes yes yes (10)yes -   -    yes ?
 Chuwi HiBook	ROT yes yes yes yes yes yes yes S0i3 yes yes yes yes     yes -   (1)  yes yes
 Chuwi Vi8	yes yes FIR yes yes yes yes yes yes  yes yes yes yes yes yes -   -    -
 Chuwi Vi8 Plus	yes yes yes yes yes yes yes yes yes  yes yes yes yes yes FIR -   -    -   yes (2)
@@ -92,3 +93,4 @@ DPI   DPI is wrong
     we do not turn off the PWM controller on suspend.
 (9) Suspend (S0i3) only works on second and later suspends after boot, first
     suspend gets woken up by EC
+(10) Device mode works but need to manually set usb_role (with BIOS in windows mode)

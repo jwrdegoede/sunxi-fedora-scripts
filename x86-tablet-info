@@ -56,7 +56,7 @@ Acer Aspire Switch 10E (SW3-016) (in hema bin behind amplifier)
 -https://linux-hardware.org/index.php?computer=7af9d429ab03
 -https://www.acer.com/ac/en/US/content/support-product/6460?b=1&pn=NT.G8VEH.004
 
-Acer Aspire Switch V 10 (SW5-017)
+Acer Aspire Switch V 10 (SW5-017) (on top of vitrine)
 -10" 1280x800 DSI 24 bpp, PWM: LPSS
 -Touchscreen: FTSC1000 i2c-hid, without capacitive home-button
  -Has separate physical home button
@@ -123,7 +123,7 @@ Acer One 10 (S1003) (in hema bin next to spkr)
   physcially different) does send HID events for this
 -https://linux-hardware.org/index.php?computer=c0e64319d0b1
 
-Acer Iconia One 7 B1-750
+Acer Iconia One 7 B1-750 (on top of vitrine)
 -7" 800x1280 DSI panel 24 bpp, PWM: LPSS
 -Touchscreen: Novatouch NVT-ts, without capacitive home-button
  -and without separate physical home button
@@ -241,14 +241,20 @@ Asus T100CHI (in dark blue asics shoebox, kbd 2x)
 -Webcam LED on INT33FC:01 pin 24
 
 Asus TF103c (aka K010) (in hema bin next to spkr)
--10"
+-10" 1280x800 DSI panel 24 bpp, PMIC/CRC PWM
+-Touchscreen: atmel_mxt_ts, without capacitive home-button (Android fact. os)
+-CPU: Bay Trail Z3745, 1G RAM
+-Wifi: brcmfmac43340-sdio
+-Accel: kxtj21009, mount-matrix handled by x86-android-tablets
 -Audio codec: ALC5640
+-PMIC: Crystal Cove (BYT), 5V 2A charging through micro-USB, used tusb1211 phy
+ for charger-type (BC1.2) detection
 -I2C devices:
  -bq24192 charger IC at 1-006b
  -ug31xx-gauge at 1-0070
  -rt5640 at 2-001c (present in DSDT as "10EC5640")
  -bcm2079x-i2c at 2-0077 -> This is an NFC controller, false positive ?
- -asuspec at 3-001b -> embedded-controller / dock-keyboard ?
+ -asuspec at 3-001b -> dock-keyboard + touchpad
   Present in DSDT as "NPCE69A", but all the GPIOs it uses are not listed
   as resources
  -gc0339 camera sensor at 4-0021
@@ -258,6 +264,8 @@ Asus TF103c (aka K010) (in hema bin next to spkr)
  -atmel_mxt_ts touchscreen at 6-004a, present in DSDT as "ATML1664", DSDT
   claims it is HID over I2C compatible, which it is not
  -Crystal Cove PMIC at 7-005e + 7-006e, present in DSDT as "INT33FD"
+-To disconnect battery for storage:
+ i2cset -y -f 0 0x6b 0x07 0x6b
 
 Asus T200TA (on top of shoeboxes)
 -11.6" 1366x768 eDP panel
@@ -332,7 +340,7 @@ Chuwi Vi10 (CWI505) (on top of shoeboxes)
 -Can use the same BIOS settings hack from patched grub as Hi8 (CWI509) models,
  tested with G1D_S165_206 10/29/2014 BIOS
 
-Chuwi Vi8 (CWI501, Q32G22150103200)
+Chuwi Vi8 (CWI501, Q32G22150103200) (on top of vitrine)
 -8" 800x1280 DSI panel 24 bpp, PWM: LPSS
 -Touchscreen GSL3676, with capacitive home-button, fw NOT in EFI
 -PCB: INET-I86M-REV03 Zeng-gc 2014-12-19
@@ -551,22 +559,15 @@ Chuwi Vi8 Plus (CWI519) (in big Caterpillar shoebox)
      echo 20 > /sys/class/backlight/intel_backlight/brightness
   7. Run "systemctl start gdm" to start the graphical session and install as usual
 
-Chuwi Hi10 Plus (CWI527) (given away)
--10.8" 1920x1280 DSI panel 24 bpp, PWM: LPSS
+Chuwi Hi12 (CWI520) (in hema bin behind amplifier)
+-12" 2160x1440 eDP panel 24 bpp
  + Micro HDMI
--Touchscreen GSL36??, with capacitive home-button, fw in EFI, pen support
--CPU: Cherry Trail x5-Z8350, 4G RAM ??
+-Touchscreen GDIX1001, with capacitive home-button, pen support with trekstor pen
+-CPU: Cherry Trail x5-Z8350, 4G RAM
 -Wifi: RTL8723BS
 -Accel: BOSC0200, mount-matrix ok
--ALS: CPLM3218
--Audio codec: ALC5651
--PMIC: AXP288, charging only through Type-C 5V/2A, does not do PD needs to
- charge with USB-A charger + USB-A to C cable, otherwise it charges at only 500mA
--Type-C: host + gadget + charging, USB-3 / superspeed
--Micro-B: USB-2 host-only
--Keyboard: USB 6080:8060 keyboard/touchpad(mouse mode only) combo dock
- Touchpad on/off toggle key handled inside kbd-dock, sends empty
- consumer-page keys input-report
+-Audio codec: ESS8316
+-PMIC: AXP288, charging only through micro-USB
 
 Chuwi Hi10 Pro (CWI529, in black straightpower 450W psy box)
 -10.1" 1200x1920 DSI panel 24 bpp, PWM: LPSS
@@ -589,11 +590,12 @@ Chuwi Hi10 Pro (CWI529, in black straightpower 450W psy box)
 -Keyboard: USB 1c4f:0063 keyboard/touchpad(mouse mode only) combo dock
  Touchpad on/off toggle key handled inside kbd-dock, does not send events
 
-Chuwi Hi13
+Chuwi Hi13 (in its original box)
 -13" 3000x2000 eDP panel 24bpp
  + Micro HDMI
 -Light sensor: CM32181
--Touschscreen: GDIX1002 goodix touchscreen, with capacitive home-button, with pen support
+-Touschscreen: GDIX1002 goodix touchscreen, with capacitive home-button, pen support
+ with own pen (also Trekstor pen alt channel but that works less well)
 -CPU: Apollo Lake N3450, 4G RAM
 -Wifi: Intel 3165
 -Accel: BOSC0200, mount-matrix ok 
@@ -639,7 +641,7 @@ Cube iwork 8 Air (in big Caterpillar shoebox)
 CyberBook T116 (in hema bin next to spkr)
 -10.1" 800x1280 DSI 24 bpp, PWM: LPSS
  -Mini HDMI
--Touchscreen: GDIX1001, without capacitive home-button, with pen support
+-Touchscreen: GDIX1001, without capacitive home-button, with pen support with trekstor pen
  -Has 2 programmable buttons labeled P and F
 -CPU: Cherry Trail Z8350, 2G RAM
 -Wifi: brcmfmac43455
@@ -705,7 +707,7 @@ Dell Venue 10 Pro 5055 8BN8J52 (in orange giga shoebox)
  the SoC, presumably PWM2, the schematic might be for the Android version though
 -https://linux-hardware.org/?probe=39feaef221
 
-Dell Venue 11 Pro 7130 vPro
+Dell Venue 11 Pro 7130 vPro (on top of shoeboxes)
 -10.8" 1920x1080 eDP
  + Mini HDMI
 -Touchscreen: SYNA7500
@@ -725,7 +727,7 @@ Dell Venue 11 Pro 7130 vPro
 Dell Latitude D430 (in hema bin behind amplifier)
 -12.1" ...
 
-Dell Latitude E6430
+Dell Latitude E6430 (laptop)
 -14.1" 1600x900 LVDS (intel iGPU + Nvidia GF108GLM)
  +HDMI
 -CPU i5-3320M + 8G (2 DDR3 DIMM slots, 1 x 8G, 1 x empty)
@@ -734,7 +736,7 @@ Dell Latitude E6430
 -Audio: HDA
 -https://linux-hardware.org/?probe=c7a98ce916
 
-Dell Latitude 7285
+Dell Latitude 7285 (laptop)
 -12.3" 2880x1920 eDP 24bpp
  -2x TB3
 -Touchscreen: WCOM484F, with pen support, reports pen-battery through HID on
@@ -792,7 +794,7 @@ Glavey TM800A550L (in big Caterpillar shoebox)
 
 ============ GPD ============
 
-GPD-win
+GPD-win (in its own box)
 -5.5" 720x1280 DSI panel, mounted 90 degree rotated
  -mounted 90 degree rotated
  + mini HDMI + DP-over-type-C
@@ -806,7 +808,7 @@ GPD-win
 -Unknown IC 17047 36a1s
 -DSDT: OSID == One, PMID == 0x03, (BDID == 0x09) || (BDID == 0x0A)
 
-GPD-pocket
+GPD-pocket (borrowed, given back)
 -7" 1200x1920 DSI, 24 bpp, PWM: LPSS, freq: actual 21972 VBT 22000, 20-255
  -mounted 90 degree rotated
  + mini HDMI + DP-over-type-C
@@ -842,7 +844,7 @@ GP-electronic T701 (in big Caterpillar shoebox)
 HP ElitePad 1000 G2 (in 2nd hema bin behind amplifier)
 -10.1" ...
 
-HP Pavilion X2 10-n000nd
+HP Pavilion X2 10-n000nd (on top of shoeboxes)
 -10" 1280x800 DSI panel, PWM: LPSS, freq: actual 9918 VBT 10000, 0-255
 -Touchscreen: SYNA7508, with support for PR77S pen, without capacitive home-button
  -Has separate physical home button
@@ -869,7 +871,7 @@ HP Pavilion X2 10-n000nd
 -USB-2 hub: gl852g
 -DSDT: PMID == 0x05
 
-HP Pavilion X2 10-p002nd
+HP Pavilion X2 10-p002nd (Eowyn)
 -10" 1280x800 eDP panel
  + Micro HDMI
 -Touchscreen: SYNP1000, without capacitive home-button
@@ -1023,10 +1025,11 @@ Jumper EZpad 7 (in black straightpower 450W psy box)
 Juno Tablet (in mustache cover on top of Björndal shoebox with chargers)
 -10.1" 1920×1200 ... panel
  + Micro HDMI + DP-over-type-C
--Touchscreen: GDIX1002, without capacitive home-button
+-Touchscreen: GDIX1002, without capacitive home-button, pen support with
+ Chuwi Hi13 pen (also Trekstor pen alt channel but that works less well)
 -CPU: Jasperlake 5100, 8G RAM
--Wifi: ?
--Accel: ?
+-Wifi: Intel Wireless 3165
+-Accel: KIOX000A
 -Audio codec: ESS8336
 -Charging through powerbarrel 12V 3A or Type-C PD 20V
 
@@ -1110,7 +1113,7 @@ Lenovo Yoga Tablet 2 851F (Windows, black, in Be Quiet psy box)
 -PMIC: Crystal Cove (BYT), charging only through micro USB 5V/2A
 -OTG: does not appear to have a mux, locked BIOS, will only charge when directly
  connected to a charger. Does not work with charging hubs.
--Camera sensors: OVTI8865 OVTI9760
+-Camera sensors: OVTI8865 OVTI9760, both work in Windows
 -https://linux-hardware.org/?probe=8466ce344b
 
 Lenovo Yoga Tablet 2 1050L (Android, silver, in black boost (yellow letters) shoebox)
@@ -1209,7 +1212,7 @@ Lenovo Miix 2 8 (in big Caterpillar shoebox)
   gpioset 'INT33FC:01' 25=0
 -OTG: does not appear to have a mux, locked BIOS
 
-Lenovo Miix 2 10 (in hema bin behind amplifier)
+Lenovo Miix 2 10 (in dark blue asics shoebox)
 -10" 1920x1200 DSI 24 bpp, PWM: CRC, freq: VBT 200, 00255
  + Micro HDMI
 -Touchscreen: ELAN1001, i2c HID multi-touch, with home button with haptic feedback
@@ -1393,7 +1396,7 @@ Medion Akoya E2228T MD60250 (in orange giga shoebox)
 
 ============ Meegopad ============
 
-Meegopad T08
+Meegopad T08 (in original box)
 -HDMI stick
 -CPU: Cherry Trail x5-Z8350, 4GB RAM
 -Wifi: AP6234 brcmfmac43340
@@ -1404,7 +1407,7 @@ Meegopad T08
 
 ============ Mele ============
 
-Mele PCG03
+Mele PCG03 (in hema bin behind amplifier)
 -Mini PC with HDMI output + Analogic ANX9833 DP to VGA chip for VGA output on eDP
 -CPU: Bay Trail Z3735F, 2 GB RAM
 -Wifi RTL8723BS
@@ -1571,7 +1574,7 @@ Nuvision/TMAX TM800W560L (in big Caterpillar shoebox)
 
 ============ Onda ============
 
-ONDA V891w P891WBEBV1B00 aka V1
+ONDA V891w P891WBEBV1B00 aka V1 (in big Caterpillar shoebox)
 -8.9" 1920x1200 DSI panel
 -Touchscreen: Silead GSL3680, with capacitive home-button, fw NOT in EFI
 -PCB: INET-I80MB-REV02 2014-09-09
@@ -1582,7 +1585,7 @@ ONDA V891w P891WBEBV1B00 aka V1
 -Audio codec: ALC5640, uses OMTP headset pinout instead of the usual CTIA one
 -PMIC: AXP288, charging only through micro-usb 5V/2A max
 
-Onda v975w (Carlos):
+Onda v975w (Carlos) (borrowed, returned)
 -9.7" 1536x2048 eDP panel
 -Touchscreen: GDIX1001
 -CPU: Bay Trail Z3735D, 2GB RAM
@@ -1618,7 +1621,7 @@ Packard Bell Dot SC (in orange cellini shoebox)
 
 ============ Peaq ============
 
-Peaq 10" C1010 2-in-1
+Peaq 10" C1010 2-in-1 (on top of shoeboxes)
 -10" 1920x1200 DSI 24 bpp, PWM: LPSS, freq: actual 40054 VBT 40000, 10-255
  + mini HDMI
 -Touchscreen: SIS0817 i2c-hid touchscreen, without capacitive home-button
@@ -1787,7 +1790,7 @@ Sony Vaio vpc-x11z1e (in orange cellini shoebox)
 
 ============ T-BAO ============
 
-T-BAO Tbook Air 12.5
+T-BAO Tbook Air 12.5 (on top of shoeboxes)
 -Wifi: Intel 3165D2W
 -Audio codec: ALC269
 -Charge IC: TI bq24715
@@ -1948,7 +1951,7 @@ Toshiba WT8-A (in Poelman shoebox)
 -PMIC: Crystal Cove (BYT), charging only through micro USB 5V/2A
 -OTG: Does not have an USB mux
 
-Toshiba WT10-A PDW0BE
+Toshiba WT10-A PDW0BE (on top of shoeboxes)
 -10" 1280x800 eDP panel 18bpp
  + Micro HDMI
 -Touchscreen: eKTH3910AY digitizer: MCF-101-1525-03-V2, without capacitive home-button
@@ -1970,10 +1973,10 @@ Toshiba WT10-A PDW0BE
 
 ============ Trekstor ============
 
-Trekstor Surftab duo W1 10.1 ST10432-10b
+Trekstor Surftab duo W1 10.1 ST10432-10b (on top of vitrine)
 -10.1" 1920x1200 DSI panel 24 bpp, LPSS PWM
  -Mini HDMI
--Touchscreen GDIX1001, with capacitive home-button, with pen support
+-Touchscreen GDIX1001, with capacitive home-button, with pen support with trekstor pen
 -CPU: Cherry Trail x5-Z8300, 2GB RAM
 -Wifi: RTL8723BS
 -Accel: BOSC0200, mount matrix ok
