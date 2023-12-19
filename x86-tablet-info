@@ -56,7 +56,7 @@ Acer Aspire Switch 10E (SW3-016) (in hema bin behind amplifier)
 -https://linux-hardware.org/index.php?computer=7af9d429ab03
 -https://www.acer.com/ac/en/US/content/support-product/6460?b=1&pn=NT.G8VEH.004
 
-Acer Aspire Switch V 10 (SW5-017) (on top of vitrine)
+Acer Aspire Switch V 10 (SW5-017) (in dark blue asics shoebox)
 -10" 1280x800 DSI 24 bpp, PWM: LPSS
 -Touchscreen: FTSC1000 i2c-hid, without capacitive home-button
  -Has separate physical home button
@@ -1392,6 +1392,15 @@ Medion Akoya E2228T MD60250 (in orange giga shoebox)
  which is charging the battery in tandem with the axp288 ???
 -Keyboard: USB 0911:2188 touchpad only supports mouse-emulation
  Touchpad on/off toggle key handled inside kbd-controller, does not send events
+
+Medion Lifetab S10346 (in dark blue asics shoebox)
+-10.1" 1920x1200 DSI panel, 24bpp, PWM: LPSS
+-Touchscreen: goodix_ts
+-CPU: Bay Trail Z3735F, 2G RAM
+-Wifi: rtl8723bs
+-Accel: kxtj21009
+-Audio codec: ALC5640
+-PMIC: AXP288, charging only through micro USB 5V/2A
 
 
 ============ Meegopad ============
