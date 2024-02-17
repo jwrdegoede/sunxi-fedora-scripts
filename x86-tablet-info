@@ -4,6 +4,13 @@ DragonBoard 410C (in big black unmarked shoebox)
 -...
 
 
+============ Ace =============
+
+Ace W5 Pro HDMI stick (in black straightpower 450W psy box)
+-HDMI out
+-CPU: Cherry Trail x5-Z8350, 2GB RAM
+-Wifi: brcmfmac43455-sdio
+
 ============ Acer ============
 
 Acer Aspire Switch 10 (SW5-012) (in big black unmarked shoebox)
@@ -194,14 +201,25 @@ Archos 80 Cesium
 ============ Asus ============
 
 Asus ME176c (aka R013) (in red kickers shoebox)
--7" ...
+-7" 800x1280 DSI 24 bpp, PWM: CRC
+ -No HDMI
+-Touchscreen: Goodix, without capacitive home-button
+-CPU: Bay Trail Z3745, 1G RAM
+-Wifi: brcmfmac43362-sdio
+-BT: BCM2076B1 acpi:BCM2E3A
+-Accel: kxtj21009, mount-matrix ok
+-Compass: ak09911
+-Audio codec: ALC5640
+-PMIC: Crystal Cove (BYT), charging only through micro-usb 5V/2A max
+-Has USB-mux + TI T1210B USB-phy, uses USB-phy for charger-type detection
+-Camera sensors: hm2056b gc0339
 
 Asus T100TA (in black straightpower 450W psy box)
 -10" 1368x768 DSI 24 bpp, PWM: CRC, freq: actual 200 VBT 200, 0-255
  + Micro HDMI
 -Touchscreen: Atmel MXT1664TXES-C2U 1330B TW QLG9F, without capacitive home-button
  -Has separate physical home button
--Wifi: Broadcom BCM43241SFKFFBG TN1322 P24 294688 P3T
+-Wifi: brcmfmac43241b4-sdio 2.4 + 5 GHz
 -Accel: INVN6500, mount-matrix ok
 -Ambient light: Capella cm32181
 -Audio Codec: Realtek ALC5642
@@ -225,12 +243,31 @@ Asus T100TAF (in hema bin next to spkr)
 -Audio Codec: Realtek ALC5642
 -PMIC: TI Dollar Cove, charging only through micro USB 5V/2A
 
+Asus T100TAM
+-10" 1368x768 DSI 24 bpp, PWM: CRC
+ + Micro HDMI
+-Touchscreen: SIS0817:00 0457:1071, without capacitive home-button
+ -Has separate physical home button
+-CPU: Bay Trail Z3775, 2G RAM
+-Wifi: brcmfmac43241b4-sdio 2.4 + 5 GHz
+-Accel: INVN6500, mount-matrix ok
+-Ambient light: Capella cm32181
+-Audio Codec: ALC5640
+-PMIC: Crystal Cove (BYT), charging only through micro USB at 5V/2A
+-Camera sensor: mt9m114 (INT33F0)
+-HDD keyboard dock with:
+ 0b05:17f6 USB 3.0 2 port 5 Gbit hub
+ 0b05:17f7 USB 2.0 2 port 480 Mbit hub
+ 0b05:17f9 USB 3.0 USB sata bridge (mass-storage proto only)
+ 0b05:17e0 USB HID for keyboard and touchpad
+-https://linux-hardware.org/?probe=c1216daf6a
+
 Asus T100CHI (in dark blue asics shoebox, kbd 2x)
 -10" 1920x1200 DSI panel 24 bpp, PMIC/CRC PWM
  + Micro HDMI
 -Touchscreen: SYNA7508 06CB:11E5, with support for PR77S pen, without capacitive home-button
 -CPU: Bay Trail Z3775, 2G RAM
--Wifi: brcmfmac43241b4-sdio
+-Wifi: brcmfmac43241b4-sdio 2.4 + 5 GHz
 -Accel: INVN6500, mount-matrix ok
 -Ambient light: Capella cm32181
 -Audio codec: ALC5640
@@ -264,6 +301,7 @@ Asus TF103c (aka K010) (in hema bin next to spkr)
  -atmel_mxt_ts touchscreen at 6-004a, present in DSDT as "ATML1664", DSDT
   claims it is HID over I2C compatible, which it is not
  -Crystal Cove PMIC at 7-005e + 7-006e, present in DSDT as "INT33FD"
+-Camera sensors: hm2056b gc0339
 -To disconnect battery for storage:
  i2cset -y -f 0 0x6b 0x07 0x6b
 
@@ -843,6 +881,7 @@ GP-electronic T701 (in big Caterpillar shoebox)
 
 HP ElitePad 1000 G2 (in 2nd hema bin behind amplifier)
 -10.1" ...
+-Wifi: brcmfmac43241b4
 
 HP Pavilion X2 10-n000nd (on top of shoeboxes)
 -10" 1280x800 DSI panel, PWM: LPSS, freq: actual 9918 VBT 10000, 0-255
@@ -1162,6 +1201,7 @@ Lenovo Yoga Tab 3 (yt3-x90f, Android, in black boost (yellow letters) shoebox)
 -Accel + ALS: HID sensors over intel_ish bridge
 -Audio codec: WM5102 SPI
 -PMIC: Whiskey Cove (CHT), charging through micro USB with pump-express 12V/2A
+-Camera sensors: AR1335+DW9761 OV5693
 -https://linux-hardware.org/?probe=6c58138c35
 -To disconnect battery for storage:
  i2cset -y -f  0 0x6b 0x09 0x64
