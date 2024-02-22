@@ -7,6 +7,7 @@
  -Lenovo Thinkpad 8      brcmfmac43241b5-sdio / efivar / ccode=XT/27   / 5GHz
  -Acer Iconia Tab8 w1-8  brcmfmac4330-sdio    / efivar / ccode=XV      / no-5G
  -Mele PCG09             brcmfmac4330-sdio    / efivar / ccode=ALL   * / 5Ghz
+ -Acer B1-750		 brcmfmac43340-sdio   / noefiv / ccode=XZ/1    / no-5G ch13-ok
  -Asus T200TA            brcmfmac43340-sdio   / efivar / ccode=ALL   * / 5GHz
  -Asus T100HA            brcmfmac43340-sdio   / efivar / ccode=XV/1  * / 5GHz
  -Asus TF103C            brcmfmac43340-sdio   / noefiv / ccode=X2      / 5GHz  ch13-ok
