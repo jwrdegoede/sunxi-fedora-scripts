@@ -1,9 +1,3 @@
-========== 96Boards ==========
-
-DragonBoard 410C (in big black unmarked shoebox)
--...
-
-
 ============ Ace =============
 
 Ace W5 Pro HDMI stick (in black straightpower 450W psy box)
@@ -130,15 +124,17 @@ Acer One 10 (S1003) (in hema bin next to spkr)
   physcially different) does send HID events for this
 -https://linux-hardware.org/index.php?computer=c0e64319d0b1
 
-Acer Iconia One 7 B1-750 (on top of vitrine)
+Acer Iconia One 7 B1-750 (in red kickers shoebox)
 -7" 800x1280 DSI panel 24 bpp, PWM: LPSS
 -Touchscreen: Novatouch NVT-ts, without capacitive home-button
  -and without separate physical home button
 -CPU: Bay Trail Z3735G, 1G RAM
--Wifi: brcmfmac43340-sdio
+-Wifi: brcmfmac43340-sdio, 2.4Ghz only
 -Accel: BMA250, mount matrix ok
 -Audio codec: ALC5640
 -PMIC: AXP288, charging only through micro USB 5V/2A
+-Camera sensors: ov5670+vcm gc0310  # ov5670 has libcamera ready mainline driver ...
+-https://linux-hardware.org/?probe=e4ffb3787d
 
 Acer Iconia Tab 8 W1-810 (in big Caterpillar shoebox)
 -8" 800x1280 DSI panel
@@ -161,6 +157,7 @@ Acer Iconia W4-820 (in red kickers shoebox)
 -Accel: SMO91D0
 -Audio codec: ALC5640
 -PMIC: Crystal Cove (BYT), charging only through micro USB at 5V/2A
+-Camera sensors: ov5693 + AD5823-vcm, ov2722
 -Appears to have a USB mux but no ULPI phy
 -https://linux-hardware.org/?probe=cf25eeba85
 
@@ -213,12 +210,15 @@ Asus ME176c (aka R013) (in red kickers shoebox)
 -PMIC: Crystal Cove (BYT), charging only through micro-usb 5V/2A max
 -Has USB-mux + TI T1210B USB-phy, uses USB-phy for charger-type detection
 -Camera sensors: hm2056b gc0339
+-To disconnect battery for storage:
+ i2cset -y -f 0 0x6b 0x07 0x64
 
-Asus T100TA (in black straightpower 450W psy box)
+Asus T100TA (1x in black straightpower 450W psy box, 1x on top of records)
 -10" 1368x768 DSI 24 bpp, PWM: CRC, freq: actual 200 VBT 200, 0-255
  + Micro HDMI
 -Touchscreen: Atmel MXT1664TXES-C2U 1330B TW QLG9F, without capacitive home-button
  -Has separate physical home button
+-CPU: Bay Trail Z3740, 2G RAM
 -Wifi: brcmfmac43241b4-sdio 2.4 + 5 GHz
 -Accel: INVN6500, mount-matrix ok
 -Ambient light: Capella cm32181
@@ -232,6 +232,17 @@ Asus T100TA (in black straightpower 450W psy box)
 -ITE IT8568VG 1331-AXO ZC0P1A (No idea)
 -SANDISK 9.15 XC4*00 SanDisk32G (The eMMC storage unit, 32GB version)
 -Webcam LED on INT33FC:02 pin 8
+-BIOS version 314 set atomisp mode:
+ Save https://fedorapeople.org/~jwrdegoede/grub-efi-setup_var/grubia32.efi
+ as grubia32-setupvar.efi in same dir as distro grubia32.efi
+ From distro grub cmdline:
+ chainloader (hd1,gpt1)/EFI/fedora/grubia32-setupvar.efi
+ boot
+ In grubia32-setupvar.efi:
+ setup_var_3 0x69 2 # set atomisp to PCI mode
+ setup_var_3 0x69 1 # set atomisp to default GPU child mode
+ or use efivar util to write:
+ efivar -n ec87d643-eba4-4bb5-a1e5-3f3e36b20da9-Setup --datafile ISP-LINUX-Setup-ec87d643-eba4-4bb5-a1e5-3f3e36b20da9.noheader -w
 
 Asus T100TAF (in hema bin next to spkr)
 -10" 1368x768 DSI 24 bpp, PWM: LPSS
@@ -243,7 +254,7 @@ Asus T100TAF (in hema bin next to spkr)
 -Audio Codec: Realtek ALC5642
 -PMIC: TI Dollar Cove, charging only through micro USB 5V/2A
 
-Asus T100TAM
+Asus T100TAM (on top of records)
 -10" 1368x768 DSI 24 bpp, PWM: CRC
  + Micro HDMI
 -Touchscreen: SIS0817:00 0457:1071, without capacitive home-button
@@ -261,8 +272,9 @@ Asus T100TAM
  0b05:17f9 USB 3.0 USB sata bridge (mass-storage proto only)
  0b05:17e0 USB HID for keyboard and touchpad
 -https://linux-hardware.org/?probe=c1216daf6a
+-BIOS version 205 set atomisp mode, same as T100TA BIOS version 314
 
-Asus T100CHI (in dark blue asics shoebox, kbd 2x)
+Asus T100CHI (ewaste, kbd 2x in dark blue asics shoebox)
 -10" 1920x1200 DSI panel 24 bpp, PMIC/CRC PWM
  + Micro HDMI
 -Touchscreen: SYNA7508 06CB:11E5, with support for PR77S pen, without capacitive home-button
@@ -313,6 +325,8 @@ Asus T200TA (on top of shoeboxes)
 -Accel: INVN6500, mount-matrix ok
 -Audio codec: ALC5640
 -PMIC: Crystal Cove (BYT), charging only through power-barrel 19.5V/1.75A
+-Battery somewhat dead, does work on charger. Needs to charge for a bit
+ before powering on then need unplug of charger to see true battery state.
 -ITE IT8568VG
 -GPS module: no markings
 -Webcam LED on INT33FC:02 pin 8
@@ -378,14 +392,14 @@ Chuwi Vi10 (CWI505) (on top of shoeboxes)
 -Can use the same BIOS settings hack from patched grub as Hi8 (CWI509) models,
  tested with G1D_S165_206 10/29/2014 BIOS
 
-Chuwi Vi8 (CWI501, Q32G22150103200) (on top of vitrine)
+Chuwi Vi8 (CWI501, Q32G22150103200) (in big Caterpillar shoebox)
 -8" 800x1280 DSI panel 24 bpp, PWM: LPSS
 -Touchscreen GSL3676, with capacitive home-button, fw NOT in EFI
 -PCB: INET-I86M-REV03 Zeng-gc 2014-12-19
 -CPU: Bay Trail Z3735F, 2GB RAM
 -Wifi: RTL8723BS
 -Accel: BMA250E
--Audicodec: Realtek ALC5640
+-Audio codec: Realtek ALC5640
 -PMIC: AXP288, charging only through micro USB 5V/2A
 -No mux? No phy (yet OTG controller enabled by default in BIOS?)
 
@@ -396,7 +410,7 @@ Chuwi Vi8 (CWI506) (in big black unmarked shoebox)
 -CPU: Bay Trail Z3735F, 2GB RAM
 -Wifi: RTL8723BS
 -Accel: BMA250E
--Audicodec: Realtek ALC5640, analog mic3, mono speaker
+-Audio codec: Realtek ALC5640, analog mic3, mono speaker
  -GPIO based headphone detect (AMCR0F28): yes!
 -PMIC: AXP288, charging only through micro USB 5V/2A
 -USB-phy: TI T1210B
@@ -597,7 +611,7 @@ Chuwi Vi8 Plus (CWI519) (in big Caterpillar shoebox)
      echo 20 > /sys/class/backlight/intel_backlight/brightness
   7. Run "systemctl start gdm" to start the graphical session and install as usual
 
-Chuwi Hi12 (CWI520) (in hema bin behind amplifier)
+Chuwi Hi12 (CWI520) (on top of records)
 -12" 2160x1440 eDP panel 24 bpp
  + Micro HDMI
 -Touchscreen GDIX1001, with capacitive home-button, pen support with trekstor pen
@@ -1192,9 +1206,30 @@ Lenovo Yoga Tablet 2 1051L (Windows, black, on top of shoeboxes)
 -Has a ??? LTE modem
 -Has a broadcom BCM4752 GPS ?
 
+Lenovo Yoga Tablet 2 Pro 1380F (Android, silver, in original box)
+-13" 2560x1440 eDP 24 bpp, brightness controlled by an i2c attached lp8557
+ -No HDMI
+ -Builtin DLP projector
+-Touchscreen: rmi4_i2c, without capacitive home-button
+ -No separate physical home button
+-CPU: Bay Trail Z3745, 2GB RAM
+-Wifi: BCM4324/5 brcmfmac43241b4-sdio
+-Accel: ACCL0001: LSM303D (also magnetic compass)
+-ALS: al3320 (b?) should work with kernel als3320a driver
+-Kickstand angle sensor MXM1120 HALL sensor
+-Audio codec: WM5102 SPI!
+-PMIC: Crystal Cove (BYT), charging through micro USB 5V/1.8A or 12V/1.8 with
+ proprietary fastcharge protocol on original charger
+-OTG: Uses lc824206xa USB switch, USB-phy: TI T1210B
+-Camera sensors: ov8865 ov9760
+-To disconnect battery for storage:
+ i2cset -y -f 0 0x6b 0x07 0x6b
+-https://linux-hardware.org/?probe=8de81fb9d7
+
 Lenovo Yoga Tab 3 (yt3-x90f, Android, in black boost (yellow letters) shoebox)
 -10" 1600x2560 DSI 24 bpp, backlight controlled through lp8557 chip
  -No HDMI
+ -Builtin DLP projector
 -Touschscreen: HiDeep IST520E in native HiDeep mode, without any home-button
 -CPU: Cherry Trail x5-Z8550, 4G RAM
 -Wifi: brcmfmac4356-pcie
@@ -1261,7 +1296,7 @@ Lenovo Miix 2 10 (in dark blue asics shoebox)
 -Accel: SMO91D0, i2c HID sensor-hub, including ALS
 -Audio codec: ALC5672, does not use codec IRQ, jack detect switch directly
  connected to BYT SoC
--PMIC: Crystal Cove (BYT), charging only through power-barrel 12V/1.5A
+-PMIC: Crystal Cove (BYT), charging through micro-usb (slow) or through power-barrel 12V/1.5A
 -OTG:
  -Has a mux
  -Locked BIOS cannot test for device-mode phy / gadget mode
@@ -1988,6 +2023,13 @@ Toshiba Click Mini L9W-B (in big Caterpillar shoebox)
 -Audio codec: ALC5640
 -PMIC: Dollar Cove TI PMIC
 
+Toshiba Portege Z830 (on top of spare speakers)
+-13.3" 1366x768 LCD
+-CPU: i7-2677M, 2G soldered RAM, 4G SODIMM
+-Wifi: ar9002w
+-Charging 19.2V power-barrel 5.5mm outside, 2.5mm inside
+ (NEC laptop charger in creme Björndal shoebox)
+
 Toshiba WT8-A (in Poelman shoebox)
 -8" 800x1280 DSI 24 bpp, PWM: CRC, freq: actual 23531 VBT 20000, 60-255
  + Micro HDMI
@@ -2148,3 +2190,10 @@ Yours Y8W81 8" Tablet (in big Caterpillar shoebox) (white or black no markings) 
 -PMIC: AXP288, charging only through micro USB 5V/2A
 -OTG:
  -Does not have an USB mux
+
+
+========== Arm Boards ==========
+
+DragonBoard 410C (in Red Kickers shoebox with sata cables)
+Libre Computers ROC-RK3399-PC (in Red Kickers shoebox with sata cables)
+Libre Computers AML-A311D-CC (in Red Kickers shoebox with sata cables)
