@@ -136,6 +136,19 @@ Acer Iconia One 7 B1-750 (in red kickers shoebox)
 -Camera sensors: ov5670+vcm gc0310  # ov5670 has libcamera ready mainline driver ...
 -https://linux-hardware.org/?probe=e4ffb3787d
 
+Acer Iconia One 8 A1-840FHD (in red grey ecco shoebox on top of records)
+-This tablet is Bay Trail based but has a SFI BIOS, so it cannot boot standard Linux :(
+-8" 1200x1900
+ + Micro HMDI
+-Touschscreen: ft5x0x_ts, without capacitive home-button
+ -and without separate physical home button
+-CPU: Bay Trail Z3745, 2G RAM
+-Wifi: Some brcmfmac
+-Accel: INVN6500?
+-Audio codec: ALC5640
+-PMIC: Crystal Cove + SMB329 charger + max170xx + fsa9285
+-Camera sensors: ov2722 + ov5693 + VCM
+
 Acer Iconia Tab 8 W1-810 (in big Caterpillar shoebox)
 -8" 800x1280 DSI panel
 -Touchscreen: Goodix GT811, without capacitive home-button
@@ -160,6 +173,8 @@ Acer Iconia W4-820 (in red kickers shoebox)
 -Camera sensors: ov5693 + AD5823-vcm, ov2722
 -Appears to have a USB mux but no ULPI phy
 -https://linux-hardware.org/?probe=cf25eeba85
+-To boot from eMMC cp shimia32.efi to EFI/Microsoft/Boot/bootmgfw.efi
+ as well as copying grubia32.efi + grub.cfg to EFI/Microsoft/Boot/
 
 
 ============ Advantech ============
@@ -211,9 +226,12 @@ Asus ME176c (aka R013) (in red kickers shoebox)
 -Has USB-mux + TI T1210B USB-phy, uses USB-phy for charger-type detection
 -Camera sensors: hm2056b gc0339
 -To disconnect battery for storage:
+ # Stop fuelgauge
+ i2cset -y -f 0 0x70 0x00 0x00
+ # Disable battery FET
  i2cset -y -f 0 0x6b 0x07 0x64
 
-Asus T100TA (1x in black straightpower 450W psy box, 1x on top of records)
+Asus T100TA (1x in black straightpower 450W psy box, 1x at space)
 -10" 1368x768 DSI 24 bpp, PWM: CRC, freq: actual 200 VBT 200, 0-255
  + Micro HDMI
 -Touchscreen: Atmel MXT1664TXES-C2U 1330B TW QLG9F, without capacitive home-button
@@ -414,6 +432,7 @@ Chuwi Vi8 (CWI506) (in big black unmarked shoebox)
  -GPIO based headphone detect (AMCR0F28): yes!
 -PMIC: AXP288, charging only through micro USB 5V/2A
 -USB-phy: TI T1210B
+-Camera sensors: gc0310 + ov2680
 -With cover with bluetooth keyboard
 
 Chuwi Hi8 (CWI509)
@@ -619,6 +638,7 @@ Chuwi Hi12 (CWI520) (on top of records)
 -Wifi: RTL8723BS
 -Accel: BOSC0200, mount-matrix ok
 -Audio codec: ESS8316
+-Cameras: OV2680 (front?) OV5648 (back?)
 -PMIC: AXP288, charging only through micro-USB
 
 Chuwi Hi10 Pro (CWI529, in black straightpower 450W psy box)
@@ -793,7 +813,7 @@ Dell Latitude 7285 (laptop)
  -2x TB3
 -Touchscreen: WCOM484F, with pen support, reports pen-battery through HID on
  touchscreen resulting in 0% battery reading when no pen is used
- touchscreen if flakey on my model, only works on some boots
+ touchscreen is flaky on my model, only works on some boots
 -CPU: Core i5-7Y57, 8G RAM
 -Wifi: Intel 8265
 -Accel + ALS: ISH HID sensors
@@ -859,6 +879,8 @@ GPD-win (in its own box)
 -Charge IC: TI bq24292i
 -Unknown IC 17047 36a1s
 -DSDT: OSID == One, PMID == 0x03, (BDID == 0x09) || (BDID == 0x0A)
+-To disconnect battery for storage:
+ i2cset -y -f 15 0x6b 0x07 0x6b
 
 GPD-pocket (borrowed, given back)
 -7" 1200x1920 DSI, 24 bpp, PWM: LPSS, freq: actual 21972 VBT 22000, 20-255
@@ -1325,7 +1347,7 @@ Lenovo Miix 3 830 (in Poelman shoebox)
   Cannot test, locked BIOS, no IFR ?
 -https://hackcorrelation.blogspot.com/2016/01/inside-stuff-lenovo-miix-3-830-tablet.html
 
-Lenovo ThinkPad 8 (in big Caterpillar shoebox, 2x)
+Lenovo ThinkPad 8 (2x in big Caterpillar shoebox)
 -8" 1200x1920 eDP panel
  + Micro HDMI
 -Touchscreen: ATML1000
@@ -1628,7 +1650,7 @@ Nextbook Ares 8 (in black boost (yellow letters) shoebox)
 -PMIC: AXP288, charging only through micro-usb 5V/2A max
 -https://linux-hardware.org/?probe=151efb0278
 
-Nextbook Ares 8A (in black boost (yellow letters) shoebox)
+Nextbook Ares 8A (defect, in black straightpower 450W psy box)
 -8" 800x1280 DSI panel 24 bpp, PWM: LPSS
  + Micro HDMI
 -Touchscreen: Focal Tech FT5416DQ9 (ft5416)
@@ -2160,7 +2182,7 @@ Voyo winpad A15 (in hema bin behind amplifier)
 
 ============ Xiaomi ===========
 
-Xiaomi Mi Pad 2 (in black boost (yellow letters) shoebox)
+Xiaomi Mi Pad 2 (2x in black boost (yellow letters) shoebox)
 -7.9" 1536x2048 DSI panel 24 bpp, backlight control through lp8557 i2c chip
  -No HDMI
 -Touchscreen: FTSC1000 i2c-hid, with 3 separate touch buttons
@@ -2178,22 +2200,24 @@ Xiaomi Mi Pad 2 (in black boost (yellow letters) shoebox)
 
 ============ Yours ============
 
-Yours Y8W81 8" Tablet (in big Caterpillar shoebox) (white or black no markings) (1 working, 1 defect, 1 given away)
+Yours Y8W81 8" Tablet (1x white in big Caterpillar shoebox,
+                       1x black in Chuwi cover in in big black unmarked shoebox)
+-Same as Chuwi CWI506 but with no markings on the back
 -8" 800x1280 DSI panel
  + Micro HDMI
 -Touchscreen: GSL3676, with capacitive home-button, fw NOT in EFI
--PCB: INET-I86M-REV21 Zeng-gc 2015-07-08
+-PCB: INET-I86-REV21 Zeng-gc 2015-07-08
 -CPU: Bay Trail Z3735F, 2GB RAM
 -Wifi: RTL8723BS
 -Accel: BMA250E, mount-matrix ok
 -Audio codec: Realtek ALC5651, mono speaker
 -PMIC: AXP288, charging only through micro USB 5V/2A
--OTG:
- -Does not have an USB mux
+-OTG: Does not have an USB mux
+-Camera sensors: gc0310 + ov2680
 
 
 ========== Arm Boards ==========
 
-DragonBoard 410C (in Red Kickers shoebox with sata cables)
-Libre Computers ROC-RK3399-PC (in Red Kickers shoebox with sata cables)
-Libre Computers AML-A311D-CC (in Red Kickers shoebox with sata cables)
+DragonBoard 410C (in black boost (yellow letters) shoebox)
+Libre Computers ROC-RK3399-PC (in black boost (yellow letters) shoebox)
+Libre Computers AML-A311D-CC (in black boost (yellow letters) shoebox)
