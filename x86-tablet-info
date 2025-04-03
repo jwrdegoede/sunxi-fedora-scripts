@@ -136,7 +136,7 @@ Acer Iconia One 7 B1-750 (in red kickers shoebox)
 -Camera sensors: ov5670+vcm gc0310  # ov5670 has libcamera ready mainline driver ...
 -https://linux-hardware.org/?probe=e4ffb3787d
 
-Acer Iconia One 8 A1-840FHD (in red grey ecco shoebox on top of records)
+Acer Iconia One 8 A1-840FHD (in grey ecco shoebox on top of records)
 -This tablet is Bay Trail based but has a SFI BIOS, so it cannot boot standard Linux :(
 -8" 1200x1900
  + Micro HMDI
@@ -1248,12 +1248,13 @@ Lenovo Yoga Tablet 2 Pro 1380F (Android, silver, in original box)
  i2cset -y -f 0 0x6b 0x07 0x6b
 -https://linux-hardware.org/?probe=8de81fb9d7
 
-Lenovo Yoga Tab 3 (yt3-x90f, Android, in black boost (yellow letters) shoebox)
+Lenovo Yoga Tab 3 (yt3-x90f, 2G RAM, Android, in grey ecco shoebox on top of records)
+Lenovo Yoga Tab 3 (yt3-x90f, 4G RAM, Android, in black boost (yellow letters) shoebox)
 -10" 1600x2560 DSI 24 bpp, backlight controlled through lp8557 chip
  -No HDMI
  -Builtin DLP projector
 -Touschscreen: HiDeep IST520E in native HiDeep mode, without any home-button
--CPU: Cherry Trail x5-Z8550, 4G RAM
+-CPU: Cherry Trail x5-Z8550, 2G/4G RAM
 -Wifi: brcmfmac4356-pcie
 -Accel + ALS: HID sensors over intel_ish bridge
 -Audio codec: WM5102 SPI
