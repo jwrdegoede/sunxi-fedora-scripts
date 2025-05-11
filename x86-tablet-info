@@ -348,6 +348,11 @@ Asus T200TA (on top of shoeboxes)
 -ITE IT8568VG
 -GPS module: no markings
 -Webcam LED on INT33FC:02 pin 8
+-Cameras:
+ INT33F3 -> ar0543         Asus-ME176C-kernel/linux/modules/camera/drivers/media/i2c/ar0543/
+                           Lenovo-Yoga-Tablet-2-1050L/linux/modules/camera/drivers/media/i2c/ar0543_raw.?
+ HIMX2056 -> Himax HM2056  Asus-ME176C-kernel/linux/modules/camera/drivers/media/i2c/hm2056/
+
 
 Asus T100HA (on top of shoeboxes)
 -10" 1280x800 DSI panel 24 bpp, PWM: CRC, freq: actual 200 VBT 200
@@ -2140,6 +2145,18 @@ Trekstor SurfTab Twin 10.1 ST10432-8 (in black straightpower 450W psy box)
 -Micro-usb only supports charging, no other function (neither host nor device)
 -Keyboard-cover: USB 0911:2188 touchpad seems to only support mouse-emulation
  Touchpad on/off toggle key handled inside kbd-dock, does not send events
+
+
+============ Vexia ============
+
+Vexia Edu Atla 10 9V (In green EU/Andalucía sleeve in hema bin behind amplifier)
+-10" ....
+-Touschscreen: FT5416DQ9 in i2c-HID mnode
+-CPU: Bay Trail Z374?, 2G RAM
+-Wifi: RTL8723BS
+-Accel: kxtj21009
+-Audio codec: ALC5640
+-PMIC: Crystal Cove charging only through small 9V powerbarrel
 
 
 ============ VIOS ============
