@@ -136,6 +136,20 @@ Acer Iconia One 7 B1-750 (in red kickers shoebox)
 -Camera sensors: ov5670+vcm gc0310  # ov5670 has libcamera ready mainline driver ...
 -https://linux-hardware.org/?probe=e4ffb3787d
 
+Acer Iconia One 8 A1-840 (in grey ecco shoebox on top of records)
+-8" 800x1280
+ + Micro HMDI
+-Touschscreen: ft5x0x_ts, without capacitive home-button
+ -and without separate physical home button
+-CPU: Bay Trail Z3735G, 1G RAM
+-Wifi: BCM43340-sdio
+-Accel: mpu6515
+-Audio codec: ALC5640
+-PMIC: TI Dolar Cove + bq24297 charger + TI Dolar Cove CC as fuel-gauge
+-Micro-USB: Charging 2A, host + device mode
+-To disconnect battery for storage:
+ i2cset -y -f 0 0x6b 0x07 0x6b
+
 Acer Iconia One 8 A1-840FHD (in grey ecco shoebox on top of records)
 -This tablet is Bay Trail based but has a SFI BIOS, so it cannot boot standard Linux :(
 -8" 1200x1900
