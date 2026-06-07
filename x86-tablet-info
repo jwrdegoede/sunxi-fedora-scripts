@@ -7,6 +7,12 @@ Ace W5 Pro HDMI stick (in black straightpower 450W psy box)
 
 ============ Acer ============
 
+Acer Aspire One AO532H (in hema bin next to spkr)
+-10" 1024x600 LVDS (ACPI video bl)
+-CPU: Intel Atom N450, 2G RAM
+-Wifi: QCA9565
+-Wired: AR8132
+
 Acer Aspire Switch 10 (SW5-012) (in big black unmarked shoebox)
 -10" 1280x800 DSI 24 bpp, PWM: LPSS, freq: actual 1525 VBT 1600, 13-255
 -Touchscreen: SYNA7300 06CB:0E75, without capacitive home-button
@@ -226,7 +232,9 @@ Archos 80 Cesium
 
 ============ Asus ============
 
-Asus ME176c (aka R013) (in red kickers shoebox)
+Asus ME176c (aka R013)
+-1x white (in grey ecco shoebox on top of records)
+-1x black (in red kickers shoebox)
 -7" 800x1280 DSI 24 bpp, PWM: CRC
  -No HDMI
 -Touchscreen: Goodix, without capacitive home-button
@@ -815,9 +823,6 @@ Dell Venue 11 Pro 7130 vPro (on top of shoeboxes)
  -https://gitlab.freedesktop.org/mobile-broadband/ModemManager/-/issues/339
 -https://linux-hardware.org/?probe=9cbca84e95
 
-Dell Latitude D430 (in hema bin behind amplifier)
--12.1" ...
-
 Dell Latitude E6430 (laptop)
 -14.1" 1600x900 LVDS (intel iGPU + Nvidia GF108GLM)
  +HDMI
@@ -1015,7 +1020,7 @@ HP Pro Tablet 608 (in Poelman shoebox)
 Type-C: Charges only at 5V, needs 3A Rp (or PD?) for charging with > 1A
 
 
-============ Intels ============
+============ Intel ============
 
 Intel Compute Stick STK1AW32SC (in black straightpower 450W psy box)
 -HDMI
@@ -1589,7 +1594,7 @@ Microsoft Surface Go 1 (in case logic cover on top of Björndal shoebox with cha
 
 ============= MPMAN ===============
 
-MPMAN Converter9
+MPMAN Converter9 (in grey ecco shoebox on top of records)
 -8.9" 800x1280 DSI, 24 bpp, PWM: LPSS
  - 90 degrees rotated when docked in kbd dock, but logo is in portrait mode
    like the panel is, so not a candidate for a panel-orientation quirk
@@ -2071,6 +2076,7 @@ Toshiba Portege Z830 (on top of spare speakers)
 -Wifi: ar9002w
 -Charging 19.2V power-barrel 5.5mm outside, 2.5mm inside
  (NEC laptop charger in creme Björndal shoebox)
+- No battery, replacement battery: PA5013U-1BRS
 
 Toshiba WT8-A (in Poelman shoebox)
 -8" 800x1280 DSI 24 bpp, PWM: CRC, freq: actual 23531 VBT 20000, 60-255
@@ -2106,7 +2112,7 @@ Toshiba WT10-A PDW0BE (on top of shoeboxes)
 
 ============ Trekstor ============
 
-Trekstor Surftab duo W1 10.1 ST10432-10b (on top of vitrine)
+Trekstor Surftab duo W1 10.1 ST10432-10b (in grey ecco shoebox on top of records)
 -10.1" 1920x1200 DSI panel 24 bpp, LPSS PWM
  -Mini HDMI
 -Touchscreen GDIX1001, with capacitive home-button, with pen support with trekstor pen
