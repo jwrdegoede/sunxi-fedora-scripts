@@ -107,7 +107,7 @@ Acer One 10 (S1002 (aka N15P2) (in hema bin behind amplifier)
  -HID events are send when the touchpad is toggled on/off, mapped to KEY_TOUCHPAD_ON / _OFF
 -https://linux-hardware.org/?probe=23688b2708
 
-Acer One 10 (S1003) (in hema bin next to spkr)
+Acer One 10 (S1003) (in hema bin behind amplifier)
 -10" 800x1280 DSI panel
 -Touchscreen: GDIX1001, without capacitive home-button, no pen support
  -Has separate physical home button
@@ -437,7 +437,7 @@ Chuwi Vi10 (CWI505) (on top of shoeboxes)
 -Can use the same BIOS settings hack from patched grub as Hi8 (CWI509) models,
  tested with G1D_S165_206 10/29/2014 BIOS
 
-Chuwi Vi8 (CWI501, Q32G22150103200) (in big Caterpillar shoebox)
+Chuwi Vi8 (CWI501, Q32G22150103200) (in small white Bizzy shoebox)
 -8" 800x1280 DSI panel 24 bpp, PWM: LPSS
 -Touchscreen GSL3676, with capacitive home-button, fw NOT in EFI
 -PCB: INET-I86M-REV03 Zeng-gc 2014-12-19
@@ -465,7 +465,7 @@ Chuwi Vi8 (CWI506) (in big black unmarked shoebox)
 Chuwi Hi8 (CWI509)
 -1x Q32G22150910320 (given away)
 -2x Q32G221512035xx (with cover with bluetooth keyboard, in black boost (yellow letters) shoebox)
--1x Q32G22160505024 (in big Caterpillar shoebox)
+-1x Q32G22160505024 (in small white Bizzy shoebox)
 -8" 1200x1920 DSI panel 24 bpp, PWM: LPSS
  -No HDMI
 -Touchscreen GSL3676, with capacitive home-button, fw NOT in EFI
@@ -503,7 +503,7 @@ Chuwi Hi8 (CWI509)
 -hw-probe brcmfmac43430a1 version:
  https://linux-hardware.org/?probe=3a3ccd7c55
 
-Chuwi Hi8 Pro (CWI513) (in big Caterpillar shoebox)
+Chuwi Hi8 Pro (CWI513) (in small white Bizzy shoebox)
 -2x serial: PQ32G22170904949, serial: PQ32G22170801975
 -8" 1200x1920 DSI panel 24 bpp, PWM: LPSS
  + Micro HDMI
@@ -607,7 +607,7 @@ Chuwi HiBook (CWI514) (in big black unmarked shoebox)
  Touchpad on/off toggle key handled inside kbd-dock, does not send events
 -https://linux-hardware.org/?probe=c1a354c2e2
 
-Chuwi Vi8 Plus (CWI519) (in big Caterpillar shoebox)
+Chuwi Vi8 Plus (CWI519) (in small white Bizzy shoebox)
 -8" 800x1280 LCD
  + Micro HDMI
 -Touchscreen Chipone ICN8505, fw in EFI
@@ -1372,8 +1372,10 @@ Lenovo Miix 3 830 (in Poelman shoebox)
   Cannot test, locked BIOS, no IFR ?
 -https://hackcorrelation.blogspot.com/2016/01/inside-stuff-lenovo-miix-3-830-tablet.html
 
-Lenovo ThinkPad 8 (2x in big Caterpillar shoebox)
+Lenovo ThinkPad 8 (2x in small white Bizzy shoebox)
 -8" 1200x1920 eDP panel
+ - Backlight of both tablets has become very uneven / spotty + significant backlight bleed
+ - Or the panel itself has gone bad?
  + Micro HDMI
 -Touchscreen: ATML1000
  -With capacative home-button through gpio-keys, with haptic feedback
@@ -1701,6 +1703,22 @@ Nuvision/TMAX TM800W560L (in big Caterpillar shoebox)
  part of the sleeve-contact of the headset's jack can work around this.
 -PMIC: AXP288, charging only through micro-usb 5V/2A max
 -USB-phy: TI T1210B
+
+
+============ Odys ============
+
+Odys Windesk X10 (in big Caterpillar shoebox)
+-10.1" 1280x800 DSI panel 18 bpp, PWM: LPSS
+ + Micro HDMI
+-Touchscreen: FTSC1000 i2c-hid, with capacitive home-button which sends left-ctrl+esc ?
+ -Has separate physical home button
+-CPU: Bay Trail Z3735G, 1G RAM
+-Wifi: RTL8723BS
+-Accel: kxcjk1013, mount-matrix ok
+-Audio codec: ALC5640
+-PMIC: AXP288, charging olny through mini power barrel connector 5V, 2.5A,
+       micro-USB does not charge
+-Camera sensors: GC0310 + HIMX2056
 
 
 ============ Onda ============
@@ -2169,7 +2187,7 @@ Trekstor SurfTab Twin 10.1 ST10432-8 (in black straightpower 450W psy box)
 
 ============ Vexia ============
 
-Vexia Edu Atla 10 9V (In green EU/Andalucía sleeve in hema bin behind amplifier)
+Vexia Edu Atla 10 9V (In green EU/Andalucía sleeve in hema bin next to speaker)
 -10" ....
 -Touschscreen: FT5416DQ9 in i2c-HID mnode
 -CPU: Bay Trail Z374?, 2G RAM
