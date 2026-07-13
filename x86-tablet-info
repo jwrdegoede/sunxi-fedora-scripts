@@ -109,6 +109,7 @@ Acer One 10 (S1002 (aka N15P2) (in hema bin next to desk)
 
 Acer One 10 (S1003) (in hema bin next to desk)
 -2x 1x 2GB RAM + 1x 4GB RAM, 1x keyboard dock
+-4G version has empty /sys/firmware/efi/efivars (corrupt efivar store?)
 -10" 800x1280 DSI panel
 -Touchscreen: GDIX1001, without capacitive home-button, no pen support
  -Has separate physical home button
@@ -2278,3 +2279,5 @@ Yours Y8W81 8" Tablet (1x white in big Caterpillar shoebox,
 DragonBoard 410C (in black boost (yellow letters) shoebox)
 Libre Computers ROC-RK3399-PC (in black boost (yellow letters) shoebox)
 Libre Computers AML-A311D-CC (in black boost (yellow letters) shoebox)
+Radxa Dragon Q6A (in black boost (yellow letters) shoebox)
+2x Arduino Uno media carrier (in black boost (yellow letters) shoebox)
