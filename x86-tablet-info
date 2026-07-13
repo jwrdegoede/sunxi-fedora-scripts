@@ -35,7 +35,7 @@ Acer Aspire Switch 10 (SW5-012) (in big black unmarked shoebox)
 -PWM is not listed in ACPI, breaking backlight ctrl, requires DSDT override fix
 -https://linux-hardware.org/index.php?computer=d0a7a08478d7
 
-Acer Aspire Switch 10E (SW3-016) (in hema bin behind amplifier)
+Acer Aspire Switch 10E (SW3-016) (in hema bin next to desk)
 -10" 1280x800 DSI 24 bpp, PWM: LPSS
 -Touchscreen: ELAN1001 i2c-hid, without capacitive home-button
  -Has separate physical home button
@@ -88,7 +88,7 @@ Acer Aspire Switch V 10 (SW5-017) (in dark blue asics shoebox)
  -HID events are send when the touchpad is toggled on/off, mapped to KEY_TOUCHPAD_ON / _OFF
 -https://linux-hardware.org/?probe=d4ff3ee29e
 
-Acer One 10 (S1002 (aka N15P2) (in hema bin behind amplifier)
+Acer One 10 (S1002 (aka N15P2) (in hema bin next to desk)
 -10" 1280x800 DSI 24 bpp, PWM: LPSS
 -Touchscreen: FTSC9999 2808:5012
  -With capacative home-button through gpio-keys
@@ -107,11 +107,12 @@ Acer One 10 (S1002 (aka N15P2) (in hema bin behind amplifier)
  -HID events are send when the touchpad is toggled on/off, mapped to KEY_TOUCHPAD_ON / _OFF
 -https://linux-hardware.org/?probe=23688b2708
 
-Acer One 10 (S1003) (in hema bin behind amplifier)
+Acer One 10 (S1003) (in hema bin next to desk)
+-2x 1x 2GB RAM + 1x 4GB RAM, 1x keyboard dock
 -10" 800x1280 DSI panel
 -Touchscreen: GDIX1001, without capacitive home-button, no pen support
  -Has separate physical home button
--CPU: Cherry Trail x5-Z8300, 2GB RAM
+-CPU: Cherry Trail x5-Z8300, 2/4GB RAM
 -Wifi: AP6212 brcmfmac43430a0
 -Accel: KIOX0009, mount-matrix ok
 -Audio codec: ALC5645
@@ -939,7 +940,7 @@ GP-electronic T701 (in big Caterpillar shoebox)
 
 ============ HP ============
 
-HP ElitePad 1000 G2 (in 2nd hema bin behind amplifier)
+HP ElitePad 1000 G2 (in 2nd hema bin next to desk)
 -10.1" ...
 -Wifi: brcmfmac43241b4
 
@@ -1540,7 +1541,7 @@ Meegopad T08 (in original box)
 
 ============ Mele ============
 
-Mele PCG03 (in hema bin behind amplifier)
+Mele PCG03 (in hema bin next to desk)
 -Mini PC with HDMI output + Analogic ANX9833 DP to VGA chip for VGA output on eDP
 -CPU: Bay Trail Z3735F, 2 GB RAM
 -Wifi RTL8723BS
@@ -1896,7 +1897,7 @@ Point of View TAB-P1006W-232-3G (in orange giga shoebox)
 
 ============ Predia ============
 
-Predia Basic Tablet (in hema bin behind amplifier)
+Predia Basic Tablet (in hema bin next to desk)
 -10" 800x1280 DSI panel 24 bpp, PWM: LPSS
  + Micro HDMI
 -Touchscreen: Silead GSL3676 with capacitive home button, fw NOT in EFI
@@ -2159,7 +2160,7 @@ Trekstor Surftab Wintron 7.0 ST70416-6 (in big Caterpillar shoebox) (1 given awa
 -DSDT: PMID = 0x05
 -https://linux-hardware.org/?probe=12af9205b0
 
-Trekstor Surftab Wintron 10.1 ST10432-3 (in hema bin behind amplifier)
+Trekstor Surftab Wintron 10.1 ST10432-3 (in hema bin next to desk)
 -10" 1280x800 DSI 24 bpp, PWM: LPSS
  + mini HDMI
 -Touchscreen: FTSC1000, with capacitive home button handled by gpio-keys
@@ -2218,7 +2219,7 @@ VIOS LTH17 (in orange giga shoebox)
 
 ============ Voyo ============
 
-Voyo winpad A15 (in hema bin behind amplifier)
+Voyo winpad A15 (in hema bin next to desk)
 -11.6" 1366x768 DSI 24 bpp, PWM: CRC
 -Touchscreen: ACPI: SIS0817 chip: SIS9255, digitizer cable: SSET 04-1160-06078 2014.09.20
  digitizer cable is ripped/torn does not work
